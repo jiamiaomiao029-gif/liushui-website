@@ -10,13 +10,14 @@
 | qr-wechat.jpg | 微信二维码（弹窗 + 底部） |
 | work-1.jpg ~ work-5.jpg | 「实战方向」横滑卡片配图 |
 
-这些图片当前随源码包 `liushui-website.zip` 一起提供。将 zip 解压后，把 `public/images/` 下的 9 张图片提交到本目录即可完成完整部署：
+## 如何补齐图片（2 分钟）
 
-```bash
-unzip liushui-website.zip
-cd liushui-website  # 或解压目录
-git clone <本仓库> deploy && cp -r public/images deploy/public/
-cd deploy && git add -A && git commit -m "Add images" && git push
-```
+9 张图片已随源码包 `liushui-website.zip` 一起交付。最简单的上传方式：
 
-之后 Vercel 重新部署即可显示全部图片。
+1. 解压 `liushui-website.zip`
+2. 打开 GitHub 仓库页面 → `public/images/` → **Add file → Upload files**
+3. 把解压出的 9 张图片拖进去 → **Commit changes**
+
+Vercel 会自动重新部署，图片即上线。
+
+（如果先部署再补图片：首屏头像等位置会暂时空白，其余功能不受影响。）
