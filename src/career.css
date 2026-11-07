@@ -140,3 +140,97 @@ footer{padding:22px 0;background:#193728;color:#c2d9c8;font-size:10px}
 footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:900px){.container{padding:0 22px}.nav-items{gap:13px}.hero-layout{gap:28px}.hero-image{height:345px}.value-grid{grid-template-columns:repeat(2,1fr)}.value-item{min-height:195px}.thinking-grid{gap:14px}}
 @media(max-width:650px){html{scroll-padding-top:105px}.container{padding:0 18px}.nav-bar{padding-top:13px;padding-bottom:13px;flex-wrap:wrap;gap:12px}.nav-items{order:3;width:100%;overflow-x:auto;white-space:nowrap;padding:3px 0 0;gap:17px}.nav-items a{font-size:11px}.wordmark{font-size:21px}.hero{padding:53px 0 58px}.hero-layout,.project-grid,.habit-grid,.about-grid,.thinking-grid{grid-template-columns:1fr}.hero h1{font-size:43px;letter-spacing:-1.2px}.hero-image{height:325px;max-width:300px;width:100%;margin:12px auto}.section{padding:56px 0}.section-heading{display:block}.section-description{margin-top:15px}.value-grid{gap:8px}.value-item{padding:19px 15px;min-height:192px}.value-item h3{font-size:16px;margin-top:18px}.proof-strip>div{padding:17px 9px}.proof-strip strong{font-size:24px}.proof-strip span{font-size:9px}.photo-grid{grid-template-columns:1fr 1fr;gap:9px}.photo-grid figure{height:230px}.photo-grid figure:first-child{grid-column:1/-1;height:240px}.timeline{grid-template-columns:repeat(2,1fr);gap:10px}.thinking-grid{gap:28px}.habit-body{padding:22px}.habit-big{font-size:38px}}
+
+
+/* V7 · evidence-led editorial components: real metrics first, no recreated screenshots */
+.content-evidence{scroll-margin-top:100px;margin-top:46px;padding:35px;border:1px solid #dbe5da;border-radius:18px;background:#fff;box-shadow:0 16px 48px rgba(37,67,49,.045)}
+.content-evidence-heading{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}
+.content-evidence-heading h3{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(24px,3vw,32px);font-weight:800;line-height:1.5;margin:9px 0 0;max-width:600px}
+.content-evidence-heading>p{max-width:295px;color:#788979;font-size:12px;line-height:1.9;margin:0}
+.evidence-subheading{font-size:11px;color:#477857;font-weight:850;letter-spacing:1.7px;margin:5px 0 15px}
+.video-evidence-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.video-evidence-card{border-radius:12px;background:#fbfcfa;border:1px solid #dde6db;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.video-evidence-card:hover{transform:translateY(-3px);box-shadow:0 9px 25px rgba(38,67,50,.11)}
+.video-evidence-visual{position:relative;min-height:182px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;color:#fff;background:linear-gradient(155deg,#456d55,#1d4434)}
+.video-evidence-visual::before{content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff47;border-radius:50%;right:-58px;top:33px;box-shadow:0 0 0 25px #ffffff0e,0 0 0 54px #ffffff08}
+.video-evidence-card.theme-sage .video-evidence-visual{background:linear-gradient(145deg,#798f7c,#3a6250)}
+.video-evidence-card.theme-olive .video-evidence-visual{background:linear-gradient(155deg,#56694b,#283c32)}
+.video-evidence-card.theme-sand .video-evidence-visual{background:linear-gradient(155deg,#a28b70,#70654e)}
+.video-card-topline{z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:5px;font-size:9px;letter-spacing:.7px;font-weight:800;color:#ffffffd8}
+.video-card-topline span:last-child{font-size:9px;letter-spacing:0;background:#ffffff21;padding:2px 7px;border-radius:20px}
+.video-visual-number{position:absolute;right:7px;top:38px;color:#ffffff18;font:800 104px/1 Georgia,serif;letter-spacing:-8px;pointer-events:none}
+.video-evidence-visual p{font-size:17px;font-weight:850;line-height:1.5;letter-spacing:.1px;z-index:1;max-width:98%;margin:12px 0 0}
+.video-evidence-bottom{display:flex;justify-content:space-between;align-items:baseline;gap:5px;padding:16px 15px 11px}
+.video-evidence-bottom span{font-size:10px;color:#7c8f80;font-weight:650}
+.video-evidence-bottom strong{font:800 25px/1.25 Georgia,"Noto Serif SC",serif;color:#2e6649;white-space:nowrap}
+.video-evidence-insight{font-size:11px;color:#7b8a7c;line-height:1.8;margin:0;padding:0 15px 18px;min-height:66px}
+.account-label{margin-top:32px}
+.account-evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.account-evidence-card{padding:22px;border:1px solid #dce5db;border-radius:12px;background:linear-gradient(155deg,#fff,#f7faf6)}
+.account-platform{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid #e2e9e0}
+.account-platform>span{font-weight:850;font-size:14px;color:#254b36}
+.account-platform small{font-size:10px;letter-spacing:1.2px;font-weight:700;color:#92a698}
+.account-evidence-card.xhs .account-platform>span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#bc6559;margin-right:9px}
+.account-evidence-card.douyin .account-platform>span:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#305e54;margin-right:9px}
+.account-figures{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:19px 0}
+.account-figures strong{display:block;font:800 30px/1.25 Georgia,"Noto Serif SC",serif;white-space:nowrap;color:#244f39}
+.account-figures span{display:block;color:#7a8b7e;font-size:11px;margin-top:6px}
+.account-evidence-card>p{margin:0;color:#58715e;font-size:11px}
+.account-evidence-card>p span{color:#94a396}
+.evidence-footnote,.habit-evidence-note{margin-top:20px;background:#f0f5ee;border:1px solid #deeadc;border-radius:9px;overflow:hidden}
+.evidence-footnote summary,.habit-evidence-note summary{list-style:none;padding:12px 16px;color:#3c6d4d;font-weight:750;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.evidence-footnote summary::-webkit-details-marker,.habit-evidence-note summary::-webkit-details-marker{display:none}
+.evidence-footnote[open] summary span,.habit-evidence-note[open] summary span{transform:rotate(45deg)}
+.evidence-footnote summary span,.habit-evidence-note summary span{transition:transform .18s;font-size:16px;line-height:1}
+.evidence-footnote>p,.habit-evidence-note>p{font-size:11px;line-height:1.95;color:#69806c;padding:0 16px 15px;margin:0}
+.flomo-card .habit-body{padding:29px}
+.flomo-card h3{margin-bottom:10px}
+.flomo-card .habit-lead{margin-top:0}
+.flomo-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:27px 0}
+.flomo-metrics>div{border-radius:9px;background:#f1f6ee;padding:14px 10px;min-width:0}
+.flomo-metrics strong{display:block;font:800 clamp(21px,2vw,31px)/1.25 Georgia,"Noto Serif SC",serif;color:#2c6949;letter-spacing:-.6px;overflow-wrap:anywhere}
+.flomo-metrics span{font-size:10px;color:#6c896f;margin-top:5px;display:block}
+.flomo-year-panel{padding:20px 18px;border:1px solid #e1e9de;border-radius:10px;background:#fbfdfb}
+.flomo-year-heading{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:19px}
+.flomo-year-heading span{font-size:12px;color:#365c41;font-weight:800}
+.flomo-year-heading small{font-size:9px;color:#9aab9a;font-weight:800;letter-spacing:1px}
+.flomo-year-row{margin:0 0 18px}
+.flomo-year-row:last-child{margin-bottom:0}
+.flomo-year-summary{display:flex;justify-content:space-between;gap:9px;align-items:baseline;margin-bottom:7px}
+.flomo-year-summary b{font-size:11px;color:#517c5a}
+.flomo-year-summary strong{font-size:11px;color:#506958}
+.flomo-year-track{background:#e6eee3;height:8px;overflow:hidden;border-radius:20px}
+.flomo-year-track>span{display:block;background:linear-gradient(90deg,#60976d,#93bd96);height:100%;border-radius:20px}
+.flomo-year-row>p{font-size:10px;color:#889889;margin:6px 0 0}
+.flomo-year-row>p i{font-style:normal;padding:0 5px}
+.swim-card{display:flex;flex-direction:column}
+.swim-graphic{min-height:252px;height:252px;background:linear-gradient(125deg,#325e67,#44898c 55%,#2b6a79);padding:27px}
+.swim-graphic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,54,60,0),rgba(9,38,44,.27));pointer-events:none}
+.swim-lanes{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;transform:rotate(-15deg) scale(1.23);opacity:.26}
+.swim-lanes span{height:160%;width:1px;background:linear-gradient(transparent,#fff,transparent);display:block}
+.swim-feature{position:relative;z-index:2;color:#fff}
+.swim-feature small{display:block;font-size:10px;letter-spacing:1.2px;font-weight:750;color:#e9f8f1}
+.swim-feature strong{display:block;font:800 clamp(53px,6vw,74px)/1.3 Georgia,serif;letter-spacing:-2px;color:white}
+.swim-feature strong span{display:inline;font:500 30px Georgia,serif;letter-spacing:0;margin-left:5px}
+.swim-feature p{font-size:12px;color:#e1f2ec;margin-top:6px}
+.swim-card .habit-body{display:flex;flex-direction:column;flex:1}
+.swim-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:21px}
+.swim-stat-grid>div{border:1px solid #e2ebe1;background:#f5f9f4;padding:15px;border-radius:8px}
+.swim-stat-grid strong{font:800 25px/1.2 Georgia,"Noto Serif SC",serif;color:#2c674b;display:block;white-space:nowrap}
+.swim-stat-grid strong small{font-size:12px;font-weight:650}
+.swim-stat-grid span{font-size:10px;color:#7e907d;display:block;margin-top:7px}
+.swim-card .habit-evidence-note{margin-top:auto}
+.about-editorial{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:0;border:1px solid #dce5dc;border-radius:14px;overflow:hidden;background:#f3f7f1;min-height:316px}
+.about-editorial-photo{margin:0;position:relative;min-height:316px;overflow:hidden;background:#d7e7dc}
+.about-editorial-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.about-editorial-photo figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#153825bb);color:#fff;font-size:10px;letter-spacing:1.3px;padding:45px 20px 15px;font-weight:650}
+.about-editorial-story{padding:37px;display:flex;flex-direction:column;justify-content:center}
+.about-editorial-story h3{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,2.5vw,27px);line-height:1.6;margin:15px 0;font-weight:800}
+.about-editorial-story p:not(.eyebrow){font-size:12px;line-height:2.05;color:#708272}
+.editorial-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}
+.editorial-chips span{border-radius:30px;padding:5px 12px;background:#e4eee4;color:#53735b;font-size:10px;font-weight:700}
+@media(max-width:1100px){.video-evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-evidence-visual{min-height:182px}}
+@media(max-width:750px){.content-evidence{padding:25px}.content-evidence-heading{display:block}.content-evidence-heading>p{max-width:none;margin-top:12px}.flomo-metrics strong{font-size:22px}.about-editorial-story{padding:25px}}
+@media(max-width:650px){.content-evidence{margin-top:32px;padding:18px;border-radius:12px}.video-evidence-grid{gap:9px}.video-evidence-visual{min-height:160px;padding:14px}.video-evidence-visual p{font-size:14px}.video-evidence-bottom{padding:12px 11px 8px}.video-evidence-bottom strong{font-size:20px}.video-evidence-bottom span{font-size:9px}.video-evidence-insight{padding:0 11px 14px;font-size:10px;min-height:64px}.account-evidence-grid{grid-template-columns:1fr}.account-evidence-card{padding:18px}.account-figures strong{font-size:29px}.flomo-card .habit-body{padding:20px}.flomo-metrics{gap:6px}.flomo-metrics>div{padding:12px 8px}.flomo-metrics strong{font-size:20px}.flomo-metrics span{font-size:9px}.swim-stat-grid{gap:8px}.swim-stat-grid>div{padding:13px}.swim-stat-grid strong{font-size:23px}.about-editorial{grid-template-columns:1fr}.about-editorial-photo{height:255px;min-height:0}.about-editorial-story{padding:23px}}
+@media(max-width:390px){.video-evidence-grid{grid-template-columns:1fr}.video-evidence-visual{min-height:140px}.video-evidence-insight{min-height:0}.flomo-metrics strong{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.video-evidence-card,.evidence-footnote summary span,.habit-evidence-note summary span{transition:none}.video-evidence-card:hover{transform:none}}
