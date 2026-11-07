@@ -1,34 +1,25 @@
-# 六水六水 · 个人网站
+# 六水 · 贾淼淼｜求职作品网站
 
-帮 AI 创业者解决自媒体营销问题的个人品牌站。白 / 深蓝 / 灰三色体系，Apple 官网式极简风格。
+面向招聘方的个人网站，重点展示岗位匹配、实际项目、决策过程、成果证据、工作方式和持续写作／游泳习惯。
 
-## 技术栈
-
-- React 19 + TypeScript + Vite
-- Tailwind CSS
-- GSAP（ScrollTrigger）+ Lenis 平滑滚动
-
-## 本地开发
-
+## 运行
 ```bash
 npm install
 npm run dev
+npm run build
 ```
 
-## 构建
+技术栈为 React + TypeScript + Vite。Vercel 部署可沿用原有设置。
 
-```bash
-npm run build   # 产物输出到 dist/
-```
+## 求职网站的信息边界
 
-## 部署到 Vercel
+- 不重复放置 PDF 简历，不公开私人手机号。
+- 首页优先 AI 产品增长、产品营销与运营，个人 IP 商业化与 AI 产品为可扩展方向。
+- SnapVee 增长数字以个人提供的经历记录为依据，暂无可公开截图。
+- SecurityFlex 是团队演示系统，个人负责账单分析场景 PRD，不声称独立开发。
+- 个人 IP 作品与账号数据对应用户提供的截图。
+- flomo 的 2024—2026 年度截图合计 718 条记录、252,583 字；年度数据仅代表截图时点。
+- 游泳展示 2025-04-04 单次 1000m / 29:22 的记录，不推断训练频次。
 
-仓库已包含 `vercel.json`（Vite 框架、构建命令 `npm run build`、输出目录 `dist`），Vercel 导入本仓库即可自动识别，无需任何额外配置：
-
-1. 登录 [vercel.com](https://vercel.com)，选择 **Add New → Project**
-2. **Import** 这个 GitHub 仓库
-3. Framework Preset 会自动识别为 **Vite**，直接点 **Deploy**
-
-## 内容修改
-
-所有文案（名字、标签、关于我、金句、作品、联系方式）集中在 `src/content.ts`，改文字即可；图片在 `public/images/`，同名替换。
+## 图片
+当前使用仓库原有的 `public/images/` 图片，以避免构建失败。已上传到聊天的新职业照、游泳及 flomo 年度截图待转入仓库资源后即可替换。若需要公开图片，必须先核对授权和隐私。
