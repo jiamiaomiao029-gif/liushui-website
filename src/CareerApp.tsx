@@ -218,10 +218,11 @@ function SectionHeading({ eyebrow, title, description }: { eyebrow: string; titl
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  return <article className={"project-card card-" + project.category}>
+  return <article className={"project-card card-" + project.category + (project.id === "personal-ip" ? " featured-project" : "")}>
     <div className="project-cover">
       <span>{project.tag}</span>
       <strong>{project.name}</strong>
+      <span className="cover-watermark" aria-hidden="true">{project.id === "personal-ip" ? "47.5万" : project.id === "securityflex" ? "AI" : project.id === "snapvee" ? "GROWTH" : project.id === "commercial-ip" ? "IP" : "SOP"}</span>
       <i aria-hidden="true" />
     </div>
     <div className="project-summary">
@@ -266,26 +267,39 @@ export default function CareerApp() {
     <main>
       <section className="hero">
         <div className="container hero-layout">
-          <div>
-            <p className="eyebrow">JIA MIAOMIAO / CLARA · 2027届</p>
-            <h1>从用户洞察，<br />到<span>内容、产品<br />与增长。</span></h1>
-            <p className="lead">你好，我是<strong>贾淼淼</strong>，也叫六水。西南大学本科生，求职方向聚焦 <b>AI产品增长、产品营销与运营</b>，同时关注个人IP商业化与AI产品。我希望把对用户的理解，转化成真正可执行的内容与业务方案。</p>
+          <div className="hero-copy">
+            <div className="hero-issue"><span>LIUSHUI / PERSONAL PORTFOLIO</span><span>2026 · ISSUE NO. 01</span></div>
+            <p className="eyebrow">贾淼淼 / CLARA · 西南大学 2027届</p>
+            <h1 className="hero-display">理解用户。<br />做好内容。<br /><span>连接<span className="hero-brush">产品与增长。</span></span></h1>
+            <p className="lead">你好，我是<strong>贾淼淼</strong>，也叫六水。我希望做的不只是“内容好看”，而是让内容理解用户、承接需求、帮助产品增长。求职聚焦 <b>AI产品增长 / 产品营销与运营</b>，同时持续探索IP商业化和AI产品需求。</p>
             <div className="hero-cta">
-              <a className="button primary" href="#projects">查看代表项目 ↘</a>
-              <a className="button outlined" href="#habits">工作之外的我 ↗</a>
+              <a className="button primary" href="#projects">探索代表项目 <span aria-hidden="true">↗</span></a>
+              <a className="button outlined" href="#about">认识真实的我 <span aria-hidden="true">↗</span></a>
             </div>
-            <div className="tag-row"><span>AI产品增长</span><span>产品营销</span><span>IP商业化</span><span>AI产品需求</span></div>
+            <div className="hero-roles"><span>CONTENT STRATEGY</span><i/> <span>USER GROWTH</span><i/> <span>AI PRODUCT</span></div>
           </div>
-          <figure className="hero-image">
-            <img src={media("portrait.png")} alt="贾淼淼个人照片" />
-            <figcaption>贾淼淼 <span>JIA MIAOMIAO · CLARA</span></figcaption>
-          </figure>
+          <div className="hero-art">
+            <div className="hero-art-square" aria-hidden="true"/>
+            <figure className="hero-image">
+              <img src={media("portrait.png")} alt="贾淼淼个人照片，使用已有网站原图" />
+              <figcaption><span>JIA MIAOMIAO · CLARA</span><b>六水 / LIUSHUI</b></figcaption>
+            </figure>
+            <div className="hero-sticker" aria-label="代表内容47.5万播放">
+              <small>CONTENT / SELECTED RESULT</small>
+              <strong>47.5<span>万</span></strong>
+              <span>代表视频单条播放</span>
+            </div>
+            <div className="hero-vertical" aria-hidden="true">CREATIVE THINKING · BUSINESS DOING</div>
+            <div className="hero-scribble" aria-hidden="true">↗</div>
+          </div>
         </div>
+        <div className="hero-bottom container"><span>SCROLL TO EXPLORE</span><span>NO. 01—06 / SELECTED WORKS & THINKING</span></div>
       </section>
+      <div className="editorial-ribbon" aria-hidden="true"><div>USER INSIGHT <span>✳</span> CONTENT STRATEGY <span>✳</span> AI PRODUCT <span>✳</span> GROWTH <span>✳</span> USER INSIGHT <span>✳</span> CONTENT STRATEGY <span>✳</span> AI PRODUCT <span>✳</span> GROWTH <span>✳</span></div></div>
 
       <section className="section" id="value">
         <div className="container">
-          <SectionHeading eyebrow="01 / WHY HIRE ME" title="我能为团队带来什么？" description="不靠抽象形容词，而是让项目经历对应可承担的实际工作。" />
+          <SectionHeading eyebrow="01 / WHY HIRE ME" title="我能为团队带来什么？" description="不是罗列技能，而是用已经做过的事情解释：我能够解决哪些真实业务问题。" />
           <div className="value-grid">
             <div className="value-item"><span>01 / INSIGHT</span><h3>用户洞察<br />与内容策划</h3><p>从具体问题出发，独立完成选题、脚本、出镜、拍摄、剪辑与发布。</p></div>
             <div className="value-item"><span>02 / GROWTH</span><h3>内容增长<br />与用户承接</h3><p>实践跨平台内容运营、产品推广、用户咨询与私域承接。</p></div>
@@ -303,7 +317,7 @@ export default function CareerApp() {
 
       <section className="section projects-section" id="projects">
         <div className="container">
-          <SectionHeading eyebrow="02 / SELECTED PROJECTS" title="项目不是经历清单，而是解决问题的证据。" description="每个案例呈现背景、我做出的判断、实际交付、结果，以及尚未被验证的部分。" />
+          <SectionHeading eyebrow="02 / SELECTED PROJECTS" title="从想法到作品，从作品到结果。" description="五个项目，五种问题。每个案例均可展开查看决策过程、交付成果与证据边界。" />
           <div className="project-filters" role="group" aria-label="筛选项目方向">
             {filters.map((f) => <button type="button" key={f.value} className={filter === f.value ? "active" : ""} aria-pressed={filter === f.value} onClick={() => setFilter(f.value)}>{f.label}</button>)}
           </div>
@@ -317,7 +331,7 @@ export default function CareerApp() {
 
       <section className="section" id="thinking">
         <div className="container">
-          <SectionHeading eyebrow="03 / MY THINKING" title="我如何理解业务问题？" description="不是课程笔记展览，而是从亲自参与的项目中形成的判断。" />
+          <SectionHeading eyebrow="03 / MY THINKING" title="我如何思考？" description="三种反复出现的业务问题，以及我从真实项目中得到的理解。" />
           <div className="thinking-grid">
             <article><small>CONTENT × GROWTH</small><h3>为什么播放量很高，<br />却不一定有客户？</h3><p>注意力只是起点，业务还需要信任、需求匹配和后续承接。内容目标与最终商业结果应当分开看待。</p></article>
             <article><small>AUDIENCE × CREATIVE</small><h3>为什么有些选题，<br />天然更值得做？</h3><p>先理解用户真实感受到的冲突，再用明确表达形成注意力，通过发布结果检验假设。</p></article>
@@ -329,7 +343,7 @@ export default function CareerApp() {
 
       <section className="section habit-section" id="habits">
         <div className="container">
-          <SectionHeading eyebrow="04 / LONG-TERM PRACTICE" title="工作之外，我长期投入的事。" description="写作让我整理复杂思考，游泳帮助我获得专注与恢复。它们不是为简历制造标签。" />
+          <SectionHeading eyebrow="04 / LONG-TERM PRACTICE" title="认真工作，也认真生活。" description="我不想把自己变成一份永远只讲结果的报告。写作和游泳，是工作之外两个长期存在的支点。" />
           <p className="habit-quote">有些成长不发生在一场活动或一个项目里，而发生在反复记录、训练和重新开始的日常里。</p>
           <div className="habit-grid">
             <article className="habit-card flomo-card">
