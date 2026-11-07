@@ -56,7 +56,7 @@ export const philosophy = {
 export const works = {
   kicker: "实战方向",
   title: "我能帮你解决的事。",
-  photo: "/images/work-3.png",
+  photo: "/images/work-profile.jpg",
   photoCaption: "六水的直播间日常 · 每晚 20:00",
   items: [
     { img: "/images/work-1.png", title: "账号从 0 到 1", category: "自媒体起号", desc: "定位、人设、第一批内容怎么发，陪你把账号从白纸做到有血有肉。" },

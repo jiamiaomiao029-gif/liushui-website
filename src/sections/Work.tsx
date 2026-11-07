@@ -11,7 +11,7 @@ export default function Work() {
           </div>
           {/* her photo beside the section */}
           <figure className="hero-photo-frame hidden lg:block" data-reveal data-delay="0.1">
-            <img src={works.photo} alt="六水的直播间日常" />
+            <img src={works.photo} alt="六水个人形象照" />
             <figcaption className="mt-3 text-xs tracking-wide text-[var(--text-secondary)]">{works.photoCaption}</figcaption>
           </figure>
         </div>
