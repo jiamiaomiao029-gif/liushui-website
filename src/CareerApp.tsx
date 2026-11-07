@@ -153,6 +153,55 @@ const projects: Project[] = [
   }
 ];
 
+
+const featuredVideos = [
+  { no: "01", title: "大学里如何铺自己的人脉网", topic: "大学人脉", views: "47.5万", note: "围绕校园人脉的具体问题，给出分步骤的行动建议。", accent: "lead" },
+  { no: "02", title: "必须走捷径", topic: "成长策略", views: "10.9万", note: "从反常识观点切入，引发对成长路径的讨论。", accent: "sage" },
+  { no: "03", title: "大学里的大佬幼年体如何走捷径", topic: "成长方法", views: "8.2万", note: "将抽象的成长建议转化为更具体的讨论。", accent: "olive" },
+  { no: "04", title: "大学里为什么要选流派", topic: "校园选择", views: "2.2万", note: "聚焦大学阶段的信息筛选和路径选择。", accent: "sand" }
+];
+
+const platformAccounts = [
+  { platform: "小红书", code: "XIAOHONGSHU", followers: "4,297", reactions: "5.6万", reactionLabel: "获赞与收藏", variant: "xhs" },
+  { platform: "抖音", code: "DOUYIN", followers: "4,439", reactions: "5.6万", reactionLabel: "获赞", variant: "douyin" }
+];
+
+function ContentEvidence() {
+  return <section id="content-evidence" className="content-evidence" aria-labelledby="content-evidence-title">
+    <div className="content-evidence-heading">
+      <div><p className="eyebrow">PROJECT EVIDENCE / PERSONAL IP</p><h3 id="content-evidence-title">内容增长，看得见的作品结果。</h3></div>
+      <p>用统一的数据卡呈现真实作品。具体能力和判断见上方「大学生成长个人 IP」项目复盘。</p>
+    </div>
+    <p className="evidence-subheading">01 / 代表内容表现</p>
+    <div className="video-evidence-grid">
+      {featuredVideos.map(video => <article className={"video-evidence-card theme-" + video.accent} key={video.no}>
+        <div className="video-evidence-visual">
+          <div className="video-card-topline"><span>CONTENT {video.no}</span><span>{video.topic}</span></div>
+          <div className="video-visual-number">{video.no}</div>
+          <p>{video.title}</p>
+        </div>
+        <div className="video-evidence-bottom"><span>视频播放</span><strong>{video.views}</strong></div>
+        <p className="video-evidence-insight">{video.note}</p>
+      </article>)}
+    </div>
+    <p className="evidence-subheading account-label">02 / 账号积累</p>
+    <div className="account-evidence-grid">
+      {platformAccounts.map(account => <article className={"account-evidence-card " + account.variant} key={account.platform}>
+        <div className="account-platform"><span>{account.platform}</span><small>{account.code}</small></div>
+        <div className="account-figures">
+          <div><strong>{account.followers}</strong><span>粉丝</span></div>
+          <div><strong>{account.reactions}</strong><span>{account.reactionLabel}</span></div>
+        </div>
+        <p>账号：六水六水 <span>· 截图记录时点</span></p>
+      </article>)}
+    </div>
+    <details className="evidence-footnote">
+      <summary>关于原始截图与数据口径 <span>+</span></summary>
+      <p>以上视频播放量来自本人提交的代表作品截图；粉丝和互动数据来自抖音、小红书个人主页截图。这里是基于原始截图制作的可视化，不是重绘的后台页面。原始图片尚未上传到公开网站，因此暂不提供失效的「查看原图」按钮。截图不能单独证明单条作品的精确涨粉归因。</p>
+    </details>
+  </section>;
+}
+
 const filters: { value: ProjectCategory | "all"; label: string }[] = [
   { value: "all", label: "全部项目" },
   { value: "growth", label: "内容与增长" },
@@ -189,6 +238,7 @@ function ProjectCard({ project }: { project: Project }) {
         <h4>04 / 结果</h4><ul>{project.result.map((a, i) => <li key={i}>{a}</li>)}</ul>
         <h4>05 / 复盘</h4><p>{project.review}</p>
         <div className="evidence"><b>证据与边界</b><p>{project.evidence}</p></div>
+        {project.id === "personal-ip" && <a className="source-link" href="#content-evidence">查看内容与账号数据卡片 ↘</a>}
         {project.link && <a className="source-link" href={project.link.href} target="_blank" rel="noopener noreferrer">{project.link.label} ↗</a>}
       </div>
     </details>
@@ -260,6 +310,7 @@ export default function CareerApp() {
           <div className="project-grid">
             {visibleProjects.map((project) => <ProjectCard key={project.id} project={project}/>)}
           </div>
+          <ContentEvidence />
           <p className="fineprint">项目数据均区分“截图支持”“可公开核验”和“本人经历记录”，不把团队成果、计划或理论学习包装成个人已经完成的商业结果。</p>
         </div>
       </section>
@@ -283,30 +334,55 @@ export default function CareerApp() {
           <div className="habit-grid">
             <article className="habit-card flomo-card">
               <div className="habit-body">
-                <p className="eyebrow">WRITING / FLOMO</p><h3>持续写作，让思考留下痕迹。</h3>
-                <div className="habit-big">718 <small>条笔记</small></div>
-                <div className="habit-big">25.26万 <small>累计字数</small></div>
-                <div className="habit-big">229 <small>记录天数</small></div>
-                <p className="habit-description">从2024到2026，我在flomo持续记录阅读、内容创作、营销观察与自我复盘。写作不是只为了留下观点，也是在不断梳理自己的判断。</p>
-                <div className="bar-chart" aria-label="三个年度的写作字数">
-                  <div className="bar-line"><span>2024</span><div><i style={{ width: "14.9%" }} /></div><b>28,670字</b></div>
-                  <div className="bar-line"><span>2025</span><div><i style={{ width: "16.6%" }} /></div><b>31,813字</b></div>
-                  <div className="bar-line"><span>2026</span><div><i style={{ width: "100%" }} /></div><b>192.1k字</b></div>
+                <p className="eyebrow">WRITING / FLOMO · 2024—2026</p>
+                <h3>让思考留下痕迹。</h3>
+                <p className="habit-description habit-lead">从2024年开始，我记录阅读、营销观察、内容灵感和日常复盘。写作是我把零散想法变成可回顾思考材料的方式。</p>
+                <div className="flomo-metrics">
+                  <div><strong>718</strong><span>条笔记</span></div>
+                  <div><strong>252.6k</strong><span>约计字数</span></div>
+                  <div><strong>229</strong><span>记录天数</span></div>
                 </div>
-                <p className="data-note">2024：157条 / 28,670字 / 48天；2025：176条 / 31,813字 / 56天；2026：385条 / 约192.1k字 / 125天。累计718条笔记、约252.6k字、229个记录日。数据来自flomo年度统计截图，不代表连续打卡。</p>
+                <div className="flomo-year-panel">
+                  <div className="flomo-year-heading"><span>年度积累</span><small>WORDS / YEAR</small></div>
+                  {[
+                    {year:"2024", notes:157, days:48, words:"28,670字", width:"15%"},
+                    {year:"2025", notes:176, days:56, words:"31,813字", width:"17%"},
+                    {year:"2026", notes:385, days:125, words:"约192.1k字", width:"100%"}
+                  ].map(row => <div className="flomo-year-row" key={row.year}>
+                    <div className="flomo-year-summary"><b>{row.year}</b><strong>{row.words}</strong></div>
+                    <div className="flomo-year-track"><span style={{width:row.width}}/></div>
+                    <p>{row.notes}条笔记 <i aria-hidden="true">·</i> {row.days}天记录</p>
+                  </div>)}
+                </div>
+                <details className="habit-evidence-note">
+                  <summary>数据说明 <span>+</span></summary>
+                  <p>数据来自flomo提供的三个年度统计截图：2024年157条、28,670字、48天；2025年176条、31,813字、56天；2026年385条、约192.1k字、125天。三年约252.6k字，合计229个记录日；不等于连续229天打卡。原始截图未上传到公开网站。</p>
+                </details>
               </div>
             </article>
             <article className="habit-card swim-card">
               <div className="swim-graphic">
-                <div className="wave wave-one"/><div className="wave wave-two"/>
-                <span className="swim-symbol" aria-hidden="true">≈</span>
-                <div><small>POOL SWIM · APR 04 2025</small><strong>1,000m</strong><span>29′22″ · 自由泳</span></div>
+                <div className="swim-lanes" aria-hidden="true"><span/><span/><span/><span/><span/></div>
+                <div className="swim-feature">
+                  <small>POOL SWIM / APR 04, 2025</small>
+                  <strong>1,000<span>m</span></strong>
+                  <p>一次完整的自由泳记录</p>
+                </div>
               </div>
               <div className="habit-body">
-                <p className="eyebrow">SWIMMING / RECOVERY</p><h3>游泳，让我重新回到当下。</h3>
-                <p className="habit-description">游泳是我喜欢的运动，也是释放压力、恢复精力的一种方式。水里的时间不需要不断处理信息，只需要专注呼吸、动作和自己的节奏。</p>
-                <div className="swim-details"><span>50m泳池</span><span>20趟</span><span>226 kcal</span><span>平均心率 125 bpm</span></div>
-                <p className="data-note">数据来自2025年4月4日的一次游泳记录，不能由此推算连续训练天数。</p>
+                <p className="eyebrow">SWIMMING / RECOVERY</p>
+                <h3>游泳，让我重新回到当下。</h3>
+                <p className="habit-description">游泳是我释放压力、恢复精力的方式。在水里，不必随时处理新信息，只需要专注呼吸、动作与节奏。</p>
+                <div className="swim-stat-grid">
+                  <div><strong>29′22″</strong><span>完成用时</span></div>
+                  <div><strong>20 <small>趟</small></strong><span>50米泳池</span></div>
+                  <div><strong>226 <small>kcal</small></strong><span>运动消耗</span></div>
+                  <div><strong>125 <small>bpm</small></strong><span>平均心率</span></div>
+                </div>
+                <details className="habit-evidence-note">
+                  <summary>数据说明 <span>+</span></summary>
+                  <p>2025年4月4日单次运动记录：1000米、29分22秒、自由泳、50米泳池、20趟、226 kcal、平均心率125 bpm。记录仅对应这次游泳，不能用于推断连续训练天数。原始运动App截图尚未上传到公开网站。</p>
+                </details>
               </div>
             </article>
           </div>
@@ -316,10 +392,17 @@ export default function CareerApp() {
       <section className="section" id="about">
         <div className="container">
           <SectionHeading eyebrow="05 / ABOUT ME" title="我的生活，不只由工作组成。" description="旅行、观察、运动和内容表达，都让我持续接触真实的人与场景。" />
-          <div className="photo-grid">
-            <figure><img src={media("work-1.png")} alt="个人内容与生活记录" loading="lazy"/><figcaption>保持好奇，走进真实场景</figcaption></figure>
-            <figure><img src={media("work-3.png")} alt="个人内容创作过程" loading="lazy"/><figcaption>在表达中理解别人</figcaption></figure>
-            <figure><img src={media("work-5.png")} alt="个人项目与生活记录" loading="lazy"/><figcaption>把观察变成实际行动</figcaption></figure>
+          <div className="about-editorial">
+            <figure className="about-editorial-photo">
+              <img src={media("work-1.png")} alt="个人生活与旅行记录" loading="lazy"/>
+              <figcaption>BEYOND WORK · 真实生活记录</figcaption>
+            </figure>
+            <div className="about-editorial-story">
+              <p className="eyebrow">CURIOUS ABOUT LIFE</p>
+              <h3>不把生活变成一面需要填满的照片墙。</h3>
+              <p>旅行和观察让我始终愿意接触不同的人与场景。网站里只选一张代表性的生活照，其余注意力留给项目和思考本身。</p>
+              <div className="editorial-chips"><span>观察</span><span>表达</span><span>行动</span></div>
+            </div>
           </div>
           <div className="about-grid">
             <div>
