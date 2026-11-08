@@ -194,3 +194,38 @@
   .book-turn-next, .book-turn-prev { animation: none; }
   .book-progress span { transition: none; }
 }
+
+/* 70/30 edition: analytical notes and review pages */
+.book-review-step {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 15px;
+  border-top: 1px solid var(--book-line);
+  padding: 21px 0 19px;
+}
+.book-review-step>b {
+  color: #8bad91;
+  font: 700 17px/1.5 Georgia, serif;
+}
+.book-review-step strong {
+  display: block;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #3d5d45;
+  font-weight: 600;
+}
+.book-review-step p {
+  font-size: 12px;
+  line-height: 1.95;
+  color: #788479;
+  margin: 5px 0 0;
+}
+.book-shell .book-quote-block a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 650px) {
+  .book-review-step { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding: 17px 0; }
+}
