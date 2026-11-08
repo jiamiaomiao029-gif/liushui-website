@@ -281,6 +281,16 @@ a { color:inherit; }
 @media(max-width:940px){.case-section,.studio-section{padding-left:4%;padding-right:4%}}
 @media(max-width:680px){.case-section{padding:38px 18px 0}.case-head{align-items:start}.case-head h2{font-size:29px}.case-count{display:none}.case-grid{grid-template-columns:1fr;gap:17px}.case-visual{min-height:180px}.case-visual-title{font-size:31px}.case-body{padding:22px}.studio-section{padding:0 18px}.photo-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mobile-paper .chapter-action{margin:6px 0 5px}.mobile-cover .cover-volume{font-size:9px}.mobile-cover .cover-title{font-size:clamp(26px,8vw,38px);line-height:1.42}.mobile-cover .cover-cta{white-space:nowrap;font-size:9px;padding:9px 11px}}
 
+
+/* V2.3 editorial contact, connected to the fifth chapter */
+.collab-section{max-width:1280px;margin:30px auto;padding:0 6.3%;position:relative;z-index:2}
+.collab-inner{background:#e9e3d5;border:1px solid #d0c4b1;padding:35px clamp(20px,5vw,65px);text-align:center}
+.collab-inner h2{font:normal clamp(26px,3vw,39px)/1.3 Georgia,"Songti SC",serif;color:#24473e;margin:13px 0}
+.collab-inner>p{font-size:13px;line-height:1.9;color:#67675e;max-width:570px;margin:0 auto 20px}
+.collab-mail{display:inline-block;padding:11px 23px;background:#25483e;color:#fff6e4;border-radius:30px;text-decoration:none;font-size:13px;font-weight:600}
+.collab-mail:hover{background:#366354}
+.collab-inner .collab-aside{font-size:10px;margin:16px auto 0;color:#7f786d}
+@media(max-width:680px){.collab-section{padding:0 18px}.collab-inner{padding:30px 18px}}
 </style>
 </head>
 <body>
@@ -292,7 +302,7 @@ a { color:inherit; }
       <span class="wordmark-mark">水</span>
       <span class="wordmark-name">LIUSHUI / 六水<small>CURIOUS AT HEART</small></span>
     </a>
-    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">INTERACTIVE DEMO / V.02.1</span></div>
+    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">INTERACTIVE DEMO / V.02.3</span></div>
   </header>
 
   <main class="main-layout" id="reading-area">
@@ -396,13 +406,22 @@ a { color:inherit; }
  </div>
  <div class="case-end-note"><strong>证据说明</strong>：以上成果文字依据你先前确认的经历记录；平台后台和私信原图目前未放入 Demo，因此明确标记“待补”，不会用绘制的假截图代替。</div>
 </section>
+<section class="collab-section" id="collaborate" aria-labelledby="collabTitle">
+  <div class="collab-inner">
+    <span class="eyebrow">A NOTE FROM LIUSHUI</span>
+    <h2 id="collabTitle">如果你也有些有趣的想法。</h2>
+    <p>我愿意聊内容创作、营销、个人 IP 与 AI 的实际应用。也欢迎分享你看完这本小书之后的任何想法。</p>
+    <a class="collab-mail" href="mailto:jiamiaomiao029@gmail.com?subject=Hello%20from%20Curious%20at%20Heart">写封邮件给我 ↗</a>
+    <p class="collab-aside">不公开手机号。联系邮箱来自已公开的创作者主页。</p>
+  </div>
+</section>
 <section class="studio-section" id="photo-studio" aria-labelledby="studioTitle">
  <details class="studio-details"><summary><span><strong id="studioTitle">替换原始照片</strong><small>仅在本机预览，不上传、不修图；点击展开编辑</small></span><span class="studio-arrow">＋</span></summary>
   <div class="studio-body"><p>为每一章选择你的原始照片或截图，即可立即在书里预览。刷新网页后预览会消失；正式保存请按 README 将原图放进 <code>images/</code> 并配置对应文件名。</p><div id="photoInputs" class="photo-input-grid"></div><p class="studio-warn">请勿直接把含有他人私人信息的聊天截图发布到公开网站。这里不会对照片进行 AI 优化。</p></div>
  </details>
 </section>
 
-  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>V2.2 独立原型 · 未发布到公开网站 · 原始照片不会被 AI 修改</p></footer>
+  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>V2.3 预览 · 原图策展进行中 · 原始照片不会被 AI 修改</p></footer>
 </div>
 <script>
 /*
@@ -419,37 +438,37 @@ const chapters = [
   {
     nav:'我眼中的世界', category:'CHAPTER 01 · THE OBSERVER', label:'WHAT I SEE',
     headline:'我习惯先观察，<br><em>再开始表达。</em>',
-    desc:'你好，我是六水。对内容、人与传播保持好奇：为什么某个故事能打动人？一个想法怎样从纸上走到现实？这里是我的观察手账，也是我的作品入口。',
-    quote:'“先看见真实的问题，再寻找值得做的事。”',
-    tags:['内容观察','用户洞察','个人表达'], caption:'原始人像照 / 生活摄影', date:'PORTRAIT 001', image:'', alt:'我眼中的世界：原始个人照片'
+    desc:'你好，我是六水。喜欢观察有意思的人和事，喜欢记录生活里那些一闪而过的念头，也喜欢把复杂的问题讲清楚。这本手账里有我的作品，也有很多与工作无关的快乐。',
+    quote:'“有好奇心，也有一点把想法做出来的执拗。”',
+    tags:['喜欢观察','喜欢表达','保留玩心'], caption:'湖边的一个开心瞬间 · PHOTO 08', date:'PORTRAIT 001', image:'', alt:'我眼中的世界：原始个人照片'
   },
   {
     nav:'让想法发生', category:'CHAPTER 02 · THE MAKER', label:'WHAT I MAKE',
     headline:'不只想清楚，<br><em>还要做出来。</em>',
-    desc:'我做过产品内容推广，也持续经营自己的个人内容：从选题、脚本、发布到用户沟通，关心的始终是创意如何抵达真实的人，并产生真实反馈。',
+    desc:'做内容时，我总忍不住追问：谁会真正需要它？它能带来什么改变？从自己的成长类账号到 SnapVee 产品推广，我尝试把观察变成选题，再把选题变成真实作品和反馈。',
     quote:'“内容不只为了被看见，也为了推动下一步行动。”',
-    tags:['SnapVee','个人 IP','内容增长'], caption:'真实项目封面 / 内容后台截图', date:'WORK 002', image:'', alt:'让想法发生：项目作品截图'
+    tags:['内容策划','产品推广','实践复盘'], caption:'真实内容作品 / 原始截图', date:'WORK 002', image:'', alt:'让想法发生：项目作品截图'
   },
   {
     nav:'思考的痕迹', category:'CHAPTER 03 · THE THINKER', label:'WHAT I THINK',
     headline:'让思考有迹可循，<br><em>也有停止点。</em>',
-    desc:'我在 flomo 中持续记录内容观察、营销思路与生活判断。写作帮助我整理观点，但我也在训练自己：分析最终要通向行动，而不是停在分析里。',
+    desc:'从 2024 年开始，我在 flomo 里记录那些值得多想一会儿的事。到这次整理资料时，三年的统计合计 718 条笔记、252,583 字。数字不是奖状，更重要的是这些文字最终如何改变我的选择和行动。',
     quote:'“思考是为了指导行动，而不是替代行动。”',
-    tags:['flomo','写作','实践复盘'], caption:'flomo 原始截图 / 真实笔记', date:'NOTES 003', image:'', alt:'思考的痕迹：flomo 笔记截图'
+    tags:['718 条笔记','252,583 字','2024—2026'], caption:'flomo 记录与精选原文', date:'NOTES 003', image:'', alt:'思考的痕迹：flomo 笔记截图'
   },
   {
     nav:'认真地生活', category:'CHAPTER 04 · THE EVERYDAY', label:'HOW I LIVE',
     headline:'在水里找节奏，<br><em>在日常里积累。</em>',
-    desc:'我喜欢游泳，也喜欢留下生活的照片。持续练习、反复调整、慢慢变好，是游泳和内容创作共同教会我的事。生活不必每一刻都变成一份业绩报告。',
+    desc:'我喜欢游泳，也喜欢把旅行和日常拍下来。2025 年 4 月 4 日，我有一条 1000 米、29 分 22 秒的自由泳记录。这里不想写成一张自律成绩单，只想留住那些确实让我开心的时刻。',
     quote:'“有些值得坚持的事，本身就是答案。”',
-    tags:['游泳','生活摄影','长期练习'], caption:'游泳 / 日常生活原始照片', date:'LIFE 004', image:'', alt:'认真地生活：游泳或生活原始照片'
+    tags:['游泳 1000 m','29 分 22 秒','旅行与日常'], caption:'木屋前的阳光 · PHOTO 02', date:'LIFE 004', image:'', alt:'认真地生活：游泳或生活原始照片'
   },
   {
     nav:'一起做点什么', category:'CHAPTER 05 · LET’S MAKE SOMETHING', label:'LET’S CONNECT',
     headline:'有好想法的话，<br><em>一起做点什么。</em>',
-    desc:'如果你也关心内容、个人 IP、创意策划或 AI 如何服务真实业务，欢迎来聊聊。比起一个漂亮的终章，我更希望这本书成为下一次有趣合作的起点。',
-    quote:'“从一次认真的交流，开始下一次创造。”',
-    tags:['交流','内容合作','新的可能'], caption:'开放的页面 / 未来合作的占位影像', date:'HELLO 005', image:'', alt:'一起做点什么：联系与合作'
+    desc:'如果你对内容、个人 IP、营销策划或 AI 的真实应用感兴趣，欢迎来交流。也欢迎只是因为这本手账里的某句话、某个作品，想来聊两句。',
+    quote:'“好奇于心，创造于行。”',
+    tags:['交流','一起创作','合作'], caption:'蓝白配色的个人形象照 · PHOTO 04', date:'HELLO 005', image:'', alt:'一起做点什么：联系与合作'
   }
 ]
 
@@ -472,11 +491,14 @@ function placeholderSVG(index) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" width="640" height="760"><rect width="640" height="760" fill="${palette[1]}"/>${art}<rect x="22" y="20" width="596" height="720" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="1"/><text x="38" y="730" font-size="12" fill="#524d43" letter-spacing="2" font-family="Arial,sans-serif" opacity=".78">PLACEHOLDER · REPLACE WITH YOUR ORIGINAL PHOTO</text></svg>`;
 }
 const svgToUrl = markup => 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(markup);
+// Photos are intentionally blank until the selected ORIGINAL images are available
+// in ./images/. Never silently substitute AI-edited portraits or fake screenshots.
+const curatedImageFiles = ['01-lake-joy.jpg','02-work-evidence.png','03-flomo-notes.png','04-wooden-house.jpg','05-contact-portrait.jpg'];
 const imageFor = index => chapters[index].image || svgToUrl(placeholderSVG(index));
 
 function leftMarkup(i) {
   const c=chapters[i];
-  return `<article class="page-inner"><span class="big-num" aria-hidden="true">0${i+1}</span><div class="page-kicker"><span>${c.category}</span><span>EST. 2026</span></div><div class="line-rule"></div><div class="eyebrow">${c.label}</div><h2 class="chapter-heading">${c.headline}</h2><p class="chapter-desc">${c.desc}</p><blockquote class="chapter-pull">${c.quote}</blockquote><div class="chips">${c.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>${i===1?'<a class="chapter-action" href="#case-studies">阅读两个完整项目案例 ↗</a>':''}<div class="page-foot"><span>LIUSHUI · SEE / THINK / MAKE</span><em>${String(i*2+1).padStart(2,'0')}</em></div></article>`;
+  return `<article class="page-inner"><span class="big-num" aria-hidden="true">0${i+1}</span><div class="page-kicker"><span>${c.category}</span><span>EST. 2026</span></div><div class="line-rule"></div><div class="eyebrow">${c.label}</div><h2 class="chapter-heading">${c.headline}</h2><p class="chapter-desc">${c.desc}</p><blockquote class="chapter-pull">${c.quote}</blockquote><div class="chips">${c.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>${i===1?'<a class="chapter-action" href="#case-studies">阅读两个完整项目案例 ↗</a>':i===4?'<a class="chapter-action" href="#collaborate">写封邮件，聊聊想法 ↗</a>':''}<div class="page-foot"><span>LIUSHUI · SEE / THINK / MAKE</span><em>${String(i*2+1).padStart(2,'0')}</em></div></article>`;
 }
 function rightMarkup(i) {
   const c=chapters[i];
