@@ -559,6 +559,22 @@ a { color:inherit; }
 .v3-heat .v3-day-pad{background:transparent}.v3-heat .v3-day-no-data{background:#e6e1d8}
 .v3-heat button:hover{outline:1px solid #a86743;outline-offset:1px}
 @media(max-width:680px){.v3-heat button,.v3-heat .v3-day-no-data,.v3-heat .v3-day-pad{height:8px}}
+
+/* V3.1 – six quiet mother chapters; child topics remain sibling navigation */
+.toc{display:block}
+.toc .toc-group{list-style:none;border-bottom:1px solid #d1cbc0}
+.toc .toc-parent{padding:12px 2px}
+.toc .toc-parent[aria-current="location"]{color:#25483e;font-weight:650;padding-left:7px}
+.toc-children{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 2px 13px 32px}
+.toc-children:has(> :nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+.toc-child{min-width:0;background:#f3f0e8;border:1px solid #d6cebf;color:#857d70;border-radius:6px;padding:9px 3px;cursor:pointer;font-size:10px;transition:background .18s,color .18s,transform .18s}
+.toc-child:hover{color:#315e48;background:#e7ece2;transform:translateY(-1px)}
+.toc-child[aria-current="page"]{background:#dbe8d9;border-color:#88a890;color:#254e3c;font-weight:700}
+.toc-group.has-children .toc-parent .toc-mark{opacity:0}
+.toc-group.has-children .toc-parent.is-active .toc-mark{opacity:1}
+@media(max-width:940px){.toc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px 13px}.toc .toc-group{border-bottom:1px solid #d1cbc0}.toc-children{margin-left:0;gap:4px}.toc-children:has(> :nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}.toc .toc-parent{padding:7px 2px}}
+@media(max-width:680px){.toc{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px}.toc-child{padding:9px 3px;font-size:10px}.toc-children{margin-bottom:8px}.toc .toc-parent{font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -579,12 +595,12 @@ a { color:inherit; }
       <div>
         <div class="sidebar-overline">THE TABLE OF CONTENTS</div>
         <h1>不止<br><i>想想。</i></h1>
-        <p class="sidebar-description">这本书收录我的观察、作品、思考和日常。点击目录，翻到你感兴趣的那一章。</p>
+        <p class="sidebar-description">目录只保留母章节；作品与直播并列，具体内容在书里慢慢展开。</p>
       </div>
       <ol class="toc" id="toc"></ol>
       <div class="sidebar-note">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 13c4 0 5-5 8-5s4 8 8 8M4 4v16m16-16v16" /></svg>
-        <span>拖动书页，或使用方向键。<br>第二章可以查看完整项目案例。</span>
+        <span>拖动书页，或使用方向键。<br>作品、直播各自有完整展示；继续翻页可查看内页。</span>
       </div>
     </aside>
 
@@ -824,21 +840,41 @@ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 function renderStatic(index) {
   left.innerHTML=leftMarkup(index); right.innerHTML=rightMarkup(index);
   mobilePaper.innerHTML=leftMarkup(index)+`<div class="image-page">${rightMarkup(index)}</div>`;
-  for(const [i,el] of [...document.querySelectorAll('.toc-btn')].entries()) {
-    if(i===index) el.setAttribute('aria-current','page'); else el.removeAttribute('aria-current');
-  }
+  syncTocSelection(index);
   $('pageProgress').textContent=opened?`${String(index+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`:'COVER';
   $('prevButton').disabled=!opened || busy || index===0;
   $('nextButton').disabled=busy || (opened && index===chapters.length-1);
   $('controlHint').innerHTML=opened?'<span>拖动书页翻页 · 或使用方向键</span><kbd>←</kbd><kbd>→</kbd>':'<span>点击封面，开始阅读</span><kbd>←</kbd><kbd>→</kbd>';
   if(index===9)hydrateV3Heatmaps();
 }
-function createToc() {
-  $('toc').innerHTML=chapters.map((c,i)=>`<li><button class="toc-btn" type="button" data-index="${i}" aria-label="打开第 ${i+1} 章：${c.nav}"><span class="toc-number">0${i+1}.</span><span class="toc-title">${c.nav}</span><span class="toc-mark"></span></button></li>`).join('');
-  $('toc').addEventListener('click',evt=>{
-    const el=evt.target.closest('.toc-btn'); if(el) goTo(Number(el.dataset.index));
-  });
+
+const v3Nav=[
+ {number:'00',title:'关于我',start:0,end:0},
+ {number:'01',title:'我的创作舞台',start:1,end:4,children:[{title:'作品',start:1,end:2},{title:'直播',start:3,end:4}]},
+ {number:'02',title:'教学',start:5,end:5},
+ {number:'03',title:'活动',start:6,end:6},
+ {number:'04',title:'我的其他世界',start:7,end:11,children:[{title:'Skills',start:7,end:7},{title:'笔记',start:8,end:10},{title:'照片',start:11,end:11}]},
+ {number:'05',title:'联系我',start:12,end:12}
+];
+function createToc(){
+ $('toc').innerHTML=v3Nav.map(group=>'<li class="toc-group'+(group.children?' has-children':'')+'">'+
+  '<button type="button" class="toc-btn toc-parent" data-index="'+group.start+'" data-start="'+group.start+'" data-end="'+group.end+'" data-parent="true" aria-label="前往'+group.title+'"><span class="toc-number">'+group.number+'.</span><span class="toc-title">'+group.title+'</span><span class="toc-mark" aria-hidden="true"></span></button>'+
+  (group.children?'<div class="toc-children" role="group" aria-label="'+group.title+'的平级内容">'+group.children.map(child=>
+  '<button type="button" class="toc-child" data-index="'+child.start+'" data-start="'+child.start+'" data-end="'+child.end+'" aria-label="打开'+child.title+'">'+child.title+'</button>').join('')+'</div>':'')+
+  '</li>').join('');
+ $('toc').addEventListener('click',event=>{
+  const el=event.target.closest('[data-index]');if(el)goTo(Number(el.dataset.index));
+ });
 }
+function syncTocSelection(index) {
+ document.querySelectorAll('#toc [data-start][data-end]').forEach(el=>{
+  const active=index>=Number(el.dataset.start)&&index<=Number(el.dataset.end);
+  if(active)el.setAttribute('aria-current',el.dataset.parent==='true'&&el.closest('.has-children')?'location':'page');
+  else el.removeAttribute('aria-current');
+  el.classList.toggle('is-active',active);
+ });
+}
+
 function openBook(target=0) {
   if(opened || busy) return;
   busy=true; opened=true; current=target;
