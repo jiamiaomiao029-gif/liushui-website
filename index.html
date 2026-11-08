@@ -395,6 +395,19 @@ a { color:inherit; }
 @media(max-width:680px){.photo-editorial{display:flex;flex-direction:column;gap:16px}.photo-stage{width:100%;min-height:0;padding:24px 32px}.photo-hero-frame{width:min(100%,285px)}.photo-hero-frame img{height:310px}.photo-editorial-text{width:100%}.photo-editorial-text p{min-height:0;max-width:none}.photo-switch{margin-top:10px}.photo-filmstrip{overflow:auto;justify-content:flex-start;padding:12px 4px 18px}.photo-filmstrip button{min-width:100px;flex:0 0 100px}.photo-filmstrip img{height:95px}}
 @media(prefers-reduced-motion:reduce){.photo-filmstrip button,.photo-hero-frame img{transition:none!important}}
 
+
+/* Small selectable paper prints over the right-hand book page */
+.mini-photo-picker{position:absolute;z-index:4;right:8.5%;bottom:14.4%;display:flex;gap:7px}
+.mini-photo-picker button{width:clamp(31px,4.2vw,52px);height:clamp(39px,5.3vw,65px);padding:3px;border:1px solid #cfc4b1;background:#fbf8ee;box-shadow:0 5px 13px #493e2c41;transform:rotate(var(--rot,0deg));cursor:pointer;transition:transform .2s,box-shadow .2s}
+.mini-photo-picker button:nth-child(1){--rot:-6deg}.mini-photo-picker button:nth-child(2){--rot:5deg}.mini-photo-picker button:nth-child(3){--rot:-2deg}
+.mini-photo-picker button:hover,.mini-photo-picker button[aria-pressed="true"]{transform:translateY(-7px) rotate(0deg);box-shadow:0 9px 18px #493e2c55}
+.mini-photo-picker button[aria-pressed="true"]{outline:2px solid #638a70;outline-offset:2px}
+.mini-photo-picker img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-holder img{image-rendering:auto;animation:photoPageReveal .4s both}
+@keyframes photoPageReveal{from{opacity:.56;transform:scale(1.018)}to{opacity:1;transform:scale(1)}}
+@media(max-width:680px){.mini-photo-picker{right:6%;bottom:13%}.mini-photo-picker button{width:39px;height:50px}}
+@media(prefers-reduced-motion:reduce){.mini-photo-picker button{transition:none!important}.photo-holder img{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -615,6 +628,31 @@ const svgToUrl = markup => 'data:image/svg+xml;charset=utf-8,'+encodeURIComponen
 const curatedImageFiles = ['01-lake-joy.webp', null, null, '04-wooden-house.webp', '05-contact-portrait.webp'];
 const imageFor = index => chapters[index].image || svgToUrl(placeholderSVG(index));
 
+/* Clickable small photo prints for the book's personal chapters */
+const bookPhotoChoices={
+  0:[
+    {src:'images/01-lake-joy.webp',alt:'湖边开心比耶的照片',label:'湖边的快乐'},
+    {src:'images/01-about-blue-shirt.webp',alt:'浅蓝衬衫自然微笑照',label:'一个平常的下午'},
+    {src:'images/01-blackwhite-playful.webp',alt:'黑白搞怪的生活照片',label:'不那么正经'}
+  ],
+  3:[
+    {src:'images/04-wooden-house.webp',alt:'木屋前橙色裙子的照片',label:'路上的某一天'},
+    {src:'images/04-hongkong-street.webp',alt:'香港街头的旅行照片',label:'城市观察'},
+    {src:'images/04-snow-sunset.webp',alt:'雪地日落的旅行照片',label:'收藏日落'}
+  ],
+  4:[
+    {src:'images/05-contact-portrait.webp',alt:'蓝白服装的个人形象照',label:'联系与合作'},
+    {src:'images/01-about-blue-shirt.webp',alt:'浅蓝衬衫的轻松肖像',label:'日常的我'}
+  ]
+};
+function bookThumbs(index){
+ const choices=bookPhotoChoices[index];if(!choices)return '';
+ return '<div class="mini-photo-picker" aria-label="切换本章照片">'+choices.map(p=>
+  '<button type="button" data-book-image="'+p.src+'" data-book-chapter="'+index+'" aria-label="查看'+p.label+'" aria-pressed="'+(chapters[index].image===p.src)+'"><img src="'+p.src+'" alt="" loading="lazy"></button>'
+ ).join('')+'</div>';
+}
+
+
 function leftMarkup(i) {
   const c=chapters[i];
   return `<article class="page-inner"><span class="big-num" aria-hidden="true">0${i+1}</span><div class="page-kicker"><span>${c.category}</span><span>EST. 2026</span></div><div class="line-rule"></div><div class="eyebrow">${c.label}</div><h2 class="chapter-heading">${c.headline}</h2><p class="chapter-desc">${c.desc}</p><blockquote class="chapter-pull">${c.quote}</blockquote><div class="chips">${c.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>${i===1?'<a class="chapter-action" href="#case-studies">阅读两个完整项目案例 ↗</a>':i===4?'<a class="chapter-action" href="#collaborate">写封邮件，聊聊想法 ↗</a>':''}<div class="page-foot"><span>LIUSHUI · SEE / THINK / MAKE</span><em>${String(i*2+1).padStart(2,'0')}</em></div></article>`;
@@ -625,7 +663,7 @@ function rightMarkup(i) {
   // not fabricated platform screenshots or unrelated portraits.
   if (i===1) return `<div class="page-inner image-page"><div class="image-top"><span>SELECTED WORK / REAL RESULTS</span><span>02</span></div><div class="editorial-metric-card work-metric"><span class="metric-overline">PERSONAL IP · SELECTED VIDEO</span><strong>47.5<span>万</span></strong><p>代表视频单条播放量<br><small>来自原始作品截图记录，不推算转化</small></p><div class="metric-divider"></div><span class="metric-overline">SNAPVEE · CONTENT PRACTICE</span><b>日更视频与图文</b><p>数百名新增粉丝 · 多名主动咨询</p><small>详细的过程与证据状态见下方项目案例</small></div><div class="page-foot"><span>WORK IS MORE THAN A TITLE</span><em>04</em></div></div>`;
   if (i===2) return `<div class="page-inner image-page"><div class="image-top"><span>FLOMO / YEARS OF NOTES</span><span>03</span></div><div class="editorial-metric-card note-metric"><span class="metric-overline">2024 — 2026 · SNAPSHOT</span><strong>718<span>条</span></strong><p>记录下的想法与观察</p><div class="metric-divider"></div><b>252,583 字</b><p>不是每天都在写，也不是每条都有答案。<br>但好奇心值得被认真对待。</p><small>统计来自上传的 flomo 年度记录截图，数字为截图时点</small></div><div class="page-foot"><span>A LITTLE NOTE TO MYSELF</span><em>06</em></div></div>`;
-  return `<div class="page-inner image-page"><div class="image-top"><span>VISUAL ARCHIVE / 0${i+1}</span><span>✳ &nbsp; 2026</span></div><div class="photo-border"><span class="photo-tape" aria-hidden="true"></span><div class="photo-holder"><img src="${imageFor(i)}" alt="${c.image ? c.alt : c.nav+'章节的原创插画占位图，等待替换为原始照片'}" draggable="false"></div></div><div class="photo-caption"><span>${c.caption}</span><span>${c.date}</span></div><div class="page-foot"><span>AN OPEN PERSONAL ARCHIVE</span><em>${String(i*2+2).padStart(2,'0')}</em></div></div>`;
+  return `<div class="page-inner image-page"><div class="image-top"><span>VISUAL ARCHIVE / 0${i+1}</span><span>✳ &nbsp; 2026</span></div><div class="photo-border"><span class="photo-tape" aria-hidden="true"></span><div class="photo-holder"><img src="${imageFor(i)}" alt="${c.image ? c.alt : c.nav+'章节的原创插画占位图，等待替换为原始照片'}" draggable="false"></div></div>${bookThumbs(i)}<div class="photo-caption"><span>${c.caption}</span><span>${c.date}</span></div><div class="page-foot"><span>AN OPEN PERSONAL ARCHIVE</span><em>${String(i*2+2).padStart(2,'0')}</em></div></div>`;
 }
 
 const $=id=>document.getElementById(id);
@@ -888,6 +926,16 @@ $('photoFilmstrip').addEventListener('keydown',e=>{
 });
 document.addEventListener('visibilitychange',updateGalleryTimer);
 switchGallery(0,true);updateGalleryTimer();
+
+
+document.addEventListener('click',event=>{
+ const button=event.target.closest('[data-book-image]');if(!button)return;
+ const index=Number(button.dataset.bookChapter);
+ const photo=bookPhotoChoices[index]?.find(p=>p.src===button.dataset.bookImage);
+ if(!photo)return;
+ chapters[index].image=photo.src;chapters[index].alt=photo.alt;chapters[index].caption=photo.label;
+ if(!busy)renderStatic(current);
+});
 
 </script>
 </body>
