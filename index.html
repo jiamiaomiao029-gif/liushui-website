@@ -1152,6 +1152,66 @@ a { color:inherit; }
 }
 @media(prefers-reduced-motion:reduce){.v38-chapter-breath .liushui-sprite,.v38-margin-mascot{animation:none!important}}
 
+
+/* V3.9 — original unaltered photographs, writing excerpts, swimming archive, refined book-opening motion */
+.v37-identity-frontispiece{
+ transform-origin:right 50%;
+ transform-style:preserve-3d;
+ backface-visibility:hidden;
+ transition:transform 1.04s cubic-bezier(.19,.78,.24,1),opacity .6s ease .32s,filter .7s ease!important;
+}
+.v37-identity-frontispiece .v37-frontispiece-frame{border:1px solid #e8dfce;box-shadow:inset 0 0 0 1px #fff9ec}
+.v37-identity-frontispiece .v37-frontispiece-frame img{object-position:center 35%}
+.v39-turn-invitation{margin-top:6px;padding-top:5px;border-top:1px solid #cfc3b4;font-size:9px;letter-spacing:.025em;color:#7c796f;display:flex;justify-content:space-between;align-items:center}
+.v39-turn-invitation span{font:italic 21px Georgia,serif;color:#507560;transition:transform .3s ease}
+.book-stage:has(#cover:hover) .v37-identity-frontispiece{transform:rotate(1.3deg) translateX(10px) translateY(-4px)}
+.book-stage:has(#cover:hover) .v39-turn-invitation span{transform:translateX(5px)}
+.is-opening .book-stage .v37-identity-frontispiece{
+ transform:perspective(1100px) rotateY(-89deg) translateX(-14px) rotate(-1deg)!important;
+ opacity:0;visibility:visible!important;
+}
+.is-open .v37-identity-frontispiece{opacity:0;visibility:hidden;transform:perspective(1100px) rotateY(-89deg) translateX(-14px) rotate(-1deg)!important}
+@media(max-width:680px){
+ .v37-mobile-identity{transform-origin:50% 0;transition:opacity .7s ease, transform 1s cubic-bezier(.17,.78,.21,1),max-height .9s ease,margin .9s ease!important;overflow:hidden;max-height:290px}
+ .v37-mobile-identity img{object-position:center 28%}
+ .is-opening .v37-mobile-identity{transform:translateY(-18px) scale(.95);opacity:0;max-height:0;margin:0!important}
+ .is-opening .mobile-cover.v35-cloth-cover{transform-origin:left center;animation:v39-cover-flip 1s cubic-bezier(.19,.72,.18,1) both;pointer-events:none}
+ .is-opening .mobile-paper{animation:v39-paper-enter .8s ease .25s both}
+}
+@keyframes v39-cover-flip{0%{opacity:1;transform:perspective(900px) rotateY(0)}70%{opacity:.8;transform:perspective(900px) rotateY(-58deg) translateX(-10px)}100%{opacity:0;transform:perspective(900px) rotateY(-90deg) translateX(-20px)}}
+@keyframes v39-paper-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.v39-book-flomo-quote{background:#f0eee3;border-left:3px solid #9eaf96;margin:8px 0 1px;padding:10px 12px;color:#435a44;font:normal 11px/1.7 "Songti SC",serif}
+.v39-book-flomo-quote small{display:block;margin-top:4px;font:9px Georgia,serif;color:#948e7e}
+.v39-book-life img:first-child{object-position:center 28%}
+.v39-flomo-writing{margin:46px 0 20px}
+.v39-writing-heading{display:flex;align-items:end;justify-content:space-between;gap:18px}
+.v39-writing-heading h3{font:normal clamp(23px,3vw,35px)/1.35 "Songti SC",serif;color:#315744;max-width:720px;margin:13px 0 25px}
+.v39-writing-heading .liushui-sprite{width:86px;align-self:center}
+.v39-writing-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.v39-writing-cards figure{margin:0;padding:22px 20px 18px;min-height:220px;background:#f7f3e9;border:1px solid #dfd4c3;display:flex;flex-direction:column;gap:15px;box-shadow:0 4px 12px #3d483a0a}
+.v39-writing-cards figure:nth-child(2){background:#e8ecdf;border-color:#c8d4c0}
+.v39-writing-cards figure>div{display:flex;flex-direction:column;gap:5px;color:#829080;font:9px Georgia,serif;letter-spacing:.06em}
+.v39-writing-cards time{font:11px Georgia,serif;color:#968673}
+.v39-writing-cards blockquote{font:normal clamp(16px,1.65vw,21px)/1.65 "Songti SC",serif;color:#315441;margin:0;flex:1}
+.v39-writing-cards figcaption{border-top:1px solid #d9d2c4;padding-top:13px;color:#807b6e;font-size:11px;line-height:1.7}
+.v39-flomo-note{font-size:10px;color:#9a8d7c;margin:13px 0 0;line-height:1.7}
+.v39-swimming-story{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;margin:0 0 44px;background:#e8eee5;border:1px solid #d4dccf;overflow:hidden}
+.v39-swim-image{position:relative;min-height:340px;background:#d8e0d7}
+.v39-swim-image img{display:block;width:100%;height:100%;max-height:570px;object-fit:cover;object-position:center 18%}
+.v39-swim-image>span{position:absolute;left:16px;bottom:16px;background:#f8f8edeb;padding:7px 10px;font:10px Georgia,serif;letter-spacing:.12em;color:#507260}
+.v39-swim-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(22px,3.3vw,50px);gap:13px}
+.v39-swim-copy h3{font:normal clamp(25px,3vw,39px)/1.22 "Songti SC",serif;margin:0;color:#2e5c48}
+.v39-swim-copy p{font-size:13px;line-height:2;color:#69796b;max-width:510px}
+.v39-swim-stats{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:13px 0}
+.v39-swim-stats div{display:flex;flex-direction:column;gap:6px;border-top:1px solid #b6c4b6;padding-top:14px}
+.v39-swim-stats strong{font:normal clamp(25px,3vw,39px) Georgia,serif;color:#315e4c}
+.v39-swim-stats em{font-size:18px;font-style:normal}
+.v39-swim-stats span{font-size:11px;color:#758272}
+.v39-swim-copy>small{font-size:10px;line-height:1.75;color:#8b8c79}
+@media(max-width:800px){.v39-writing-cards{grid-template-columns:1fr}.v39-writing-cards figure{min-height:0}.v39-swimming-story{grid-template-columns:1fr}.v39-swim-image{height:370px}.v39-swim-image img{object-position:center 25%}}
+@media(max-width:480px){.v39-swim-image{height:310px;min-height:310px}.v39-swim-copy{padding:24px 20px}.v39-writing-heading .liushui-sprite{width:70px}.v39-writing-heading h3{font-size:24px}.v39-swim-stats{gap:9px}}
+@media(prefers-reduced-motion:reduce){.v37-identity-frontispiece,.v37-mobile-identity,.is-opening .mobile-cover.v35-cloth-cover,.is-opening .mobile-paper{transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -1186,8 +1246,8 @@ a { color:inherit; }
       <div class="book-area">
         <div class="book-stage" id="bookStage">
           <div class="v37-identity-frontispiece" aria-label="六水的真实照片，欢迎来到不止想想">
-            <div class="v37-frontispiece-frame"><img src="images/01-about-blue-shirt.webp" alt="六水穿着浅蓝色衬衫的真实个人照片" decoding="async" fetchpriority="high"></div>
-            <div class="v37-frontispiece-footer"><span>HELLO, I'M LIUSHUI.</span><b>一个好奇、也愿意动手做的人。</b></div>
+            <div class="v37-frontispiece-frame"><img src="images/v3/v39-home-portrait.webp" alt="六水戴着墨镜、穿浅蓝色条纹衬衫的真实照片" decoding="async" fetchpriority="high"></div>
+            <div class="v37-frontispiece-footer"><span>HELLO, I'M LIUSHUI.</span><b>一个好奇、也愿意动手做的人。</b><small class="v39-turn-invitation">从这里开始，翻开我的故事 <span aria-hidden="true">→</span></small></div>
           </div>
           <div class="book-body" id="bookBody">
             <div class="spread" id="spread" aria-live="polite">
@@ -1236,7 +1296,7 @@ a { color:inherit; }
         </div>
       </div>
       <div class="mobile-reader" id="mobileReader">
-        <div class="v37-mobile-identity"><img src="images/01-about-blue-shirt.webp" alt="六水的真实照片，穿浅蓝色衬衫" decoding="async"><div><span>HI, I'M LIUSHUI</span><strong>你好，<br>我是六水。</strong><small>先认识我，<br>再来翻翻我做过的事。</small></div></div>
+        <div class="v37-mobile-identity"><img src="images/v3/v39-home-portrait.webp" alt="六水戴墨镜、穿浅蓝色条纹衬衫的真实照片" decoding="async"><div><span>HI, I'M LIUSHUI</span><strong>你好，<br>我是六水。</strong><small>先认识我，<br>再来翻翻我做过的事。</small></div></div>
         <button class="mobile-cover v35-cloth-cover v35-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
  <span class="v35-cover-artwork" aria-hidden="true">
  <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1420,12 +1480,29 @@ a { color:inherit; }
   <div class="v33-notes-feature-copy"><span>FROM SCREEN TO PAPER</span><h3>原来 17 万字<br>真的有这么厚。</h3><p>当时打印出来的那一叠纸，是日常思考留下的真实体积。后来继续记录，累计统计也在变化，所以这里区分不同时点。</p><div class="v33-notes-metrics"><div><b>17 万字</b><small>打印时点</small></div><div><b>709 条</b><small>两批导出笔记</small></div><div><b>224 天</b><small>导出中的活跃日期</small></div></div></div>
  </div>
  <div class="v3-thinking-grid"><div><h3>写作活跃热力图</h3><p>在「笔记 · 数据」书页里按年份查看日历，点一天，就能看到那天记录了几条。</p><button type="button" data-open-chapter="9">探索热力图 ↗</button></div><div><h3>我的知识生长树</h3><p>从读过的书、研究过的人，到写出的观点，以及最后做成的视频、课程、直播和 Skills。</p><button type="button" data-open-chapter="10">打开知识树 ↗</button></div></div>
+ <div class="v39-flomo-writing" aria-label="flomo 写作原文节选">
+  <div class="v39-writing-heading"><div><span class="eyebrow">WORDS FROM FLOMO · 真实节选</span><h3>比数字更重要的，是这些具体写下来的话。</h3></div><span class="liushui-sprite pose-thinking" aria-hidden="true"></span></div>
+  <div class="v39-writing-cards">
+   <figure><div><span>01 / 直播复盘</span><time datetime="2026-06-30">2026.06.30</time></div><blockquote>“我以为即兴效果会很好的，但其实不是，就是需要提前准备的。”</blockquote><figcaption>一场直播后，对准备和表达的重新认识。</figcaption></figure>
+   <figure><div><span>02 / 创作实践</span><time datetime="2026-09-14">2026.09.14</time></div><blockquote>“原来这就是认认真真做一条视频的感觉，原来这就是把每一条视频都认真对待的感觉”</blockquote><figcaption>从无限思考，转向具体做一条视频。</figcaption></figure>
+   <figure><div><span>03 / 长期执行</span><time datetime="2026-09-14">2026.09.14</time></div><blockquote>“能忍受长久的不稳定，空白和真空才是执行力”</blockquote><figcaption>不只追求快速开始，也学着持续投入。</figcaption></figure>
+  </div>
+  <p class="v39-flomo-note">选自本人 flomo 原始导出；仅展示创作与成长相关片段，不公开私人日记。此为待审核的预览版本。</p>
+ </div>
 <div class="v34-note-transforms"><div><span>COLLECT</span><b>每天留下的念头</b><small>按真实日期存档</small></div><div><span>CONNECT</span><b>整理反复出现的问题</b><small>主题与观点形成联系</small></div><div><span>CREATE</span><b>变成作品、课程或工具</b><small>让思考进入现实</small></div></div>
 </section>
 <section class="archive-section" id="photo-archive" aria-labelledby="photoArchiveTitle">
   <div class="archive-heading"><span class="liushui-sprite pose-happy v38-photo-mascot" role="img" aria-label="六水开心地陪访客翻阅生活相册"></span><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>翻一翻这叠照片。不是履历，也不是作品成绩，只是我愿意记住的瞬间。</p></div>
+ <article class="v39-swimming-story">
+   <div class="v39-swim-image"><img src="images/v3/v39-swimming.webp" alt="六水穿着青绿色泳衣，在更衣室里开心比耶的游泳训练留影" loading="lazy" decoding="async"><span>AFTER SWIM / REAL MOMENT</span></div>
+   <div class="v39-swim-copy"><span class="eyebrow">A PRACTICE I KEEP · 游泳</span><h3>在水里，找回自己的节奏。</h3>
+    <p>游泳不是为了给自己贴一个“自律”的标签。练技术、调整动作、再下水，慢慢就能看见变化。它提醒我：有些值得坚持的事，本身就是答案。</p>
+    <div class="v39-swim-stats"><div><strong>1,000 <em>m</em></strong><span>一条自由泳训练记录</span></div><div><strong>29:22</strong><span>该次训练用时</span></div></div>
+    <small>记录日期：2025.04.04。照片为游泳生活留影，不作为该次训练成绩的证明截图。</small>
+   </div>
+ </article>
   <div class="photo-editorial">
-    <div class="photo-stage"><div class="photo-hero-frame"><img id="photoMain" src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"></div><span class="photo-stage-index" id="photoCount">01 / 05</span></div>
+    <div class="photo-stage"><div class="photo-hero-frame"><img id="photoMain" src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"></div><span class="photo-stage-index" id="photoCount">01 / 06</span></div>
     <div class="photo-editorial-text" aria-live="polite"><span class="eyebrow" id="photoEyebrow">01 / HELLO AGAIN</span><h3 id="photoTitle">一个平常的下午。</h3><p id="photoStory">从日常里随手留下的一个微笑开始。</p><div class="photo-switch"><button type="button" id="photoPrev" aria-label="上一张照片">←</button><button type="button" id="photoNext" aria-label="下一张照片">→</button><button type="button" id="photoPause" class="photo-play" aria-pressed="false">暂停轮播</button></div></div>
   </div>
   <div class="photo-filmstrip" id="photoFilmstrip" role="tablist" aria-label="选择照片">
@@ -1434,6 +1511,7 @@ a { color:inherit; }
     <button type="button" role="tab" aria-selected="false" data-gallery-index="2" aria-label="黑白趣味照"><img src="images/01-blackwhite-playful.webp" alt="" loading="lazy"><span>03 / PLAY</span></button>
     <button type="button" role="tab" aria-selected="false" data-gallery-index="3" aria-label="雪地日落照"><img src="images/04-snow-sunset.webp" alt="" loading="lazy"><span>04 / WINTER</span></button>
     <button type="button" role="tab" aria-selected="false" data-gallery-index="4" aria-label="暖色低光肖像"><img src="images/03-lowlight-portrait.webp" alt="" loading="lazy"><span>05 / QUIET</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="5" aria-label="游泳训练留影"><img src="images/v3/v39-swimming.webp" alt="" loading="lazy"><span>06 / SWIM</span></button>
   </div>
 </section>
 <section class="collab-section" id="collaborate" aria-labelledby="collabTitle">
@@ -1550,8 +1628,8 @@ function rightMarkup(i) {
  if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LAB / PROTOTYPE</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看真实 GitHub 仓库 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容创作与业务判断的 Skills 集合</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开项目 ↗</a></div>','v3-skills-panel');
  if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v33-print-book"><img src="images/v3/v3-flomo-print.webp" alt="一整叠打印出来的 flomo 笔记，用手托住纸张"><div class="v33-print-label"><small>WRITING / ON PAPER</small><strong>17<span>万字</span></strong><span>把记录变成一叠纸。</span></div></div><p class="v3-soft-caption">17 万字是打印稿当时的字数；其他累计统计以各自记录时间为准。</p><a class="v3-inline-link" href="#v3-notes">打开写作档案 ↗</a>','v3-notes-panel');
  if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>两批导出笔记</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">日期计数来自 Obsidian 导出，不等于账号全部累计。</small>','v3-heat-panel');
- if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><div class="v36-thinking-guide"><span class="liushui-sprite pose-thinking" role="img" aria-label="六水认真思考"></span><span class="v36-guide-text">读过、想过，接下来做出来。</span></div><p class="v3-soft-caption">这是内容关系图，不是假装精确的知识统计。公开的是我的理解，不是外部资料全文。</p>','v3-tree-panel');
- if(i===11)return panel(i,'LITTLE JOYS / PHOTO NOTES','<div class="v3-photo-layout"><img src="images/04-wooden-house.webp" alt="木屋前橙色裙子的旅行照"><img src="images/04-hongkong-street.webp" alt="香港街头旅行照"><img src="images/04-snow-sunset.webp" alt="雪地日落旅行照"></div><p class="v3-soft-caption">旅行、游泳、拍照和随手记下的日常。点击下方相册继续翻看。</p><a class="v3-inline-link" href="#photo-archive">翻开生活相册 ↗</a>','v3-photo-panel');
+ if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><div class="v36-thinking-guide"><span class="liushui-sprite pose-thinking" role="img" aria-label="六水认真思考"></span><span class="v36-guide-text">读过、想过，接下来做出来。</span></div><p class="v39-book-flomo-quote">“能忍受长久的不稳定，空白和真空才是执行力。”<small>摘自 flomo · 2026.09.14</small></p><p class="v3-soft-caption">真实的笔记内容与整理路径都在下面的笔记章节，正式公开前会复核节选。</p>','v3-tree-panel');
+ if(i===11)return panel(i,'LITTLE JOYS / PHOTO NOTES','<div class="v3-photo-layout v39-book-life"><img src="images/v3/v39-swimming.webp" alt="六水完成游泳训练时穿着泳衣、开心比耶的真实照片"><img src="images/04-hongkong-street.webp" alt="香港街头的旅行照片"><img src="images/04-snow-sunset.webp" alt="雪地日落的旅行照片"></div><p class="v3-soft-caption"><b>游泳 · 2025.04.04</b> 自由泳 1000 米 / 29 分 22 秒。慢慢练习，反复调整；不把每个快乐都变成一份成绩单。</p><a class="v3-inline-link" href="#photo-archive">翻开生活相册 ↗</a>','v3-photo-panel');
  return panel(i,'SAY HELLO / CONTACT','<div class="v3-contact-pic"><img src="images/05-contact-portrait.webp" alt="蓝白服装的个人形象照"><span class="liushui-sprite pose-happy v36-contact-guide" role="img" aria-label="开心的六水挥手告别"></span></div><div class="v3-contact-links"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" data-copy-wechat>微信 · liushui029</button></div>','v3-contact-panel');
 }
 const $=id=>document.getElementById(id);
@@ -1605,9 +1683,8 @@ function openBook(target=0) {
   busy=true; opened=true; current=target;
   app.classList.add('is-opening');
   renderStatic(target);
-  $('mobileCover').hidden=true;
   mobilePaper.classList.add('is-visible');
-  const done=()=>{ app.classList.remove('is-opening'); app.classList.add('is-open'); busy=false; renderStatic(current); };
+  const done=()=>{ $('mobileCover').hidden=true; app.classList.remove('is-opening'); app.classList.add('is-open'); busy=false; renderStatic(current); };
   setTimeout(done,reducedMotion.matches?25:1120);
 }
 function next(){ if(!opened) return openBook(0); goTo(current+1); }
@@ -1870,7 +1947,8 @@ const photoItems=[
  {src:'images/04-hongkong-street.webp',alt:'香港街头的色彩与橙红色裙子',eyebrow:'02 / CITY WALKS',title:'街头也有好故事。',story:'喜欢人来人往的城市，也喜欢那些偶然撞见的颜色。'},
  {src:'images/01-blackwhite-playful.webp',alt:'黑白照片里做鬼脸比手势',eyebrow:'03 / NOT TOO SERIOUS',title:'偶尔不那么正经。',story:'认真做事，也保留一点无厘头。'},
  {src:'images/04-snow-sunset.webp',alt:'白色绒帽与雪地日落',eyebrow:'04 / WINTER LIGHT',title:'收藏一点日落。',story:'风景好看的时候，想记住的不一定是结果。'},
- {src:'images/03-lowlight-portrait.webp',alt:'暖色低光室内肖像',eyebrow:'05 / QUIET MOMENTS',title:'安静也是一种状态。',story:'有热闹的瞬间，也有安静看世界的时候。'}
+ {src:'images/03-lowlight-portrait.webp',alt:'暖色低光室内肖像',eyebrow:'05 / QUIET MOMENTS',title:'安静也是一种状态。',story:'有热闹的瞬间，也有安静看世界的时候。'},
+ {src:'images/v3/v39-swimming.webp',alt:'青绿色泳衣、开心比耶的游泳训练留影',eyebrow:'06 / BACK TO WATER',title:'在水里找回节奏。',story:'游泳不是一项需要每天展示成绩的任务，而是我愿意长期练习的事。'}
 ];
 let galleryIndex=0,galleryPaused=false,galleryTimer=null,galleryTransition=null;
 const gallerySection=$('photo-archive'),photoMain=$('photoMain');
