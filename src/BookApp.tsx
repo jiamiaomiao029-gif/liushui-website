@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import "./book-mascot.css";
 
 type Spread = {
   id: string;
@@ -13,6 +14,15 @@ const imageOne = "/images/work-1.png";
 const xUrl = "https://x.com/Clara_J_0529";
 const email = "jiamiaomiao029@gmail.com";
 const careerUrl = "/?view=career";
+
+// Six approved 2D Liushui illustrations: never alter existing personal photographs.
+const mascotByChapter: Record<string, string> = {
+  hello: "/images/ip/waving.webp",
+  marketing: "/images/ip/thinking.webp",
+  projects: "/images/ip/working.webp",
+  life: "/images/ip/reading.webp",
+  contact: "/images/ip/happy.webp",
+};
 
 const spreads: Spread[] = [
   {
@@ -316,6 +326,7 @@ export default function BookApp() {
           <div className={"book-spread book-turn-" + direction} key={spread.id} aria-live="polite">
             <section className={"book-page book-page-left " + (current === 0 ? "is-cover" : "")} aria-label={spread.chapter + "前页"}>
               {spread.left}
+              {spread.id === "cover" && <img className="book-cover-mascot" src="/images/ip/standing.webp" alt="" aria-hidden="true" />}
               <span className="book-corner-number">{String(current * 2 + 1).padStart(2, "0")}</span>
             </section>
             <section className={"book-page book-page-right " + (current === 0 ? "is-cover" : "")} aria-label={spread.chapter + "后页"}>
@@ -323,6 +334,11 @@ export default function BookApp() {
               <span className="book-corner-number">{String(current * 2 + 2).padStart(2, "0")}</span>
             </section>
           </div>
+          {mascotByChapter[spread.id] && (
+            <div key={spread.id} className={"book-mascot-dock book-mascot-dock--" + spread.id} aria-hidden="true">
+              <img src={mascotByChapter[spread.id]} alt="" loading="lazy" decoding="async" />
+            </div>
+          )}
         </div>
 
         <div className="book-controls">
