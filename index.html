@@ -695,7 +695,7 @@ a { color:inherit; }
 .v33-event-timeline b{font:italic 17px Georgia,serif;color:#b3a38c}
 .v33-event-narrative>small{color:#988f82;font-size:10px;line-height:1.75}
 .v33-notes-feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px;margin-bottom:22px;background:#e4e2d7;padding:20px}
-.v33-notes-photo{position:relative;min-height:0;max-height:510px;margin:0;background:#faf8ee;padding:8px 8px 32px;box-shadow:0 6px 20px #48442c2d;transform:rotate(-2deg)}
+.v33-notes-photo{position:relative;min-height:390px;height:470px;max-height:510px;margin:0;background:#faf8ee;padding:8px 8px 32px;box-shadow:0 6px 20px #48442c2d;transform:rotate(-2deg)}
 .v33-notes-photo>.v33-image-button{height:100%;width:100%}
 .v33-notes-photo img{object-fit:cover;object-position:center 38%;height:100%}
 .v33-paper-tape{position:absolute;top:-12px;left:37%;width:24%;height:25px;transform:rotate(4deg);background:#e3d6b9ad;pointer-events:none}
@@ -1426,8 +1426,7 @@ document.addEventListener('click',event=>{
  }
  if(event.target.closest('[data-v33-close]'))document.getElementById('v33Lightbox')?.close();
 });
-const v33PhotoDialog=document.getElementById('v33Lightbox');
-if(v33PhotoDialog)v33PhotoDialog.addEventListener('click',e=>{if(e.target===v33PhotoDialog)v33PhotoDialog.close()});
+document.addEventListener('click',event=>{if(event.target.id==='v33Lightbox')event.target.close()});
 
 </script>
 <dialog id="v33Lightbox" class="v33-lightbox" aria-label="查看真实图片">
