@@ -2138,7 +2138,14 @@ function v40RevealCover(){
   app.removeAttribute('inert');
   v40Entry.hidden=true;
   v40Entry.inert=true;
-  window.scrollTo({top:0,behavior:'instant'});
+  if(window.matchMedia('(max-width:680px)').matches){
+   window.requestAnimationFrame(()=>{
+    const mobile=$('mobileCover');
+    const rect=mobile.getBoundingClientRect();
+    const centeredY=Math.max(0,window.scrollY+rect.top-Math.max(12,(window.innerHeight-rect.height)/2));
+    window.scrollTo(0,centeredY);
+   });
+  }else window.scrollTo(0,0);
   const bookButton=window.matchMedia('(max-width:680px)').matches?$('mobileCover'):cover;
   if(bookButton&&!opened)bookButton.focus({preventScroll:true});
  };
