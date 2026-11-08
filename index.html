@@ -718,6 +718,66 @@ a { color:inherit; }
 @media(max-width:600px){.v33-process-intro{flex-direction:column;align-items:flex-start}.v33-works-fragments{grid-template-columns:1fr}.v33-clipping{flex-direction:row;min-height:180px}.v33-clipping .v33-image-button{width:40%;height:170px}.v33-clipping-response .v33-image-button{width:55%;height:155px}.v33-clipping figcaption strong{font-size:19px}.v33-event-editorial{gap:13px}.v33-event-stage-photo>.v33-image-button{height:325px;width:82%}.v33-event-narrative{padding:25px}.v33-notes-feature{grid-template-columns:1fr;padding:14px}.v33-notes-photo{height:350px}.v33-notes-feature-copy{padding:17px 8px}.v33-notes-metrics{gap:10px}.v33-about-collage{min-height:280px}.v33-event-book{min-height:260px}.v33-print-book{min-height:285px}.v33-works-book{min-height:270px}}
 @media(prefers-reduced-motion:reduce){.v33-image-button img{transition:none!important}}
 
+
+/* V3.4 FIELD JOURNAL COVER — three unchanged, real working snapshots */
+.cover-object{background:#f1e7d4!important;color:#31483c!important;box-shadow:6px 11px 0 #b7b1a1,9px 17px 23px #574b3d7a,inset 7px 0 15px #81795b25!important;border-radius:4px 12px 12px 4px}
+.cover-object::before{inset:13px 14px!important;border:1px solid #a5a18c91!important}
+.cover-object::after{width:15px!important;background:linear-gradient(90deg,#315044a9,#bdc5b888,#43695142)!important}
+.v34-cover-content{gap:6px}
+.cover-object .cover-overline,.v34-mobile-cover .cover-overline{color:#6b7b66;font-size:9px;letter-spacing:.11em;display:flex;justify-content:space-between;gap:7px}
+.v34-issue{color:#a87755;font-size:9px;white-space:nowrap}
+.cover-object .cover-center,.v34-mobile-cover .cover-center{gap:6px}
+.cover-object .cover-volume,.v34-mobile-cover .cover-volume{color:#866e58;font-size:10px;letter-spacing:.18em}
+.cover-object .cover-title,.v34-mobile-cover .cover-title{color:#2b5242;font-size:clamp(39px,4.5vw,67px);line-height:1.04;letter-spacing:-.05em;font-family:"Songti SC","Noto Serif CJK SC",Georgia,serif}
+.cover-object .cover-title i,.v34-mobile-cover .cover-title i{color:#b66d4d}
+.cover-object .cover-subtitle,.v34-mobile-cover .cover-subtitle{color:#66776a;font-size:11px;margin:0;letter-spacing:.15em}
+.cover-object .cover-bottom,.v34-mobile-cover .cover-bottom{color:#6a6f60;font-size:9px;align-items:center;letter-spacing:.065em}
+.cover-object .cover-cta,.v34-mobile-cover .cover-cta{background:#305846;color:#f8f3e5;border-radius:2px;font-size:11px}
+.v34-cover-collage{display:block;position:relative;height:clamp(176px,21vw,276px);width:100%;margin-top:5px}
+.v34-cover-cut{display:block;position:absolute;background:#fffdf7;padding:5px 5px 16px;box-shadow:2px 5px 13px #54483a30,0 0 0 1px #eee8d8;overflow:hidden;transform-origin:center}
+.v34-cover-cut img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.v34-cover-cut>span{position:absolute;bottom:2px;left:5px;font:7px Georgia,serif;color:#737165;letter-spacing:.07em;white-space:nowrap}
+.v34-cut-speaking{width:56%;height:82%;left:1%;top:3%;transform:rotate(-7deg);z-index:2}
+.v34-cut-writing{width:46%;height:66%;right:0;top:2%;transform:rotate(8deg);z-index:3}
+.v34-cut-making{width:41%;height:55%;right:11%;bottom:0;transform:rotate(-8deg);z-index:4}
+.v34-cover-sticker{position:absolute;z-index:5;left:12%;bottom:-2%;background:#e6d89b;color:#775c39;transform:rotate(5deg);padding:7px 9px;box-shadow:2px 2px 3px #0002;font-size:10px;line-height:1.35}
+.v34-mobile-cover{background:#f1e7d4!important;color:#315044!important}
+.v34-mobile-cover .v34-cover-collage{height:225px;max-width:360px;margin:8px auto}
+.v34-mobile-cover .cover-title{font-size:clamp(42px,12vw,67px)}
+.v34-mobile-cover .cover-bottom{width:100%}
+.v34-mobile-cover .v34-cover-sticker{font-size:10px}
+.v34-mobile-cover .cover-overline{width:100%}
+@media(max-width:440px){.cover-object .cover-overline{font-size:8px}.v34-mobile-cover .v34-cover-collage{height:200px}.v34-mobile-cover .cover-title{font-size:42px}}
+/* PROCESS FIRST: book pages now contain authentic working material */
+.v34-book-work{display:grid;grid-template-columns:1.1fr .65fr;gap:8px;background:#e5e9dd;padding:10px;min-height:51%;align-items:stretch}
+.v34-book-work-heading{padding:6px 1px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.v34-book-work-heading small{font-size:9px;color:#6e8c6e}
+.v34-book-work-heading h3{font:normal clamp(18px,1.9vw,27px)/1.27 "Songti SC",serif;color:#315746;margin:0}
+.v34-book-work-heading p{font-size:9px;color:#6f7e6b;line-height:1.7}
+.v34-book-work figure{margin:0;min-width:0;background:#fff8eb;padding:5px;display:flex;flex-direction:column;transform:rotate(2deg);box-shadow:0 3px 8px #0002}
+.v34-book-work img{min-height:0;max-height:180px;flex:1;width:100%;object-fit:cover;object-position:center top}
+.v34-book-work figcaption{font-size:7.5px;color:#8a8174;line-height:1.4;padding-top:4px}
+.v34-live-notebook,.v34-teach-file,.v34-skill-file{background:#f4f0e5;border:1px solid #d4c8b4;padding:19px 18px;flex:1;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.v34-live-notebook:after,.v34-teach-file:after{content:"";position:absolute;left:27px;right:13px;bottom:40px;border-bottom:1px solid #cecab9}
+.v34-note-top{display:flex;justify-content:space-between;gap:8px;font:8px Georgia,serif;letter-spacing:.08em;color:#8c8b79}
+.v34-live-notebook h3,.v34-teach-file h3,.v34-skill-file h3{font:normal clamp(20px,2.1vw,29px)/1.28 "Songti SC",serif;color:#345a49;margin:12px 0 8px}
+.v34-live-notebook h3 em{font-size:15px;font-style:normal;color:#84715a}
+.v34-live-line{display:grid;grid-template-columns:46px 1fr;gap:10px;border-top:1px solid #d8d1c2;padding:9px 0;font-size:10px;line-height:1.7;color:#625f56}
+.v34-live-line b{color:#407251;font-weight:600}
+.v34-live-notebook>small,.v34-teach-file>small{font-size:9px;line-height:1.6;color:#938978;margin-top:auto}
+.v34-teach-file{background:repeating-linear-gradient(0deg,#f9f6ee,#f9f6ee 31px,#e4e3d7 32px)}
+.v34-file-list{display:flex;flex-direction:column;gap:7px}
+.v34-file-list>div{display:grid;grid-template-columns:100px 1fr;gap:7px;padding:7px 8px;background:#f0f0e5eb;border-left:2px solid #8baa8b;font-size:9px;color:#73756b;align-items:center}
+.v34-file-list b{color:#3c6951}
+.v34-skill-file{background:#253d35;color:#e9eddf;flex:1}
+.v34-skill-file .v34-note-top{color:#a8bba7}
+.v34-skill-file h3{color:#faf2dc;font:normal 20px Georgia,serif;margin:6px 0}
+.v34-skill-file>p{color:#dce5d2;font:13px "Courier New",monospace;margin:5px 0}
+.v34-skill-file>p span{color:#abc6b2}
+.v34-skill-progress{display:flex;gap:5px;flex-wrap:wrap;color:#d3dccb;font-size:9px;line-height:1.7;margin-top:auto}
+.v34-skill-file>a{font-size:10px;color:#e7cc93;text-decoration:underline;align-self:flex-start}
+@media(max-width:680px){.v34-book-work{min-height:250px}.v34-live-notebook,.v34-teach-file,.v34-skill-file{min-height:270px}.v34-book-work img{max-height:240px}}
+
 </style>
 </head>
 <body>
@@ -762,28 +822,35 @@ a { color:inherit; }
               <div class="face front" id="flipFront"></div>
               <div class="face back" id="flipBack"></div>
             </div>
-            <button class="cover-object" id="cover" aria-label="打开书本">
-              <span class="cover-back" aria-hidden="true"></span>
-              <span class="cover-content">
-                <span class="cover-overline">LIUSHUI’S SKETCHBOOK &nbsp; · &nbsp; VOL. I</span>
-                <span class="cover-center">
-                  <span class="cover-volume">CURIOUS AT HEART</span>
-                  <span class="cover-title">不止<i>想想</i></span>
-                  <span class="cover-subtitle">关于内容、直播、教学、思考与真实生活</span>
-                  <svg class="cover-art" viewBox="0 0 240 105" fill="none" aria-hidden="true"><path d="M5 88c19-35 29-55 41-40s19 42 32 20S113 9 126 31s14 64 29 49 26-65 40-56 21 53 40 43" stroke="#d2bf93" stroke-width="1.6" stroke-linecap="round"/><path d="M20 20c13 7 25 10 39 3M156 10l3 8 8 3-8 2-3 8-2-8-8-2 8-3 2-8ZM206 88c8-8 17-10 25-8" stroke="#d2bf93" stroke-width="1.2"/><circle cx="114" cy="87" r="2" fill="#d2bf93"/></svg>
-                </span>
-                <span class="cover-bottom"><span>六水 LIUSHUI<br>VOL. 01 · 2026</span><span class="cover-cta">OPEN THE BOOK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
-              </span>
-            </button>
+            <button class="cover-object" id="cover" aria-label="打开《不止想想》手账">
+ <span class="cover-back" aria-hidden="true"></span>
+ <span class="cover-content v34-cover-content">
+  <span class="cover-overline">LIUSHUI’S FIELD JOURNAL <span class="v34-issue">VOL. 03 / 2026</span></span>
+  <span class="cover-center">
+   <span class="cover-volume">CURIOUS AT HEART</span>
+   <span class="cover-title">不止<i>想想.</i></span>
+   <span class="cover-subtitle">好奇于心，创造于行。</span>
+   <span class="v34-cover-collage" aria-hidden="true">
+    <span class="v34-cover-cut v34-cut-speaking"><img src="images/v3/v3-event-speaking.webp" alt=""><span>01 / IN THE ROOM</span></span>
+    <span class="v34-cover-cut v34-cut-writing"><img src="images/v3/v3-flomo-print.webp" alt=""><span>02 / KEEP WRITING</span></span>
+    <span class="v34-cover-cut v34-cut-making"><img src="images/v3/v3-self-viral.webp" alt=""><span>03 / MAKE SOMETHING</span></span>
+    <span class="v34-cover-sticker">好奇，不止<br>停在纸上。</span>
+   </span>
+  </span>
+  <span class="cover-bottom"><span>六水 · LIUSHUI<br>PERSONAL FIELD NOTES</span><span class="cover-cta">翻开看看 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
+ </span>
+</button>
           </div>
         </div>
       </div>
       <div class="mobile-reader" id="mobileReader">
-        <button class="mobile-cover" id="mobileCover" aria-label="打开书本">
-          <span class="cover-overline">LIUSHUI’S SKETCHBOOK · VOL. I</span>
-          <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="cover-subtitle">关于观察、内容、创造与真实生活</span></span>
-          <span class="cover-bottom"><span>六水 LIUSHUI<br>VOL. 01 · 2026</span><span class="cover-cta">OPEN THE BOOK →</span></span>
-        </button>
+        <button class="mobile-cover v34-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
+ <span class="cover-overline">LIUSHUI’S FIELD JOURNAL · VOL. 03</span>
+ <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想.</i></span><span class="cover-subtitle">好奇于心，创造于行。</span>
+ <span class="v34-cover-collage" aria-hidden="true"><span class="v34-cover-cut v34-cut-speaking"><img src="images/v3/v3-event-speaking.webp" alt=""><span>01 / IN THE ROOM</span></span><span class="v34-cover-cut v34-cut-writing"><img src="images/v3/v3-flomo-print.webp" alt=""><span>02 / KEEP WRITING</span></span><span class="v34-cover-cut v34-cut-making"><img src="images/v3/v3-self-viral.webp" alt=""><span>03 / MAKE SOMETHING</span></span><span class="v34-cover-sticker">做出来。</span></span>
+ </span>
+ <span class="cover-bottom"><span>六水 · LIUSHUI<br>VOL. 03 / 2026</span><span class="cover-cta">翻开看看 →</span></span>
+</button>
         <div class="mobile-paper" id="mobilePaper" aria-live="polite"></div>
       </div>
       <div class="controlbar" aria-label="翻页控制">
@@ -1015,13 +1082,13 @@ function leftMarkup(i) {
 function rightMarkup(i) {
  const c=chapters[i];
  if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v33-about-collage"><figure class="v33-about-present"><img src="images/01-lake-joy.webp" alt="湖边笑着比耶的生活照"><figcaption>NOW / 依然好奇</figcaption></figure><figure class="v33-about-child"><img src="images/v3/v3-childhood.webp" alt="六水小时候的照片"><figcaption>THEN / 很久以前</figcaption></figure></div><p class="v3-soft-caption">从小时候到现在，好奇心一直都在。这里有一些我做过的事，也有很多不必为结果负责的快乐。</p>','v3-about');
- if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v3-cover-vibe"><span>大佬幼年体 · 原创短视频</span><strong>大学如何铺<br>自己的人脉网</strong><small>大学，是社会的 mini 版。</small></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>单条抖音涨粉</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">进入作品集 ↗</a>','v3-works-panel');
+ if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v34-book-work"><div class="v34-book-work-heading"><small>原创短视频 · 大佬幼年体</small><h3>大学如何铺<br>自己的人脉网</h3><p>从“看头衔”转向“看信息与资源”，是这条视频的切入点。</p></div><figure><img src="images/v3/v3-self-viral.webp" alt="另一条六水个人原创内容在小红书上的真实发布截图"><figcaption>同账号另一条原创作品的截图 · 非本视频封面</figcaption></figure></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>抖音新增关注</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">看作品与脚本档案 ↗</a>','v3-works-panel');
  if(i===2)return panel(i,'SELECTED / WORKS','<div class="v33-works-book"><div class="v33-works-book-copy"><span>MY CREATIONS / SELECTED</span><h3>我的内容，<br>有很多种样子。</h3><p>视频 · 系列选题 · X 长文</p></div><div class="v33-works-book-images"><figure><img src="images/v3/v3-self-viral.webp" alt="六水原创内容的个人发布页面截图"><figcaption>个人内容作品页</figcaption></figure><figure><img src="images/v3/v3-xhs-notifications.webp" alt="小红书点赞收藏和新增关注消息界面"><figcaption>真实互动消息</figcaption></figure></div></div><a class="v3-inline-link" href="#v3-works">打开完整作品集 ↗</a>','v3-works-panel');
- if(i===3)return panel(i,'ON AIR / LIVE','<div class="v3-live-poster"><span class="v3-onair-dot"></span><span>LIVE · LIUSHUI</span><strong>把一个问题<br>说给更多人听。</strong><p>自讲 / 连麦 / 即兴答疑</p></div><div class="v3-live-pills"><span>原创观点</span><span>实时互动</span><span>开放讨论</span></div><a class="v3-inline-link" href="#v3-live">走进直播档案 ↗</a>','v3-live-panel');
+ if(i===3)return panel(i,'ON AIR / LIVE','<div class="v34-live-notebook"><div class="v34-note-top"><span>AFTER LIVE · 2026.07.23</span><span>整理自直播录音</span></div><h3>对标方法论<br><em>为什么要研究对标？</em></h3><div class="v34-live-line"><b>问题</b><span>选题、封面、发布时间，变量太多。</span></div><div class="v34-live-line"><b>判断</b><span>对标的本质，是降低验证成本。</span></div><div class="v34-live-line"><b>输出</b><span>整理成一条可讲述的短视频稿。</span></div><small>这是真实直播整理稿的图文重排，并非直播截图。</small></div><a class="v3-inline-link" href="#v3-live">查看直播整理过程 ↗</a>','v3-live-panel');
  if(i===4)return panel(i,'CONVERSATION / LIVE','<div class="v3-topic-tabs" role="group" aria-label="切换直播观点"><button type="button" data-live-topic="0" aria-pressed="true">对标</button><button type="button" data-live-topic="1" aria-pressed="false">内容</button><button type="button" data-live-topic="2" aria-pressed="false">AI</button><button type="button" data-live-topic="3" aria-pressed="false">创业</button></div><div class="v3-topic-card"><span>AN IDEA FROM THE ROOM</span><h3 data-live-topic-title>对标是为了降低试错成本。</h3><p data-live-topic-desc>看见别人走过的路，是为了更快找到适合自己的实验方式，而不是变成另一个人。</p></div><a class="v3-inline-link" href="#v3-live">更多直播观点 ↗</a>','v3-live-panel');
- if(i===5)return panel(i,'02 / TEACHING STUDIO','<div class="v3-teach-pipeline"><div><small>01 · REACH</small><b>招生与连接</b><span>内容吸引 · 需求沟通 · 课程匹配</span></div><div class="is-focus"><small>02 · TEACH</small><b>教学与成长</b><span>知识体系 · 学习动力 · 进度追踪</span></div><div><small>03 · FOLLOW UP</small><b>反馈与陪伴</b><span>教学反馈 · 家校沟通 · 阶段规划</span></div></div><div class="v3-teach-atlas"><div class="v3-teach-atlas-head"><span>MY LEARNING MAP</span><b>英语，是可以画出来的。</b></div><div class="v3-teach-subjects"><span>词汇</span><span>语法</span><span>阅读</span><span>写作</span></div><p>从<strong>句子的骨架</strong>到<strong>动词时态与复杂句</strong>，再把知识迁移到真实的阅读和表达。</p><small>已开展英语教学；完整教培 SOP 是持续建设中的知识库。</small></div><a class="v3-inline-link" href="#v3-teaching">探索教学知识地图 ↗</a>','v3-teaching-panel');
+ if(i===5)return panel(i,'02 / TEACHING STUDIO','<div class="v34-teach-file"><div class="v34-note-top"><span>ENGLISH EDUCATION</span><span>知识库目录</span></div><h3>英语教学工作台</h3><div class="v34-file-list"><div><b>01 / 招生</b><span>内容选题 · 家长初沟通 · 课程方案</span></div><div><b>02 / 知识交付</b><span>词汇 / 语法 / 阅读 / 写作</span></div><div><b>03 / 学生培养</b><span>学习动力 · 阶段目标 · 学情追踪</span></div><div><b>04 / 家校反馈</b><span>课堂记录 · 家长沟通 · 升学建议</span></div></div><small>依据本人飞书知识库目录重新排版；正在持续完善，不代表所有 SOP 均已交付。</small></div><a class="v3-inline-link" href="#v3-teaching">打开教学与学生培养体系 ↗</a>','v3-teaching-panel');
  if(i===6)return panel(i,'OFFLINE / EVENTS','<div class="v33-event-book"><figure class="v33-event-book-main"><img src="images/v3/v3-event-speaking.webp" alt="六水坐在白板旁讲解个人 IP 内容思路的现场照片"><figcaption>现场讲解 / THE ROOM</figcaption></figure><figure class="v33-event-book-detail"><img src="images/v3/v3-event-venue.webp" alt="线下活动场地，设有屏幕和讨论桌"><figcaption>分享现场</figcaption></figure></div><div class="v3-event-stats"><strong>90 min</strong><span>传统老板为什么要做个人 IP？<br>线下主题分享</span></div><a class="v3-inline-link" href="#v3-events">看活动全貌 ↗</a>','v3-events-panel');
- if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v3-skill-mini"><b>liushui-skills</b><small>人物模式分析 · 个人 IP 定位假设</small><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看原型 V0.2 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容诊断 · 商业决策 · 工作流工具</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">浏览仓库 ↗</a></div><p class="v3-soft-caption">原型状态和实际使用情况在 GitHub 中如实标注。</p>','v3-skills-panel');
+ if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LAB / PROTOTYPE</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看真实 GitHub 仓库 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容创作与业务判断的 Skills 集合</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开项目 ↗</a></div>','v3-skills-panel');
  if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v33-print-book"><img src="images/v3/v3-flomo-print.webp" alt="一整叠打印出来的 flomo 笔记，用手托住纸张"><div class="v33-print-label"><small>WRITING / ON PAPER</small><strong>17<span>万字</span></strong><span>把记录变成一叠纸。</span></div></div><p class="v3-soft-caption">17 万字是打印稿当时的字数；其他累计统计以各自记录时间为准。</p><a class="v3-inline-link" href="#v3-notes">打开写作档案 ↗</a>','v3-notes-panel');
  if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>两批导出笔记</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">日期计数来自 Obsidian 导出，不等于账号全部累计。</small>','v3-heat-panel');
  if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><p class="v3-soft-caption">这是内容关系图，不是假装精确的知识统计。公开的是我的理解，不是外部资料全文。</p>','v3-tree-panel');
