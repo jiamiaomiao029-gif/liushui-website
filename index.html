@@ -836,6 +836,82 @@ a { color:inherit; }
 @media(max-width:920px){.v34-field-track{grid-template-columns:repeat(3,minmax(0,1fr))}.v34-event-journal{grid-template-columns:1fr}.v34-event-diptych .v33-image-button{height:240px}}
 @media(max-width:680px){.v34-field-reel{padding:0 18px;margin:36px auto}.v34-field-heading{display:block}.v34-field-track{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(185px,65vw);overflow-x:auto;scroll-snap-type:x mandatory;gap:11px;padding-bottom:8px}.v34-field-track figure{scroll-snap-align:start}.v34-process-cards,.v34-live-workflow,.v34-skill-making,.v34-teach-doc-grid,.v34-note-transforms{grid-template-columns:1fr}.v34-process-intro{margin-top:30px}.v34-event-diptych .v33-image-button{height:190px}}
 
+
+/* V3.5 clothbound edition: one original unretouched portrait blended into the cloth */
+.cover-object.v35-cloth-cover,.mobile-cover.v35-cloth-cover{
+ background:#1d4037!important;color:#f1e5ca!important;
+ box-shadow:5px 10px 0 #b8af97,9px 16px 23px #332e2880,inset 7px 0 15px #0c2d2990!important;
+ isolation:isolate;
+}
+.cover-object.v35-cloth-cover::before{
+ inset:13px!important;
+ border:1px solid #c8b47a8f!important;
+ z-index:3;
+}
+.cover-object.v35-cloth-cover::after{
+ width:13px!important;
+ background:linear-gradient(90deg,#0c2626e0,#bcaa7c50,#163d37b0)!important;
+ z-index:4;
+}
+.v35-cover-artwork{
+ position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+ border-radius:5px 12px 12px 5px;
+ background:
+  repeating-linear-gradient(93deg,rgba(243,235,215,.023) 0px,rgba(243,235,215,.023) 1px,transparent 1px,transparent 4px),
+  radial-gradient(ellipse 72% 52% at 85% 72%,#385f4d 0%,transparent 92%),
+  #1d4037;
+}
+.v35-emboss{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:.78;mix-blend-mode:screen}
+.v35-integrated-portrait{
+ position:absolute;z-index:1;left:8%;top:26%;width:111%;height:84%;
+ object-fit:cover;object-position:50% 49%;max-width:none;
+ opacity:.9;
+ -webkit-mask-image:radial-gradient(ellipse 67% 65% at 58% 50%,#000 28%,rgba(0,0,0,.91) 47%,transparent 94%);
+ mask-image:radial-gradient(ellipse 67% 65% at 58% 50%,#000 28%,rgba(0,0,0,.91) 47%,transparent 94%);
+}
+.v35-portrait-veil{
+ position:absolute;z-index:2;inset:0;pointer-events:none;
+ background:
+   linear-gradient(180deg,#1d4037 8%,#1d4037 19%,transparent 41%,transparent 69%,#193c34e6 96%),
+   linear-gradient(90deg,#1d4037a6 0%,transparent 33%,transparent 73%,#1d403733 100%),
+   linear-gradient(0deg,#244e3c2a,#244e3c2a);
+}
+.v35-cloth-content{position:relative;z-index:5;height:100%;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.v35-cloth-content .cover-overline{
+ display:flex;justify-content:space-between;gap:8px;
+ color:#d6c79d!important;font:9px/1.55 Georgia,serif!important;letter-spacing:.14em!important;
+}
+.v35-cloth-content .cover-overline span{font-size:8px;opacity:.82;letter-spacing:.08em;text-align:right}
+.v35-cloth-content .cover-center{gap:9px!important;align-self:flex-start;justify-content:center;margin-top:-13%;width:100%}
+.v35-cloth-content .cover-volume{color:#e0caa2!important;font-size:10px!important;letter-spacing:.18em!important}
+.v35-cloth-content .cover-title{
+ color:#faf0d5!important;
+ font:normal clamp(37px,4vw,61px)/1.12 "Songti SC","Noto Serif CJK SC",Georgia,serif!important;
+ letter-spacing:.02em!important;text-shadow:0 2px 12px #062b279e;
+ white-space:nowrap;
+}
+.v35-cloth-content .cover-title i{color:#e4cf99!important;font-style:normal}
+.v35-title-rule{width:56px;height:1px;display:block;background:#d0b980bb}
+.v35-cloth-content .cover-subtitle{color:#e8dcc1!important;margin:0!important;font-size:11px!important;letter-spacing:.13em!important;text-shadow:0 1px 8px #1a3026}
+.v35-cloth-content .cover-bottom{color:#e2d4b6!important;font:9px/1.6 Georgia,serif!important;letter-spacing:.1em!important}
+.v35-cloth-content .cover-cta{
+ display:inline-flex;background:rgba(226,204,156,.13)!important;color:#f8edd1!important;
+ border:1px solid #dbc58e8a;border-radius:2px!important;padding:10px 12px!important;
+ font:10px "PingFang SC",sans-serif!important;letter-spacing:.04em!important;
+}
+.v35-cloth-cover:hover .v35-cloth-content .cover-cta{background:#e4d1a5!important;color:#234b3d!important}
+.mobile-cover.v35-mobile-cover{overflow:hidden;min-height:480px;padding:30px 25px!important}
+.v35-mobile-cover .v35-cover-artwork{border-radius:4px 13px 13px 4px}
+.v35-mobile-cover .v35-integrated-portrait{top:26%;height:83%;left:6%;width:111%}
+.v35-mobile-cover .v35-cloth-content .cover-title{font-size:clamp(39px,11vw,58px)!important}
+.v35-mobile-cover .v35-cloth-content .cover-center{margin-top:-15%}
+.v35-mobile-cover .cover-bottom{align-items:flex-end}
+@media(max-width:440px){
+ .v35-mobile-cover .v35-cloth-content .cover-title{font-size:40px!important}
+ .mobile-cover.v35-mobile-cover{min-height:445px}
+ .v35-mobile-cover .v35-cloth-content .cover-center{margin-top:-12%}
+}
+
 </style>
 </head>
 <body>
@@ -880,34 +956,69 @@ a { color:inherit; }
               <div class="face front" id="flipFront"></div>
               <div class="face back" id="flipBack"></div>
             </div>
-            <button class="cover-object" id="cover" aria-label="打开《不止想想》手账">
+            <button class="cover-object v35-cloth-cover" id="cover" aria-label="打开《不止想想》手账">
  <span class="cover-back" aria-hidden="true"></span>
- <span class="cover-content v34-cover-content">
-  <span class="cover-overline">LIUSHUI’S FIELD JOURNAL <span class="v34-issue">VOL. 03 / 2026</span></span>
+ <span class="v35-cover-artwork" aria-hidden="true">
+ <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#d8bc85" stroke-width="1.12" stroke-linecap="round" opacity=".48">
+   <path d="M-60 119 C68 38 125 190 252 97 S419 63 521 -30"/>
+   <path d="M-64 134 C68 53 127 205 253 112 S423 79 525 -16"/>
+   <path d="M-66 149 C70 69 129 220 255 127 S427 94 527 0"/>
+   <path d="M-69 164 C71 85 131 235 257 142 S432 109 531 16"/>
+   <path d="M-71 179 C74 101 133 250 259 157 S435 124 536 31"/>
+   <path d="M-75 194 C75 117 135 265 261 172 S439 139 540 46"/>
+  </g>
+  <g stroke="#d8bc85" stroke-width="1.2" opacity=".54">
+   <path d="M46 660 Q96 583 156 562 T284 472 T420 308"/>
+   <path d="M154 563 Q149 516 108 484 M204 525 Q212 476 250 441 M281 472 Q322 464 344 424 M366 380 Q350 340 375 300"/>
+   <path d="M95 589 Q57 567 30 530 M250 443 Q233 416 230 386"/>
+  </g>
+  <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
+ </svg>
+ <img class="v35-integrated-portrait" src="images/01-about-blue-shirt.webp" alt="" loading="eager" decoding="async">
+ <span class="v35-portrait-veil"></span>
+</span>
+ <span class="cover-content v35-cloth-content">
+  <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL · 2026</span></span>
   <span class="cover-center">
    <span class="cover-volume">CURIOUS AT HEART</span>
-   <span class="cover-title">不止<i>想想.</i></span>
+   <span class="cover-title">不止<i>想想</i></span>
+   <span class="v35-title-rule" aria-hidden="true"></span>
    <span class="cover-subtitle">好奇于心，创造于行。</span>
-   <span class="v34-cover-collage" aria-hidden="true">
-    <span class="v34-cover-cut v34-cut-speaking"><img src="images/v3/v3-event-speaking.webp" alt=""><span>01 / IN THE ROOM</span></span>
-    <span class="v34-cover-cut v34-cut-writing"><img src="images/v3/v3-flomo-print.webp" alt=""><span>02 / KEEP WRITING</span></span>
-    <span class="v34-cover-cut v34-cut-making"><img src="images/v3/v3-self-viral.webp" alt=""><span>03 / MAKE SOMETHING</span></span>
-    <span class="v34-cover-sticker">好奇，不止<br>停在纸上。</span>
-   </span>
   </span>
-  <span class="cover-bottom"><span>六水 · LIUSHUI<br>PERSONAL FIELD NOTES</span><span class="cover-cta">翻开看看 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
+  <span class="cover-bottom"><span>六水 · LIUSHUI<br>EDITION 01</span><span class="cover-cta">OPEN THE BOOK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
  </span>
 </button>
           </div>
         </div>
       </div>
       <div class="mobile-reader" id="mobileReader">
-        <button class="mobile-cover v34-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
- <span class="cover-overline">LIUSHUI’S FIELD JOURNAL · VOL. 03</span>
- <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想.</i></span><span class="cover-subtitle">好奇于心，创造于行。</span>
- <span class="v34-cover-collage" aria-hidden="true"><span class="v34-cover-cut v34-cut-speaking"><img src="images/v3/v3-event-speaking.webp" alt=""><span>01 / IN THE ROOM</span></span><span class="v34-cover-cut v34-cut-writing"><img src="images/v3/v3-flomo-print.webp" alt=""><span>02 / KEEP WRITING</span></span><span class="v34-cover-cut v34-cut-making"><img src="images/v3/v3-self-viral.webp" alt=""><span>03 / MAKE SOMETHING</span></span><span class="v34-cover-sticker">做出来。</span></span>
+        <button class="mobile-cover v35-cloth-cover v35-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
+ <span class="v35-cover-artwork" aria-hidden="true">
+ <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#d8bc85" stroke-width="1.12" stroke-linecap="round" opacity=".48">
+   <path d="M-60 119 C68 38 125 190 252 97 S419 63 521 -30"/>
+   <path d="M-64 134 C68 53 127 205 253 112 S423 79 525 -16"/>
+   <path d="M-66 149 C70 69 129 220 255 127 S427 94 527 0"/>
+   <path d="M-69 164 C71 85 131 235 257 142 S432 109 531 16"/>
+   <path d="M-71 179 C74 101 133 250 259 157 S435 124 536 31"/>
+   <path d="M-75 194 C75 117 135 265 261 172 S439 139 540 46"/>
+  </g>
+  <g stroke="#d8bc85" stroke-width="1.2" opacity=".54">
+   <path d="M46 660 Q96 583 156 562 T284 472 T420 308"/>
+   <path d="M154 563 Q149 516 108 484 M204 525 Q212 476 250 441 M281 472 Q322 464 344 424 M366 380 Q350 340 375 300"/>
+   <path d="M95 589 Q57 567 30 530 M250 443 Q233 416 230 386"/>
+  </g>
+  <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
+ </svg>
+ <img class="v35-integrated-portrait" src="images/01-about-blue-shirt.webp" alt="" loading="eager" decoding="async">
+ <span class="v35-portrait-veil"></span>
+</span>
+ <span class="cover-content v35-cloth-content">
+  <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL</span></span>
+  <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="v35-title-rule" aria-hidden="true"></span><span class="cover-subtitle">好奇于心，创造于行。</span></span>
+  <span class="cover-bottom"><span>六水 · LIUSHUI<br>EDITION 01</span><span class="cover-cta">翻开看看 →</span></span>
  </span>
- <span class="cover-bottom"><span>六水 · LIUSHUI<br>VOL. 03 / 2026</span><span class="cover-cta">翻开看看 →</span></span>
 </button>
         <div class="mobile-paper" id="mobilePaper" aria-live="polite"></div>
       </div>
