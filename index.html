@@ -317,7 +317,7 @@ a { color:inherit; }
 @media(max-width:940px){.archive-heading{display:block}.archive-heading p{margin-top:12px}.archive-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.archive-shot{grid-column:span 3}}
 @media(max-width:680px){.archive-section{padding:0 18px;margin:25px auto 34px}.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.archive-shot{grid-column:span 1}.archive-shot img{min-height:140px;max-height:235px}.archive-a{grid-column:span 2}.archive-a img{max-height:270px}.archive-heading h2{font-size:29px}.archive-d,.archive-e{transform:none}.mobile-paper .editorial-metric-card{min-height:235px}.mobile-paper .editorial-metric-card>strong{font-size:46px}}
 
-/* V2.4 · paper motion — light, tactile and reduced-motion safe */
+/* V3.0 · paper motion — light, tactile and reduced-motion safe */
 .book-stage{touch-action:pan-y}
 .book-body{transition:filter .6s cubic-bezier(.22,.8,.2,1)}
 .is-opening .book-body{filter:drop-shadow(0 23px 28px #3f33286c)}
@@ -370,7 +370,7 @@ a { color:inherit; }
 @media(prefers-reduced-motion:reduce){.social-rail a,.social-rail button{transition:none!important}}
 
 
-/* V2.4: an editorial contact-sheet gallery, sized for current image resolution */
+/* V3.0: an editorial contact-sheet gallery, sized for current image resolution */
 .photo-editorial{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(210px,.7fr);align-items:center;gap:clamp(18px,4vw,65px);max-width:930px;margin:0 auto 26px}
 .photo-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:438px;background:linear-gradient(130deg,#dcd7c9,#eae6dc);padding:24px 28px 34px;overflow:hidden}
 .photo-stage:before{content:"";position:absolute;inset:16px;border:1px solid #fff8e482;pointer-events:none}
@@ -408,6 +408,77 @@ a { color:inherit; }
 @media(max-width:680px){.mini-photo-picker{right:6%;bottom:13%}.mini-photo-picker button{width:39px;height:50px}}
 @media(prefers-reduced-motion:reduce){.mini-photo-picker button{transition:none!important}.photo-holder img{animation:none!important}}
 
+
+/* V3 · more things, fewer claims: book-specific responsive content panels */
+.sidebar{max-height:min(80svh,850px);overflow-y:auto;scrollbar-width:thin;padding-right:7px}
+.toc-btn{padding:8px 2px}
+.main-layout{align-items:center}
+.page-inner{padding:6.4% 7.5% 5.3%}
+.chapter-heading{font-size:clamp(19px,2.25vw,32px);margin:8px 0 11px}
+.chapter-desc{font-size:clamp(10px,.93vw,12px);line-height:1.75}
+.chapter-pull{font-size:clamp(12px,1.2vw,16px);margin:12px 0 10px}
+.chips{margin-bottom:12px}
+.v3-panel-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.v3-panel .page-foot{margin-top:auto}
+.v3-panel .image-top{flex-shrink:0}
+.v3-panel .v3-soft-caption{font-size:10px;line-height:1.7;color:#777166;margin:4px 0}
+.v3-inline-link{color:#375e4c;font-size:11px;font-weight:650;text-decoration:none;border-bottom:1px solid #9ab19b;align-self:flex-start;margin-top:auto;padding-bottom:4px}
+.v3-first-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:7px}
+.v3-first-links button{border:1px solid #8da997;background:#e7eee5;color:#315849;border-radius:8px;padding:12px 6px;font-size:11px;cursor:pointer}
+.v3-first-links button:hover{background:#d4e5d3}
+.v3-portrait-stack{position:relative;flex:1;min-height:170px;background:#dad9cf;padding:10px 20% 10px 9%;border-radius:5px}
+.v3-main-portrait{height:100%;max-height:330px;max-width:100%;object-fit:cover;box-shadow:0 8px 22px #2b282740}
+.v3-small-portrait{position:absolute;right:5%;bottom:2%;height:44%;width:36%;object-fit:cover;border:6px solid #faf7eb;box-shadow:0 4px 11px #36332845;transform:rotate(5deg)}
+.v3-cover-vibe{background:#355848;color:#fff5e1;border-radius:5px;min-height:52%;padding:7%;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.v3-cover-vibe:before{content:"";position:absolute;width:140px;height:140px;right:-45px;top:-45px;border:1px solid #e7d7b355;border-radius:50%;box-shadow:0 0 0 32px #ffffff08}
+.v3-cover-vibe span{font-size:9px;letter-spacing:.08em;color:#d3e1c9}.v3-cover-vibe strong{font:normal clamp(24px,2.7vw,40px)/1.27 Georgia,"Songti SC",serif}.v3-cover-vibe small{font-size:10px;color:#cbd9c4}
+.v3-metric-triple{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.v3-metric-triple div{border-top:1px solid #cfc5b7;padding-top:9px;display:flex;flex-direction:column;gap:6px}
+.v3-metric-triple b{font-size:clamp(11px,1.5vw,18px);color:#315849}.v3-metric-triple span{font-size:9px;color:#8b8074}
+.v3-work-list{display:flex;flex-direction:column;gap:5px;flex:1}
+.v3-work-list>div{background:#f0ece1;padding:8px 11px;display:flex;flex-direction:column;gap:4px;border-left:2px solid #8fa999}
+.v3-work-list span{font-size:8px;color:#ac927d}.v3-work-list b{font-size:12px}.v3-work-list small{font-size:9px;color:#858073}
+.v3-live-poster{background:radial-gradient(circle at 80% 15%,#6a8770,#27483d 65%);color:#fff9ef;display:flex;flex-direction:column;justify-content:center;padding:25px;gap:15px;min-height:70%;position:relative}
+.v3-live-poster>span:nth-child(2){font:10px Georgia,serif;letter-spacing:.15em;color:#d6dfca}
+.v3-live-poster strong{font:normal clamp(27px,2.9vw,42px)/1.3 Georgia,"Songti SC",serif}.v3-live-poster p{font-size:11px;color:#cddccc}
+.v3-onair-dot{position:absolute;right:25px;top:22px;width:10px;height:10px;border-radius:50%;background:#e8a16e;box-shadow:0 0 0 8px #e8a16e22}
+.v3-live-pills{display:flex;gap:6px;flex-wrap:wrap}.v3-live-pills span{border-radius:20px;border:1px solid #d2c9b7;padding:5px 8px;font-size:9px;color:#716c63}
+.v3-topic-tabs,.v3-year-tabs{display:flex;gap:5px;margin:3px 0}
+.v3-topic-tabs button,.v3-year-tabs button{border:1px solid #cbbfae;background:#f8f5ec;padding:8px 13px;font-size:10px;border-radius:20px;color:#486455;cursor:pointer}
+.v3-topic-tabs button[aria-pressed="true"],.v3-year-tabs button[aria-pressed="true"]{background:#325a4a;color:white}
+.v3-topic-card{background:#e2e9e0;border-radius:5px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1}
+.v3-topic-card span{font:9px Georgia,serif;letter-spacing:.1em;color:#61866e}.v3-topic-card h3{font:normal clamp(23px,2.5vw,35px)/1.24 Georgia,"Songti SC",serif;color:#24483a;margin:0}.v3-topic-card p{font-size:12px;line-height:1.9;color:#5b705f}
+.v3-teach-notebook{border:1px solid #c4cfc4;background:repeating-linear-gradient(transparent 0 34px,#e5e7dd 34px 35px),#faf9f2;padding:23px 20px;box-shadow:0 4px 11px #44432a18;flex:1}
+.v3-teach-notebook>span{font:9px Georgia,serif;color:#897f70;letter-spacing:.13em}.v3-teach-notebook h3{font:italic 30px Georgia,serif;color:#24513f;margin:14px 0}.v3-examples{display:flex;flex-direction:column;gap:10px;font:15px Georgia,serif;color:#615c52}.v3-examples b{color:#a86040;text-decoration:underline;text-underline-offset:3px}.v3-grammar-rule{margin-top:22px;padding:9px 11px;background:#e0e7d8;color:#315846;font-size:11px}
+.v3-event-poster{background:#e0d6c5;border-left:8px solid #b17b55;padding:22px 18px;display:flex;flex-direction:column;flex:1;justify-content:space-between}.v3-event-poster>span{font:9px Georgia,serif;color:#93664b;letter-spacing:.08em}.v3-event-poster h3{font:normal clamp(24px,2.6vw,38px)/1.34 Georgia,"Songti SC",serif;color:#3d4137;margin:8px 0}.v3-event-route{display:flex;align-items:center;gap:5px;color:#6d715b;font-size:10px}.v3-event-stats{display:flex;align-items:center;gap:12px}.v3-event-stats strong{font-size:26px;color:#315848}.v3-event-stats span{font-size:10px;line-height:1.65;color:#777063}
+.v3-skill-mini{border:1px solid #d4ccbf;background:#efefe7;border-radius:5px;min-height:30%;padding:15px;display:flex;flex-direction:column;gap:8px}.v3-skill-mini b{font:16px Georgia,serif;color:#274f40}.v3-skill-mini small{font-size:10px;color:#6f756c}.v3-skill-mini a{font-size:10px;color:#45745a;text-decoration:none;margin-top:auto}
+.v3-paper-visual{min-height:65%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:30px;position:relative;background:linear-gradient(10deg,#e3dece,#faf7ed);box-shadow:inset 0 0 0 1px #d7cebf;overflow:hidden}
+.v3-paper-visual>span{font-size:9px;letter-spacing:.18em;color:#a68f74}.v3-paper-visual>strong{font:normal 84px/1.1 Georgia,serif;color:#315748;margin-top:20px;z-index:2}.v3-paper-visual strong span{font-size:21px}.v3-paper-visual>small{font-size:11px;color:#85776a;z-index:2}
+.v3-paper-visual i{position:absolute;right:-35px;bottom:-40px;width:130px;height:190px;border:1px solid #cdbfa7;background:#faf7ed;transform:rotate(12deg);box-shadow:-8px -9px 0 #eee7d8,-16px -17px 0 #e0d5c3}
+.v3-heat-top{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.v3-heat-top>div{display:flex;flex-direction:column;gap:3px;border-bottom:1px solid #cec7b8;padding-bottom:10px}.v3-heat-top b{font:26px Georgia,serif;color:#2e6347}.v3-heat-top span{font-size:9px;color:#7c756a}
+.v3-heat{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);grid-auto-columns:minmax(0,1fr);gap:2px;min-height:92px;overflow:hidden;padding:6px 0}
+.v3-heat button{min-width:0;height:10px;aspect-ratio:1;border:0;border-radius:2px;background:#dfe6da;cursor:pointer;padding:0}
+.v3-heat button[data-level="1"]{background:#b9cdb9}.v3-heat button[data-level="2"]{background:#8bb18e}.v3-heat button[data-level="3"]{background:#518b65}.v3-heat button[data-level="4"]{background:#2d6047}
+.v3-heat button:focus-visible{outline:2px solid #a6624a;outline-offset:1px}
+.v3-heat-detail{font-size:10px;color:#577360;line-height:1.5;min-height:29px}.v3-micro{font-size:9px;color:#958f80;line-height:1.5}
+.v3-tree{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:25px;padding:10px 0}
+.v3-tree-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;width:100%;position:relative}.v3-tree-row:after{content:"";position:absolute;top:100%;left:50%;width:1px;height:18px;background:#8da08c}
+.v3-tree-row span{display:grid;place-items:center;min-height:66px;background:#ece8de;padding:10px 5px;border-radius:4px;border:1px solid #dad4c6;text-align:center;color:#637060;font-size:10px}
+.v3-tree-trunk{width:76%;background:#31594a;color:#f6f1df;text-align:center;padding:20px 8px;border-radius:6px;font-size:13px;position:relative}
+.v3-tree-trunk:after{content:"";position:absolute;top:100%;left:50%;width:1px;height:18px;background:#8da08c}
+.v3-tree-output span{background:#dfe8df}
+.v3-tree-output:after{display:none}
+.v3-photo-layout{display:grid;grid-template-columns:1.5fr .75fr;grid-template-rows:1fr 1fr;gap:7px;flex:1;min-height:0}
+.v3-photo-layout img{width:100%;height:100%;object-fit:cover;min-height:0;box-shadow:0 3px 9px #66604e25}
+.v3-photo-layout img:first-child{grid-row:span 2}
+.v3-contact-pic{flex:1;min-height:0;overflow:hidden;background:#d9d4c9}
+.v3-contact-pic img{height:100%;width:100%;object-fit:cover;object-position:center 26%}
+.v3-contact-links{display:flex;gap:7px;flex-wrap:wrap}
+.v3-contact-links a,.v3-contact-links button{padding:6px 9px;border:1px solid #d5caba;background:#f9f5eb;border-radius:18px;font-size:10px;color:#37634c;text-decoration:none;cursor:pointer}
+@media(max-width:940px){.sidebar{max-height:none;overflow:visible}.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}.toc li{border-bottom:1px solid #d1cbc0}.toc-btn{padding:8px 2px}.v3-heat button{height:8px}}
+@media(max-width:680px){.toc{grid-template-columns:repeat(3,minmax(0,1fr))}.page-inner{padding:9% 8% 6%}.v3-panel-body{min-height:295px}.v3-cover-vibe{min-height:260px}.v3-live-poster{min-height:260px}.v3-portrait-stack{min-height:300px}.v3-contact-pic{min-height:285px}.v3-paper-visual{min-height:250px}.v3-heat{min-height:100px}}
+
 </style>
 </head>
 <body>
@@ -419,7 +490,7 @@ a { color:inherit; }
       <span class="wordmark-mark">水</span>
       <span class="wordmark-name">LIUSHUI / 六水<small>CURIOUS AT HEART</small></span>
     </a>
-    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.02.4</span></div>
+    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.03.0</span></div>
   </header>
 
 <nav class="social-rail" aria-label="社交账号与联系方式"><span class="social-rail-heading">FIND ME</span><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer" aria-label="X"><span aria-hidden="true">𝕏</span><span class="social-name">X</span></a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span aria-hidden="true">GH</span><span class="social-name">GitHub</span></a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer" aria-label="小红书"><span aria-hidden="true">书</span><span class="social-name">小红书</span></a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer" aria-label="抖音"><span aria-hidden="true">抖</span><span class="social-name">抖音</span></a><button type="button" data-copy-wechat aria-label="复制微信号 liushui029"><span aria-hidden="true">微</span><span class="social-name">微信</span></button></nav><div class="social-toast" id="socialToast" role="status" aria-live="polite" hidden></div>
@@ -459,7 +530,7 @@ a { color:inherit; }
                 <span class="cover-center">
                   <span class="cover-volume">CURIOUS AT HEART</span>
                   <span class="cover-title">不止<i>想想</i></span>
-                  <span class="cover-subtitle">关于观察、内容、创造与真实生活</span>
+                  <span class="cover-subtitle">关于内容、直播、教学、思考与真实生活</span>
                   <svg class="cover-art" viewBox="0 0 240 105" fill="none" aria-hidden="true"><path d="M5 88c19-35 29-55 41-40s19 42 32 20S113 9 126 31s14 64 29 49 26-65 40-56 21 53 40 43" stroke="#d2bf93" stroke-width="1.6" stroke-linecap="round"/><path d="M20 20c13 7 25 10 39 3M156 10l3 8 8 3-8 2-3 8-2-8-8-2 8-3 2-8ZM206 88c8-8 17-10 25-8" stroke="#d2bf93" stroke-width="1.2"/><circle cx="114" cy="87" r="2" fill="#d2bf93"/></svg>
                 </span>
                 <span class="cover-bottom"><span>六水 LIUSHUI<br>VOL. 01 · 2026</span><span class="cover-cta">OPEN THE BOOK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
@@ -567,41 +638,19 @@ a { color:inherit; }
  * No AI portrait modification or automatic face editing occurs.
  */
 const chapters = [
-  {
-    nav:'我眼中的世界', category:'CHAPTER 01 · THE OBSERVER', label:'WHAT I SEE',
-    headline:'我习惯先观察，<br><em>再开始表达。</em>',
-    desc:'你好，我是六水。喜欢观察有意思的人和事，喜欢记录生活里那些一闪而过的念头，也喜欢把复杂的问题讲清楚。这本手账里有我的作品，也有很多与工作无关的快乐。',
-    quote:'“有好奇心，也有一点把想法做出来的执拗。”',
-    tags:['喜欢观察','喜欢表达','保留玩心'], caption:'湖边的一个开心瞬间 · PHOTO 08', date:'PORTRAIT 001', image:'images/01-lake-joy.webp', alt:'我眼中的世界：原始个人照片'
-  },
-  {
-    nav:'让想法发生', category:'CHAPTER 02 · THE MAKER', label:'WHAT I MAKE',
-    headline:'不只想清楚，<br><em>还要做出来。</em>',
-    desc:'做内容时，我总忍不住追问：谁会真正需要它？它能带来什么改变？从自己的成长类账号到 SnapVee 产品推广，我尝试把观察变成选题，再把选题变成真实作品和反馈。',
-    quote:'“内容不只为了被看见，也为了推动下一步行动。”',
-    tags:['内容策划','产品推广','实践复盘'], caption:'真实内容作品 / 原始截图', date:'WORK 002', image:'', alt:'让想法发生：项目作品截图'
-  },
-  {
-    nav:'思考的痕迹', category:'CHAPTER 03 · THE THINKER', label:'WHAT I THINK',
-    headline:'让思考有迹可循，<br><em>也有停止点。</em>',
-    desc:'从 2024 年开始，我在 flomo 里记录那些值得多想一会儿的事。到这次整理资料时，三年的统计合计 718 条笔记、252,583 字。数字不是奖状，更重要的是这些文字最终如何改变我的选择和行动。',
-    quote:'“思考是为了指导行动，而不是替代行动。”',
-    tags:['718 条笔记','252,583 字','2024—2026'], caption:'flomo 记录与精选原文', date:'NOTES 003', image:'', alt:'思考的痕迹：flomo 笔记截图'
-  },
-  {
-    nav:'认真地生活', category:'CHAPTER 04 · THE EVERYDAY', label:'HOW I LIVE',
-    headline:'在水里找节奏，<br><em>在日常里积累。</em>',
-    desc:'我喜欢游泳，也喜欢把旅行和日常拍下来。2025 年 4 月 4 日，我有一条 1000 米、29 分 22 秒的自由泳记录。这里不想写成一张自律成绩单，只想留住那些确实让我开心的时刻。',
-    quote:'“有些值得坚持的事，本身就是答案。”',
-    tags:['游泳 1000 m','29 分 22 秒','旅行与日常'], caption:'木屋前的阳光 · PHOTO 02', date:'LIFE 004', image:'images/04-wooden-house.webp', alt:'认真地生活：游泳或生活原始照片'
-  },
-  {
-    nav:'一起做点什么', category:'CHAPTER 05 · LET’S MAKE SOMETHING', label:'LET’S CONNECT',
-    headline:'有好想法的话，<br><em>一起做点什么。</em>',
-    desc:'如果你对内容、个人 IP、营销策划或 AI 的真实应用感兴趣，欢迎来交流。也欢迎只是因为这本手账里的某句话、某个作品，想来聊两句。',
-    quote:'“好奇于心，创造于行。”',
-    tags:['交流','一起创作','合作'], caption:'蓝白配色的个人形象照 · PHOTO 04', date:'HELLO 005', image:'images/05-contact-portrait.webp', alt:'一起做点什么：联系与合作'
-  }
+ {nav:'认识六水',category:'INTRO · ABOUT',label:'THE PERSON',headline:'你好，<br><em>我是六水。</em>',desc:'喜欢观察有趣的人和事，也喜欢把想不明白的问题拆开来讲。做过内容、直播、英语教学和一些新鲜实验。这本手账不是履历表，而是我认真做过的东西。',quote:'“好奇于心，创造于行。”',tags:['观察','表达','创造'],caption:'湖边的快乐',date:'ABOUT / 01',image:'images/01-lake-joy.webp',alt:'六水在湖边开心比耶的旅行照片'},
+ {nav:'作品 · 旗舰',category:'01A · WORKS',label:'SELECTED WORK / 01',headline:'先做一件<br><em>让人记住的事。</em>',desc:'《大学如何铺自己的人脉网》：从「大学是社会的缩影」切入，试着让抽象的成长建议变成一个可以讨论、可以传播的观点。',quote:'“大学，不只是上课的地方。”',tags:['原创短视频','选题与脚本','个人表达'],caption:'独立原创作品',date:'WORKS / 02',image:'',alt:''},
+ {nav:'作品 · 精选',category:'01A · WORKS',label:'SELECTED WORK / 02',headline:'想法不止一种，<br><em>表达也不止一种。</em>',desc:'短视频、系列选题、X 长文——从一个具体的问题出发，寻找更有意思、更容易理解的讲法。',quote:'“讲故事大于空谈道理。”',tags:['大佬幼年体','成长与选择','X 长文'],caption:'创作档案',date:'WORKS / 03',image:'',alt:''},
+ {nav:'直播 · 现场',category:'01B · LIVE',label:'IN THE ROOM / 01',headline:'不只写出来，<br><em>也说给你听。</em>',desc:'在直播里，我用自己的方式表达，也在连麦和提问中学习怎么更准确地回应一个真实的问题。',quote:'“先听懂问题，再表达看法。”',tags:['主题自讲','实时连麦','开放答疑'],caption:'真实直播记录',date:'LIVE / 04',image:'',alt:''},
+ {nav:'直播 · 观点',category:'01B · LIVE',label:'IN THE ROOM / 02',headline:'每一个问题，<br><em>都值得再想一层。</em>',desc:'关于内容、IP、用户、AI 和创业，我从直播记录里选出几条真正值得继续讨论的看法。',quote:'“说出口的观点，也应该经得起推敲。”',tags:['用户思维','内容表达','市场验证'],caption:'观点精选',date:'LIVE / 05',image:'',alt:''},
+ {nav:'教学',category:'02 · TEACHING',label:'THE EXPLAINER',headline:'讲明白，<br><em>是一件开心的事。</em>',desc:'从 2023 年开始，我持续进行英语一对一和小班教学。比起直接给答案，我更喜欢把句子结构、语法逻辑和学习方法讲清楚。',quote:'“知识能被理解，比被记住更重要。”',tags:['英语教培','语法与阅读','个性化讲解'],caption:'课堂里的拆解与表达',date:'TEACH / 06',image:'',alt:''},
+ {nav:'活动',category:'03 · EVENTS',label:'OFF THE SCREEN',headline:'把想法带到<br><em>真实的现场。</em>',desc:'线下分享《传统老板为什么要做个人 IP》，从线下口碑到内容信任；也做过活动组织、咨询和内容陪跑。',quote:'“用更清晰的表达，让价值被看见。”',tags:['线下分享会','个人 IP','内容陪跑'],caption:'线下表达与组织',date:'EVENTS / 07',image:'',alt:''},
+ {nav:'Skills',category:'04A · SKILLS',label:'THINGS I BUILD',headline:'让好用的方法，<br><em>变成真的工具。</em>',desc:'我试着把内容策划、人物理解和个人 IP 研究中的一些方法，整理成可以安装、可以试验的 Skills。',quote:'“不想让每个想法都只留在聊天记录里。”',tags:['liushui-persona','liushui-ip','content skill'],caption:'GitHub 上的实验原型',date:'SKILLS / 08',image:'',alt:''},
+ {nav:'笔记 · 纸上',category:'04B · NOTES',label:'WRITTEN DOWN',headline:'那些念头，<br><em>终于有了重量。</em>',desc:'有一次我把当时积累的 17 万字 flomo 打印成册。纸张让日常记录有了真实的体积，也让我意识到：想法可以一点一点长出来。',quote:'“记录不是为了漂亮，是为了留下自己真的想过什么。”',tags:['17 万字打印稿','flomo','写作'],caption:'思考有了可触摸的形状',date:'NOTES / 09',image:'',alt:''},
+ {nav:'笔记 · 数据',category:'04B · NOTES',label:'THE DATA OF THOUGHTS',headline:'让记录的痕迹，<br><em>成为一张地图。</em>',desc:'两批带日期的 flomo 导出，覆盖 2024 年 9 月至 2026 年 10 月。这里展示真实频次，不公开未经筛选的私人日记。',quote:'“热力图里，每一格都有它真实的日期。”',tags:['709 条导出记录','224 个活跃日期','真实数据'],caption:'写作活动热力图',date:'NOTES / 10',image:'',alt:''},
+ {nav:'笔记 · 知识树',category:'04B · NOTES',label:'THE THOUGHT LIBRARY',headline:'输入世界，<br><em>输出自己的判断。</em>',desc:'书籍、创作者研究、个人经历，经过写作与实验，逐步长成内容、教学、分享和 Skills。不是读了多少，而是怎样用出来。',quote:'“知识只有用出去，才有下一次生长。”',tags:['书籍与阅读','博主研究','自己的判断'],caption:'知识来源与作品的关系',date:'NOTES / 11',image:'',alt:''},
+ {nav:'照片',category:'04C · PHOTOS',label:'LITTLE JOYS',headline:'还有一些，<br><em>无关紧要的快乐。</em>',desc:'旅行、游泳、随手拍和那些不太正经的表情。不为展示能力，只为了记住当时的生活。',quote:'“工作之外，也有一个有趣的世界。”',tags:['游泳','旅行','生活切片'],caption:'原始照片 · 不做 AI 人像重绘',date:'LIFE / 12',image:'images/04-wooden-house.webp',alt:'木屋前穿着橙色裙子的旅行照片'},
+ {nav:'联系',category:'05 · CONTACT',label:'SAY HELLO',headline:'如果你也有<br><em>有趣的想法。</em>',desc:'欢迎聊内容、直播、教学、个人 IP、AI 工具或任何让你感到好奇的话题。',quote:'“好奇于心，创造于行。”',tags:['X / 小红书 / 抖音','GitHub','微信 liushui029'],caption:'给我写一封信',date:'CONTACT / 13',image:'images/05-contact-portrait.webp',alt:'蓝白服装的个人形象照'}
 ]
 
 /* All placeholder illustrations below are ORIGINAL, procedural SVG art. No external image or network request. */
@@ -653,19 +702,30 @@ function bookThumbs(index){
 }
 
 
+
+const panel=(i,heading,content,klass='')=>'<div class="page-inner image-page v3-panel '+klass+'"><div class="image-top"><span>'+heading+'</span><span>'+String(i+1).padStart(2,'0')+'</span></div><div class="v3-panel-body">'+content+'</div><div class="page-foot"><span>CURIOUS AT HEART · VOL.03</span><em>'+String(i*2+2).padStart(2,'0')+'</em></div></div>';
 function leftMarkup(i) {
-  const c=chapters[i];
-  return `<article class="page-inner"><span class="big-num" aria-hidden="true">0${i+1}</span><div class="page-kicker"><span>${c.category}</span><span>EST. 2026</span></div><div class="line-rule"></div><div class="eyebrow">${c.label}</div><h2 class="chapter-heading">${c.headline}</h2><p class="chapter-desc">${c.desc}</p><blockquote class="chapter-pull">${c.quote}</blockquote><div class="chips">${c.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>${i===1?'<a class="chapter-action" href="#case-studies">阅读两个完整项目案例 ↗</a>':i===4?'<a class="chapter-action" href="#collaborate">写封邮件，聊聊想法 ↗</a>':''}<div class="page-foot"><span>LIUSHUI · SEE / THINK / MAKE</span><em>${String(i*2+1).padStart(2,'0')}</em></div></article>`;
+ const c=chapters[i];
+ const jumps={1:['#v3-works','看看我的作品 ↗'],2:['#v3-works','打开作品精选 ↗'],3:['#v3-live','走进直播间 ↗'],4:['#v3-live','看直播观点 ↗'],5:['#v3-teaching','打开教学章节 ↗'],6:['#v3-events','看活动现场 ↗'],7:['#v3-skills','看 GitHub Skills ↗'],8:['#v3-notes','查看写作记录 ↗'],9:['#v3-notes','探索真实热力图 ↗'],10:['#v3-notes','打开知识档案 ↗'],11:['#photo-archive','翻阅照片档案 ↗'],12:['#collaborate','找到我 ↗']};
+ const action=jumps[i]?'<a class="chapter-action" href="'+jumps[i][0]+'">'+jumps[i][1]+'</a>':'<div class="v3-first-links"><button type="button" data-open-chapter="1">作品 / WORKS</button><button type="button" data-open-chapter="3">直播 / LIVE</button></div>';
+ return '<article class="page-inner"><span class="big-num" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div class="page-kicker"><span>'+c.category+'</span><span>2026 · V3</span></div><div class="line-rule"></div><div class="eyebrow">'+c.label+'</div><h2 class="chapter-heading">'+c.headline+'</h2><p class="chapter-desc">'+c.desc+'</p><blockquote class="chapter-pull">'+c.quote+'</blockquote><div class="chips">'+c.tags.map(t=>'<span class="chip">'+t+'</span>').join('')+'</div>'+action+'<div class="page-foot"><span>SEE · THINK · MAKE</span><em>'+String(i*2+1).padStart(2,'0')+'</em></div></article>';
 }
 function rightMarkup(i) {
-  const c=chapters[i];
-  // Professional and writing chapters deliberately use verified text-based layouts,
-  // not fabricated platform screenshots or unrelated portraits.
-  if (i===1) return `<div class="page-inner image-page"><div class="image-top"><span>SELECTED WORK / REAL RESULTS</span><span>02</span></div><div class="editorial-metric-card work-metric"><span class="metric-overline">PERSONAL IP · SELECTED VIDEO</span><strong>47.5<span>万</span></strong><p>代表视频单条播放量<br><small>来自原始作品截图记录，不推算转化</small></p><div class="metric-divider"></div><span class="metric-overline">SNAPVEE · CONTENT PRACTICE</span><b>日更视频与图文</b><p>数百名新增粉丝 · 多名主动咨询</p><small>详细的过程与证据状态见下方项目案例</small></div><div class="page-foot"><span>WORK IS MORE THAN A TITLE</span><em>04</em></div></div>`;
-  if (i===2) return `<div class="page-inner image-page"><div class="image-top"><span>FLOMO / YEARS OF NOTES</span><span>03</span></div><div class="editorial-metric-card note-metric"><span class="metric-overline">2024 — 2026 · SNAPSHOT</span><strong>718<span>条</span></strong><p>记录下的想法与观察</p><div class="metric-divider"></div><b>252,583 字</b><p>不是每天都在写，也不是每条都有答案。<br>但好奇心值得被认真对待。</p><small>统计来自上传的 flomo 年度记录截图，数字为截图时点</small></div><div class="page-foot"><span>A LITTLE NOTE TO MYSELF</span><em>06</em></div></div>`;
-  return `<div class="page-inner image-page"><div class="image-top"><span>VISUAL ARCHIVE / 0${i+1}</span><span>✳ &nbsp; 2026</span></div><div class="photo-border"><span class="photo-tape" aria-hidden="true"></span><div class="photo-holder"><img src="${imageFor(i)}" alt="${c.image ? c.alt : c.nav+'章节的原创插画占位图，等待替换为原始照片'}" draggable="false"></div></div>${bookThumbs(i)}<div class="photo-caption"><span>${c.caption}</span><span>${c.date}</span></div><div class="page-foot"><span>AN OPEN PERSONAL ARCHIVE</span><em>${String(i*2+2).padStart(2,'0')}</em></div></div>`;
+ const c=chapters[i];
+ if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v3-portrait-stack"><img src="images/01-lake-joy.webp" alt="六水在湖边开心比耶" class="v3-main-portrait"><img src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫的生活照片" class="v3-small-portrait"></div><p class="v3-soft-caption">我不是一种固定的标签。这里有一些我做过的事，和许多让我继续好奇的东西。</p>','v3-about');
+ if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v3-cover-vibe"><span>大佬幼年体 · 原创短视频</span><strong>大学如何铺<br>自己的人脉网</strong><small>大学，是社会的 mini 版。</small></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>单条抖音涨粉</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">进入作品集 ↗</a>','v3-works-panel');
+ if(i===2)return panel(i,'SELECTED / WORKS','<div class="v3-work-list"><div><span>VIDEO · 01</span><b>《大佬幼年体》</b><small>成长、关系与社会观察的系列选题</small></div><div><span>VIDEO · 02</span><b>《找到自己的主线》</b><small>把抽象选择讲清楚</small></div><div><span>VIDEO · 03</span><b>《记录 10 万字，我收获了什么》</b><small>关于写作与个人表达</small></div><div><span>ESSAY · 04</span><b>《从 0 到爆款自媒体运营心法》</b><small>原创 X 长文</small></div></div><a class="v3-inline-link" href="#v3-works">查看更多作品 ↗</a>','v3-works-panel');
+ if(i===3)return panel(i,'ON AIR / LIVE','<div class="v3-live-poster"><span class="v3-onair-dot"></span><span>LIVE · LIUSHUI</span><strong>把一个问题<br>说给更多人听。</strong><p>自讲 / 连麦 / 即兴答疑</p></div><div class="v3-live-pills"><span>原创观点</span><span>实时互动</span><span>开放讨论</span></div><a class="v3-inline-link" href="#v3-live">走进直播档案 ↗</a>','v3-live-panel');
+ if(i===4)return panel(i,'CONVERSATION / LIVE','<div class="v3-topic-tabs" role="group" aria-label="切换直播观点"><button type="button" data-live-topic="0" aria-pressed="true">对标</button><button type="button" data-live-topic="1" aria-pressed="false">内容</button><button type="button" data-live-topic="2" aria-pressed="false">AI</button><button type="button" data-live-topic="3" aria-pressed="false">创业</button></div><div class="v3-topic-card"><span>AN IDEA FROM THE ROOM</span><h3 data-live-topic-title>对标是为了降低试错成本。</h3><p data-live-topic-desc>看见别人走过的路，是为了更快找到适合自己的实验方式，而不是变成另一个人。</p></div><a class="v3-inline-link" href="#v3-live">更多直播观点 ↗</a>','v3-live-panel');
+ if(i===5)return panel(i,'ENGLISH / TEACHING','<div class="v3-teach-notebook"><span>LESSON NOTE / 01</span><h3>Passive Voice</h3><p class="v3-examples"><span>The story <b>is told</b>.</span><span>The story <b>was told</b>.</span><span>The story <b>has been told</b>.</span></p><div class="v3-grammar-rule">be + done → 被动语态的核心结构</div></div><p class="v3-soft-caption">从句子结构、语法关系到阅读理解：我喜欢把复杂的知识点拆到学生真正能理解。</p><a class="v3-inline-link" href="#v3-teaching">查看教学内容 ↗</a>','v3-teaching-panel');
+ if(i===6)return panel(i,'OFFLINE / EVENTS','<div class="v3-event-poster"><span>90 MIN · SHARING SESSION</span><h3>传统老板为什么<br>要做个人 IP？</h3><div class="v3-event-route"><span>线下经验</span>→<span>内容表达</span>→<span>建立信任</span></div></div><div class="v3-event-stats"><strong>3 位</strong><span>付费内容陪跑客户<br>财会 · 体育教培 · 餐饮</span></div><a class="v3-inline-link" href="#v3-events">查看分享与实践 ↗</a>','v3-events-panel');
+ if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v3-skill-mini"><b>liushui-skills</b><small>人物模式分析 · 个人 IP 定位假设</small><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看原型 V0.2 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容诊断 · 商业决策 · 工作流工具</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">浏览仓库 ↗</a></div><p class="v3-soft-caption">原型状态和实际使用情况在 GitHub 中如实标注。</p>','v3-skills-panel');
+ if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v3-paper-visual"><span>THOUGHTS ON PAPER</span><strong>17<span>万字</span></strong><small>那次，我把笔记真的打印了出来。</small><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i></div><p class="v3-soft-caption">17 万字是打印稿时点；后续统计截图的累计字数另算。页面不公开未经选择的私人原文。</p><a class="v3-inline-link" href="#v3-notes">关于这些笔记 ↗</a>','v3-notes-panel');
+ if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>两批导出笔记</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">日期计数来自 Obsidian 导出，不等于账号全部累计。</small>','v3-heat-panel');
+ if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><p class="v3-soft-caption">这是内容关系图，不是假装精确的知识统计。公开的是我的理解，不是外部资料全文。</p>','v3-tree-panel');
+ if(i===11)return panel(i,'LITTLE JOYS / PHOTO NOTES','<div class="v3-photo-layout"><img src="images/04-wooden-house.webp" alt="木屋前橙色裙子的旅行照"><img src="images/04-hongkong-street.webp" alt="香港街头旅行照"><img src="images/04-snow-sunset.webp" alt="雪地日落旅行照"></div><p class="v3-soft-caption">旅行、游泳、拍照和随手记下的日常。点击下方相册继续翻看。</p><a class="v3-inline-link" href="#photo-archive">翻开生活相册 ↗</a>','v3-photo-panel');
+ return panel(i,'SAY HELLO / CONTACT','<div class="v3-contact-pic"><img src="images/05-contact-portrait.webp" alt="蓝白服装的个人形象照"></div><div class="v3-contact-links"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" data-copy-wechat>微信 · liushui029</button></div>','v3-contact-panel');
 }
-
 const $=id=>document.getElementById(id);
 const app=$('app'), body=$('bookBody'), left=$('leftPage'), right=$('rightPage');
 const leaf=$('flipSheet'), front=$('flipFront'), back=$('flipBack'), shadow=$('turnShadow');
@@ -879,7 +939,7 @@ document.addEventListener('click',async event=>{
  socialToastTimer=setTimeout(()=>{toast.hidden=true},3600);
 });
 
-/* V2.4 photo archive: pauseable crossfade, keyboard-friendly tabs */
+/* V3.0 photo archive: pauseable crossfade, keyboard-friendly tabs */
 const photoItems=[
  {src:'images/01-about-blue-shirt.webp',alt:'浅蓝衬衫、自然微笑的生活照',eyebrow:'01 / HELLO AGAIN',title:'一个平常的下午。',story:'从日常里随手留下的一个微笑开始。'},
  {src:'images/04-hongkong-street.webp',alt:'香港街头的色彩与橙红色裙子',eyebrow:'02 / CITY WALKS',title:'街头也有好故事。',story:'喜欢人来人往的城市，也喜欢那些偶然撞见的颜色。'},
