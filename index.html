@@ -778,6 +778,64 @@ a { color:inherit; }
 .v34-skill-file>a{font-size:10px;color:#e7cc93;text-decoration:underline;align-self:flex-start}
 @media(max-width:680px){.v34-book-work{min-height:250px}.v34-live-notebook,.v34-teach-file,.v34-skill-file{min-height:270px}.v34-book-work img{max-height:240px}}
 
+
+/* V3.4: real photo reel and source-grounded making-of panels */
+.v34-field-reel{max-width:1200px;margin:55px auto 85px;padding:0 30px}
+.v34-field-heading{display:flex;justify-content:space-between;align-items:end;gap:23px;margin-bottom:20px}
+.v34-field-heading h2{font:normal clamp(25px,3.3vw,41px)/1.3 "Songti SC",serif;color:#315746;margin:10px 0}
+.v34-field-heading>p{max-width:380px;font-size:12px;line-height:1.85;color:#7b766c}
+.v34-field-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.v34-field-track figure{min-width:0;margin:0;padding:8px;background:#f9f6ed;border:1px solid #ded4c4;box-shadow:0 5px 14px #3b2c1f12}
+.v34-field-track .v33-image-button{width:100%;height:188px;display:block;border:0;padding:0;background:#e2decf;cursor:zoom-in;overflow:hidden}
+.v34-field-track img{width:100%;height:100%;object-fit:cover;display:block}
+.v34-field-track figure:nth-child(-n+2) img{object-fit:contain;background:#f6f5ef}
+.v34-field-track figcaption{display:flex;flex-direction:column;gap:8px;margin:12px 3px 6px}
+.v34-field-track figcaption b{font-size:11px;color:#345945}
+.v34-field-track figcaption span{font-size:10px;line-height:1.6;color:#827b70}
+.v34-field-footnote{font-size:10px;line-height:1.8;color:#989183;margin-top:15px}
+.v34-process-intro{margin:50px 0 21px}
+.v34-process-intro h3{font:normal clamp(23px,2.7vw,32px)/1.3 "Songti SC",serif;color:#315746;margin:11px 0}
+.v34-process-intro p{font-size:12px;line-height:1.9;color:#777165;max-width:800px}
+.v34-process-cards,.v34-live-workflow,.v34-skill-making{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.v34-process-cards>article,.v34-live-workflow>div,.v34-skill-making>div{background:#f6f2e9;border:1px solid #dcd0c0;padding:23px 20px;display:flex;flex-direction:column;gap:13px;min-width:0}
+.v34-process-cards>article:nth-child(2),.v34-live-workflow>div:nth-child(2){background:#e3eadf;border-color:#bdcbb8}
+.v34-process-cards article>span,.v34-live-workflow>div>span,.v34-skill-making>div>span{font:10px Georgia,serif;letter-spacing:.08em;color:#a08a76}
+.v34-process-cards h4,.v34-live-workflow h4,.v34-skill-making h4{font:normal 22px "Songti SC",serif;color:#315947;margin:6px 0 0}
+.v34-process-cards blockquote{font:normal 17px/1.65 "Songti SC",serif;color:#51684f;margin:0;border-left:3px solid #b7ac8b;padding-left:12px}
+.v34-process-cards p,.v34-live-workflow p,.v34-skill-making p{font-size:12px;line-height:1.9;color:#777166}
+.v34-process-cards small{font-size:10px;color:#a19788;margin-top:auto}
+.v34-outline-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.v34-outline-steps b{font-size:10px;padding:9px 7px;text-align:center;background:#f5f7f0;color:#437454;border:1px solid #cad9c6}
+.v34-teach-doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.v34-teach-doc{background:#f4f1e8;padding:28px 25px;border:1px solid #d9d1c3;display:flex;flex-direction:column;gap:14px}
+.v34-teach-doc:nth-child(2){background:#e3eadf}
+.v34-teach-doc>span,.v34-event-paper>span{font:10px Georgia,serif;color:#a18c72;letter-spacing:.1em}
+.v34-teach-doc h4{font:normal 26px "Songti SC",serif;color:#315943;margin:5px 0}
+.v34-folder-list p,.v34-track-schema p{padding:12px 14px;background:#faf9f3;border-left:2px solid #8fa88d;color:#6b7065;font-size:12px;line-height:1.7;margin:4px 0}
+.v34-folder-list b{color:#406950}
+.v34-track-schema i{color:#8e9e7b;font:italic 15px Georgia,serif;margin-right:10px}
+.v34-teach-doc>small{font-size:10px;color:#878476;margin-top:auto}
+.v34-event-journal{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin:29px 0 0}
+.v34-event-diptych{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+.v34-event-diptych figure{min-width:0;margin:0;padding:8px;background:#f8f5ed;border:1px solid #d8d0c2}
+.v34-event-diptych .v33-image-button{display:block;width:100%;height:250px;border:0;padding:0;overflow:hidden;cursor:zoom-in}
+.v34-event-diptych img{display:block;width:100%;height:100%;object-fit:cover}
+.v34-event-diptych figcaption{font-size:10px;line-height:1.8;color:#847969;margin-top:10px}
+.v34-event-paper{background:#e7e0d3;border-left:5px solid #b48665;padding:24px 21px}
+.v34-event-paper h3{font:normal 25px "Songti SC",serif;color:#375642;margin:13px 0}
+.v34-agenda{display:flex;flex-direction:column;gap:7px}
+.v34-agenda>div{display:grid;grid-template-columns:58px 1fr;gap:7px;align-items:center;border-bottom:1px solid #cfc4b3;padding:7px 0;font-size:11px;color:#665f53}
+.v34-agenda b{color:#427458;font:italic 15px Georgia,serif}
+.v34-event-paper small{display:block;font-size:10px;color:#8f8576;margin-top:12px;line-height:1.7}
+.v34-skill-making{margin:26px 0 0}
+.v34-note-transforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:23px}
+.v34-note-transforms>div{background:#e8eae0;border:1px solid #d5d6c8;padding:21px 18px;display:flex;flex-direction:column;gap:10px}
+.v34-note-transforms span{font:10px Georgia,serif;color:#9f9178}
+.v34-note-transforms b{font-size:13px;color:#45614b}
+.v34-note-transforms small{font-size:10px;color:#7e8578}
+@media(max-width:920px){.v34-field-track{grid-template-columns:repeat(3,minmax(0,1fr))}.v34-event-journal{grid-template-columns:1fr}.v34-event-diptych .v33-image-button{height:240px}}
+@media(max-width:680px){.v34-field-reel{padding:0 18px;margin:36px auto}.v34-field-heading{display:block}.v34-field-track{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(185px,65vw);overflow-x:auto;scroll-snap-type:x mandatory;gap:11px;padding-bottom:8px}.v34-field-track figure{scroll-snap-align:start}.v34-process-cards,.v34-live-workflow,.v34-skill-making,.v34-teach-doc-grid,.v34-note-transforms{grid-template-columns:1fr}.v34-process-intro{margin-top:30px}.v34-event-diptych .v33-image-button{height:190px}}
+
 </style>
 </head>
 <body>
@@ -865,6 +923,18 @@ a { color:inherit; }
   </main>
 
 
+
+<section class="v34-field-reel" aria-labelledby="v34ReelHeading">
+ <div class="v34-field-heading"><div><span class="eyebrow">IN THE MAKING / 真实过程档案</span><h2 id="v34ReelHeading">不止结果，还有正在发生的过程。</h2></div><p>原始图片 · 不修人物 · 点击放大。每张照片和截图都注明所属场景。</p></div>
+ <div class="v34-field-track">
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-self-viral.webp" data-v33-alt="个人内容的真实发布截图"><img src="images/v3/v3-self-viral.webp" alt="六水原创内容的实际发布页面" loading="lazy"></button><figcaption><b>01 / 作品发布</b><span>个人创作的真实截图</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-xhs-notifications.webp" data-v33-alt="小红书点赞收藏与新增关注消息"><img src="images/v3/v3-xhs-notifications.webp" alt="小红书实际互动消息界面" loading="lazy"></button><figcaption><b>02 / 内容反馈</b><span>互动记录，不等于精确业绩</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-speaking.webp" data-v33-alt="六水在白板前讲解"><img src="images/v3/v3-event-speaking.webp" alt="六水在白板旁分享个人 IP 内容思路" loading="lazy"></button><figcaption><b>03 / 线下讲解</b><span>白板、问题与现场表达</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-venue.webp" data-v33-alt="真实线下活动场地"><img src="images/v3/v3-event-venue.webp" alt="有投影和讨论区的实际活动空间" loading="lazy"></button><figcaption><b>04 / 活动现场</b><span>线下分享的空间与布置</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-flomo-print.webp" data-v33-alt="17万字 flomo 打印稿"><img src="images/v3/v3-flomo-print.webp" alt="手持一整叠 flomo 打印稿" loading="lazy"></button><figcaption><b>05 / 长期写作</b><span>17 万字打印稿的实体</span></figcaption></figure>
+ </div>
+ <p class="v34-field-footnote">五组不同过程的原始照片或截图。没有对应原视频的直播、教学现场，不使用其他场景冒充。</p>
+</section>
 <section class="v3-exhibit v3-hero-showcase" id="v3-works" aria-labelledby="worksHeading">
  <div class="v3-section-head"><div><span class="eyebrow">01A / WORKS</span><h2 id="worksHeading">说过的话，做成的作品。</h2><p>短视频、系列内容与长文。这里展示属于我的创作和真实互动，不把内容作品集做成简历证明墙。</p></div><span class="v3-section-num">01A</span></div>
  <div class="v3-showcase-grid">
@@ -884,6 +954,15 @@ a { color:inherit; }
   <figure class="v33-clipping v33-clipping-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-self-viral.webp" data-v33-alt="六水个人原创小红书内容的发布截图"><img src="images/v3/v3-self-viral.webp" alt="六水个人内容作品的发布页面截图" loading="lazy"></button><figcaption><strong>一条自己的内容</strong><span>个人创作发布页面 · 点击看大图</span></figcaption></figure>
   <figure class="v33-clipping v33-clipping-response"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-xhs-notifications.webp" data-v33-alt="小红书点赞、收藏和新增关注的消息截图"><img src="images/v3/v3-xhs-notifications.webp" alt="小红书点赞收藏、新增关注及评论消息界面" loading="lazy"></button><figcaption><strong>内容被看见后的回声</strong><span>真实平台互动消息 · 点击看大图</span></figcaption></figure>
  </div>
+
+<div class="v34-work-process">
+ <div class="v34-process-intro"><span class="eyebrow">MAKING A VIDEO / 真实脚本档案</span><h3>一个选题，是怎么被我讲清楚的？</h3><p>来自《大学如何铺自己的人脉网》2026 年 9 月的实际构思与改稿记录。</p></div>
+ <div class="v34-process-cards">
+  <article><span>2026.09.15 · IDEA</span><h4>先有一个视角。</h4><blockquote>「大学是真实社会的 mini 版。」</blockquote><p>从校园里的关系和信息来源出发，提出选题母题。</p><small>原始选题思考</small></article>
+  <article><span>2026.09.16 · STRUCTURE</span><h4>把想法组织起来。</h4><div class="v34-outline-steps"><b>现象</b><b>误解</b><b>原因</b><b>认知</b><b>方案</b><b>升华</b></div><p>反复调整叙事顺序，收束到一个主要认知点。</p><small>六板块内容结构</small></article>
+  <article><span>2026.09.16 · SCRIPT</span><h4>写成能讲的话。</h4><blockquote>「人脉就是认识有头有脸的人？」</blockquote><p>用反常识问题开场，再进入具体场景与行动建议。</p><small>成稿口播结构</small></article>
+ </div>
+</div>
 </section>
 <section class="v3-exhibit" id="v3-live" aria-labelledby="liveHeading">
  <div class="v3-section-head"><div><span class="eyebrow">01B / LIVE</span><h2 id="liveHeading">我的直播间，另一种表达。</h2><p>直播与作品同级。即兴表达、现场问答与观众互动，都有自己的章节。</p></div><span class="v3-section-num">01B</span></div>
@@ -895,6 +974,15 @@ a { color:inherit; }
    <article><span>03 / 实践</span><h3>想创业，先用最小动作验证需求。</h3><p>不是先把宏大故事讲圆满。</p></article>
   </div>
  </div>
+
+<div class="v34-live-process">
+ <div class="v34-process-intro"><span class="eyebrow">LIVE NOTES · 2026.07.23</span><h3>一场直播之后，观点还会继续生长。</h3><p>来自本人 Obsidian 里记录的直播录音整理与短视频稿，不是原始视频回放。</p></div>
+ <div class="v34-live-workflow">
+  <div><span>01 / RECORD</span><h4>先表达、先讨论</h4><p>直播谈到选题、封面、BGM 和发布时间等大量待验证的变量。</p></div>
+  <div><span>02 / REFINE</span><h4>提炼出核心判断</h4><p>「对标的本质，是降低验证成本。」</p></div>
+  <div><span>03 / REWRITE</span><h4>重新组织为口播稿</h4><p>将模仿取样、理解原理、形成表达整理成三个阶段。</p></div>
+ </div>
+</div>
 </section>
 
 <section class="v3-exhibit v3-secondary v3-teaching-studio" id="v3-teaching" aria-labelledby="teachingHeading">
@@ -928,6 +1016,14 @@ a { color:inherit; }
   <div class="v3-student-loop-track"><div><span>01</span><b>了解起点</b><small>初始水平 · 兴趣 · 困难</small></div><div><span>02</span><b>制定目标</b><small>知识缺口 · 学习节奏</small></div><div><span>03</span><b>记录变化</b><small>阶段反馈 · 错因复盘</small></div><div><span>04</span><b>调整策略</b><small>课后支持 · 家校同步</small></div></div>
  </div>
  <div class="v3-teach-bottom"><p><b>已经在做的：</b>英语一对一和小班教学、知识点拆解与个性化讲解。</p><p><b>正在建设的：</b>招生、课程配置、学生培养和家长沟通的系统化知识库。</p></div>
+
+<div class="v34-teach-docs">
+ <div class="v34-process-intro"><span class="eyebrow">TEACHING WORKSPACE / 课程资料</span><h3>从一个知识点，到可交付的学习体系。</h3><p>源自本人飞书知识库的真实目录，以下为重新设计的结构展示；不冒充全部 SOP 已落地，也不复制外部课件。</p></div>
+ <div class="v34-teach-doc-grid">
+  <article class="v34-teach-doc"><span>FILE 01 · CURRICULUM</span><h4>英语知识总目录</h4><div class="v34-folder-list"><p><b>01 词汇</b>　音标 / 初高中词汇 / 词根词缀</p><p><b>02 语法</b>　词法 / 句法 / 高频速查</p><p><b>03 阅读</b>　阅读技巧与句子分析</p><p><b>04 写作</b>　组织表达和写作实践</p></div><small>知识模块目录 / 持续建设</small></article>
+  <article class="v34-teach-doc"><span>FILE 02 · LEARNER PROGRESS</span><h4>阶段学习档案结构</h4><div class="v34-track-schema"><p><i>01</i> 学生起点与实际困难</p><p><i>02</i> 学习阶段目标与内容</p><p><i>03</i> 练习表现、错因与复盘</p><p><i>04</i> 下一阶段计划与家长同步</p></div><small>档案结构示意，不含真实学生隐私</small></article>
+ </div>
+</div>
 </section>
 <section class="v3-exhibit v3-secondary v33-event-exhibit" id="v3-events" aria-labelledby="eventsHeading">
  <div class="v3-section-head"><div><span class="eyebrow">03 / EVENTS</span><h2 id="eventsHeading">不只在屏幕前。</h2><p>线下分享、讨论、内容陪跑。用活动中的真实画面，而不是装饰性海报，讲述已经发生的事情。</p></div><span class="v3-section-num">03</span></div>
@@ -951,10 +1047,19 @@ a { color:inherit; }
    <small>仅使用已经确认的成果；不展示客户隐私或虚构后续转化数据。</small>
   </div>
  </div>
+
+<div class="v34-event-journal">
+ <div class="v34-event-diptych">
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-speaking.webp" data-v33-alt="白板讲解真实现场"><img src="images/v3/v3-event-speaking.webp" alt="六水在线下分享中讲解内容" loading="lazy"></button><figcaption>讲解 · 白板上的观点拆解</figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-venue.webp" data-v33-alt="线下分享真实场地"><img src="images/v3/v3-event-venue.webp" alt="线下分享活动的实际场地" loading="lazy"></button><figcaption>活动 · 投影与讨论空间</figcaption></figure>
+ </div>
+ <div class="v34-event-paper"><span>FROM THE ACTUAL 90-MIN OUTLINE</span><h3>一场分享的讲稿是怎么组织的？</h3><div class="v34-agenda"><div><b>18′</b><span>为什么做个人 IP</span></div><div><b>15′</b><span>专业内容从哪里来</span></div><div><b>20′</b><span>一条内容怎么做</span></div><div><b>27′</b><span>获客链路、AI、行动清单与收尾</span></div><div><b>10′</b><span>互动与讨论</span></div></div><small>根据原始 90 分钟讲稿整理，不是拍摄的幻灯片。</small></div>
+</div>
 </section>
 <section class="v3-exhibit v3-secondary" id="v3-skills" aria-labelledby="skillsHeading">
  <div class="v3-section-head"><div><span class="eyebrow">04A / SKILLS</span><h2 id="skillsHeading">把方法整理成可使用的工具。</h2><p>不只是会用 AI，也在探索如何把个人判断和内容方法转成可复用的工作流。</p></div><span class="v3-section-num">04A</span></div>
  <div class="v3-tools-grid"><article><span>GITHUB · PROTOTYPE V0.2</span><h3>liushui-skills</h3><p>授权历史材料的人物行为模式研究、个人 IP 定位假设与验证计划。</p><div><span>liushui-persona</span><span>liushui-ip</span></div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article><article><span>GITHUB · SKILL COLLECTION</span><h3>xiaoshui-content-skill</h3><p>内容创作诊断、商业决策聊天室、自动更新和 HTML 转 Markdown。</p><div><span>内容诊断</span><span>商业决策</span><span>工作流工具</span></div><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article></div>
+<div class="v34-skill-making"><div><span>DESIGN / 01</span><h4>提出真实问题</h4><p>内容定位、表达特色和人物模式怎样被理解？</p></div><div><span>STRUCTURE / 02</span><h4>整理为可复用流程</h4><p>把输入、分析与输出拆成可以独立尝试的步骤。</p></div><div><span>PROTOTYPE / 03</span><h4>用实际环境验证</h4><p>当前为公开仓库原型，不夸大已验证的外部使用量。</p></div></div>
 </section>
 <section class="v3-exhibit v3-secondary v33-notes-exhibit" id="v3-notes" aria-labelledby="notesHeading">
  <div class="v3-section-head"><div><span class="eyebrow">04B / NOTES</span><h2 id="notesHeading">写过的字，和长出来的想法。</h2><p>17 万字的实物打印稿，和来自真实记录日期的可探索数据。让思考的痕迹既有重量，也有形状。</p></div><span class="v3-section-num">04B</span></div>
@@ -963,6 +1068,7 @@ a { color:inherit; }
   <div class="v33-notes-feature-copy"><span>FROM SCREEN TO PAPER</span><h3>原来 17 万字<br>真的有这么厚。</h3><p>当时打印出来的那一叠纸，是日常思考留下的真实体积。后来继续记录，累计统计也在变化，所以这里区分不同时点。</p><div class="v33-notes-metrics"><div><b>17 万字</b><small>打印时点</small></div><div><b>709 条</b><small>两批导出笔记</small></div><div><b>224 天</b><small>导出中的活跃日期</small></div></div></div>
  </div>
  <div class="v3-thinking-grid"><div><h3>写作活跃热力图</h3><p>在「笔记 · 数据」书页里按年份查看日历，点一天，就能看到那天记录了几条。</p><button type="button" data-open-chapter="9">探索热力图 ↗</button></div><div><h3>我的知识生长树</h3><p>从读过的书、研究过的人，到写出的观点，以及最后做成的视频、课程、直播和 Skills。</p><button type="button" data-open-chapter="10">打开知识树 ↗</button></div></div>
+<div class="v34-note-transforms"><div><span>COLLECT</span><b>每天留下的念头</b><small>按真实日期存档</small></div><div><span>CONNECT</span><b>整理反复出现的问题</b><small>主题与观点形成联系</small></div><div><span>CREATE</span><b>变成作品、课程或工具</b><small>让思考进入现实</small></div></div>
 </section>
 <section class="archive-section" id="photo-archive" aria-labelledby="photoArchiveTitle">
   <div class="archive-heading"><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>翻一翻这叠照片。不是履历，也不是作品成绩，只是我愿意记住的瞬间。</p></div>
