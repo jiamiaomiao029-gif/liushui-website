@@ -369,6 +369,32 @@ a { color:inherit; }
 @media(max-width:680px){.social-rail{max-width:calc(100% - 24px);gap:3px;padding:5px 8px}.social-rail a,.social-rail button{width:44px;height:44px}.social-rail-heading{font-size:8px;margin:0 3px}.social-toast{right:12px;top:130px}}
 @media(prefers-reduced-motion:reduce){.social-rail a,.social-rail button{transition:none!important}}
 
+
+/* V2.4: an editorial contact-sheet gallery, sized for current image resolution */
+.photo-editorial{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(210px,.7fr);align-items:center;gap:clamp(18px,4vw,65px);max-width:930px;margin:0 auto 26px}
+.photo-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:438px;background:linear-gradient(130deg,#dcd7c9,#eae6dc);padding:24px 28px 34px;overflow:hidden}
+.photo-stage:before{content:"";position:absolute;inset:16px;border:1px solid #fff8e482;pointer-events:none}
+.photo-hero-frame{position:relative;display:flex;flex-direction:column;background:#faf8f0;box-shadow:0 14px 38px #26211b32;padding:10px 10px 17px;transform:rotate(-1.5deg);width:min(100%,345px)}
+.photo-hero-frame:before{content:"";position:absolute;z-index:3;top:-12px;left:43%;height:26px;width:66px;background:#e5d6ac99;transform:rotate(5deg);clip-path:polygon(2% 5%,98% 0,100% 95%,0 100%)}
+.photo-hero-frame img{display:block;width:100%;height:360px;object-fit:cover;object-position:center;opacity:1;filter:contrast(1.025) saturate(1.025);transition:opacity .32s ease,transform .32s ease}
+.photo-hero-frame img.is-changing{opacity:.15;transform:scale(.985)}
+.photo-stage-index{position:absolute;right:24px;bottom:13px;color:#877c69;font:italic 12px Georgia,serif}
+.photo-editorial-text h3{font:normal clamp(26px,3.2vw,40px)/1.25 "Songti SC",Georgia,serif;color:#23493f;margin:12px 0}
+.photo-editorial-text p{font-size:13px;line-height:1.9;color:#6e6c61;max-width:270px;min-height:68px}
+.photo-switch{display:flex;align-items:center;gap:8px;margin-top:21px}
+.photo-switch button{border:1px solid #cbbfae;background:#f8f5ec;min-width:42px;height:40px;border-radius:50%;cursor:pointer;color:#264b40}
+.photo-switch button:hover{background:#fff}
+.photo-switch .photo-play{border-radius:25px;padding:0 16px;font-size:11px}
+.photo-filmstrip{display:flex;justify-content:center;gap:clamp(8px,2vw,20px);max-width:970px;margin:0 auto;align-items:flex-start}
+.photo-filmstrip button{display:flex;flex-direction:column;gap:8px;align-items:center;flex:0 1 142px;min-width:0;padding:7px 7px 11px;border:1px solid #ded6c7;background:#faf8ef;box-shadow:0 5px 12px #5546341c;transform:rotate(var(--tilt,0deg));transition:transform .25s var(--smooth),box-shadow .25s;cursor:pointer}
+.photo-filmstrip button:nth-child(odd){--tilt:-2.2deg}.photo-filmstrip button:nth-child(even){--tilt:1.9deg}
+.photo-filmstrip button:hover,.photo-filmstrip button[aria-selected="true"]{transform:translateY(-7px) rotate(0deg);box-shadow:0 12px 26px #54453233}
+.photo-filmstrip button[aria-selected="true"]{outline:2px solid #769d82;outline-offset:3px}
+.photo-filmstrip img{width:100%;height:120px;display:block;object-fit:cover}
+.photo-filmstrip span{font:9px Georgia,serif;color:#8a8377;letter-spacing:.08em}
+@media(max-width:680px){.photo-editorial{display:flex;flex-direction:column;gap:16px}.photo-stage{width:100%;min-height:0;padding:24px 32px}.photo-hero-frame{width:min(100%,285px)}.photo-hero-frame img{height:310px}.photo-editorial-text{width:100%}.photo-editorial-text p{min-height:0;max-width:none}.photo-switch{margin-top:10px}.photo-filmstrip{overflow:auto;justify-content:flex-start;padding:12px 4px 18px}.photo-filmstrip button{min-width:100px;flex:0 0 100px}.photo-filmstrip img{height:95px}}
+@media(prefers-reduced-motion:reduce){.photo-filmstrip button,.photo-hero-frame img{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -486,13 +512,17 @@ a { color:inherit; }
  <div class="case-end-note"><strong>证据说明</strong>：以上成果文字依据你先前确认的经历记录；平台后台和私信原图目前未放入 Demo，因此明确标记“待补”，不会用绘制的假截图代替。</div>
 </section>
 <section class="archive-section" id="photo-archive" aria-labelledby="photoArchiveTitle">
-  <div class="archive-heading"><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>不是履历，也不是作品成绩。只是几个我愿意留下来的瞬间。所有人物照片均来自本人提供的真实照片，网页版本只做尺寸压缩，没有 AI 修图。</p></div>
-  <div class="archive-grid">
-    <figure class="archive-shot archive-a"><img src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"><figcaption><span>01 / HELLO AGAIN</span><b>一个平常的下午。</b></figcaption></figure>
-    <figure class="archive-shot archive-b"><img src="images/04-hongkong-street.webp" alt="香港街头的色彩、路牌与橙红色裙子" loading="lazy"><figcaption><span>02 / CITY WALKS</span><b>街头也有好故事。</b></figcaption></figure>
-    <figure class="archive-shot archive-c"><img src="images/01-blackwhite-playful.webp" alt="黑白生活照，做鬼脸并比出双手手势" loading="lazy"><figcaption><span>03 / NOT TOO SERIOUS</span><b>偶尔不那么正经。</b></figcaption></figure>
-    <figure class="archive-shot archive-d"><img src="images/04-snow-sunset.webp" alt="雪地日落时戴着白色绒帽的旅行照片" loading="lazy"><figcaption><span>04 / WINTER LIGHT</span><b>收藏一点日落。</b></figcaption></figure>
-    <figure class="archive-shot archive-e"><img src="images/03-lowlight-portrait.webp" alt="暖棕色低光室内肖像" loading="lazy"><figcaption><span>05 / QUIET MOMENTS</span><b>安静也是一种状态。</b></figcaption></figure>
+  <div class="archive-heading"><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>翻一翻这叠照片。不是履历，也不是作品成绩，只是我愿意记住的瞬间。</p></div>
+  <div class="photo-editorial">
+    <div class="photo-stage"><div class="photo-hero-frame"><img id="photoMain" src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"></div><span class="photo-stage-index" id="photoCount">01 / 05</span></div>
+    <div class="photo-editorial-text" aria-live="polite"><span class="eyebrow" id="photoEyebrow">01 / HELLO AGAIN</span><h3 id="photoTitle">一个平常的下午。</h3><p id="photoStory">从日常里随手留下的一个微笑开始。</p><div class="photo-switch"><button type="button" id="photoPrev" aria-label="上一张照片">←</button><button type="button" id="photoNext" aria-label="下一张照片">→</button><button type="button" id="photoPause" class="photo-play" aria-pressed="false">暂停轮播</button></div></div>
+  </div>
+  <div class="photo-filmstrip" id="photoFilmstrip" role="tablist" aria-label="选择照片">
+    <button type="button" role="tab" aria-selected="true" data-gallery-index="0" aria-label="浅蓝衬衫照"><img src="images/01-about-blue-shirt.webp" alt="" loading="lazy"><span>01 / PORTRAIT</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="1" aria-label="香港街头照"><img src="images/04-hongkong-street.webp" alt="" loading="lazy"><span>02 / CITY</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="2" aria-label="黑白趣味照"><img src="images/01-blackwhite-playful.webp" alt="" loading="lazy"><span>03 / PLAY</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="3" aria-label="雪地日落照"><img src="images/04-snow-sunset.webp" alt="" loading="lazy"><span>04 / WINTER</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="4" aria-label="暖色低光肖像"><img src="images/03-lowlight-portrait.webp" alt="" loading="lazy"><span>05 / QUIET</span></button>
   </div>
 </section>
 <section class="collab-section" id="collaborate" aria-labelledby="collabTitle">
@@ -810,6 +840,55 @@ document.addEventListener('click',async event=>{
  toast.hidden=false;clearTimeout(socialToastTimer);
  socialToastTimer=setTimeout(()=>{toast.hidden=true},3600);
 });
+
+/* V2.4 photo archive: pauseable crossfade, keyboard-friendly tabs */
+const photoItems=[
+ {src:'images/01-about-blue-shirt.webp',alt:'浅蓝衬衫、自然微笑的生活照',eyebrow:'01 / HELLO AGAIN',title:'一个平常的下午。',story:'从日常里随手留下的一个微笑开始。'},
+ {src:'images/04-hongkong-street.webp',alt:'香港街头的色彩与橙红色裙子',eyebrow:'02 / CITY WALKS',title:'街头也有好故事。',story:'喜欢人来人往的城市，也喜欢那些偶然撞见的颜色。'},
+ {src:'images/01-blackwhite-playful.webp',alt:'黑白照片里做鬼脸比手势',eyebrow:'03 / NOT TOO SERIOUS',title:'偶尔不那么正经。',story:'认真做事，也保留一点无厘头。'},
+ {src:'images/04-snow-sunset.webp',alt:'白色绒帽与雪地日落',eyebrow:'04 / WINTER LIGHT',title:'收藏一点日落。',story:'风景好看的时候，想记住的不一定是结果。'},
+ {src:'images/03-lowlight-portrait.webp',alt:'暖色低光室内肖像',eyebrow:'05 / QUIET MOMENTS',title:'安静也是一种状态。',story:'有热闹的瞬间，也有安静看世界的时候。'}
+];
+let galleryIndex=0,galleryPaused=false,galleryTimer=null,galleryTransition=null;
+const gallerySection=$('photo-archive'),photoMain=$('photoMain');
+function switchGallery(target,instant=false){
+ galleryIndex=(target+photoItems.length)%photoItems.length;
+ const p=photoItems[galleryIndex];clearTimeout(galleryTransition);
+ const display=()=>{
+  photoMain.src=p.src;photoMain.alt=p.alt;
+  $('photoCount').textContent=String(galleryIndex+1).padStart(2,'0')+' / '+String(photoItems.length).padStart(2,'0');
+  $('photoEyebrow').textContent=p.eyebrow;$('photoTitle').textContent=p.title;$('photoStory').textContent=p.story;
+  document.querySelectorAll('[data-gallery-index]').forEach((b,i)=>{
+   b.setAttribute('aria-selected',String(i===galleryIndex));b.tabIndex=i===galleryIndex?0:-1;
+  });
+  photoMain.classList.remove('is-changing');
+ };
+ if(instant||reducedMotion.matches){display();return;}
+ photoMain.classList.add('is-changing');galleryTransition=setTimeout(display,190);
+}
+function updateGalleryTimer(){
+ clearInterval(galleryTimer);if(galleryPaused||reducedMotion.matches||document.hidden)return;
+ galleryTimer=setInterval(()=>{
+  if(!gallerySection.matches(':hover')&&!gallerySection.contains(document.activeElement))switchGallery(galleryIndex+1);
+ },5500);
+}
+$('photoPrev').addEventListener('click',()=>{switchGallery(galleryIndex-1);updateGalleryTimer()});
+$('photoNext').addEventListener('click',()=>{switchGallery(galleryIndex+1);updateGalleryTimer()});
+$('photoPause').addEventListener('click',()=>{
+ galleryPaused=!galleryPaused;$('photoPause').textContent=galleryPaused?'播放轮播':'暂停轮播';
+ $('photoPause').setAttribute('aria-pressed',String(galleryPaused));updateGalleryTimer();
+});
+$('photoFilmstrip').addEventListener('click',e=>{
+ const b=e.target.closest('[data-gallery-index]');if(b){switchGallery(Number(b.dataset.galleryIndex));updateGalleryTimer();}
+});
+$('photoFilmstrip').addEventListener('keydown',e=>{
+ if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+ e.preventDefault();switchGallery(galleryIndex+(e.key==='ArrowRight'?1:-1),true);
+ document.querySelector('[data-gallery-index="'+galleryIndex+'"]').focus();updateGalleryTimer();
+});
+document.addEventListener('visibilitychange',updateGalleryTimer);
+switchGallery(0,true);updateGalleryTimer();
+
 </script>
 </body>
 </html>
