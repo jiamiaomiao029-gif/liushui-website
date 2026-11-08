@@ -10,7 +10,6 @@ type Spread = {
 
 const portrait = "/images/portrait.png";
 const imageOne = "/images/work-1.png";
-const imageTwo = "/images/work-3.png";
 const xUrl = "https://x.com/Clara_J_0529";
 const email = "jiamiaomiao029@gmail.com";
 const careerUrl = "/?view=career";
