@@ -1908,12 +1908,14 @@ document.addEventListener('click',event=>{
 document.addEventListener('click',event=>{if(event.target.id==='v33Lightbox')event.target.close()});
 
 
-// Floating corner guide and back-to-top are wired below as normal DOM controls.
-const v37Guide=document.getElementById('v37Guide');
-const v37Top=document.getElementById('v37Top');
-v37Guide?.addEventListener('click',()=>{const book=document.getElementById('reading-area');book?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});
-v37Top?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'});});
-if(v37Top){const sync=()=>{v37Top.hidden=window.scrollY<360};sync();window.addEventListener('scroll',sync,{passive:true});}
+// Controls appear after this script, so bind after the document is parsed.
+document.addEventListener('DOMContentLoaded',()=>{
+ const guide=document.getElementById('v37Guide');
+ const top=document.getElementById('v37Top');
+ guide?.addEventListener('click',()=>document.getElementById('reading-area')?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'}));
+ top?.addEventListener('click',()=>window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'}));
+ if(top){const sync=()=>{top.hidden=window.scrollY<360};sync();window.addEventListener('scroll',sync,{passive:true});}
+});
 </script>
 <div class="v37-fixed-controls" aria-label="网站导览与快速导航">
   <button class="v37-corner-guide" id="v37Guide" type="button" aria-label="六水导览员，回到翻书区域"><span class="liushui-sprite pose-waving" aria-hidden="true"></span><span class="v37-guide-bubble" aria-hidden="true">来翻翻我的小书！</span></button>
