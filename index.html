@@ -352,6 +352,23 @@ a { color:inherit; }
   .flip-sheet,.turn-shadow,.photo-border,.case-card,.book-body{transition:none!important;animation:none!important}
 }
 
+
+.social-rail{position:fixed;z-index:40;right:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 7px;background:#faf7efec;backdrop-filter:blur(14px);border:1px solid #d1c7b6;border-radius:27px;box-shadow:0 8px 27px #473c3027}
+.social-rail-heading{writing-mode:vertical-rl;font:9px Georgia,serif;letter-spacing:.19em;color:#8e7e6c;margin:5px 0}
+.social-rail a,.social-rail button{width:38px;height:38px;border:0;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;text-decoration:none;background:transparent;cursor:pointer;color:#294a3e;transition:transform .2s,background .2s}
+.social-rail a:hover,.social-rail button:hover{background:#e8e4d7;transform:translateX(-3px)}
+.social-rail a>span:first-child,.social-rail button>span:first-child{font:600 13px/1 -apple-system,"PingFang SC",sans-serif}
+.social-rail .social-name{font-size:8px;color:#82786b;white-space:nowrap}
+.social-toast{position:fixed;z-index:100;right:66px;top:55%;max-width:280px;padding:13px 18px;border-radius:11px;background:#22483e;color:#fffaf1;font-size:13px;box-shadow:0 12px 34px #2b2d2738}
+.collab-socials{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:18px auto 0}
+.collab-socials a,.collab-socials button{border:1px solid #cabfae;background:#f7f3e9;color:#34594a;border-radius:22px;text-decoration:none;padding:9px 15px;font-size:12px;cursor:pointer}
+.collab-socials a:hover,.collab-socials button:hover{background:#fff;border-color:#8caa94}
+.collab-wechat{font-size:12px;color:#526e62;margin-top:12px}
+@media(max-width:1180px){.social-rail{right:5px}.main-layout{padding-right:7.8%}}
+@media(max-width:940px){.social-rail{position:relative;right:auto;top:auto;transform:none;margin:4px auto 0;max-width:400px;width:max-content;flex-direction:row;border-radius:28px;padding:6px 12px}.social-rail-heading{writing-mode:initial;margin:0 9px 0 3px}.main-layout{padding-right:4%}}
+@media(max-width:680px){.social-rail{max-width:calc(100% - 24px);gap:3px;padding:5px 8px}.social-rail a,.social-rail button{width:44px;height:44px}.social-rail-heading{font-size:8px;margin:0 3px}.social-toast{right:12px;top:130px}}
+@media(prefers-reduced-motion:reduce){.social-rail a,.social-rail button{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -366,6 +383,7 @@ a { color:inherit; }
     <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.02.4</span></div>
   </header>
 
+<nav class="social-rail" aria-label="社交账号与联系方式"><span class="social-rail-heading">FIND ME</span><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer" aria-label="X"><span aria-hidden="true">𝕏</span><span class="social-name">X</span></a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span aria-hidden="true">GH</span><span class="social-name">GitHub</span></a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer" aria-label="小红书"><span aria-hidden="true">书</span><span class="social-name">小红书</span></a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer" aria-label="抖音"><span aria-hidden="true">抖</span><span class="social-name">抖音</span></a><button type="button" data-copy-wechat aria-label="复制微信号 liushui029"><span aria-hidden="true">微</span><span class="social-name">微信</span></button></nav><div class="social-toast" id="socialToast" role="status" aria-live="polite" hidden></div>
   <main class="main-layout" id="reading-area">
     <aside class="sidebar" aria-label="章节目录">
       <div>
@@ -483,7 +501,7 @@ a { color:inherit; }
     <h2 id="collabTitle">如果你也有些有趣的想法。</h2>
     <p>我愿意聊内容创作、营销、个人 IP 与 AI 的实际应用。也欢迎分享你看完这本小书之后的任何想法。</p>
     <a class="collab-mail" href="mailto:jiamiaomiao029@gmail.com?subject=Hello%20from%20Curious%20at%20Heart">写封邮件给我 ↗</a>
-    <p class="collab-aside">不公开手机号。联系邮箱来自已公开的创作者主页。</p>
+    <div class="collab-socials" aria-label="其他联系方式"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书 ↗</a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音 ↗</a><button type="button" data-copy-wechat>复制微信号</button></div><p class="collab-wechat">WeChat · liushui029</p><p class="collab-aside">不公开手机号。站外账号将在新标签页打开。</p>
   </div>
 </section>
 <section class="studio-section" id="photo-studio" aria-labelledby="studioTitle">
@@ -781,6 +799,16 @@ window.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight') { e.preventDefault(); next(); }
   if(e.key==='ArrowLeft') { e.preventDefault(); prev(); }
   if(e.key==='Home') { e.preventDefault(); returnCover(); }
+});
+
+let socialToastTimer;
+document.addEventListener('click',async event=>{
+ const b=event.target.closest('[data-copy-wechat]');if(!b)return;
+ const toast=document.getElementById('socialToast');let copied=false;
+ try{await navigator.clipboard.writeText('liushui029');copied=true}catch(_){}
+ toast.textContent=copied?'微信号 liushui029 已复制':'微信：liushui029（可手动复制）';
+ toast.hidden=false;clearTimeout(socialToastTimer);
+ socialToastTimer=setTimeout(()=>{toast.hidden=true},3600);
 });
 </script>
 </body>
