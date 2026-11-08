@@ -1,0 +1,80 @@
+/* Liushui 2D IP edition — additive layer, keeps original portraits untouched. */
+.book-scene { position: relative; }
+
+.book-cover-mascot {
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  z-index: 4;
+  width: clamp(132px, 15vw, 210px);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 13px 13px rgba(46, 52, 41, .14));
+  transform: rotate(-5deg);
+  transform-origin: 50% 100%;
+  animation: bookMascotHello .7s cubic-bezier(.2,.8,.2,1) both;
+}
+.book-cover-copy .book-handnote {
+  max-width: 60%;
+  position: relative;
+  z-index: 5;
+}
+.book-mascot-dock {
+  position: absolute;
+  z-index: 6;
+  top: 23px;
+  right: -57px;
+  width: clamp(115px, 10.8vw, 140px);
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(6deg);
+  filter: drop-shadow(0 9px 10px rgba(40, 45, 36, .16));
+  animation: bookMascotDock .52s cubic-bezier(.2,.8,.2,1) both;
+}
+.book-mascot-dock img { display: block; width: 100%; height: auto; }
+.book-mascot-dock::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 22%;
+  z-index: 1;
+  width: 42px;
+  height: 13px;
+  background: rgba(231, 205, 155, .58);
+  border: 1px solid rgba(165, 137, 99, .15);
+  transform: rotate(-14deg);
+}
+.book-mascot-dock--projects { width: clamp(127px, 11.5vw, 155px); }
+.book-mascot-dock--contact {
+  top: auto;
+  bottom: -16px;
+  right: -43px;
+  width: clamp(112px, 10vw, 136px);
+  transform: rotate(-6deg);
+}
+@keyframes bookMascotHello {
+  from { opacity: 0; transform: translateY(16px) rotate(-11deg) scale(.92); }
+  to { opacity: 1; transform: translateY(0) rotate(-5deg) scale(1); }
+}
+@keyframes bookMascotDock {
+  from { opacity: 0; transform: translateY(15px) rotate(11deg) scale(.89); }
+  to { opacity: 1; transform: translateY(0) rotate(6deg) scale(1); }
+}
+@media (max-width: 900px) {
+  .book-cover-mascot { right: -12px; bottom: -9px; width: clamp(102px, 17vw, 152px); }
+  .book-mascot-dock { width: 106px; right: -24px; top: 18px; }
+  .book-mascot-dock--projects { width: 114px; }
+  .book-mascot-dock--contact { top: auto; bottom: -7px; right: -17px; width: 103px; }
+}
+@media (max-width: 650px) {
+  .book-cover-mascot { width: 132px; right: -10px; bottom: -8px; }
+  .book-cover-copy .book-handnote { max-width: 61%; font-size: 11px; line-height: 1.8; }
+  .book-mascot-dock { top: 9px; right: 10px; width: 67px; }
+  .book-mascot-dock::before { width: 25px; height: 8px; top: 6px; }
+  .book-mascot-dock--projects { width: 70px; }
+  .book-mascot-dock--contact { top: auto; bottom: -3px; right: 10px; width: 74px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-cover-mascot, .book-mascot-dock { animation: none; }
+}
