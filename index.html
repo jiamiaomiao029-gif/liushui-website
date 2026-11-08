@@ -981,6 +981,129 @@ a { color:inherit; }
 }
 @media(prefers-reduced-motion:reduce){.v36-cover-guide,.v36-welcome-note .liushui-sprite{animation:none!important;transform:none!important}}
 
+
+/* V3.7 — direct first-impression portrait, persistent mascot, real work and live frames */
+.v37-identity-frontispiece{
+ position:absolute;z-index:5;left:4%;top:2.5%;bottom:2.5%;width:40.5%;
+ padding:10px 10px 12px;background:#f3ede0;border:1px solid #c7bca5;
+ box-shadow:0 8px 25px #3a312c25;
+ display:flex;flex-direction:column;gap:8px;
+ transform:rotate(-1deg);pointer-events:none;
+ transition:opacity .4s ease,transform .7s ease,visibility .4s;
+}
+.v37-frontispiece-frame{flex:1;min-height:0;overflow:hidden;background:#e3ded4}
+.v37-frontispiece-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.v37-frontispiece-footer{display:flex;flex-direction:column;gap:3px;padding:3px 5px 0}
+.v37-frontispiece-footer span{font:10px Georgia,serif;letter-spacing:.14em;color:#7c8c79}
+.v37-frontispiece-footer b{font:normal clamp(13px,1.3vw,18px)/1.35 "Songti SC",serif;color:#405949}
+.is-opening .v37-identity-frontispiece,.is-open .v37-identity-frontispiece{opacity:0;visibility:hidden;transform:translateX(-22px) rotate(-3deg)}
+.v37-mobile-identity{display:none}
+.v37-fixed-controls{pointer-events:none;position:fixed;z-index:175;inset:0}
+.v37-corner-guide{
+ pointer-events:auto;position:absolute;bottom:max(10px,env(safe-area-inset-bottom));left:max(8px,env(safe-area-inset-left));
+ width:105px;min-height:113px;padding:0;background:transparent;border:0;cursor:pointer;
+ display:flex;align-items:end;justify-content:center;
+ filter:drop-shadow(0 4px 5px #31463833);
+}
+.v37-corner-guide .liushui-sprite{width:100px;transform-origin:55% 85%;animation:v36-greet 3.2s ease-in-out 2s 2;transition:transform .22s ease}
+.v37-corner-guide:hover .liushui-sprite,.v37-corner-guide:focus-visible .liushui-sprite{transform:translateY(-5px) rotate(-3deg)}
+.v37-guide-bubble{
+ position:absolute;bottom:93px;left:61px;
+ width:max-content;max-width:145px;background:#faf5e8;border:1px solid #cfc3a8;border-radius:12px 12px 12px 2px;
+ padding:7px 9px;box-shadow:0 3px 7px #413d3030;
+ font:10px/1.3 "PingFang SC",sans-serif;color:#3b5a43;
+ opacity:0;transform:translateY(5px);transition:opacity .18s,transform .18s;
+}
+.v37-corner-guide:hover .v37-guide-bubble,.v37-corner-guide:focus-visible .v37-guide-bubble{opacity:1;transform:none}
+.v37-top-button{
+ pointer-events:auto;position:absolute;right:max(18px,env(safe-area-inset-right));bottom:max(23px,env(safe-area-inset-bottom));
+ width:56px;height:56px;border-radius:50%;border:1px solid #b7bdab;
+ background:#f7f4e9;color:#335e49;
+ box-shadow:0 4px 13px #4c534028;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+ cursor:pointer;transition:transform .2s,background .2s;
+}
+.v37-top-button:hover{transform:translateY(-4px);background:#e4eee0}
+.v37-top-button span{font-size:9px;line-height:1}
+.v37-top-button[hidden]{display:none!important}
+.v37-corner-guide:focus-visible,.v37-top-button:focus-visible{outline:3px solid #60886d;outline-offset:3px}
+/* Book details use real screenshots rather than mock video graphics */
+.v37-book-flagship{flex:1;min-height:0;display:grid;grid-template-columns:42% 1fr;gap:10px;background:#e8e9df;padding:10px}
+.v37-book-film{min-height:0;overflow:hidden;box-shadow:2px 4px 12px #303e3040;border:4px solid #f8f5eb;align-self:stretch}
+.v37-book-film img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.v37-book-film-copy{display:flex;flex-direction:column;justify-content:center;gap:9px;min-width:0}
+.v37-book-film-copy span,.v37-book-selected-head span,.v37-book-live>div span{font:8px/1.4 Georgia,serif;letter-spacing:.08em;color:#8c866d}
+.v37-book-film-copy h3{font:normal clamp(17px,2vw,25px)/1.3 "Songti SC",serif;color:#2f5d43;margin:0}
+.v37-book-film-copy p{font-size:10px;line-height:1.6;color:#6b7b68}
+.v37-book-selected{background:#e5e9e0;flex:1;min-height:0;padding:13px 16px;display:flex;flex-direction:column;gap:9px}
+.v37-book-selected-head h3{font:normal 20px "Songti SC",serif;color:#365847;margin:5px 0}
+.v37-book-selected-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px;min-height:0;flex:1}
+.v37-book-selected-cards figure{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;margin:0;background:#faf7ec;padding:5px;box-shadow:0 4px 10px #38443920}
+.v37-book-selected-cards img{width:100%;min-height:0;flex:1;object-fit:cover;object-position:center 20%;display:block}
+.v37-book-selected-cards figcaption{font-size:9px;padding:5px 2px;color:#566350;line-height:1.4}
+.v37-book-live{flex:1;position:relative;min-height:0;overflow:hidden;background:#dcded3}
+.v37-book-live>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 29%}
+.v37-book-live>div{position:absolute;left:0;bottom:0;right:0;display:flex;flex-direction:column;gap:6px;padding:26px 15px 12px;background:linear-gradient(0deg,#173a30e8,transparent);color:#f5f0e1}
+.v37-book-live>div span{color:#e8dcc4}
+.v37-book-live>div b{font:normal 16px/1.45 "Songti SC",serif}
+/* Long-form works exhibition */
+.v37-feature-work{position:relative;background:#e4e9dc;min-height:315px;display:grid;grid-template-columns:minmax(0,48%) 1fr;gap:0}
+.v37-feature-work>.v33-image-button{height:315px;width:100%;padding:10px;display:block;box-shadow:none}
+.v37-feature-work>.v33-image-button img{width:100%;height:100%;object-fit:contain;background:#dee5da}
+.v37-feature-work-caption{display:flex;flex-direction:column;justify-content:center;gap:13px;padding:24px 21px}
+.v37-feature-work-caption span{font:9px Georgia,serif;letter-spacing:.1em;color:#728671}
+.v37-feature-work-caption h3{font:normal 24px/1.35 "Songti SC",serif;margin:0;color:#335b44}
+.v37-feature-work-caption small{font-size:10px;color:#818879}
+.v37-thumb-work{display:flex;gap:12px!important;padding:12px!important;align-items:center}
+.v37-thumb-work>.v33-image-button{width:43%;height:167px;flex:none;background:#ede9de}
+.v37-thumb-work>.v33-image-button img{width:100%;height:100%;object-fit:contain}
+.v37-thumb-work>div{min-width:0}
+.v37-thumb-work h3{font-size:16px;margin:9px 0}
+.v37-thumb-work p{font-size:10px;margin:6px 0}
+.v37-thumb-work span{font:9px Georgia,serif;color:#857866}
+.v37-real-live-feature{position:relative;display:grid;grid-template-columns:47% 1fr;min-height:315px;background:#294c40;color:#f8f4e8}
+.v37-real-live-feature>.v33-image-button{height:315px;padding:8px}
+.v37-real-live-feature>.v33-image-button img{width:100%;height:100%;object-fit:contain}
+.v37-real-live-copy{padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:11px}
+.v37-real-live-copy h3{font:normal 22px/1.35 "Songti SC",serif;margin:0}
+.v37-real-live-copy p{font-size:11px;color:#d6e2d6;margin:0}
+.v37-real-live-copy small{font-size:9px;line-height:1.8;color:#c1d0bf}
+@media(max-width:940px){
+ .v37-identity-frontispiece{width:41%;left:3%}
+ .v37-frontispiece-footer b{font-size:13px}
+ .v37-corner-guide{width:85px;min-height:96px}
+ .v37-corner-guide .liushui-sprite{width:85px}
+ .v37-guide-bubble{left:50px;bottom:78px}
+ .v37-feature-work,.v37-real-live-feature{grid-template-columns:43% 1fr}
+ .v37-thumb-work{flex-direction:column;align-items:stretch}
+ .v37-thumb-work>.v33-image-button{width:100%;height:190px}
+}
+@media(max-width:680px){
+ .v37-mobile-identity{
+  display:grid;grid-template-columns:43% 1fr;gap:16px;
+  background:#f3eee4;border:1px solid #d0c7b8;padding:10px;
+  width:min(100%,400px);margin:10px auto 12px;min-height:210px;
+ }
+ .v37-mobile-identity img{width:100%;height:210px;object-fit:cover;object-position:center 35%;display:block}
+ .v37-mobile-identity>div{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:5px 0}
+ .v37-mobile-identity span{font:10px Georgia,serif;letter-spacing:.08em;color:#718473}
+ .v37-mobile-identity strong{font:normal 24px/1.35 "Songti SC",serif;color:#345e4a}
+ .v37-mobile-identity small{font-size:11px;line-height:1.8;color:#7b796c}
+ .is-open .v37-mobile-identity{display:none}
+ .v37-corner-guide{bottom:max(5px,env(safe-area-inset-bottom));left:max(3px,env(safe-area-inset-left));width:70px;min-height:78px}
+ .v37-corner-guide .liushui-sprite{width:70px}
+ .v37-guide-bubble{left:42px;bottom:60px;font-size:9px}
+ .v37-top-button{right:max(10px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:49px;height:49px}
+ .v37-feature-work,.v37-real-live-feature{grid-template-columns:43% 1fr;min-height:230px}
+ .v37-feature-work>.v33-image-button,.v37-real-live-feature>.v33-image-button{height:230px;padding:5px}
+ .v37-feature-work-caption{padding:12px}
+ .v37-feature-work-caption h3,.v37-real-live-copy h3{font-size:17px}
+ .v37-real-live-copy{padding:10px}
+ .v37-thumb-work{flex-direction:row}
+ .v37-thumb-work>.v33-image-button{width:39%;height:160px}
+}
+@media(prefers-reduced-motion:reduce){.v37-corner-guide .liushui-sprite{animation:none}}
+
 </style>
 </head>
 <body>
@@ -1014,6 +1137,10 @@ a { color:inherit; }
       <div class="stage-heading"><span><i class="stroke"></i> CURIOUS AT HEART</span><span>VOL. 01 &nbsp;·&nbsp; 2026</span></div>
       <div class="book-area">
         <div class="book-stage" id="bookStage">
+          <div class="v37-identity-frontispiece" aria-label="六水的真实照片，欢迎来到不止想想">
+            <div class="v37-frontispiece-frame"><img src="images/01-about-blue-shirt.webp" alt="六水穿着浅蓝色衬衫的真实个人照片" decoding="async" fetchpriority="high"></div>
+            <div class="v37-frontispiece-footer"><span>HELLO, I'M LIUSHUI.</span><b>一个好奇、也愿意动手做的人。</b></div>
+          </div>
           <div class="book-body" id="bookBody">
             <div class="spread" id="spread" aria-live="polite">
               <div class="page page-left" id="leftPage"></div>
@@ -1045,7 +1172,7 @@ a { color:inherit; }
   <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
  </svg>
 </span>
- <span class="liushui-sprite pose-standing v36-cover-guide" aria-hidden="true"></span>
+ 
  <span class="cover-content v35-cloth-content">
   <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL · 2026</span></span>
   <span class="cover-center">
@@ -1061,6 +1188,7 @@ a { color:inherit; }
         </div>
       </div>
       <div class="mobile-reader" id="mobileReader">
+        <div class="v37-mobile-identity"><img src="images/01-about-blue-shirt.webp" alt="六水的真实照片，穿浅蓝色衬衫" decoding="async"><div><span>HI, I'M LIUSHUI</span><strong>你好，<br>我是六水。</strong><small>先认识我，<br>再来翻翻我做过的事。</small></div></div>
         <button class="mobile-cover v35-cloth-cover v35-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
  <span class="v35-cover-artwork" aria-hidden="true">
  <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1080,7 +1208,7 @@ a { color:inherit; }
   <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
  </svg>
 </span>
- <span class="liushui-sprite pose-standing v36-cover-guide" aria-hidden="true"></span>
+ 
  <span class="cover-content v35-cloth-content">
   <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL</span></span>
   <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="v35-title-rule" aria-hidden="true"></span><span class="cover-subtitle">好奇于心，创造于行。</span></span>
@@ -1117,13 +1245,13 @@ a { color:inherit; }
  <div class="v3-section-head"><div><span class="eyebrow">01A / WORKS</span><h2 id="worksHeading">说过的话，做成的作品。</h2><p>短视频、系列内容与长文。这里展示属于我的创作和真实互动，不把内容作品集做成简历证明墙。</p></div><span class="liushui-sprite pose-working v36-section-guide" role="img" aria-label="六水在电脑前创作"></span><span class="v3-section-num">01A</span></div>
  <div class="v3-showcase-grid">
   <article class="v3-flagship">
-   <div class="v3-flagship-cover"><span>ORIGINAL / FLAGSHIP VIDEO</span><h3>大学如何铺<br>自己的人脉网</h3><div>「大佬幼年体」系列 · 大学是社会的 mini 版</div></div>
-   <div class="v3-flagship-meta"><p>把熟悉的大学生活，换一个视角讲给更多人听。</p><div class="v3-result-row"><span><b>约 50 万</b>抖音播放</span><span><b>约 4,000</b>抖音新增关注</span><span><b>约 10 万</b>小红书播放</span></div><small>该作品的数据来自此前确认的不同平台统计；此处的标题设计不是原视频画面。</small><div class="v3-platform-links"><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音账号 ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书账号 ↗</a></div></div>
+   <div class="v37-feature-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-networking.webp" data-v33-alt="原创代表作《大学里大佬幼年体：怎么铺自己的人脉网》真实视频截图"><img src="images/v3/liushui-work-networking.webp" alt="六水《大学如何铺自己的人脉网》代表作真实视频画面" loading="lazy"></button><div class="v37-feature-work-caption"><span>FLAGSHIP / ORIGINAL VIDEO</span><h3>大学如何铺自己的人脉网</h3><small>真实视频封面与播放截图 · 点击放大</small></div></div>
+   <div class="v3-flagship-meta"><p>把熟悉的大学生活，换一个视角讲给更多人听。</p><div class="v3-result-row"><span><b>约 50 万</b>抖音播放</span><span><b>约 4,000</b>抖音新增关注</span><span><b>约 10 万</b>小红书播放</span></div><small>该作品的数据来自此前确认的不同平台统计；主视觉为本次上传的真实视频截图。</small><div class="v3-platform-links"><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音账号 ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书账号 ↗</a></div></div>
   </article>
-  <div class="v3-works-list">
+  <div class="v3-works-list v37-works-list">
+   <article class="v37-thumb-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-feminism.webp" data-v33-alt="六水作品《曾经，我被开盒》在社交平台的真实截图"><img src="images/v3/liushui-work-feminism.webp" alt="六水视频作品《曾经，我被开盒》截图" loading="lazy"></button><div><span>SELECTED VIDEO 01</span><h3>曾经，我被开盒</h3><p>一条关于表达与经历的原创作品。</p></div></article>
+   <article class="v37-thumb-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-university.webp" data-v33-alt="六水作品《上大学后最没用的事》的真实视频截图"><img src="images/v3/liushui-work-university.webp" alt="六水视频作品《上大学后最没用的事》截图" loading="lazy"></button><div><span>SELECTED VIDEO 02</span><h3>上大学后最没用的事</h3><p>从校园生活出发的观察与表达。</p></div></article>
    <article><span>VIDEO SERIES</span><h3>大佬幼年体</h3><p>关于大学、社会观察与成长判断的一组系列选题。</p></article>
-   <article><span>VIDEO</span><h3>大学生如何找到自己的主线</h3><p>从自我探索，到一次真正能开始的行动。</p></article>
-   <article><span>VIDEO</span><h3>系统记录 10 万字，我收获了什么</h3><p>写作与个人表达之间的关系。</p></article>
    <article><span>ESSAY · X</span><h3>从 0 到爆款自媒体运营心法</h3><p>将内容实践整理成结构化的原创长文。</p><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">阅读 X 创作 ↗</a></article>
   </div>
  </div>
@@ -1145,7 +1273,7 @@ a { color:inherit; }
 <section class="v3-exhibit" id="v3-live" aria-labelledby="liveHeading">
  <div class="v3-section-head"><div><span class="eyebrow">01B / LIVE</span><h2 id="liveHeading">我的直播间，另一种表达。</h2><p>直播与作品同级。即兴表达、现场问答与观众互动，都有自己的章节。</p></div><span class="v3-section-num">01B</span></div>
  <div class="v3-showcase-grid">
-  <div class="v3-live-hero"><span class="v3-live-pill"><i></i> ON AIR</span><h3>把问题拆开，<br>也把交流留给现场。</h3><p>主题自讲 / 实时连麦 / 互动答疑</p><small>精选直播片段仍需从原始录像中选取；这里先展示真实观点档案，不模拟回放。</small></div>
+  <div class="v37-real-live-feature"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-live-ai.webp" data-v33-alt="六水讨论 AI 话题的真实直播截图"><img src="images/v3/liushui-live-ai.webp" loading="lazy" alt="六水在直播间谈论 AI 的真实直播截图"></button><div class="v37-real-live-copy"><span class="v3-live-pill"><i></i> REAL LIVE / ON AIR</span><h3>把问题拆开，<br>把交流留给现场。</h3><p>AI 话题直播 · 真实现场画面</p><small>图片是直播截图，并非可播放的视频；完整切片仍待整理。</small></div></div>
   <div class="v3-live-quotes">
    <article><span>01 / 内容</span><h3>做内容前，先想清楚谁需要它。</h3><p>把真实用户的问题放在内容的起点。</p></article>
    <article><span>02 / AI</span><h3>用户不为 AI 两个字买单。</h3><p>关键是具体解决了什么问题。</p></article>
@@ -1366,9 +1494,9 @@ function leftMarkup(i) {
 function rightMarkup(i) {
  const c=chapters[i];
  if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v33-about-collage"><figure class="v33-about-present"><img src="images/01-lake-joy.webp" alt="湖边笑着比耶的生活照"><figcaption>NOW / 依然好奇</figcaption></figure><figure class="v33-about-child"><img src="images/v3/v3-childhood.webp" alt="六水小时候的照片"><figcaption>THEN / 很久以前</figcaption></figure></div><div class="v36-welcome-note"><span class="liushui-sprite pose-waving" role="img" aria-label="六水挥手欢迎"></span><span><b>嗨，欢迎来翻翻。</b><small>这本书里，放着我认真做过的事。</small></span></div><p class="v3-soft-caption">从小时候到现在，好奇心一直都在。这里有一些我做过的事，也有很多不必为结果负责的快乐。</p>','v3-about');
- if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v34-book-work"><div class="v34-book-work-heading"><small>原创短视频 · 大佬幼年体</small><h3>大学如何铺<br>自己的人脉网</h3><p>从“看头衔”转向“看信息与资源”，是这条视频的切入点。</p></div><figure><img src="images/v3/v3-self-viral.webp" alt="另一条六水个人原创内容在小红书上的真实发布截图"><figcaption>同账号另一条原创作品的截图 · 非本视频封面</figcaption></figure></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>抖音新增关注</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">看作品与脚本档案 ↗</a>','v3-works-panel');
- if(i===2)return panel(i,'SELECTED / WORKS','<div class="v33-works-book"><div class="v33-works-book-copy"><span>MY CREATIONS / SELECTED</span><h3>我的内容，<br>有很多种样子。</h3><p>视频 · 系列选题 · X 长文</p></div><div class="v33-works-book-images"><figure><img src="images/v3/v3-self-viral.webp" alt="六水原创内容的个人发布页面截图"><figcaption>个人内容作品页</figcaption></figure><figure><img src="images/v3/v3-xhs-notifications.webp" alt="小红书点赞收藏和新增关注消息界面"><figcaption>真实互动消息</figcaption></figure></div></div><a class="v3-inline-link" href="#v3-works">打开完整作品集 ↗</a>','v3-works-panel');
- if(i===3)return panel(i,'ON AIR / LIVE','<div class="v34-live-notebook"><div class="v34-note-top"><span>AFTER LIVE · 2026.07.23</span><span>整理自直播录音</span></div><h3>对标方法论<br><em>为什么要研究对标？</em></h3><div class="v34-live-line"><b>问题</b><span>选题、封面、发布时间，变量太多。</span></div><div class="v34-live-line"><b>判断</b><span>对标的本质，是降低验证成本。</span></div><div class="v34-live-line"><b>输出</b><span>整理成一条可讲述的短视频稿。</span></div><small>这是真实直播整理稿的图文重排，并非直播截图。</small></div><a class="v3-inline-link" href="#v3-live">查看直播整理过程 ↗</a>','v3-live-panel');
+ if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v37-book-flagship"><div class="v37-book-film"><img src="images/v3/liushui-work-networking.webp" alt="原创代表作《大学里大佬幼年体：怎么铺自己的人脉网》真实视频截图"></div><div class="v37-book-film-copy"><span>REAL VIDEO / 47.7万截图时播放量</span><h3>大学如何铺<br>自己的人脉网</h3><p>从观察出发，把想法讲给更多人听。</p></div></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>抖音新增关注</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">查看真实作品 ↗</a>','v3-works-panel');
+ if(i===2)return panel(i,'SELECTED / WORKS','<div class="v37-book-selected"><div class="v37-book-selected-head"><span>MY WORK / REAL FRAMES</span><h3>其他代表作</h3></div><div class="v37-book-selected-cards"><figure><img src="images/v3/liushui-work-feminism.webp" alt="代表作品《曾经，我被开盒》截图"><figcaption>曾经，我被开盒</figcaption></figure><figure><img src="images/v3/liushui-work-university.webp" alt="代表作品《上大学后最没用的事》截图"><figcaption>上大学后最没用的事</figcaption></figure></div></div><a class="v3-inline-link" href="#v3-works">展开完整作品档案 ↗</a>','v3-works-panel');
+ if(i===3)return panel(i,'ON AIR / LIVE','<div class="v37-book-live"><img src="images/v3/liushui-live-ai.webp" alt="六水直播时讨论 AI 话题的真实现场截图"><div><span>REAL LIVE SCREENSHOT</span><b>把问题留在现场，<br>把观点讲给大家。</b></div></div><p class="v3-soft-caption">真实直播画面 · AI 话题讨论。直播与短视频作品是并列的创作场景。</p><a class="v3-inline-link" href="#v3-live">查看直播档案 ↗</a>','v3-live-panel');
  if(i===4)return panel(i,'CONVERSATION / LIVE','<div class="v3-topic-tabs" role="group" aria-label="切换直播观点"><button type="button" data-live-topic="0" aria-pressed="true">对标</button><button type="button" data-live-topic="1" aria-pressed="false">内容</button><button type="button" data-live-topic="2" aria-pressed="false">AI</button><button type="button" data-live-topic="3" aria-pressed="false">创业</button></div><div class="v3-topic-card"><span>AN IDEA FROM THE ROOM</span><h3 data-live-topic-title>对标是为了降低试错成本。</h3><p data-live-topic-desc>看见别人走过的路，是为了更快找到适合自己的实验方式，而不是变成另一个人。</p></div><a class="v3-inline-link" href="#v3-live">更多直播观点 ↗</a>','v3-live-panel');
  if(i===5)return panel(i,'02 / TEACHING STUDIO','<div class="v34-teach-file"><div class="v34-note-top"><span>ENGLISH EDUCATION</span><span>知识库目录</span></div><h3>英语教学工作台</h3><div class="v34-file-list"><div><b>01 / 招生</b><span>内容选题 · 家长初沟通 · 课程方案</span></div><div><b>02 / 知识交付</b><span>词汇 / 语法 / 阅读 / 写作</span></div><div><b>03 / 学生培养</b><span>学习动力 · 阶段目标 · 学情追踪</span></div><div><b>04 / 家校反馈</b><span>课堂记录 · 家长沟通 · 升学建议</span></div></div><small>依据本人飞书知识库目录重新排版；正在持续完善，不代表所有 SOP 均已交付。</small></div><a class="v3-inline-link" href="#v3-teaching">打开教学与学生培养体系 ↗</a>','v3-teaching-panel');
  if(i===6)return panel(i,'OFFLINE / EVENTS','<div class="v33-event-book"><figure class="v33-event-book-main"><img src="images/v3/v3-event-speaking.webp" alt="六水坐在白板旁讲解个人 IP 内容思路的现场照片"><figcaption>现场讲解 / THE ROOM</figcaption></figure><figure class="v33-event-book-detail"><img src="images/v3/v3-event-venue.webp" alt="线下活动场地，设有屏幕和讨论桌"><figcaption>分享现场</figcaption></figure></div><div class="v3-event-stats"><strong>90 min</strong><span>传统老板为什么要做个人 IP？<br>线下主题分享</span></div><a class="v3-inline-link" href="#v3-events">看活动全貌 ↗</a>','v3-events-panel');
@@ -1779,7 +1907,18 @@ document.addEventListener('click',event=>{
 });
 document.addEventListener('click',event=>{if(event.target.id==='v33Lightbox')event.target.close()});
 
+
+// Floating corner guide and back-to-top are wired below as normal DOM controls.
+const v37Guide=document.getElementById('v37Guide');
+const v37Top=document.getElementById('v37Top');
+v37Guide?.addEventListener('click',()=>{const book=document.getElementById('reading-area');book?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'});});
+v37Top?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'});});
+if(v37Top){const sync=()=>{v37Top.hidden=window.scrollY<360};sync();window.addEventListener('scroll',sync,{passive:true});}
 </script>
+<div class="v37-fixed-controls" aria-label="网站导览与快速导航">
+  <button class="v37-corner-guide" id="v37Guide" type="button" aria-label="六水导览员，回到翻书区域"><span class="liushui-sprite pose-waving" aria-hidden="true"></span><span class="v37-guide-bubble" aria-hidden="true">来翻翻我的小书！</span></button>
+  <button class="v37-top-button" id="v37Top" type="button" hidden aria-label="一键返回页面顶部"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 14 7-7 7 7M12 7v12"/></svg><span>顶部</span></button>
+</div>
 <dialog id="v33Lightbox" class="v33-lightbox" aria-label="查看真实图片">
  <div class="v33-lightbox-inner"><button type="button" class="v33-lightbox-close" data-v33-close aria-label="关闭大图">×</button><img id="v33LightboxImage" alt=""><p id="v33LightboxCaption"></p></div>
 </dialog>
