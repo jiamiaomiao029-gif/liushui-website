@@ -291,6 +291,31 @@ a { color:inherit; }
 .collab-mail:hover{background:#366354}
 .collab-inner .collab-aside{font-size:10px;margin:16px auto 0;color:#7f786d}
 @media(max-width:680px){.collab-section{padding:0 18px}.collab-inner{padding:30px 18px}}
+
+/* Curated original-photo archive and evidence-respecting book pages */
+.editorial-metric-card{flex:1;min-height:0;padding:clamp(16px,2.4vw,32px);display:flex;flex-direction:column;justify-content:center;border:1px solid #d8d0c0;background:#f4eddf;color:#315145}
+.editorial-metric-card .metric-overline{font:10px/1.5 Georgia,serif;letter-spacing:.12em;color:#7a8173}
+.editorial-metric-card>strong{font:italic clamp(38px,5vw,70px)/1.12 Georgia,serif;letter-spacing:-.06em;margin:18px 0 4px}
+.editorial-metric-card>strong span{font:normal clamp(15px,2vw,26px)/1.1 "Songti SC",serif;margin-left:5px}
+.editorial-metric-card>p{color:#5c6e61;font-size:clamp(10px,1.1vw,13px);line-height:1.8;margin:8px 0}
+.editorial-metric-card small{font:10px/1.6 -apple-system,"PingFang SC",sans-serif;color:#858477}
+.editorial-metric-card>b{font:600 clamp(19px,2vw,28px)/1.3 "Songti SC",serif;margin-top:12px}
+.metric-divider{height:1px;background:#d1c9b6;width:100%;margin:20px 0}
+.note-metric{background:#e6e9dd}.note-metric>strong{color:#2b5c4b}.work-metric{background:#ede5d5}
+.archive-section{max-width:1280px;margin:50px auto;padding:0 6.3%;position:relative;z-index:2}
+.archive-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:24px}
+.archive-heading h2{font:normal clamp(27px,3.2vw,42px)/1.26 Georgia,"Songti SC",serif;color:#24473e;margin:9px 0 0}
+.archive-heading p{max-width:450px;margin:0;color:#797369;font-size:12px;line-height:1.85}
+.archive-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px;align-items:stretch}
+.archive-shot{margin:0;min-width:0;background:#f9f6ee;padding:7px;border:1px solid #e0d7c8;box-shadow:0 5px 14px #4d46381a;display:flex;flex-direction:column}
+.archive-shot img{display:block;width:100%;height:100%;max-height:370px;min-height:175px;object-fit:cover;object-position:center;flex:1}
+.archive-shot figcaption{padding:11px 6px 7px;display:flex;flex-direction:column;gap:3px}
+.archive-shot figcaption span{font:9px Georgia,serif;letter-spacing:.12em;color:#95897b}
+.archive-shot figcaption b{font-weight:500;font-size:12px;color:#4d594d}
+.archive-a{grid-column:span 3}.archive-b{grid-column:span 4}.archive-c{grid-column:span 3}.archive-d{grid-column:span 4}.archive-e{grid-column:span 3}
+.archive-d,.archive-e{transform:translateY(10px)}
+@media(max-width:940px){.archive-heading{display:block}.archive-heading p{margin-top:12px}.archive-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.archive-shot{grid-column:span 3}}
+@media(max-width:680px){.archive-section{padding:0 18px;margin:25px auto 34px}.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.archive-shot{grid-column:span 1}.archive-shot img{min-height:140px;max-height:235px}.archive-a{grid-column:span 2}.archive-a img{max-height:270px}.archive-heading h2{font-size:29px}.archive-d,.archive-e{transform:none}.mobile-paper .editorial-metric-card{min-height:235px}.mobile-paper .editorial-metric-card>strong{font-size:46px}}
 </style>
 </head>
 <body>
@@ -406,6 +431,16 @@ a { color:inherit; }
  </div>
  <div class="case-end-note"><strong>证据说明</strong>：以上成果文字依据你先前确认的经历记录；平台后台和私信原图目前未放入 Demo，因此明确标记“待补”，不会用绘制的假截图代替。</div>
 </section>
+<section class="archive-section" id="photo-archive" aria-labelledby="photoArchiveTitle">
+  <div class="archive-heading"><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>不是履历，也不是作品成绩。只是几个我愿意留下来的瞬间。所有人物照片均来自本人提供的真实照片，网页版本只做尺寸压缩，没有 AI 修图。</p></div>
+  <div class="archive-grid">
+    <figure class="archive-shot archive-a"><img src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"><figcaption><span>01 / HELLO AGAIN</span><b>一个平常的下午。</b></figcaption></figure>
+    <figure class="archive-shot archive-b"><img src="images/04-hongkong-street.webp" alt="香港街头的色彩、路牌与橙红色裙子" loading="lazy"><figcaption><span>02 / CITY WALKS</span><b>街头也有好故事。</b></figcaption></figure>
+    <figure class="archive-shot archive-c"><img src="images/01-blackwhite-playful.webp" alt="黑白生活照，做鬼脸并比出双手手势" loading="lazy"><figcaption><span>03 / NOT TOO SERIOUS</span><b>偶尔不那么正经。</b></figcaption></figure>
+    <figure class="archive-shot archive-d"><img src="images/04-snow-sunset.webp" alt="雪地日落时戴着白色绒帽的旅行照片" loading="lazy"><figcaption><span>04 / WINTER LIGHT</span><b>收藏一点日落。</b></figcaption></figure>
+    <figure class="archive-shot archive-e"><img src="images/03-lowlight-portrait.webp" alt="暖棕色低光室内肖像" loading="lazy"><figcaption><span>05 / QUIET MOMENTS</span><b>安静也是一种状态。</b></figcaption></figure>
+  </div>
+</section>
 <section class="collab-section" id="collaborate" aria-labelledby="collabTitle">
   <div class="collab-inner">
     <span class="eyebrow">A NOTE FROM LIUSHUI</span>
@@ -440,7 +475,7 @@ const chapters = [
     headline:'我习惯先观察，<br><em>再开始表达。</em>',
     desc:'你好，我是六水。喜欢观察有意思的人和事，喜欢记录生活里那些一闪而过的念头，也喜欢把复杂的问题讲清楚。这本手账里有我的作品，也有很多与工作无关的快乐。',
     quote:'“有好奇心，也有一点把想法做出来的执拗。”',
-    tags:['喜欢观察','喜欢表达','保留玩心'], caption:'湖边的一个开心瞬间 · PHOTO 08', date:'PORTRAIT 001', image:'', alt:'我眼中的世界：原始个人照片'
+    tags:['喜欢观察','喜欢表达','保留玩心'], caption:'湖边的一个开心瞬间 · PHOTO 08', date:'PORTRAIT 001', image:'images/01-lake-joy.webp', alt:'我眼中的世界：原始个人照片'
   },
   {
     nav:'让想法发生', category:'CHAPTER 02 · THE MAKER', label:'WHAT I MAKE',
@@ -461,14 +496,14 @@ const chapters = [
     headline:'在水里找节奏，<br><em>在日常里积累。</em>',
     desc:'我喜欢游泳，也喜欢把旅行和日常拍下来。2025 年 4 月 4 日，我有一条 1000 米、29 分 22 秒的自由泳记录。这里不想写成一张自律成绩单，只想留住那些确实让我开心的时刻。',
     quote:'“有些值得坚持的事，本身就是答案。”',
-    tags:['游泳 1000 m','29 分 22 秒','旅行与日常'], caption:'木屋前的阳光 · PHOTO 02', date:'LIFE 004', image:'', alt:'认真地生活：游泳或生活原始照片'
+    tags:['游泳 1000 m','29 分 22 秒','旅行与日常'], caption:'木屋前的阳光 · PHOTO 02', date:'LIFE 004', image:'images/04-wooden-house.webp', alt:'认真地生活：游泳或生活原始照片'
   },
   {
     nav:'一起做点什么', category:'CHAPTER 05 · LET’S MAKE SOMETHING', label:'LET’S CONNECT',
     headline:'有好想法的话，<br><em>一起做点什么。</em>',
     desc:'如果你对内容、个人 IP、营销策划或 AI 的真实应用感兴趣，欢迎来交流。也欢迎只是因为这本手账里的某句话、某个作品，想来聊两句。',
     quote:'“好奇于心，创造于行。”',
-    tags:['交流','一起创作','合作'], caption:'蓝白配色的个人形象照 · PHOTO 04', date:'HELLO 005', image:'', alt:'一起做点什么：联系与合作'
+    tags:['交流','一起创作','合作'], caption:'蓝白配色的个人形象照 · PHOTO 04', date:'HELLO 005', image:'images/05-contact-portrait.webp', alt:'一起做点什么：联系与合作'
   }
 ]
 
@@ -493,7 +528,7 @@ function placeholderSVG(index) {
 const svgToUrl = markup => 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(markup);
 // Photos are intentionally blank until the selected ORIGINAL images are available
 // in ./images/. Never silently substitute AI-edited portraits or fake screenshots.
-const curatedImageFiles = ['01-lake-joy.jpg','02-work-evidence.png','03-flomo-notes.png','04-wooden-house.jpg','05-contact-portrait.jpg'];
+const curatedImageFiles = ['01-lake-joy.webp', null, null, '04-wooden-house.webp', '05-contact-portrait.webp'];
 const imageFor = index => chapters[index].image || svgToUrl(placeholderSVG(index));
 
 function leftMarkup(i) {
@@ -502,6 +537,10 @@ function leftMarkup(i) {
 }
 function rightMarkup(i) {
   const c=chapters[i];
+  // Professional and writing chapters deliberately use verified text-based layouts,
+  // not fabricated platform screenshots or unrelated portraits.
+  if (i===1) return `<div class="page-inner image-page"><div class="image-top"><span>SELECTED WORK / REAL RESULTS</span><span>02</span></div><div class="editorial-metric-card work-metric"><span class="metric-overline">PERSONAL IP · SELECTED VIDEO</span><strong>47.5<span>万</span></strong><p>代表视频单条播放量<br><small>来自原始作品截图记录，不推算转化</small></p><div class="metric-divider"></div><span class="metric-overline">SNAPVEE · CONTENT PRACTICE</span><b>日更视频与图文</b><p>数百名新增粉丝 · 多名主动咨询</p><small>详细的过程与证据状态见下方项目案例</small></div><div class="page-foot"><span>WORK IS MORE THAN A TITLE</span><em>04</em></div></div>`;
+  if (i===2) return `<div class="page-inner image-page"><div class="image-top"><span>FLOMO / YEARS OF NOTES</span><span>03</span></div><div class="editorial-metric-card note-metric"><span class="metric-overline">2024 — 2026 · SNAPSHOT</span><strong>718<span>条</span></strong><p>记录下的想法与观察</p><div class="metric-divider"></div><b>252,583 字</b><p>不是每天都在写，也不是每条都有答案。<br>但好奇心值得被认真对待。</p><small>统计来自上传的 flomo 年度记录截图，数字为截图时点</small></div><div class="page-foot"><span>A LITTLE NOTE TO MYSELF</span><em>06</em></div></div>`;
   return `<div class="page-inner image-page"><div class="image-top"><span>VISUAL ARCHIVE / 0${i+1}</span><span>✳ &nbsp; 2026</span></div><div class="photo-border"><span class="photo-tape" aria-hidden="true"></span><div class="photo-holder"><img src="${imageFor(i)}" alt="${c.image ? c.alt : c.nav+'章节的原创插画占位图，等待替换为原始照片'}" draggable="false"></div></div><div class="photo-caption"><span>${c.caption}</span><span>${c.date}</span></div><div class="page-foot"><span>AN OPEN PERSONAL ARCHIVE</span><em>${String(i*2+2).padStart(2,'0')}</em></div></div>`;
 }
 
