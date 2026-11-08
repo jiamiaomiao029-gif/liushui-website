@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 type Spread = {
   id: string;
   chapter: string;
   eyebrow: string;
-  left: React.ReactNode;
-  right: React.ReactNode;
+  left: ReactNode;
+  right: ReactNode;
 };
 
 const portrait = "/images/portrait.png";
@@ -32,7 +32,7 @@ const spreads: Spread[] = [
     ),
     right: (
       <div className="book-cover-photo">
-        <img src={portrait} alt="六水的个人肖像，原始上传照片" />
+        <img src={portrait} alt="六水的个人肖像" />
         <div className="book-photo-overlay">
           <span>CHAPTER ZERO</span>
           <p>认真生活，保持好奇。</p>
