@@ -553,6 +553,12 @@ a { color:inherit; }
 @media(max-width:760px){.v3-showcase-grid,.v3-education-grid,.v3-event-grid,.v3-tools-grid,.v3-thinking-grid{grid-template-columns:1fr}.v3-works-list{grid-template-columns:1fr 1fr}.v3-exhibit{padding:0 18px;margin:44px auto}.v3-section-num{font-size:29px}.v3-notes-summary{grid-template-columns:1fr 1fr}.v3-notes-summary>div:last-child{grid-column:span 2}.v3-flagship-cover{min-height:280px}}
 @media(max-width:450px){.v3-works-list{grid-template-columns:1fr}.v3-flagship-cover{padding:25px}.v3-tools-grid article{padding:24px}.v3-exhibit{margin:34px auto 60px}.v3-section-head h2{font-size:29px}}
 
+
+.studio-section[hidden]{display:none!important}
+.v3-heat .v3-day-pad,.v3-heat .v3-day-no-data{display:block;min-width:0;height:10px;aspect-ratio:1;border-radius:2px}
+.v3-heat .v3-day-pad{background:transparent}.v3-heat .v3-day-no-data{background:#e6e1d8}
+.v3-heat button:hover{outline:1px solid #a86743;outline-offset:1px}
+@media(max-width:680px){.v3-heat button,.v3-heat .v3-day-no-data,.v3-heat .v3-day-pad{height:8px}}
 </style>
 </head>
 <body>
@@ -825,6 +831,7 @@ function renderStatic(index) {
   $('prevButton').disabled=!opened || busy || index===0;
   $('nextButton').disabled=busy || (opened && index===chapters.length-1);
   $('controlHint').innerHTML=opened?'<span>拖动书页翻页 · 或使用方向键</span><kbd>←</kbd><kbd>→</kbd>':'<span>点击封面，开始阅读</span><kbd>←</kbd><kbd>→</kbd>';
+  if(index===9)hydrateV3Heatmaps();
 }
 function createToc() {
   $('toc').innerHTML=chapters.map((c,i)=>`<li><button class="toc-btn" type="button" data-index="${i}" aria-label="打开第 ${i+1} 章：${c.nav}"><span class="toc-number">0${i+1}.</span><span class="toc-title">${c.nav}</span><span class="toc-mark"></span></button></li>`).join('');
@@ -989,6 +996,56 @@ function buildLocalPhotoInputs() {
     box.querySelector('.evidence-status').textContent='本机预览 · 未持久保存';
   }));
 }
+
+/* Verified date-count series from Obsidian export, 2024-09-20—2026-10-20. Counts only. */
+const v3FlomoCounts="115j200085210110001342a2535400080400001000000802222005220140300122332011115310000000000000000000000000000000000000062100000700000000000000000000000014000000040000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000420a3e12211132103220000310007853100002000000000000000000000000000000000001002101210400500000000000001d001410501001500000b000001200000000000100000010007b0200000000010j56832000m012200000000000012010020100000000110004100000000002031153633000f364612372300017012011512511123101014942211054318682130330211020110102100000100000000000000210001000000022000000000000600001010000000000030011000000000000100400001002033005100001010200701000000003110090302";
+const v3Start=Date.UTC(2024,8,20),v3End=Date.UTC(2026,9,20),v3Day=86400000;
+let v3HeatYear=2026;
+function v3CountOn(day){
+ const n=Math.round((day-v3Start)/v3Day);
+ return n<0||n>=v3FlomoCounts.length?null:parseInt(v3FlomoCounts[n],24);
+}
+function hydrateV3Heatmaps(year=v3HeatYear){
+ v3HeatYear=year;
+ document.querySelectorAll('.v3-heat-panel').forEach(panel=>{
+  panel.querySelectorAll('[data-year]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.year)===year)));
+  const grid=panel.querySelector('.v3-heat');if(!grid)return;
+  const first=Date.UTC(year,0,1),end=Date.UTC(year,11,31),pad=(new Date(first).getUTCDay()+6)%7,parts=[];
+  for(let i=0;i<pad;i++)parts.push('<span class="v3-day-pad" aria-hidden="true"></span>');
+  for(let day=first;day<=end;day+=v3Day){
+   const c=v3CountOn(day),date=new Date(day).toISOString().slice(0,10);
+   if(c===null){parts.push('<span class="v3-day-no-data" title="'+date+' 不在本次导出范围内"></span>');continue}
+   const level=c>=10?4:c>=5?3:c>=2?2:c>0?1:0;
+   parts.push('<button type="button" data-date="'+date+'" data-count="'+c+'" data-level="'+level+'" aria-label="'+date+'：'+c+' 条笔记" title="'+date+'：'+c+' 条笔记"></button>');
+  }
+  grid.innerHTML=parts.join('');
+  const info=panel.querySelector('.v3-heat-detail');
+  if(info)info.textContent='选中一天查看记录数（2024.09.20—2026.10.20）';
+ });
+}
+const v3LiveTopics=[
+ ['对标的本质，是降低试错成本。','研究别人的路径，是为了找到更有效的测试方法，而不是模仿别人的身份。'],
+ ['做内容前，先回答谁需要它。','从真实用户遇到的问题出发，而不只是从创作者想表达什么出发。'],
+ ['用户不为 AI 两个字买单。','AI 是手段，用户最终关心的仍是被解决的具体问题。'],
+ ['想创业，先验证真实需求。','先用最小动作取得现实反馈，再决定值不值得继续放大。']
+];
+document.addEventListener('click',event=>{
+ const jump=event.target.closest('[data-open-chapter]');
+ if(jump){event.preventDefault();goTo(Number(jump.dataset.openChapter));document.getElementById('reading-area')?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth'});return}
+ const b=event.target.closest('[data-live-topic]');
+ if(b){const panel=b.closest('.v3-live-panel');if(!panel)return;const data=v3LiveTopics[Number(b.dataset.liveTopic)];if(!data)return;
+  panel.querySelectorAll('[data-live-topic]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn===b)));
+  panel.querySelector('[data-live-topic-title]').textContent=data[0];
+  panel.querySelector('[data-live-topic-desc]').textContent=data[1];return;
+ }
+ const year=event.target.closest('.v3-year-tabs [data-year]');
+ if(year){hydrateV3Heatmaps(Number(year.dataset.year));return}
+ const day=event.target.closest('.v3-heat [data-date]');
+ if(day){const panel=day.closest('.v3-heat-panel');const target=panel?.querySelector('.v3-heat-detail');
+  if(target)target.textContent=day.dataset.date+' · '+day.dataset.count+' 条笔记';return;
+ }
+});
+
 createToc(); renderStatic(0); buildLocalPhotoInputs();
 
 cover.addEventListener('click',()=>openBook(current));
@@ -1005,6 +1062,7 @@ bookStage.addEventListener('pointercancel',e=>{
 });
 window.addEventListener('keydown',e=>{
   if(e.defaultPrevented||e.ctrlKey||e.altKey||e.metaKey||document.activeElement?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
+  if(e.target.closest && e.target.closest('.v3-heat-panel,.v3-topic-tabs,.v3-year-tabs,.v3-thinking-grid,.v3-first-links')) return;
   if(e.key==='ArrowRight') { e.preventDefault(); next(); }
   if(e.key==='ArrowLeft') { e.preventDefault(); prev(); }
   if(e.key==='Home') { e.preventDefault(); returnCover(); }
