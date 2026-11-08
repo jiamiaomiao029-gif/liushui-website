@@ -912,6 +912,75 @@ a { color:inherit; }
  .v35-mobile-cover .v35-cloth-content .cover-center{margin-top:-12%}
 }
 
+
+/* V3.6 — Approved six-pose Liushui visual guide. Existing photo files unmodified. */
+.liushui-sprite{
+ display:block;flex:none;width:96px;height:auto;aspect-ratio:1/1;
+ background-image:url("images/liushui-ip-sprite.webp");
+ background-repeat:no-repeat;
+ background-size:300% 200%;
+ background-position:0 0;
+ image-rendering:auto;
+ pointer-events:none;
+ filter:drop-shadow(0 4px 4px rgba(31,39,31,.10));
+}
+.liushui-sprite.pose-standing{background-position:0% 0%}
+.liushui-sprite.pose-waving{background-position:50% 0%}
+.liushui-sprite.pose-thinking{background-position:100% 0%}
+.liushui-sprite.pose-happy{background-position:0% 100%}
+.liushui-sprite.pose-working{background-position:50% 100%}
+.liushui-sprite.pose-reading{background-position:100% 100%}
+/* The clothbound green/gold cover remains; remove the awkward photographic portrait. */
+.v35-cover-artwork{
+ background:
+ repeating-linear-gradient(93deg,rgba(243,235,215,.025) 0px,rgba(243,235,215,.025) 1px,transparent 1px,transparent 4px),
+ radial-gradient(ellipse 70% 60% at 74% 68%,rgba(73,119,96,.48),transparent 92%),#1d4037;
+}
+.v36-cover-guide{
+ position:absolute;z-index:8;width:clamp(128px,14vw,180px);
+ right:-32px;bottom:65px;
+ transform-origin:65% 86%;
+ animation:v36-peek 980ms cubic-bezier(.21,.79,.23,1) both;
+ filter:drop-shadow(0 9px 9px #102f2c40);
+}
+.cover-object:hover .v36-cover-guide,
+.mobile-cover:active .v36-cover-guide{transform:translateY(-7px) rotate(-4deg)}
+.v35-cloth-content .cover-center{align-self:stretch;width:100%;padding-right:4%}
+.v35-cloth-content .cover-title{font-size:clamp(37px,4vw,60px)!important}
+@keyframes v36-peek{
+ 0%{opacity:0;transform:translate(28px,27px) rotate(10deg)}
+ 72%{opacity:1;transform:translate(-5px,-2px) rotate(-3deg)}
+ 100%{opacity:1;transform:translate(0,0) rotate(0)}
+}
+@keyframes v36-greet{
+ 0%,100%{transform:rotate(0)}
+ 50%{transform:rotate(-4deg) translateY(-2px)}
+}
+.v36-mobile-cover .v36-cover-guide,
+.v35-mobile-cover .v36-cover-guide{width:133px;right:-23px;bottom:64px}
+.v36-welcome-note{display:flex;align-items:center;gap:5px;min-height:54px;border-top:1px solid #d1c7b5;margin-top:5px;padding-top:3px}
+.v36-welcome-note .liushui-sprite{width:63px;animation:v36-greet 2.8s ease-in-out 1.2s 2}
+.v36-welcome-note>span:last-child{display:flex;flex-direction:column;gap:4px;min-width:0}
+.v36-welcome-note b{font-size:11px;color:#3c654e}
+.v36-welcome-note small{font-size:9px;line-height:1.45;color:#807c70}
+.v3-section-head{position:relative}
+.v3-section-head .v36-section-guide{position:absolute;right:73px;bottom:-5px;width:78px;z-index:1}
+#v3-works .v3-section-head{padding-right:175px}
+.v36-thinking-guide{display:flex;align-items:center;gap:7px;padding:6px 10px;background:#f0f2e8;border-radius:5px}
+.v36-thinking-guide .liushui-sprite{width:65px}
+.v36-thinking-guide .v36-guide-text{font-size:10px;color:#60705f;line-height:1.65}
+.v3-contact-pic{position:relative}
+.v36-contact-guide{position:absolute;bottom:-7px;right:1px;width:95px;filter:drop-shadow(0 5px 3px #1635223c)}
+@media(max-width:940px){#v3-works .v3-section-head{padding-right:105px}.v3-section-head .v36-section-guide{right:10px;width:72px;bottom:0}.v36-cover-guide{width:130px}}
+@media(max-width:680px){
+ .v35-mobile-cover .v36-cover-guide{width:116px;right:-22px;bottom:55px}
+ .v3-section-head .v36-section-guide{position:relative;right:auto;bottom:auto;width:66px;margin-left:auto}
+ #v3-works .v3-section-head{padding-right:0}
+ .v36-welcome-note .liushui-sprite{width:71px}
+ .v36-thinking-guide .liushui-sprite{width:64px}
+}
+@media(prefers-reduced-motion:reduce){.v36-cover-guide,.v36-welcome-note .liushui-sprite{animation:none!important;transform:none!important}}
+
 </style>
 </head>
 <body>
@@ -975,9 +1044,8 @@ a { color:inherit; }
   </g>
   <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
  </svg>
- <img class="v35-integrated-portrait" src="images/01-about-blue-shirt.webp" alt="" loading="eager" decoding="async">
- <span class="v35-portrait-veil"></span>
 </span>
+ <span class="liushui-sprite pose-standing v36-cover-guide" aria-hidden="true"></span>
  <span class="cover-content v35-cloth-content">
   <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL · 2026</span></span>
   <span class="cover-center">
@@ -1011,9 +1079,8 @@ a { color:inherit; }
   </g>
   <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
  </svg>
- <img class="v35-integrated-portrait" src="images/01-about-blue-shirt.webp" alt="" loading="eager" decoding="async">
- <span class="v35-portrait-veil"></span>
 </span>
+ <span class="liushui-sprite pose-standing v36-cover-guide" aria-hidden="true"></span>
  <span class="cover-content v35-cloth-content">
   <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL</span></span>
   <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="v35-title-rule" aria-hidden="true"></span><span class="cover-subtitle">好奇于心，创造于行。</span></span>
@@ -1047,7 +1114,7 @@ a { color:inherit; }
  <p class="v34-field-footnote">五组不同过程的原始照片或截图。没有对应原视频的直播、教学现场，不使用其他场景冒充。</p>
 </section>
 <section class="v3-exhibit v3-hero-showcase" id="v3-works" aria-labelledby="worksHeading">
- <div class="v3-section-head"><div><span class="eyebrow">01A / WORKS</span><h2 id="worksHeading">说过的话，做成的作品。</h2><p>短视频、系列内容与长文。这里展示属于我的创作和真实互动，不把内容作品集做成简历证明墙。</p></div><span class="v3-section-num">01A</span></div>
+ <div class="v3-section-head"><div><span class="eyebrow">01A / WORKS</span><h2 id="worksHeading">说过的话，做成的作品。</h2><p>短视频、系列内容与长文。这里展示属于我的创作和真实互动，不把内容作品集做成简历证明墙。</p></div><span class="liushui-sprite pose-working v36-section-guide" role="img" aria-label="六水在电脑前创作"></span><span class="v3-section-num">01A</span></div>
  <div class="v3-showcase-grid">
   <article class="v3-flagship">
    <div class="v3-flagship-cover"><span>ORIGINAL / FLAGSHIP VIDEO</span><h3>大学如何铺<br>自己的人脉网</h3><div>「大佬幼年体」系列 · 大学是社会的 mini 版</div></div>
@@ -1298,7 +1365,7 @@ function leftMarkup(i) {
 }
 function rightMarkup(i) {
  const c=chapters[i];
- if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v33-about-collage"><figure class="v33-about-present"><img src="images/01-lake-joy.webp" alt="湖边笑着比耶的生活照"><figcaption>NOW / 依然好奇</figcaption></figure><figure class="v33-about-child"><img src="images/v3/v3-childhood.webp" alt="六水小时候的照片"><figcaption>THEN / 很久以前</figcaption></figure></div><p class="v3-soft-caption">从小时候到现在，好奇心一直都在。这里有一些我做过的事，也有很多不必为结果负责的快乐。</p>','v3-about');
+ if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v33-about-collage"><figure class="v33-about-present"><img src="images/01-lake-joy.webp" alt="湖边笑着比耶的生活照"><figcaption>NOW / 依然好奇</figcaption></figure><figure class="v33-about-child"><img src="images/v3/v3-childhood.webp" alt="六水小时候的照片"><figcaption>THEN / 很久以前</figcaption></figure></div><div class="v36-welcome-note"><span class="liushui-sprite pose-waving" role="img" aria-label="六水挥手欢迎"></span><span><b>嗨，欢迎来翻翻。</b><small>这本书里，放着我认真做过的事。</small></span></div><p class="v3-soft-caption">从小时候到现在，好奇心一直都在。这里有一些我做过的事，也有很多不必为结果负责的快乐。</p>','v3-about');
  if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v34-book-work"><div class="v34-book-work-heading"><small>原创短视频 · 大佬幼年体</small><h3>大学如何铺<br>自己的人脉网</h3><p>从“看头衔”转向“看信息与资源”，是这条视频的切入点。</p></div><figure><img src="images/v3/v3-self-viral.webp" alt="另一条六水个人原创内容在小红书上的真实发布截图"><figcaption>同账号另一条原创作品的截图 · 非本视频封面</figcaption></figure></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>抖音新增关注</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">看作品与脚本档案 ↗</a>','v3-works-panel');
  if(i===2)return panel(i,'SELECTED / WORKS','<div class="v33-works-book"><div class="v33-works-book-copy"><span>MY CREATIONS / SELECTED</span><h3>我的内容，<br>有很多种样子。</h3><p>视频 · 系列选题 · X 长文</p></div><div class="v33-works-book-images"><figure><img src="images/v3/v3-self-viral.webp" alt="六水原创内容的个人发布页面截图"><figcaption>个人内容作品页</figcaption></figure><figure><img src="images/v3/v3-xhs-notifications.webp" alt="小红书点赞收藏和新增关注消息界面"><figcaption>真实互动消息</figcaption></figure></div></div><a class="v3-inline-link" href="#v3-works">打开完整作品集 ↗</a>','v3-works-panel');
  if(i===3)return panel(i,'ON AIR / LIVE','<div class="v34-live-notebook"><div class="v34-note-top"><span>AFTER LIVE · 2026.07.23</span><span>整理自直播录音</span></div><h3>对标方法论<br><em>为什么要研究对标？</em></h3><div class="v34-live-line"><b>问题</b><span>选题、封面、发布时间，变量太多。</span></div><div class="v34-live-line"><b>判断</b><span>对标的本质，是降低验证成本。</span></div><div class="v34-live-line"><b>输出</b><span>整理成一条可讲述的短视频稿。</span></div><small>这是真实直播整理稿的图文重排，并非直播截图。</small></div><a class="v3-inline-link" href="#v3-live">查看直播整理过程 ↗</a>','v3-live-panel');
@@ -1308,9 +1375,9 @@ function rightMarkup(i) {
  if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LAB / PROTOTYPE</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看真实 GitHub 仓库 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容创作与业务判断的 Skills 集合</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开项目 ↗</a></div>','v3-skills-panel');
  if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v33-print-book"><img src="images/v3/v3-flomo-print.webp" alt="一整叠打印出来的 flomo 笔记，用手托住纸张"><div class="v33-print-label"><small>WRITING / ON PAPER</small><strong>17<span>万字</span></strong><span>把记录变成一叠纸。</span></div></div><p class="v3-soft-caption">17 万字是打印稿当时的字数；其他累计统计以各自记录时间为准。</p><a class="v3-inline-link" href="#v3-notes">打开写作档案 ↗</a>','v3-notes-panel');
  if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>两批导出笔记</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">日期计数来自 Obsidian 导出，不等于账号全部累计。</small>','v3-heat-panel');
- if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><p class="v3-soft-caption">这是内容关系图，不是假装精确的知识统计。公开的是我的理解，不是外部资料全文。</p>','v3-tree-panel');
+ if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><div class="v36-thinking-guide"><span class="liushui-sprite pose-thinking" role="img" aria-label="六水认真思考"></span><span class="v36-guide-text">读过、想过，接下来做出来。</span></div><p class="v3-soft-caption">这是内容关系图，不是假装精确的知识统计。公开的是我的理解，不是外部资料全文。</p>','v3-tree-panel');
  if(i===11)return panel(i,'LITTLE JOYS / PHOTO NOTES','<div class="v3-photo-layout"><img src="images/04-wooden-house.webp" alt="木屋前橙色裙子的旅行照"><img src="images/04-hongkong-street.webp" alt="香港街头旅行照"><img src="images/04-snow-sunset.webp" alt="雪地日落旅行照"></div><p class="v3-soft-caption">旅行、游泳、拍照和随手记下的日常。点击下方相册继续翻看。</p><a class="v3-inline-link" href="#photo-archive">翻开生活相册 ↗</a>','v3-photo-panel');
- return panel(i,'SAY HELLO / CONTACT','<div class="v3-contact-pic"><img src="images/05-contact-portrait.webp" alt="蓝白服装的个人形象照"></div><div class="v3-contact-links"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" data-copy-wechat>微信 · liushui029</button></div>','v3-contact-panel');
+ return panel(i,'SAY HELLO / CONTACT','<div class="v3-contact-pic"><img src="images/05-contact-portrait.webp" alt="蓝白服装的个人形象照"><span class="liushui-sprite pose-happy v36-contact-guide" role="img" aria-label="开心的六水挥手告别"></span></div><div class="v3-contact-links"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" data-copy-wechat>微信 · liushui029</button></div>','v3-contact-panel');
 }
 const $=id=>document.getElementById(id);
 const app=$('app'), body=$('bookBody'), left=$('leftPage'), right=$('rightPage');
