@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e8e5dd">
+<meta name="theme-color" content="#f0ede7">
 <meta name="description" content="不止想想 · Curious at Heart｜六水的交互式个人手账，记录观察、内容、创造与生活。">
 <title>不止想想 · Curious at Heart｜六水的个人手账</title>
 <style>
@@ -317,7 +317,7 @@ a { color:inherit; }
 @media(max-width:940px){.archive-heading{display:block}.archive-heading p{margin-top:12px}.archive-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.archive-shot{grid-column:span 3}}
 @media(max-width:680px){.archive-section{padding:0 18px;margin:25px auto 34px}.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.archive-shot{grid-column:span 1}.archive-shot img{min-height:140px;max-height:235px}.archive-a{grid-column:span 2}.archive-a img{max-height:270px}.archive-heading h2{font-size:29px}.archive-d,.archive-e{transform:none}.mobile-paper .editorial-metric-card{min-height:235px}.mobile-paper .editorial-metric-card>strong{font-size:46px}}
 
-/* V2.4 · paper motion — light, tactile and reduced-motion safe */
+/* V3.0 · paper motion — light, tactile and reduced-motion safe */
 .book-stage{touch-action:pan-y}
 .book-body{transition:filter .6s cubic-bezier(.22,.8,.2,1)}
 .is-opening .book-body{filter:drop-shadow(0 23px 28px #3f33286c)}
@@ -370,7 +370,7 @@ a { color:inherit; }
 @media(prefers-reduced-motion:reduce){.social-rail a,.social-rail button{transition:none!important}}
 
 
-/* V2.4: an editorial contact-sheet gallery, sized for current image resolution */
+/* V3.0: an editorial contact-sheet gallery, sized for current image resolution */
 .photo-editorial{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(210px,.7fr);align-items:center;gap:clamp(18px,4vw,65px);max-width:930px;margin:0 auto 26px}
 .photo-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:438px;background:linear-gradient(130deg,#dcd7c9,#eae6dc);padding:24px 28px 34px;overflow:hidden}
 .photo-stage:before{content:"";position:absolute;inset:16px;border:1px solid #fff8e482;pointer-events:none}
@@ -408,18 +408,1116 @@ a { color:inherit; }
 @media(max-width:680px){.mini-photo-picker{right:6%;bottom:13%}.mini-photo-picker button{width:39px;height:50px}}
 @media(prefers-reduced-motion:reduce){.mini-photo-picker button{transition:none!important}.photo-holder img{animation:none!important}}
 
+
+/* V3 · more things, fewer claims: book-specific responsive content panels */
+.sidebar{max-height:min(80svh,850px);overflow-y:auto;scrollbar-width:thin;padding-right:7px}
+.toc-btn{padding:8px 2px}
+.main-layout{align-items:center}
+.page-inner{padding:6.4% 7.5% 5.3%}
+.chapter-heading{font-size:clamp(19px,2.25vw,32px);margin:8px 0 11px}
+.chapter-desc{font-size:clamp(10px,.93vw,12px);line-height:1.75}
+.chapter-pull{font-size:clamp(12px,1.2vw,16px);margin:12px 0 10px}
+.chips{margin-bottom:12px}
+.v3-panel-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.v3-panel .page-foot{margin-top:auto}
+.v3-panel .image-top{flex-shrink:0}
+.v3-panel .v3-soft-caption{font-size:10px;line-height:1.7;color:#777166;margin:4px 0}
+.v3-inline-link{color:#375e4c;font-size:11px;font-weight:650;text-decoration:none;border-bottom:1px solid #9ab19b;align-self:flex-start;margin-top:auto;padding-bottom:4px}
+.v3-first-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:7px}
+.v3-first-links button{border:1px solid #8da997;background:#e7eee5;color:#315849;border-radius:8px;padding:12px 6px;font-size:11px;cursor:pointer}
+.v3-first-links button:hover{background:#d4e5d3}
+.v3-portrait-stack{position:relative;flex:1;min-height:170px;background:#dad9cf;padding:10px 20% 10px 9%;border-radius:5px}
+.v3-main-portrait{height:100%;max-height:330px;max-width:100%;object-fit:cover;box-shadow:0 8px 22px #2b282740}
+.v3-small-portrait{position:absolute;right:5%;bottom:2%;height:44%;width:36%;object-fit:cover;border:6px solid #faf7eb;box-shadow:0 4px 11px #36332845;transform:rotate(5deg)}
+.v3-cover-vibe{background:#355848;color:#fff5e1;border-radius:5px;min-height:52%;padding:7%;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.v3-cover-vibe:before{content:"";position:absolute;width:140px;height:140px;right:-45px;top:-45px;border:1px solid #e7d7b355;border-radius:50%;box-shadow:0 0 0 32px #ffffff08}
+.v3-cover-vibe span{font-size:9px;letter-spacing:.08em;color:#d3e1c9}.v3-cover-vibe strong{font:normal clamp(24px,2.7vw,40px)/1.27 Georgia,"Songti SC",serif}.v3-cover-vibe small{font-size:10px;color:#cbd9c4}
+.v3-metric-triple{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.v3-metric-triple div{border-top:1px solid #cfc5b7;padding-top:9px;display:flex;flex-direction:column;gap:6px}
+.v3-metric-triple b{font-size:clamp(11px,1.5vw,18px);color:#315849}.v3-metric-triple span{font-size:9px;color:#8b8074}
+.v3-work-list{display:flex;flex-direction:column;gap:5px;flex:1}
+.v3-work-list>div{background:#f0ece1;padding:8px 11px;display:flex;flex-direction:column;gap:4px;border-left:2px solid #8fa999}
+.v3-work-list span{font-size:8px;color:#ac927d}.v3-work-list b{font-size:12px}.v3-work-list small{font-size:9px;color:#858073}
+.v3-live-poster{background:radial-gradient(circle at 80% 15%,#6a8770,#27483d 65%);color:#fff9ef;display:flex;flex-direction:column;justify-content:center;padding:25px;gap:15px;min-height:70%;position:relative}
+.v3-live-poster>span:nth-child(2){font:10px Georgia,serif;letter-spacing:.15em;color:#d6dfca}
+.v3-live-poster strong{font:normal clamp(27px,2.9vw,42px)/1.3 Georgia,"Songti SC",serif}.v3-live-poster p{font-size:11px;color:#cddccc}
+.v3-onair-dot{position:absolute;right:25px;top:22px;width:10px;height:10px;border-radius:50%;background:#e8a16e;box-shadow:0 0 0 8px #e8a16e22}
+.v3-live-pills{display:flex;gap:6px;flex-wrap:wrap}.v3-live-pills span{border-radius:20px;border:1px solid #d2c9b7;padding:5px 8px;font-size:9px;color:#716c63}
+.v3-topic-tabs,.v3-year-tabs{display:flex;gap:5px;margin:3px 0}
+.v3-topic-tabs button,.v3-year-tabs button{border:1px solid #cbbfae;background:#f8f5ec;padding:8px 13px;font-size:10px;border-radius:20px;color:#486455;cursor:pointer}
+.v3-topic-tabs button[aria-pressed="true"],.v3-year-tabs button[aria-pressed="true"]{background:#325a4a;color:white}
+.v3-topic-card{background:#e2e9e0;border-radius:5px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:14px;flex:1}
+.v3-topic-card span{font:9px Georgia,serif;letter-spacing:.1em;color:#61866e}.v3-topic-card h3{font:normal clamp(23px,2.5vw,35px)/1.24 Georgia,"Songti SC",serif;color:#24483a;margin:0}.v3-topic-card p{font-size:12px;line-height:1.9;color:#5b705f}
+.v3-teach-notebook{border:1px solid #c4cfc4;background:repeating-linear-gradient(transparent 0 34px,#e5e7dd 34px 35px),#faf9f2;padding:23px 20px;box-shadow:0 4px 11px #44432a18;flex:1}
+.v3-teach-notebook>span{font:9px Georgia,serif;color:#897f70;letter-spacing:.13em}.v3-teach-notebook h3{font:italic 30px Georgia,serif;color:#24513f;margin:14px 0}.v3-examples{display:flex;flex-direction:column;gap:10px;font:15px Georgia,serif;color:#615c52}.v3-examples b{color:#a86040;text-decoration:underline;text-underline-offset:3px}.v3-grammar-rule{margin-top:22px;padding:9px 11px;background:#e0e7d8;color:#315846;font-size:11px}
+.v3-event-poster{background:#e0d6c5;border-left:8px solid #b17b55;padding:22px 18px;display:flex;flex-direction:column;flex:1;justify-content:space-between}.v3-event-poster>span{font:9px Georgia,serif;color:#93664b;letter-spacing:.08em}.v3-event-poster h3{font:normal clamp(24px,2.6vw,38px)/1.34 Georgia,"Songti SC",serif;color:#3d4137;margin:8px 0}.v3-event-route{display:flex;align-items:center;gap:5px;color:#6d715b;font-size:10px}.v3-event-stats{display:flex;align-items:center;gap:12px}.v3-event-stats strong{font-size:26px;color:#315848}.v3-event-stats span{font-size:10px;line-height:1.65;color:#777063}
+.v3-skill-mini{border:1px solid #d4ccbf;background:#efefe7;border-radius:5px;min-height:30%;padding:15px;display:flex;flex-direction:column;gap:8px}.v3-skill-mini b{font:16px Georgia,serif;color:#274f40}.v3-skill-mini small{font-size:10px;color:#6f756c}.v3-skill-mini a{font-size:10px;color:#45745a;text-decoration:none;margin-top:auto}
+.v3-paper-visual{min-height:65%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:30px;position:relative;background:linear-gradient(10deg,#e3dece,#faf7ed);box-shadow:inset 0 0 0 1px #d7cebf;overflow:hidden}
+.v3-paper-visual>span{font-size:9px;letter-spacing:.18em;color:#a68f74}.v3-paper-visual>strong{font:normal 84px/1.1 Georgia,serif;color:#315748;margin-top:20px;z-index:2}.v3-paper-visual strong span{font-size:21px}.v3-paper-visual>small{font-size:11px;color:#85776a;z-index:2}
+.v3-paper-visual i{position:absolute;right:-35px;bottom:-40px;width:130px;height:190px;border:1px solid #cdbfa7;background:#faf7ed;transform:rotate(12deg);box-shadow:-8px -9px 0 #eee7d8,-16px -17px 0 #e0d5c3}
+.v3-heat-top{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.v3-heat-top>div{display:flex;flex-direction:column;gap:3px;border-bottom:1px solid #cec7b8;padding-bottom:10px}.v3-heat-top b{font:26px Georgia,serif;color:#2e6347}.v3-heat-top span{font-size:9px;color:#7c756a}
+.v3-heat{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);grid-auto-columns:minmax(0,1fr);gap:2px;min-height:92px;overflow:hidden;padding:6px 0}
+.v3-heat button{min-width:0;height:10px;aspect-ratio:1;border:0;border-radius:2px;background:#dfe6da;cursor:pointer;padding:0}
+.v3-heat button[data-level="1"]{background:#b9cdb9}.v3-heat button[data-level="2"]{background:#8bb18e}.v3-heat button[data-level="3"]{background:#518b65}.v3-heat button[data-level="4"]{background:#2d6047}
+.v3-heat button:focus-visible{outline:2px solid #a6624a;outline-offset:1px}
+.v3-heat-detail{font-size:10px;color:#577360;line-height:1.5;min-height:29px}.v3-micro{font-size:9px;color:#958f80;line-height:1.5}
+.v3-tree{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:25px;padding:10px 0}
+.v3-tree-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;width:100%;position:relative}.v3-tree-row:after{content:"";position:absolute;top:100%;left:50%;width:1px;height:18px;background:#8da08c}
+.v3-tree-row span{display:grid;place-items:center;min-height:66px;background:#ece8de;padding:10px 5px;border-radius:4px;border:1px solid #dad4c6;text-align:center;color:#637060;font-size:10px}
+.v3-tree-trunk{width:76%;background:#31594a;color:#f6f1df;text-align:center;padding:20px 8px;border-radius:6px;font-size:13px;position:relative}
+.v3-tree-trunk:after{content:"";position:absolute;top:100%;left:50%;width:1px;height:18px;background:#8da08c}
+.v3-tree-output span{background:#dfe8df}
+.v3-tree-output:after{display:none}
+.v3-photo-layout{display:grid;grid-template-columns:1.5fr .75fr;grid-template-rows:1fr 1fr;gap:7px;flex:1;min-height:0}
+.v3-photo-layout img{width:100%;height:100%;object-fit:cover;min-height:0;box-shadow:0 3px 9px #66604e25}
+.v3-photo-layout img:first-child{grid-row:span 2}
+.v3-contact-pic{flex:1;min-height:0;overflow:hidden;background:#d9d4c9}
+.v3-contact-pic img{height:100%;width:100%;object-fit:cover;object-position:center 26%}
+.v3-contact-links{display:flex;gap:7px;flex-wrap:wrap}
+.v3-contact-links a,.v3-contact-links button{padding:6px 9px;border:1px solid #d5caba;background:#f9f5eb;border-radius:18px;font-size:10px;color:#37634c;text-decoration:none;cursor:pointer}
+@media(max-width:940px){.sidebar{max-height:none;overflow:visible}.toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px}.toc li{border-bottom:1px solid #d1cbc0}.toc-btn{padding:8px 2px}.v3-heat button{height:8px}}
+@media(max-width:680px){.toc{grid-template-columns:repeat(3,minmax(0,1fr))}.page-inner{padding:9% 8% 6%}.v3-panel-body{min-height:295px}.v3-cover-vibe{min-height:260px}.v3-live-poster{min-height:260px}.v3-portrait-stack{min-height:300px}.v3-contact-pic{min-height:285px}.v3-paper-visual{min-height:250px}.v3-heat{min-height:100px}}
+
+
+/* V3 editorial exhibition – selected results, not proof walls */
+.v3-exhibit{max-width:1160px;margin:52px auto 90px;padding:0 32px}
+.v3-section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:30px}
+.v3-section-head h2{font:normal clamp(29px,3.9vw,49px)/1.2 "Songti SC",Georgia,serif;color:#264e40;margin:10px 0}
+.v3-section-head p{font-size:13px;line-height:1.9;color:#777267;margin:0;max-width:600px}
+.v3-section-num{font:italic 45px Georgia,serif;color:#b5a994}
+.v3-showcase-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:23px}
+.v3-flagship{border:1px solid #c4bbaa;background:#fbf8f0;display:flex;flex-direction:column;min-width:0}
+.v3-flagship-cover{background:#355847;color:#fff8e8;min-height:315px;padding:38px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.v3-flagship-cover:before{content:"";position:absolute;width:260px;height:260px;right:-40px;bottom:-80px;border:1px solid #c5d6b64d;border-radius:50%;box-shadow:0 0 0 55px #ffffff06}
+.v3-flagship-cover>span{font:10px Georgia,serif;color:#bacbb5;letter-spacing:.14em}
+.v3-flagship-cover h3{font:normal clamp(31px,3.8vw,50px)/1.25 "Songti SC",Georgia,serif;margin:18px 0;position:relative}
+.v3-flagship-cover>div{font-size:12px;color:#c4d7c3}
+.v3-flagship-meta{padding:24px 26px}.v3-flagship-meta p{font-size:13px;line-height:1.8;color:#5e675a}
+.v3-result-row{display:flex;gap:16px;flex-wrap:wrap;margin:21px 0 12px}
+.v3-result-row span{display:flex;flex-direction:column;gap:7px;font-size:11px;color:#82796f;border-top:1px solid #d7cbbb;padding-top:9px}
+.v3-result-row b{font-size:23px;color:#285542;font-weight:600}
+.v3-flagship-meta small,.v3-event-copy small{display:block;font-size:10px;color:#999285;line-height:1.7}
+.v3-platform-links{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.v3-platform-links a{display:inline-block;border:1px solid #9eb09f;border-radius:20px;color:#315846;padding:10px 14px;font-size:11px;text-decoration:none}
+.v3-platform-links a:hover{background:#e3ede2}
+.v3-works-list{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.v3-works-list article,.v3-live-quotes article{background:#f7f3e9;border:1px solid #d9cebe;padding:23px 19px;min-width:0}
+.v3-works-list article>span,.v3-live-quotes article>span{font:10px Georgia,serif;color:#9d8c75;letter-spacing:.09em}
+.v3-works-list h3,.v3-live-quotes h3{font:normal 20px/1.35 "Songti SC",serif;margin:15px 0;color:#335247}
+.v3-works-list p,.v3-live-quotes p{font-size:12px;line-height:1.85;color:#80776c}
+.v3-works-list a{font-size:11px;color:#3d7155;text-decoration:none}
+.v3-live-hero{background:#284b3e;color:#fcf7e9;min-height:310px;padding:35px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.v3-live-hero h3{font:normal clamp(28px,3.8vw,47px)/1.3 "Songti SC",Georgia,serif;margin:10px 0}
+.v3-live-hero p{font-size:13px;color:#ced7c8}.v3-live-hero small{font-size:10px;color:#a9bea7;line-height:1.7}
+.v3-live-pill{font:10px Georgia,serif;letter-spacing:.16em;color:#e6d9c2}
+.v3-live-pill i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#e4a47a;margin-right:8px}
+.v3-live-quotes{display:grid;gap:12px;grid-template-columns:1fr}
+.v3-live-quotes article{padding:16px 24px}
+.v3-live-quotes h3{margin:6px 0}
+.v3-live-quotes p{margin:0}
+.v3-secondary{margin-top:83px}
+.v3-education-grid,.v3-event-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.v3-lesson-sheet{border:1px solid #d3cbbd;background:repeating-linear-gradient(transparent 0 39px,#e0e6dd 39px 40px),#faf9f2;padding:34px 30px;box-shadow:0 7px 15px #49442d18}
+.v3-lesson-sheet>span,.v3-event-cover>span{font:11px Georgia,serif;letter-spacing:.1em;color:#988c7a}
+.v3-lesson-sheet h3{font:italic 34px Georgia,serif;color:#285745;margin:22px 0}
+.v3-lesson-sheet p{font:17px Georgia,serif;color:#5d5b52;margin:22px 0}
+.v3-lesson-sheet b{color:#a55d46}.v3-lesson-sheet>div{font-size:12px;color:#41664e;background:#e0e9de;padding:13px;margin-top:23px}
+.v3-lessons-copy,.v3-event-copy{padding:32px;background:#f6f3e9;border:1px solid #dbd2c3}
+.v3-lessons-copy h3,.v3-event-copy h3{font:normal 28px "Songti SC",Georgia,serif;color:#315442;margin:0 0 21px}
+.v3-lessons-copy p,.v3-event-copy p{font-size:13px;line-height:2;color:#776f63}
+.v3-teaching-tags{display:flex;gap:6px;flex-wrap:wrap;margin:23px 0}
+.v3-teaching-tags span{padding:8px 10px;border:1px solid #b1bbac;border-radius:19px;font-size:10px;color:#4d7056}
+.v3-lessons-copy small{font-size:10px;color:#928879;line-height:1.6}
+.v3-event-cover{background:#e1d5c3;border-left:9px solid #a66d52;padding:32px;display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+.v3-event-cover h3{font:normal clamp(30px,3.6vw,46px)/1.25 "Songti SC",serif;color:#333b33}
+.v3-event-cover p{font-size:13px;color:#7d7062}
+.v3-event-path{display:flex;gap:7px;flex-wrap:wrap}.v3-event-path b{border:1px solid #b7a58f;padding:10px;border-radius:50%;font-size:11px;color:#53624d}
+.v3-event-copy>span{font:10px Georgia,serif;color:#998a77;letter-spacing:.15em}
+.v3-tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}
+.v3-tools-grid article{padding:32px;border:1px solid #d2c7b7;background:#f7f6ed;display:flex;flex-direction:column;gap:13px}
+.v3-tools-grid article>span{font:10px Georgia,serif;color:#9b8a77}
+.v3-tools-grid h3{font:normal 28px Georgia,serif;color:#315644;margin:9px 0 0}
+.v3-tools-grid p{font-size:13px;line-height:1.8;color:#736f64;max-width:470px}
+.v3-tools-grid article>div{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 15px}.v3-tools-grid article>div span{padding:7px 9px;border:1px solid #c2c7b7;border-radius:20px;font-size:10px;color:#597461}
+.v3-tools-grid article>a{color:#37684f;font-size:12px;text-decoration:none;align-self:flex-start;border-bottom:1px solid #8eaa93}
+.v3-notes-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:16px}
+.v3-notes-summary>div{background:#f7f5ed;border:1px solid #d9cebe;padding:23px;display:flex;flex-direction:column;gap:12px}
+.v3-notes-summary span{font:9px Georgia,serif;letter-spacing:.1em;color:#968575}
+.v3-notes-summary b{font:32px Georgia,"Songti SC",serif;color:#315747}.v3-notes-summary small{font-size:11px;color:#82796d}
+.v3-thinking-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.v3-thinking-grid>div{background:#e2e8df;padding:27px}
+.v3-thinking-grid h3{font:normal 21px "Songti SC",serif;color:#315343}
+.v3-thinking-grid p{font-size:12px;line-height:1.85;color:#657261}
+.v3-thinking-grid button{border:1px solid #8fb39b;background:#f7fbf5;color:#375a45;border-radius:20px;font-size:11px;padding:10px 14px;cursor:pointer}
+@media(max-width:760px){.v3-showcase-grid,.v3-education-grid,.v3-event-grid,.v3-tools-grid,.v3-thinking-grid{grid-template-columns:1fr}.v3-works-list{grid-template-columns:1fr 1fr}.v3-exhibit{padding:0 18px;margin:44px auto}.v3-section-num{font-size:29px}.v3-notes-summary{grid-template-columns:1fr 1fr}.v3-notes-summary>div:last-child{grid-column:span 2}.v3-flagship-cover{min-height:280px}}
+@media(max-width:450px){.v3-works-list{grid-template-columns:1fr}.v3-flagship-cover{padding:25px}.v3-tools-grid article{padding:24px}.v3-exhibit{margin:34px auto 60px}.v3-section-head h2{font-size:29px}}
+
+
+.studio-section[hidden]{display:none!important}
+.v3-heat .v3-day-pad,.v3-heat .v3-day-no-data{display:block;min-width:0;height:10px;aspect-ratio:1;border-radius:2px}
+.v3-heat .v3-day-pad{background:transparent}.v3-heat .v3-day-no-data{background:#e6e1d8}
+.v3-heat button:hover{outline:1px solid #a86743;outline-offset:1px}
+@media(max-width:680px){.v3-heat button,.v3-heat .v3-day-no-data,.v3-heat .v3-day-pad{height:8px}}
+
+/* V3.1 – six quiet mother chapters; child topics remain sibling navigation */
+.toc{display:block}
+.toc .toc-group{list-style:none;border-bottom:1px solid #d1cbc0}
+.toc .toc-parent{padding:12px 2px}
+.toc .toc-parent[aria-current="location"]{color:#25483e;font-weight:650;padding-left:7px}
+.toc-children{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 2px 13px 32px}
+.toc-children:has(> :nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+.toc-child{min-width:0;background:#f3f0e8;border:1px solid #d6cebf;color:#857d70;border-radius:6px;padding:9px 3px;cursor:pointer;font-size:10px;transition:background .18s,color .18s,transform .18s}
+.toc-child:hover{color:#315e48;background:#e7ece2;transform:translateY(-1px)}
+.toc-child[aria-current="page"]{background:#dbe8d9;border-color:#88a890;color:#254e3c;font-weight:700}
+.toc-group.has-children .toc-parent .toc-mark{opacity:0}
+.toc-group.has-children .toc-parent.is-active .toc-mark{opacity:1}
+@media(max-width:940px){.toc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px 13px}.toc .toc-group{border-bottom:1px solid #d1cbc0}.toc-children{margin-left:0;gap:4px}.toc-children:has(> :nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}.toc .toc-parent{padding:7px 2px}}
+@media(max-width:680px){.toc{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 13px}.toc-child{padding:9px 3px;font-size:10px}.toc-children{margin-bottom:8px}.toc .toc-parent{font-size:11px}}
+
+
+/* V3 teaching studio: curriculum + service design, fully original explanation and visuals */
+.v3-teach-pipeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.v3-teach-pipeline>div{border:1px solid #d9d0bf;border-radius:4px;padding:8px 7px;background:#f0efe5;display:flex;flex-direction:column;gap:6px;min-width:0}
+.v3-teach-pipeline>div.is-focus{background:#dbe8dc;border-color:#9cb9a1}
+.v3-teach-pipeline small{font:8px Georgia,serif;color:#8d806b;letter-spacing:.03em}
+.v3-teach-pipeline b{font-size:10px;color:#335743}
+.v3-teach-pipeline span{font-size:8px;line-height:1.55;color:#7b796d}
+.v3-teach-atlas{background:#e4e9df;padding:17px 18px;min-height:53%;display:flex;flex-direction:column;gap:15px;justify-content:center}
+.v3-teach-atlas-head{display:flex;flex-direction:column;gap:8px}
+.v3-teach-atlas-head span{font:9px Georgia,serif;letter-spacing:.12em;color:#78917b}
+.v3-teach-atlas-head b{font:normal clamp(20px,2.1vw,29px)/1.3 "Songti SC",serif;color:#2e5c45}
+.v3-teach-subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.v3-teach-subjects span{border:1px solid #b9c7b6;border-radius:20px;padding:7px 3px;text-align:center;font-size:10px;color:#385a47;background:#f6f8f0}
+.v3-teach-atlas p{font-size:11px;line-height:1.85;color:#5f705f;margin:0}
+.v3-teach-atlas strong{color:#2d6849}
+.v3-teach-atlas small{font-size:9px;color:#829083}
+.v3-teach-journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 65px}
+.v3-teach-journey article{background:#f6f2e9;border:1px solid #d9cfbd;padding:28px 23px;min-height:220px;display:flex;flex-direction:column;gap:13px}
+.v3-teach-journey article:nth-child(2){background:#e3eadf;border-color:#b8c9b7}
+.v3-teach-journey article>span{font:10px Georgia,serif;color:#8d8b72;letter-spacing:.1em}
+.v3-teach-journey h3{font:normal 24px "Songti SC",serif;color:#315745;margin:0}
+.v3-teach-journey p{font-size:12px;line-height:1.95;color:#716e63;flex:1;margin:0}
+.v3-teach-journey article>div{font-size:10px;line-height:1.7;color:#6f8b72;border-top:1px solid #c8cbba;padding-top:12px}
+.v3-teach-structure{background:#f3f1e8;border:1px solid #d8d0c2;padding:clamp(20px,3vw,40px);margin-bottom:28px}
+.v3-teach-structure-head h3{font:normal clamp(25px,3vw,36px) "Songti SC",serif;color:#315a43;margin:12px 0}
+.v3-teach-structure-head p{font-size:13px;line-height:1.9;color:#7b7469;max-width:680px}
+.v3-teach-subnav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:24px 0 16px}
+.v3-teach-subnav button{border:1px solid #c7c8b6;background:#faf9f1;padding:16px 10px;cursor:pointer;color:#516950;font-size:14px;text-align:left;display:flex;gap:13px;align-items:center;transition:background .2s,color .2s}
+.v3-teach-subnav button span{font:italic 13px Georgia,serif;opacity:.6}
+.v3-teach-subnav button[aria-pressed="true"]{background:#315d48;color:#fffdf3;border-color:#315d48}
+.v3-teach-stage{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr);gap:13px}
+.v3-teach-stage-main{padding:clamp(18px,3vw,32px);background:#fdfbf4;border:1px solid #d6cdbd;min-height:270px;display:flex;flex-direction:column;justify-content:center}
+.v3-teach-stage-kicker,.v3-teach-stage-map>span{font:10px Georgia,serif;letter-spacing:.1em;color:#967e6b}
+.v3-teach-stage h4{font:normal clamp(25px,2.7vw,36px)/1.3 "Songti SC",serif;color:#315843;margin:20px 0 14px}
+.v3-teach-stage-main>p{font-size:12px;line-height:1.9;color:#777065}
+.v3-grammar-demo{display:flex;gap:6px;flex-wrap:wrap;margin-top:15px}
+.v3-grammar-demo span{background:#e1ece0;color:#315c42;border-bottom:2px solid #89ad90;padding:11px 12px;font:16px Georgia,serif}
+.v3-teach-stage-main .v3-teach-stage-foot{font-size:11px;color:#8a8577;margin-top:13px}
+.v3-teach-stage-map{padding:27px;background:#e3e9dc;display:flex;flex-direction:column;gap:22px}
+.v3-teach-stage-map>div{display:flex;flex-wrap:wrap;gap:9px}
+.v3-teach-stage-map>div span{background:#f6f9f0;border:1px solid #b6c7af;color:#4b6d51;border-radius:22px;padding:9px 12px;font-size:11px}
+.v3-teach-stage-map small{font-size:10px;color:#788676;line-height:1.8;margin-top:auto}
+.v3-student-loop{padding:32px 26px;background:#e8e2d5}
+.v3-student-loop h3{font:normal 27px "Songti SC",serif;color:#3e5645;margin:13px 0}
+.v3-student-loop-heading p{font-size:12px;color:#7a7468;line-height:1.9}
+.v3-student-loop-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:22px}
+.v3-student-loop-track>div{background:#faf7ed;border-top:3px solid #96ad90;padding:18px 12px;display:flex;flex-direction:column;gap:10px}
+.v3-student-loop-track span{font:italic 22px Georgia,serif;color:#a09b87}
+.v3-student-loop-track b{font-size:14px;color:#405947}
+.v3-student-loop-track small{font-size:10px;color:#867c6f;line-height:1.7}
+.v3-teach-bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.v3-teach-bottom p{font-size:11px;line-height:1.8;color:#77716a;background:#f3eee4;padding:15px}
+.v3-teach-bottom b{color:#44614c}
+@media(max-width:800px){.v3-teach-journey{grid-template-columns:1fr;gap:9px}.v3-teach-journey article{min-height:0}.v3-teach-stage{grid-template-columns:1fr}.v3-student-loop-track{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.v3-teach-subnav{grid-template-columns:repeat(2,1fr)}.v3-teach-bottom{grid-template-columns:1fr}.v3-teach-journey{margin-bottom:35px}.v3-grammar-demo span{font-size:14px}.v3-teach-pipeline span{font-size:7px}.v3-teach-pipeline b{font-size:9px}}
+
+
+/* V3.3 real-process editorial layout */
+.v33-about-collage{position:relative;display:flex;align-items:center;justify-content:flex-start;flex:1;min-height:250px;padding:8px 19% 8px 5%;background:linear-gradient(140deg,#deded2,#e9e6dc)}
+.v33-about-collage figure{margin:0;position:relative;background:#faf8ef;box-shadow:0 8px 22px #38362c2b;padding:7px 7px 22px}
+.v33-about-present{height:100%;max-height:330px;width:73%;transform:rotate(-2deg)}
+.v33-about-present img,.v33-about-child img{display:block;width:100%;height:calc(100% - 1px);object-fit:cover}
+.v33-about-present figcaption,.v33-about-child figcaption{position:absolute;bottom:6px;left:7px;font:italic 9px Georgia,serif;letter-spacing:.06em;color:#8d8577}
+.v33-about-child{position:absolute!important;right:4%;bottom:5%;width:35%;height:48%;transform:rotate(7deg)}
+.v33-works-book{display:flex;flex-direction:column;flex:1;min-height:0;background:#e7eadf;padding:17px;gap:13px}
+.v33-works-book-copy>span{font:9px Georgia,serif;letter-spacing:.13em;color:#7a8c78}
+.v33-works-book-copy h3{font:normal 22px/1.35 "Songti SC",serif;color:#315941;margin:8px 0}
+.v33-works-book-copy p{font-size:10px;color:#7b7d70;margin:0}
+.v33-works-book-images{display:flex;gap:12px;align-items:center;justify-content:center;min-height:0;flex:1}
+.v33-works-book-images figure{position:relative;display:flex;flex-direction:column;align-items:center;background:#faf8f0;border:5px solid #faf8f0;box-shadow:0 4px 13px #33392c3a;margin:0;max-width:45%;max-height:185px;overflow:hidden}
+.v33-works-book-images figure:first-child{height:100%;transform:rotate(-3deg)}
+.v33-works-book-images figure:last-child{height:70%;transform:rotate(4deg)}
+.v33-works-book-images img{display:block;width:100%;height:calc(100% - 20px);object-fit:contain;background:#eeeae3}
+.v33-works-book-images figcaption{font-size:8px;color:#746f64;margin-top:4px}
+.v33-event-book{display:grid;grid-template-columns:1.4fr .65fr;gap:10px;align-items:end;flex:1;min-height:0;background:#e6e3d7;padding:10px 12px}
+.v33-event-book figure{margin:0;display:flex;flex-direction:column;background:#faf8ed;padding:5px 5px 21px;box-shadow:0 5px 18px #392f2638;min-height:0;height:93%;position:relative}
+.v33-event-book figure:first-child{transform:rotate(-2deg)}.v33-event-book figure:last-child{height:65%;transform:rotate(5deg)}
+.v33-event-book img{display:block;width:100%;height:calc(100% - 2px);object-fit:cover;object-position:center 55%}
+.v33-event-book figcaption{font:8px Georgia,serif;position:absolute;bottom:6px;left:8px;color:#817866}
+.v33-print-book{position:relative;min-height:0;flex:1;overflow:hidden;background:#e1ddd1}
+.v33-print-book img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.v33-print-label{position:absolute;left:12px;bottom:13px;padding:10px 13px;background:#fbf7e9ee;backdrop-filter:blur(4px);display:flex;flex-direction:column;gap:4px;border-left:3px solid #507b5b}
+.v33-print-label small{font:8px Georgia,serif;letter-spacing:.1em;color:#977f6a}
+.v33-print-label strong{font:30px Georgia,"Songti SC",serif;color:#315944}
+.v33-print-label strong span{font:14px "Songti SC",serif}
+.v33-print-label>span{font-size:9px;color:#766c5e}
+.v33-process-intro{max-width:950px;margin:42px auto 18px;display:flex;align-items:end;justify-content:space-between;gap:17px}
+.v33-process-intro p{font-size:11px;line-height:1.8;color:#898073;max-width:580px;margin:0}
+.v33-works-fragments{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;max-width:950px;margin:0 auto;align-items:stretch}
+.v33-clipping{margin:0;padding:20px;background:#e9e4d8;border:1px solid #d6ccbd;display:flex;align-items:center;gap:20px;min-height:240px}
+.v33-clipping-work{background:#e2e8df}
+.v33-image-button{border:0;background:transparent;padding:0;display:block;cursor:zoom-in;max-width:100%;min-width:0;position:relative;overflow:hidden}
+.v33-image-button img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .28s ease}
+.v33-image-button:hover img{transform:scale(1.025)}
+.v33-image-button:focus-visible{outline:3px solid #517f62;outline-offset:3px}
+.v33-clipping .v33-image-button{width:43%;height:195px;flex-shrink:0;box-shadow:0 5px 17px #27352d2b;background:#faf8f1;padding:5px;transform:rotate(-2deg)}
+.v33-clipping-response .v33-image-button{width:57%;height:175px;transform:rotate(2deg)}
+.v33-clipping figcaption{display:flex;flex-direction:column;gap:13px;flex:1;min-width:0}
+.v33-clipping figcaption strong{font:normal 21px/1.38 "Songti SC",serif;color:#315b45}
+.v33-clipping figcaption span{font-size:10px;line-height:1.75;color:#80786a}
+.v33-event-editorial{display:grid;grid-template-columns:1.12fr .88fr;gap:26px}
+.v33-event-stage{background:#e7e2d6;padding:23px;border:1px solid #dad0c1;display:flex;flex-direction:column;gap:15px;min-width:0}
+.v33-event-stage-photo{position:relative;min-height:0;flex:1;display:flex;align-items:center;justify-content:center}
+.v33-event-stage-photo>.v33-image-button{width:82%;height:440px;padding:9px 9px 27px;background:#faf8f1;transform:rotate(-2deg);box-shadow:0 9px 24px #27241e32}
+.v33-event-stage-photo img{object-fit:cover}
+.v33-event-sticker{position:absolute;right:0;bottom:14px;background:#fbf9ed;padding:9px 11px;font:10px Georgia,serif;color:#6e866b;box-shadow:0 4px 10px #21251c19}
+.v33-event-switches{display:flex;gap:8px;justify-content:center}
+.v33-event-switches button{border:1px solid #bfc6b5;background:#f7f7ed;border-radius:20px;padding:10px 14px;color:#47705a;cursor:pointer;font-size:11px}
+.v33-event-switches button[aria-pressed="true"]{background:#345a48;color:#fff; border-color:#345a48}
+.v33-event-photo-caption{text-align:center;color:#81796c;line-height:1.8;font-size:11px;margin:0}
+.v33-event-narrative{display:flex;flex-direction:column;justify-content:center;background:#f7f3e9;border:1px solid #ded4c6;padding:clamp(24px,4vw,45px);gap:20px}
+.v33-event-narrative>span{font:10px Georgia,serif;letter-spacing:.1em;color:#9e806a}
+.v33-event-narrative h3{font:normal clamp(29px,3.5vw,42px)/1.4 "Songti SC",serif;color:#334c39;margin:0}
+.v33-event-narrative p{font-size:13px;line-height:1.95;color:#7a756a;margin:0}
+.v33-event-timeline{display:flex;flex-direction:column;gap:5px;border-left:2px solid #9faf96;margin:4px 0;padding-left:16px}
+.v33-event-timeline>div{display:flex;align-items:center;gap:15px;padding:5px 0;font-size:12px;color:#526c54}
+.v33-event-timeline b{font:italic 17px Georgia,serif;color:#b3a38c}
+.v33-event-narrative>small{color:#988f82;font-size:10px;line-height:1.75}
+.v33-notes-feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:25px;margin-bottom:22px;background:#e4e2d7;padding:20px}
+.v33-notes-photo{position:relative;min-height:390px;height:470px;max-height:510px;margin:0;background:#faf8ee;padding:8px 8px 32px;box-shadow:0 6px 20px #48442c2d;transform:rotate(-2deg)}
+.v33-notes-photo>.v33-image-button{height:100%;width:100%}
+.v33-notes-photo img{object-fit:cover;object-position:center 38%;height:100%}
+.v33-paper-tape{position:absolute;top:-12px;left:37%;width:24%;height:25px;transform:rotate(4deg);background:#e3d6b9ad;pointer-events:none}
+.v33-notes-photo figcaption{position:absolute;bottom:9px;left:13px;font:italic 12px Georgia,serif;color:#857d70}
+.v33-notes-feature-copy{display:flex;flex-direction:column;justify-content:center;gap:17px;padding:18px 24px}
+.v33-notes-feature-copy>span{font:10px Georgia,serif;letter-spacing:.16em;color:#9b8870}
+.v33-notes-feature-copy h3{font:normal clamp(33px,4.2vw,52px)/1.25 "Songti SC",serif;color:#325644;margin:0}
+.v33-notes-feature-copy p{font-size:13px;line-height:2;color:#797366;margin:0}
+.v33-notes-metrics{display:flex;flex-wrap:wrap;gap:17px;margin-top:10px}
+.v33-notes-metrics>div{border-top:1px solid #c0b8a6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.v33-notes-metrics b{font:21px Georgia,"Songti SC",serif;color:#3c6450}
+.v33-notes-metrics small{color:#8a8071;font-size:10px}
+.v33-lightbox{border:0;padding:0;max-width:min(92vw,1020px);max-height:93vh;background:transparent;overflow:visible}
+.v33-lightbox::backdrop{background:#171d18d9;backdrop-filter:blur(6px)}
+.v33-lightbox-inner{background:#faf8ef;padding:17px;position:relative;display:flex;flex-direction:column;gap:10px}
+.v33-lightbox img{max-height:calc(88vh - 85px);max-width:calc(90vw - 40px);width:auto;height:auto;object-fit:contain;display:block;margin:auto}
+.v33-lightbox p{margin:0;text-align:center;font-size:12px;color:#636f5b}
+.v33-lightbox-close{position:absolute;top:-14px;right:-13px;width:33px;height:33px;border-radius:50%;border:1px solid #d7d0c3;background:#faf8ef;color:#315b46;cursor:pointer;font-size:19px}
+@media(max-width:860px){.v33-works-fragments{grid-template-columns:1fr 1fr}.v33-clipping{flex-direction:column;align-items:flex-start}.v33-clipping .v33-image-button,.v33-clipping-response .v33-image-button{width:100%;height:220px}.v33-event-editorial{grid-template-columns:1fr}.v33-event-stage-photo>.v33-image-button{height:410px}.v33-notes-feature{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.v33-process-intro{flex-direction:column;align-items:flex-start}.v33-works-fragments{grid-template-columns:1fr}.v33-clipping{flex-direction:row;min-height:180px}.v33-clipping .v33-image-button{width:40%;height:170px}.v33-clipping-response .v33-image-button{width:55%;height:155px}.v33-clipping figcaption strong{font-size:19px}.v33-event-editorial{gap:13px}.v33-event-stage-photo>.v33-image-button{height:325px;width:82%}.v33-event-narrative{padding:25px}.v33-notes-feature{grid-template-columns:1fr;padding:14px}.v33-notes-photo{height:350px}.v33-notes-feature-copy{padding:17px 8px}.v33-notes-metrics{gap:10px}.v33-about-collage{min-height:280px}.v33-event-book{min-height:260px}.v33-print-book{min-height:285px}.v33-works-book{min-height:270px}}
+@media(prefers-reduced-motion:reduce){.v33-image-button img{transition:none!important}}
+
+
+/* V3.4 FIELD JOURNAL COVER — three unchanged, real working snapshots */
+.cover-object{background:#f1e7d4!important;color:#31483c!important;box-shadow:6px 11px 0 #b7b1a1,9px 17px 23px #574b3d7a,inset 7px 0 15px #81795b25!important;border-radius:4px 12px 12px 4px}
+.cover-object::before{inset:13px 14px!important;border:1px solid #a5a18c91!important}
+.cover-object::after{width:15px!important;background:linear-gradient(90deg,#315044a9,#bdc5b888,#43695142)!important}
+.v34-cover-content{gap:6px}
+.cover-object .cover-overline,.v34-mobile-cover .cover-overline{color:#6b7b66;font-size:9px;letter-spacing:.11em;display:flex;justify-content:space-between;gap:7px}
+.v34-issue{color:#a87755;font-size:9px;white-space:nowrap}
+.cover-object .cover-center,.v34-mobile-cover .cover-center{gap:6px}
+.cover-object .cover-volume,.v34-mobile-cover .cover-volume{color:#866e58;font-size:10px;letter-spacing:.18em}
+.cover-object .cover-title,.v34-mobile-cover .cover-title{color:#2b5242;font-size:clamp(39px,4.5vw,67px);line-height:1.04;letter-spacing:-.05em;font-family:"Songti SC","Noto Serif CJK SC",Georgia,serif}
+.cover-object .cover-title i,.v34-mobile-cover .cover-title i{color:#b66d4d}
+.cover-object .cover-subtitle,.v34-mobile-cover .cover-subtitle{color:#66776a;font-size:11px;margin:0;letter-spacing:.15em}
+.cover-object .cover-bottom,.v34-mobile-cover .cover-bottom{color:#6a6f60;font-size:9px;align-items:center;letter-spacing:.065em}
+.cover-object .cover-cta,.v34-mobile-cover .cover-cta{background:#305846;color:#f8f3e5;border-radius:2px;font-size:11px}
+.v34-cover-collage{display:block;position:relative;height:clamp(176px,21vw,276px);width:100%;margin-top:5px}
+.v34-cover-cut{display:block;position:absolute;background:#fffdf7;padding:5px 5px 16px;box-shadow:2px 5px 13px #54483a30,0 0 0 1px #eee8d8;overflow:hidden;transform-origin:center}
+.v34-cover-cut img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.v34-cover-cut>span{position:absolute;bottom:2px;left:5px;font:7px Georgia,serif;color:#737165;letter-spacing:.07em;white-space:nowrap}
+.v34-cut-speaking{width:56%;height:82%;left:1%;top:3%;transform:rotate(-7deg);z-index:2}
+.v34-cut-writing{width:46%;height:66%;right:0;top:2%;transform:rotate(8deg);z-index:3}
+.v34-cut-making{width:41%;height:55%;right:11%;bottom:0;transform:rotate(-8deg);z-index:4}
+.v34-cover-sticker{position:absolute;z-index:5;left:12%;bottom:-2%;background:#e6d89b;color:#775c39;transform:rotate(5deg);padding:7px 9px;box-shadow:2px 2px 3px #0002;font-size:10px;line-height:1.35}
+.v34-mobile-cover{background:#f1e7d4!important;color:#315044!important}
+.v34-mobile-cover .v34-cover-collage{height:225px;max-width:360px;margin:8px auto}
+.v34-mobile-cover .cover-title{font-size:clamp(42px,12vw,67px)}
+.v34-mobile-cover .cover-bottom{width:100%}
+.v34-mobile-cover .v34-cover-sticker{font-size:10px}
+.v34-mobile-cover .cover-overline{width:100%}
+@media(max-width:440px){.cover-object .cover-overline{font-size:8px}.v34-mobile-cover .v34-cover-collage{height:200px}.v34-mobile-cover .cover-title{font-size:42px}}
+/* PROCESS FIRST: book pages now contain authentic working material */
+.v34-book-work{display:grid;grid-template-columns:1.1fr .65fr;gap:8px;background:#e5e9dd;padding:10px;min-height:51%;align-items:stretch}
+.v34-book-work-heading{padding:6px 1px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.v34-book-work-heading small{font-size:9px;color:#6e8c6e}
+.v34-book-work-heading h3{font:normal clamp(18px,1.9vw,27px)/1.27 "Songti SC",serif;color:#315746;margin:0}
+.v34-book-work-heading p{font-size:9px;color:#6f7e6b;line-height:1.7}
+.v34-book-work figure{margin:0;min-width:0;background:#fff8eb;padding:5px;display:flex;flex-direction:column;transform:rotate(2deg);box-shadow:0 3px 8px #0002}
+.v34-book-work img{min-height:0;max-height:180px;flex:1;width:100%;object-fit:cover;object-position:center top}
+.v34-book-work figcaption{font-size:7.5px;color:#8a8174;line-height:1.4;padding-top:4px}
+.v34-live-notebook,.v34-teach-file,.v34-skill-file{background:#f4f0e5;border:1px solid #d4c8b4;padding:19px 18px;flex:1;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.v34-live-notebook:after,.v34-teach-file:after{content:"";position:absolute;left:27px;right:13px;bottom:40px;border-bottom:1px solid #cecab9}
+.v34-note-top{display:flex;justify-content:space-between;gap:8px;font:8px Georgia,serif;letter-spacing:.08em;color:#8c8b79}
+.v34-live-notebook h3,.v34-teach-file h3,.v34-skill-file h3{font:normal clamp(20px,2.1vw,29px)/1.28 "Songti SC",serif;color:#345a49;margin:12px 0 8px}
+.v34-live-notebook h3 em{font-size:15px;font-style:normal;color:#84715a}
+.v34-live-line{display:grid;grid-template-columns:46px 1fr;gap:10px;border-top:1px solid #d8d1c2;padding:9px 0;font-size:10px;line-height:1.7;color:#625f56}
+.v34-live-line b{color:#407251;font-weight:600}
+.v34-live-notebook>small,.v34-teach-file>small{font-size:9px;line-height:1.6;color:#938978;margin-top:auto}
+.v34-teach-file{background:repeating-linear-gradient(0deg,#f9f6ee,#f9f6ee 31px,#e4e3d7 32px)}
+.v34-file-list{display:flex;flex-direction:column;gap:7px}
+.v34-file-list>div{display:grid;grid-template-columns:100px 1fr;gap:7px;padding:7px 8px;background:#f0f0e5eb;border-left:2px solid #8baa8b;font-size:9px;color:#73756b;align-items:center}
+.v34-file-list b{color:#3c6951}
+.v34-skill-file{background:#253d35;color:#e9eddf;flex:1}
+.v34-skill-file .v34-note-top{color:#a8bba7}
+.v34-skill-file h3{color:#faf2dc;font:normal 20px Georgia,serif;margin:6px 0}
+.v34-skill-file>p{color:#dce5d2;font:13px "Courier New",monospace;margin:5px 0}
+.v34-skill-file>p span{color:#abc6b2}
+.v34-skill-progress{display:flex;gap:5px;flex-wrap:wrap;color:#d3dccb;font-size:9px;line-height:1.7;margin-top:auto}
+.v34-skill-file>a{font-size:10px;color:#e7cc93;text-decoration:underline;align-self:flex-start}
+@media(max-width:680px){.v34-book-work{min-height:250px}.v34-live-notebook,.v34-teach-file,.v34-skill-file{min-height:270px}.v34-book-work img{max-height:240px}}
+
+
+/* V3.4: real photo reel and source-grounded making-of panels */
+.v34-field-reel{max-width:1200px;margin:55px auto 85px;padding:0 30px}
+.v34-field-heading{display:flex;justify-content:space-between;align-items:end;gap:23px;margin-bottom:20px}
+.v34-field-heading h2{font:normal clamp(25px,3.3vw,41px)/1.3 "Songti SC",serif;color:#315746;margin:10px 0}
+.v34-field-heading>p{max-width:380px;font-size:12px;line-height:1.85;color:#7b766c}
+.v34-field-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.v34-field-track figure{min-width:0;margin:0;padding:8px;background:#f9f6ed;border:1px solid #ded4c4;box-shadow:0 5px 14px #3b2c1f12}
+.v34-field-track .v33-image-button{width:100%;height:188px;display:block;border:0;padding:0;background:#e2decf;cursor:zoom-in;overflow:hidden}
+.v34-field-track img{width:100%;height:100%;object-fit:cover;display:block}
+.v34-field-track figure:nth-child(-n+2) img{object-fit:contain;background:#f6f5ef}
+.v34-field-track figcaption{display:flex;flex-direction:column;gap:8px;margin:12px 3px 6px}
+.v34-field-track figcaption b{font-size:11px;color:#345945}
+.v34-field-track figcaption span{font-size:10px;line-height:1.6;color:#827b70}
+.v34-field-footnote{font-size:10px;line-height:1.8;color:#989183;margin-top:15px}
+.v34-process-intro{margin:50px 0 21px}
+.v34-process-intro h3{font:normal clamp(23px,2.7vw,32px)/1.3 "Songti SC",serif;color:#315746;margin:11px 0}
+.v34-process-intro p{font-size:12px;line-height:1.9;color:#777165;max-width:800px}
+.v34-process-cards,.v34-live-workflow,.v34-skill-making{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.v34-process-cards>article,.v34-live-workflow>div,.v34-skill-making>div{background:#f6f2e9;border:1px solid #dcd0c0;padding:23px 20px;display:flex;flex-direction:column;gap:13px;min-width:0}
+.v34-process-cards>article:nth-child(2),.v34-live-workflow>div:nth-child(2){background:#e3eadf;border-color:#bdcbb8}
+.v34-process-cards article>span,.v34-live-workflow>div>span,.v34-skill-making>div>span{font:10px Georgia,serif;letter-spacing:.08em;color:#a08a76}
+.v34-process-cards h4,.v34-live-workflow h4,.v34-skill-making h4{font:normal 22px "Songti SC",serif;color:#315947;margin:6px 0 0}
+.v34-process-cards blockquote{font:normal 17px/1.65 "Songti SC",serif;color:#51684f;margin:0;border-left:3px solid #b7ac8b;padding-left:12px}
+.v34-process-cards p,.v34-live-workflow p,.v34-skill-making p{font-size:12px;line-height:1.9;color:#777166}
+.v34-process-cards small{font-size:10px;color:#a19788;margin-top:auto}
+.v34-outline-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.v34-outline-steps b{font-size:10px;padding:9px 7px;text-align:center;background:#f5f7f0;color:#437454;border:1px solid #cad9c6}
+.v34-teach-doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.v34-teach-doc{background:#f4f1e8;padding:28px 25px;border:1px solid #d9d1c3;display:flex;flex-direction:column;gap:14px}
+.v34-teach-doc:nth-child(2){background:#e3eadf}
+.v34-teach-doc>span,.v34-event-paper>span{font:10px Georgia,serif;color:#a18c72;letter-spacing:.1em}
+.v34-teach-doc h4{font:normal 26px "Songti SC",serif;color:#315943;margin:5px 0}
+.v34-folder-list p,.v34-track-schema p{padding:12px 14px;background:#faf9f3;border-left:2px solid #8fa88d;color:#6b7065;font-size:12px;line-height:1.7;margin:4px 0}
+.v34-folder-list b{color:#406950}
+.v34-track-schema i{color:#8e9e7b;font:italic 15px Georgia,serif;margin-right:10px}
+.v34-teach-doc>small{font-size:10px;color:#878476;margin-top:auto}
+.v34-event-journal{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin:29px 0 0}
+.v34-event-diptych{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}
+.v34-event-diptych figure{min-width:0;margin:0;padding:8px;background:#f8f5ed;border:1px solid #d8d0c2}
+.v34-event-diptych .v33-image-button{display:block;width:100%;height:250px;border:0;padding:0;overflow:hidden;cursor:zoom-in}
+.v34-event-diptych img{display:block;width:100%;height:100%;object-fit:cover}
+.v34-event-diptych figcaption{font-size:10px;line-height:1.8;color:#847969;margin-top:10px}
+.v34-event-paper{background:#e7e0d3;border-left:5px solid #b48665;padding:24px 21px}
+.v34-event-paper h3{font:normal 25px "Songti SC",serif;color:#375642;margin:13px 0}
+.v34-agenda{display:flex;flex-direction:column;gap:7px}
+.v34-agenda>div{display:grid;grid-template-columns:58px 1fr;gap:7px;align-items:center;border-bottom:1px solid #cfc4b3;padding:7px 0;font-size:11px;color:#665f53}
+.v34-agenda b{color:#427458;font:italic 15px Georgia,serif}
+.v34-event-paper small{display:block;font-size:10px;color:#8f8576;margin-top:12px;line-height:1.7}
+.v34-skill-making{margin:26px 0 0}
+.v34-note-transforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:23px}
+.v34-note-transforms>div{background:#e8eae0;border:1px solid #d5d6c8;padding:21px 18px;display:flex;flex-direction:column;gap:10px}
+.v34-note-transforms span{font:10px Georgia,serif;color:#9f9178}
+.v34-note-transforms b{font-size:13px;color:#45614b}
+.v34-note-transforms small{font-size:10px;color:#7e8578}
+@media(max-width:920px){.v34-field-track{grid-template-columns:repeat(3,minmax(0,1fr))}.v34-event-journal{grid-template-columns:1fr}.v34-event-diptych .v33-image-button{height:240px}}
+@media(max-width:680px){.v34-field-reel{padding:0 18px;margin:36px auto}.v34-field-heading{display:block}.v34-field-track{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(185px,65vw);overflow-x:auto;scroll-snap-type:x mandatory;gap:11px;padding-bottom:8px}.v34-field-track figure{scroll-snap-align:start}.v34-process-cards,.v34-live-workflow,.v34-skill-making,.v34-teach-doc-grid,.v34-note-transforms{grid-template-columns:1fr}.v34-process-intro{margin-top:30px}.v34-event-diptych .v33-image-button{height:190px}}
+
+
+/* V3.5 clothbound edition: one original unretouched portrait blended into the cloth */
+.cover-object.v35-cloth-cover,.mobile-cover.v35-cloth-cover{
+ background:#1d4037!important;color:#f1e5ca!important;
+ box-shadow:5px 10px 0 #b8af97,9px 16px 23px #332e2880,inset 7px 0 15px #0c2d2990!important;
+ isolation:isolate;
+}
+.cover-object.v35-cloth-cover::before{
+ inset:13px!important;
+ border:1px solid #c8b47a8f!important;
+ z-index:3;
+}
+.cover-object.v35-cloth-cover::after{
+ width:13px!important;
+ background:linear-gradient(90deg,#0c2626e0,#bcaa7c50,#163d37b0)!important;
+ z-index:4;
+}
+.v35-cover-artwork{
+ position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+ border-radius:5px 12px 12px 5px;
+ background:
+  repeating-linear-gradient(93deg,rgba(243,235,215,.023) 0px,rgba(243,235,215,.023) 1px,transparent 1px,transparent 4px),
+  radial-gradient(ellipse 72% 52% at 85% 72%,#385f4d 0%,transparent 92%),
+  #1d4037;
+}
+.v35-emboss{position:absolute;inset:0;width:100%;height:100%;z-index:3;opacity:.78;mix-blend-mode:screen}
+.v35-integrated-portrait{
+ position:absolute;z-index:1;left:8%;top:26%;width:111%;height:84%;
+ object-fit:cover;object-position:50% 49%;max-width:none;
+ opacity:.9;
+ -webkit-mask-image:radial-gradient(ellipse 67% 65% at 58% 50%,#000 28%,rgba(0,0,0,.91) 47%,transparent 94%);
+ mask-image:radial-gradient(ellipse 67% 65% at 58% 50%,#000 28%,rgba(0,0,0,.91) 47%,transparent 94%);
+}
+.v35-portrait-veil{
+ position:absolute;z-index:2;inset:0;pointer-events:none;
+ background:
+   linear-gradient(180deg,#1d4037 8%,#1d4037 19%,transparent 41%,transparent 69%,#193c34e6 96%),
+   linear-gradient(90deg,#1d4037a6 0%,transparent 33%,transparent 73%,#1d403733 100%),
+   linear-gradient(0deg,#244e3c2a,#244e3c2a);
+}
+.v35-cloth-content{position:relative;z-index:5;height:100%;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.v35-cloth-content .cover-overline{
+ display:flex;justify-content:space-between;gap:8px;
+ color:#d6c79d!important;font:9px/1.55 Georgia,serif!important;letter-spacing:.14em!important;
+}
+.v35-cloth-content .cover-overline span{font-size:8px;opacity:.82;letter-spacing:.08em;text-align:right}
+.v35-cloth-content .cover-center{gap:9px!important;align-self:flex-start;justify-content:center;margin-top:-13%;width:100%}
+.v35-cloth-content .cover-volume{color:#e0caa2!important;font-size:10px!important;letter-spacing:.18em!important}
+.v35-cloth-content .cover-title{
+ color:#faf0d5!important;
+ font:normal clamp(37px,4vw,61px)/1.12 "Songti SC","Noto Serif CJK SC",Georgia,serif!important;
+ letter-spacing:.02em!important;text-shadow:0 2px 12px #062b279e;
+ white-space:nowrap;
+}
+.v35-cloth-content .cover-title i{color:#e4cf99!important;font-style:normal}
+.v35-title-rule{width:56px;height:1px;display:block;background:#d0b980bb}
+.v35-cloth-content .cover-subtitle{color:#e8dcc1!important;margin:0!important;font-size:11px!important;letter-spacing:.13em!important;text-shadow:0 1px 8px #1a3026}
+.v35-cloth-content .cover-bottom{color:#e2d4b6!important;font:9px/1.6 Georgia,serif!important;letter-spacing:.1em!important}
+.v35-cloth-content .cover-cta{
+ display:inline-flex;background:rgba(226,204,156,.13)!important;color:#f8edd1!important;
+ border:1px solid #dbc58e8a;border-radius:2px!important;padding:10px 12px!important;
+ font:10px "PingFang SC",sans-serif!important;letter-spacing:.04em!important;
+}
+.v35-cloth-cover:hover .v35-cloth-content .cover-cta{background:#e4d1a5!important;color:#234b3d!important}
+.mobile-cover.v35-mobile-cover{overflow:hidden;min-height:480px;padding:30px 25px!important}
+.v35-mobile-cover .v35-cover-artwork{border-radius:4px 13px 13px 4px}
+.v35-mobile-cover .v35-integrated-portrait{top:26%;height:83%;left:6%;width:111%}
+.v35-mobile-cover .v35-cloth-content .cover-title{font-size:clamp(39px,11vw,58px)!important}
+.v35-mobile-cover .v35-cloth-content .cover-center{margin-top:-15%}
+.v35-mobile-cover .cover-bottom{align-items:flex-end}
+@media(max-width:440px){
+ .v35-mobile-cover .v35-cloth-content .cover-title{font-size:40px!important}
+ .mobile-cover.v35-mobile-cover{min-height:445px}
+ .v35-mobile-cover .v35-cloth-content .cover-center{margin-top:-12%}
+}
+
+
+/* V3.6 — Approved six-pose Liushui visual guide. Existing photo files unmodified. */
+.liushui-sprite{
+ display:block;flex:none;width:96px;height:auto;aspect-ratio:1/1;
+ background-image:url("images/liushui-ip-sprite.webp");
+ background-repeat:no-repeat;
+ background-size:300% 200%;
+ background-position:0 0;
+ image-rendering:auto;
+ pointer-events:none;
+ filter:drop-shadow(0 4px 4px rgba(31,39,31,.10));
+}
+.liushui-sprite.pose-standing{background-position:0% 0%}
+.liushui-sprite.pose-waving{background-position:50% 0%}
+.liushui-sprite.pose-thinking{background-position:100% 0%}
+.liushui-sprite.pose-happy{background-position:0% 100%}
+.liushui-sprite.pose-working{background-position:50% 100%}
+.liushui-sprite.pose-reading{background-position:100% 100%}
+/* The clothbound green/gold cover remains; remove the awkward photographic portrait. */
+.v35-cover-artwork{
+ background:
+ repeating-linear-gradient(93deg,rgba(243,235,215,.025) 0px,rgba(243,235,215,.025) 1px,transparent 1px,transparent 4px),
+ radial-gradient(ellipse 70% 60% at 74% 68%,rgba(73,119,96,.48),transparent 92%),#1d4037;
+}
+.v36-cover-guide{
+ position:absolute;z-index:8;width:clamp(128px,14vw,180px);
+ right:-32px;bottom:65px;
+ transform-origin:65% 86%;
+ animation:v36-peek 980ms cubic-bezier(.21,.79,.23,1) both;
+ filter:drop-shadow(0 9px 9px #102f2c40);
+}
+.cover-object:hover .v36-cover-guide,
+.mobile-cover:active .v36-cover-guide{transform:translateY(-7px) rotate(-4deg)}
+.v35-cloth-content .cover-center{align-self:stretch;width:100%;padding-right:4%}
+.v35-cloth-content .cover-title{font-size:clamp(37px,4vw,60px)!important}
+@keyframes v36-peek{
+ 0%{opacity:0;transform:translate(28px,27px) rotate(10deg)}
+ 72%{opacity:1;transform:translate(-5px,-2px) rotate(-3deg)}
+ 100%{opacity:1;transform:translate(0,0) rotate(0)}
+}
+@keyframes v36-greet{
+ 0%,100%{transform:rotate(0)}
+ 50%{transform:rotate(-4deg) translateY(-2px)}
+}
+.v36-mobile-cover .v36-cover-guide,
+.v35-mobile-cover .v36-cover-guide{width:133px;right:-23px;bottom:64px}
+.v36-welcome-note{display:flex;align-items:center;gap:5px;min-height:54px;border-top:1px solid #d1c7b5;margin-top:5px;padding-top:3px}
+.v36-welcome-note .liushui-sprite{width:63px;animation:v36-greet 2.8s ease-in-out 1.2s 2}
+.v36-welcome-note>span:last-child{display:flex;flex-direction:column;gap:4px;min-width:0}
+.v36-welcome-note b{font-size:11px;color:#3c654e}
+.v36-welcome-note small{font-size:9px;line-height:1.45;color:#807c70}
+.v3-section-head{position:relative}
+.v3-section-head .v36-section-guide{position:absolute;right:73px;bottom:-5px;width:78px;z-index:1}
+#v3-works .v3-section-head{padding-right:175px}
+.v36-thinking-guide{display:flex;align-items:center;gap:7px;padding:6px 10px;background:#f0f2e8;border-radius:5px}
+.v36-thinking-guide .liushui-sprite{width:65px}
+.v36-thinking-guide .v36-guide-text{font-size:10px;color:#60705f;line-height:1.65}
+.v3-contact-pic{position:relative}
+.v36-contact-guide{position:absolute;bottom:-7px;right:1px;width:95px;filter:drop-shadow(0 5px 3px #1635223c)}
+@media(max-width:940px){#v3-works .v3-section-head{padding-right:105px}.v3-section-head .v36-section-guide{right:10px;width:72px;bottom:0}.v36-cover-guide{width:130px}}
+@media(max-width:680px){
+ .v35-mobile-cover .v36-cover-guide{width:116px;right:-22px;bottom:55px}
+ .v3-section-head .v36-section-guide{position:relative;right:auto;bottom:auto;width:66px;margin-left:auto}
+ #v3-works .v3-section-head{padding-right:0}
+ .v36-welcome-note .liushui-sprite{width:71px}
+ .v36-thinking-guide .liushui-sprite{width:64px}
+}
+@media(prefers-reduced-motion:reduce){.v36-cover-guide,.v36-welcome-note .liushui-sprite{animation:none!important;transform:none!important}}
+
+
+/* V3.7 — direct first-impression portrait, persistent mascot, real work and live frames */
+.v37-identity-frontispiece{
+ position:absolute;z-index:5;left:4%;top:2.5%;bottom:2.5%;width:40.5%;
+ padding:10px 10px 12px;background:#f3ede0;border:1px solid #c7bca5;
+ box-shadow:0 8px 25px #3a312c25;
+ display:flex;flex-direction:column;gap:8px;
+ transform:rotate(-1deg);pointer-events:none;
+ transition:opacity .4s ease,transform .7s ease,visibility .4s;
+}
+.v37-frontispiece-frame{flex:1;min-height:0;overflow:hidden;background:#e3ded4}
+.v37-frontispiece-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.v37-frontispiece-footer{display:flex;flex-direction:column;gap:3px;padding:3px 5px 0}
+.v37-frontispiece-footer span{font:10px Georgia,serif;letter-spacing:.14em;color:#7c8c79}
+.v37-frontispiece-footer b{font:normal clamp(13px,1.3vw,18px)/1.35 "Songti SC",serif;color:#405949}
+.is-opening .v37-identity-frontispiece,.is-open .v37-identity-frontispiece{opacity:0;visibility:hidden;transform:translateX(-22px) rotate(-3deg)}
+.v37-mobile-identity{display:none}
+.v37-fixed-controls{pointer-events:none;position:fixed;z-index:175;inset:0}
+.v37-corner-guide{
+ pointer-events:auto;position:absolute;bottom:max(10px,env(safe-area-inset-bottom));left:max(8px,env(safe-area-inset-left));
+ width:105px;min-height:113px;padding:0;background:transparent;border:0;cursor:pointer;
+ display:flex;align-items:end;justify-content:center;
+ filter:drop-shadow(0 4px 5px #31463833);
+}
+.v37-corner-guide .liushui-sprite{width:100px;transform-origin:55% 85%;animation:v36-greet 3.2s ease-in-out 2s 2;transition:transform .22s ease}
+.v37-corner-guide:hover .liushui-sprite,.v37-corner-guide:focus-visible .liushui-sprite{transform:translateY(-5px) rotate(-3deg)}
+.v37-guide-bubble{
+ position:absolute;bottom:93px;left:61px;
+ width:max-content;max-width:145px;background:#faf5e8;border:1px solid #cfc3a8;border-radius:12px 12px 12px 2px;
+ padding:7px 9px;box-shadow:0 3px 7px #413d3030;
+ font:10px/1.3 "PingFang SC",sans-serif;color:#3b5a43;
+ opacity:0;transform:translateY(5px);transition:opacity .18s,transform .18s;
+}
+.v37-corner-guide:hover .v37-guide-bubble,.v37-corner-guide:focus-visible .v37-guide-bubble{opacity:1;transform:none}
+.v37-top-button{
+ pointer-events:auto;position:absolute;right:max(18px,env(safe-area-inset-right));bottom:max(23px,env(safe-area-inset-bottom));
+ width:56px;height:56px;border-radius:50%;border:1px solid #b7bdab;
+ background:#f7f4e9;color:#335e49;
+ box-shadow:0 4px 13px #4c534028;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+ cursor:pointer;transition:transform .2s,background .2s;
+}
+.v37-top-button:hover{transform:translateY(-4px);background:#e4eee0}
+.v37-top-button span{font-size:9px;line-height:1}
+.v37-top-button[hidden]{display:none!important}
+.v37-corner-guide:focus-visible,.v37-top-button:focus-visible{outline:3px solid #60886d;outline-offset:3px}
+/* Book details use real screenshots rather than mock video graphics */
+.v37-book-flagship{flex:1;min-height:0;display:grid;grid-template-columns:42% 1fr;gap:10px;background:#e8e9df;padding:10px}
+.v37-book-film{min-height:0;overflow:hidden;box-shadow:2px 4px 12px #303e3040;border:4px solid #f8f5eb;align-self:stretch}
+.v37-book-film img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.v37-book-film-copy{display:flex;flex-direction:column;justify-content:center;gap:9px;min-width:0}
+.v37-book-film-copy span,.v37-book-selected-head span,.v37-book-live>div span{font:8px/1.4 Georgia,serif;letter-spacing:.08em;color:#8c866d}
+.v37-book-film-copy h3{font:normal clamp(17px,2vw,25px)/1.3 "Songti SC",serif;color:#2f5d43;margin:0}
+.v37-book-film-copy p{font-size:10px;line-height:1.6;color:#6b7b68}
+.v37-book-selected{background:#e5e9e0;flex:1;min-height:0;padding:13px 16px;display:flex;flex-direction:column;gap:9px}
+.v37-book-selected-head h3{font:normal 20px "Songti SC",serif;color:#365847;margin:5px 0}
+.v37-book-selected-cards{display:grid;grid-template-columns:1fr 1fr;gap:9px;min-height:0;flex:1}
+.v37-book-selected-cards figure{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;margin:0;background:#faf7ec;padding:5px;box-shadow:0 4px 10px #38443920}
+.v37-book-selected-cards img{width:100%;min-height:0;flex:1;object-fit:cover;object-position:center 20%;display:block}
+.v37-book-selected-cards figcaption{font-size:9px;padding:5px 2px;color:#566350;line-height:1.4}
+.v37-book-live{flex:1;position:relative;min-height:0;overflow:hidden;background:#dcded3}
+.v37-book-live>img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 29%}
+.v37-book-live>div{position:absolute;left:0;bottom:0;right:0;display:flex;flex-direction:column;gap:6px;padding:26px 15px 12px;background:linear-gradient(0deg,#173a30e8,transparent);color:#f5f0e1}
+.v37-book-live>div span{color:#e8dcc4}
+.v37-book-live>div b{font:normal 16px/1.45 "Songti SC",serif}
+/* Long-form works exhibition */
+.v37-feature-work{position:relative;background:#e4e9dc;min-height:315px;display:grid;grid-template-columns:minmax(0,48%) 1fr;gap:0}
+.v37-feature-work>.v33-image-button{height:315px;width:100%;padding:10px;display:block;box-shadow:none}
+.v37-feature-work>.v33-image-button img{width:100%;height:100%;object-fit:contain;background:#dee5da}
+.v37-feature-work-caption{display:flex;flex-direction:column;justify-content:center;gap:13px;padding:24px 21px}
+.v37-feature-work-caption span{font:9px Georgia,serif;letter-spacing:.1em;color:#728671}
+.v37-feature-work-caption h3{font:normal 24px/1.35 "Songti SC",serif;margin:0;color:#335b44}
+.v37-feature-work-caption small{font-size:10px;color:#818879}
+.v37-thumb-work{display:flex;gap:12px!important;padding:12px!important;align-items:center}
+.v37-thumb-work>.v33-image-button{width:43%;height:167px;flex:none;background:#ede9de}
+.v37-thumb-work>.v33-image-button img{width:100%;height:100%;object-fit:contain}
+.v37-thumb-work>div{min-width:0}
+.v37-thumb-work h3{font-size:16px;margin:9px 0}
+.v37-thumb-work p{font-size:10px;margin:6px 0}
+.v37-thumb-work span{font:9px Georgia,serif;color:#857866}
+.v37-real-live-feature{position:relative;display:grid;grid-template-columns:47% 1fr;min-height:315px;background:#294c40;color:#f8f4e8}
+.v37-real-live-feature>.v33-image-button{height:315px;padding:8px}
+.v37-real-live-feature>.v33-image-button img{width:100%;height:100%;object-fit:contain}
+.v37-real-live-copy{padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:11px}
+.v37-real-live-copy h3{font:normal 22px/1.35 "Songti SC",serif;margin:0}
+.v37-real-live-copy p{font-size:11px;color:#d6e2d6;margin:0}
+.v37-real-live-copy small{font-size:9px;line-height:1.8;color:#c1d0bf}
+@media(max-width:940px){
+ .v37-identity-frontispiece{width:41%;left:3%}
+ .v37-frontispiece-footer b{font-size:13px}
+ .v37-corner-guide{width:85px;min-height:96px}
+ .v37-corner-guide .liushui-sprite{width:85px}
+ .v37-guide-bubble{left:50px;bottom:78px}
+ .v37-feature-work,.v37-real-live-feature{grid-template-columns:43% 1fr}
+ .v37-thumb-work{flex-direction:column;align-items:stretch}
+ .v37-thumb-work>.v33-image-button{width:100%;height:190px}
+}
+@media(max-width:680px){
+ .v37-mobile-identity{
+  display:grid;grid-template-columns:43% 1fr;gap:16px;
+  background:#f3eee4;border:1px solid #d0c7b8;padding:10px;
+  width:min(100%,400px);margin:10px auto 12px;min-height:210px;
+ }
+ .v37-mobile-identity img{width:100%;height:210px;object-fit:cover;object-position:center 35%;display:block}
+ .v37-mobile-identity>div{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:5px 0}
+ .v37-mobile-identity span{font:10px Georgia,serif;letter-spacing:.08em;color:#718473}
+ .v37-mobile-identity strong{font:normal 24px/1.35 "Songti SC",serif;color:#345e4a}
+ .v37-mobile-identity small{font-size:11px;line-height:1.8;color:#7b796c}
+ .is-open .v37-mobile-identity{display:none}
+ .v37-corner-guide{bottom:max(5px,env(safe-area-inset-bottom));left:max(3px,env(safe-area-inset-left));width:70px;min-height:78px}
+ .v37-corner-guide .liushui-sprite{width:70px}
+ .v37-guide-bubble{left:42px;bottom:60px;font-size:9px}
+ .v37-top-button{right:max(10px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:49px;height:49px}
+ .v37-feature-work,.v37-real-live-feature{grid-template-columns:43% 1fr;min-height:230px}
+ .v37-feature-work>.v33-image-button,.v37-real-live-feature>.v33-image-button{height:230px;padding:5px}
+ .v37-feature-work-caption{padding:12px}
+ .v37-feature-work-caption h3,.v37-real-live-copy h3{font-size:17px}
+ .v37-real-live-copy{padding:10px}
+ .v37-thumb-work{flex-direction:row}
+ .v37-thumb-work>.v33-image-button{width:39%;height:160px}
+}
+@media(prefers-reduced-motion:reduce){.v37-corner-guide .liushui-sprite{animation:none}}
+
+
+/* V3.8 — more of the original six-pose guide across genuine whitespace */
+.v37-corner-guide{width:clamp(143px,11vw,176px)!important;min-height:clamp(150px,12vw,185px)!important;left:max(8px,env(safe-area-inset-left))!important;bottom:max(5px,env(safe-area-inset-bottom))!important}
+.v37-corner-guide .liushui-sprite{width:clamp(138px,10.5vw,169px)!important}
+.v37-guide-bubble{left:98px;bottom:142px;z-index:2;max-width:170px}
+.v3-exhibit .v3-section-head:has(.v38-margin-mascot){position:relative;min-height:132px;padding-right:168px}
+.v3-section-head .v38-margin-mascot{position:absolute;right:68px;bottom:-9px;width:112px;transform:rotate(4deg);filter:drop-shadow(0 5px 5px #6e694724);pointer-events:none}
+#v3-teaching .v38-margin-mascot{right:65px;width:106px;transform:rotate(-5deg)}
+#v3-events .v38-margin-mascot{right:66px;bottom:-13px;width:119px;transform:rotate(3deg)}
+#v3-skills .v38-margin-mascot{width:106px;transform:rotate(-3deg)}
+#v3-notes .v38-margin-mascot{width:111px;transform:rotate(5deg)}
+.v38-chapter-breath{display:flex;align-items:center;justify-content:center;gap:22px;max-width:1030px;margin:-15px auto 48px;padding:0 32px;min-height:100px;color:#9b957e;pointer-events:none}
+.v38-chapter-breath .liushui-sprite{width:96px;transform:rotate(-5deg);filter:drop-shadow(0 5px 6px #49563a1a)}
+.v38-breath-line{flex:1;height:1px;max-width:290px;background:linear-gradient(90deg,transparent,#c8bfac,transparent)}
+.v38-breath-caption{font-size:11px;letter-spacing:.05em;white-space:nowrap;color:#8f8f7f}
+.archive-heading{position:relative}
+.v38-photo-mascot{position:absolute;left:46%;bottom:-10px;width:112px;transform:rotate(6deg);pointer-events:none}
+.collab-inner{position:relative;overflow:visible}
+.v38-goodbye-mascot{position:absolute;bottom:-13px;right:8px;width:126px;transform:rotate(5deg);pointer-events:none}
+@media(max-width:940px){
+ .v37-corner-guide{width:139px!important;min-height:149px!important}
+ .v37-corner-guide .liushui-sprite{width:134px!important}
+ .v37-guide-bubble{left:81px;bottom:118px}
+ .v3-exhibit .v3-section-head:has(.v38-margin-mascot){padding-right:125px;min-height:108px}
+ .v3-section-head .v38-margin-mascot,#v3-teaching .v38-margin-mascot,#v3-events .v38-margin-mascot,#v3-skills .v38-margin-mascot,#v3-notes .v38-margin-mascot{right:12px;bottom:-9px;width:90px}
+ .v38-photo-mascot{width:88px;left:50%;bottom:0}
+ .v38-goodbye-mascot{width:95px;right:1px}
+}
+@media(max-width:680px){
+ .v37-corner-guide{width:96px!important;min-height:108px!important;left:max(0px,env(safe-area-inset-left))!important;bottom:max(0px,env(safe-area-inset-bottom))!important}
+ .v37-corner-guide .liushui-sprite{width:94px!important}
+ .v37-guide-bubble{left:61px;bottom:83px;font-size:9px}
+ .v3-exhibit .v3-section-head:has(.v38-margin-mascot){padding-right:0;min-height:0}
+ .v3-section-head .v38-margin-mascot,#v3-teaching .v38-margin-mascot,#v3-events .v38-margin-mascot,#v3-skills .v38-margin-mascot,#v3-notes .v38-margin-mascot{position:relative;right:auto;bottom:auto;width:70px;flex:none;margin-left:auto;transform:none}
+ .v38-chapter-breath{gap:8px;min-height:76px;margin:-20px 15px 34px;padding:0 12px}
+ .v38-chapter-breath .liushui-sprite{width:69px}
+ .v38-breath-caption{font-size:9px;white-space:normal;max-width:105px}
+ .v38-photo-mascot{display:none}
+ .v38-goodbye-mascot{width:64px;right:0;bottom:-10px}
+}
+@media(max-width:360px){
+ .v37-corner-guide{width:81px!important;min-height:91px!important}
+ .v37-corner-guide .liushui-sprite{width:80px!important}
+ .v3-exhibit .v3-section-head .v38-margin-mascot{width:56px}
+ .v38-breath-caption{display:none}
+}
+@media(prefers-reduced-motion:reduce){.v38-chapter-breath .liushui-sprite,.v38-margin-mascot{animation:none!important}}
+
+
+/* V3.9 — original unaltered photographs, writing excerpts, swimming archive, refined book-opening motion */
+.v37-identity-frontispiece{
+ transform-origin:right 50%;
+ transform-style:preserve-3d;
+ backface-visibility:hidden;
+ transition:transform 1.04s cubic-bezier(.19,.78,.24,1),opacity .6s ease .32s,filter .7s ease!important;
+}
+.v37-identity-frontispiece .v37-frontispiece-frame{border:1px solid #e8dfce;box-shadow:inset 0 0 0 1px #fff9ec}
+.v37-identity-frontispiece .v37-frontispiece-frame img{object-position:center 35%}
+.v39-turn-invitation{margin-top:6px;padding-top:5px;border-top:1px solid #cfc3b4;font-size:9px;letter-spacing:.025em;color:#7c796f;display:flex;justify-content:space-between;align-items:center}
+.v39-turn-invitation span{font:italic 21px Georgia,serif;color:#507560;transition:transform .3s ease}
+.book-stage:has(#cover:hover) .v37-identity-frontispiece{transform:rotate(1.3deg) translateX(10px) translateY(-4px)}
+.book-stage:has(#cover:hover) .v39-turn-invitation span{transform:translateX(5px)}
+.is-opening .book-stage .v37-identity-frontispiece{
+ transform:perspective(1100px) rotateY(-89deg) translateX(-14px) rotate(-1deg)!important;
+ opacity:0;visibility:visible!important;
+}
+.is-open .v37-identity-frontispiece{opacity:0;visibility:hidden;transform:perspective(1100px) rotateY(-89deg) translateX(-14px) rotate(-1deg)!important}
+@media(max-width:680px){
+ .v37-mobile-identity{transform-origin:50% 0;transition:opacity .7s ease, transform 1s cubic-bezier(.17,.78,.21,1),max-height .9s ease,margin .9s ease!important;overflow:hidden;max-height:290px}
+ .v37-mobile-identity img{object-position:center 28%}
+ .is-opening .v37-mobile-identity{transform:translateY(-18px) scale(.95);opacity:0;max-height:0;margin:0!important}
+ .is-opening .mobile-cover.v35-cloth-cover{transform-origin:left center;animation:v39-cover-flip 1s cubic-bezier(.19,.72,.18,1) both;pointer-events:none}
+ .is-opening .mobile-paper{animation:v39-paper-enter .8s ease .25s both}
+}
+@keyframes v39-cover-flip{0%{opacity:1;transform:perspective(900px) rotateY(0)}70%{opacity:.8;transform:perspective(900px) rotateY(-58deg) translateX(-10px)}100%{opacity:0;transform:perspective(900px) rotateY(-90deg) translateX(-20px)}}
+@keyframes v39-paper-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.v39-book-flomo-quote{background:#f0eee3;border-left:3px solid #9eaf96;margin:8px 0 1px;padding:10px 12px;color:#435a44;font:normal 11px/1.7 "Songti SC",serif}
+.v39-book-flomo-quote small{display:block;margin-top:4px;font:9px Georgia,serif;color:#948e7e}
+.v39-book-life img:first-child{object-position:center 28%}
+.v39-flomo-writing{margin:46px 0 20px}
+.v39-writing-heading{display:flex;align-items:end;justify-content:space-between;gap:18px}
+.v39-writing-heading h3{font:normal clamp(23px,3vw,35px)/1.35 "Songti SC",serif;color:#315744;max-width:720px;margin:13px 0 25px}
+.v39-writing-heading .liushui-sprite{width:86px;align-self:center}
+.v39-writing-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.v39-writing-cards figure{margin:0;padding:22px 20px 18px;min-height:220px;background:#f7f3e9;border:1px solid #dfd4c3;display:flex;flex-direction:column;gap:15px;box-shadow:0 4px 12px #3d483a0a}
+.v39-writing-cards figure:nth-child(2){background:#e8ecdf;border-color:#c8d4c0}
+.v39-writing-cards figure>div{display:flex;flex-direction:column;gap:5px;color:#829080;font:9px Georgia,serif;letter-spacing:.06em}
+.v39-writing-cards time{font:11px Georgia,serif;color:#968673}
+.v39-writing-cards blockquote{font:normal clamp(16px,1.65vw,21px)/1.65 "Songti SC",serif;color:#315441;margin:0;flex:1}
+.v39-writing-cards figcaption{border-top:1px solid #d9d2c4;padding-top:13px;color:#807b6e;font-size:11px;line-height:1.7}
+.v39-flomo-note{font-size:10px;color:#9a8d7c;margin:13px 0 0;line-height:1.7}
+.v39-swimming-story{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;margin:0 0 44px;background:#e8eee5;border:1px solid #d4dccf;overflow:hidden}
+.v39-swim-image{position:relative;min-height:340px;background:#d8e0d7}
+.v39-swim-image img{display:block;width:100%;height:100%;max-height:570px;object-fit:cover;object-position:center 18%}
+.v39-swim-image>span{position:absolute;left:16px;bottom:16px;background:#f8f8edeb;padding:7px 10px;font:10px Georgia,serif;letter-spacing:.12em;color:#507260}
+.v39-swim-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(22px,3.3vw,50px);gap:13px}
+.v39-swim-copy h3{font:normal clamp(25px,3vw,39px)/1.22 "Songti SC",serif;margin:0;color:#2e5c48}
+.v39-swim-copy p{font-size:13px;line-height:2;color:#69796b;max-width:510px}
+.v39-swim-stats{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:13px 0}
+.v39-swim-stats div{display:flex;flex-direction:column;gap:6px;border-top:1px solid #b6c4b6;padding-top:14px}
+.v39-swim-stats strong{font:normal clamp(25px,3vw,39px) Georgia,serif;color:#315e4c}
+.v39-swim-stats em{font-size:18px;font-style:normal}
+.v39-swim-stats span{font-size:11px;color:#758272}
+.v39-swim-copy>small{font-size:10px;line-height:1.75;color:#8b8c79}
+@media(max-width:800px){.v39-writing-cards{grid-template-columns:1fr}.v39-writing-cards figure{min-height:0}.v39-swimming-story{grid-template-columns:1fr}.v39-swim-image{height:370px}.v39-swim-image img{object-position:center 25%}}
+@media(max-width:480px){.v39-swim-image{height:310px;min-height:310px}.v39-swim-copy{padding:24px 20px}.v39-writing-heading .liushui-sprite{width:70px}.v39-writing-heading h3{font-size:24px}.v39-swim-stats{gap:9px}}
+@media(prefers-reduced-motion:reduce){.v37-identity-frontispiece,.v37-mobile-identity,.is-opening .mobile-cover.v35-cloth-cover,.is-opening .mobile-paper{transition:none!important;animation:none!important}}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   V4.0 — PERSONAL FRONTISPIECE / CLOTHBOUND BOOK / EDITORIAL WORK
+   Three deliberate beats, not one mixed-up stage.
+   Influenced by the restraint of matthewyu.dev and the tactile sketchbook
+   interaction of mengto.com; all layouts and styles authored for Liushui.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root{
+ --desk:#f0ede7;--desk-dark:#e4ddd0;--ink:#303b33;--muted:#7b786f;
+ --paper:#fcfaf4;--paper-edge:#eae3d7;--deep:#1b3d35;
+ --accent:#a96f51;--line:#d6cfc3;
+}
+body{background:#f0ede7;color:#303b33}
+body.v40-entry-active{overflow:hidden;height:100svh;overscroll-behavior:none}
+body.v40-entry-active .v37-fixed-controls{opacity:0;pointer-events:none}
+.v40-entry[hidden]{display:none!important}
+.v40-entry{
+ position:fixed;z-index:9999;inset:0;
+ display:grid;grid-template-columns:minmax(0,56%) minmax(0,44%);
+ width:100%;height:100svh;overflow:hidden;border:0;padding:0;
+ text-align:left;background:#eeeae2;color:#203b32;cursor:pointer;
+ isolation:isolate;-webkit-tap-highlight-color:transparent;
+}
+.v40-entry::after{
+ content:"";pointer-events:none;position:absolute;inset:0;z-index:8;
+ box-shadow:inset 0 0 0 1px #ffffff60;
+}
+.v40-photo-side{
+ position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;
+ background:#c7b7a5;overflow:hidden;
+}
+.v40-photo-frame{position:absolute;inset:0;overflow:hidden;display:block}
+.v40-photo-frame img{
+ width:100%;height:100%;display:block;object-fit:cover;object-position:center 38%;
+ transform:scale(1.02);transition:transform 850ms cubic-bezier(.2,.72,.21,1),filter 850ms ease;
+ filter:saturate(.98);
+}
+.v40-entry:hover .v40-photo-frame img{transform:scale(1.055)}
+.v40-photo-frame::after{
+ content:"";pointer-events:none;position:absolute;inset:0;
+ background:linear-gradient(180deg,transparent 73%,#1e302c69 100%);
+}
+.v40-photo-meta{
+ position:absolute;z-index:1;bottom:clamp(23px,4vw,56px);left:clamp(24px,5vw,90px);right:clamp(22px,3vw,46px);
+ display:flex;justify-content:space-between;gap:20px;
+ color:#fff8e9;font:10px/1.4 Georgia,serif;letter-spacing:.14em;
+ text-shadow:0 2px 7px #14201e7a;
+}
+.v40-editorial-side{
+ position:relative;display:flex;flex-direction:column;justify-content:space-between;min-width:0;
+ padding:clamp(26px,3.6vw,63px) clamp(26px,4.5vw,86px);
+ background:#f7f3eb;
+ background-image:repeating-linear-gradient(90deg,#aa9e8b06 0,#aa9e8b06 1px,transparent 1px,transparent 5px);
+ border-left:1px solid #d5c8b5;
+ transition:transform 720ms cubic-bezier(.22,.79,.2,1),opacity 540ms ease;
+}
+.v40-entry-topline{
+ display:flex;justify-content:space-between;gap:18px;align-items:center;
+ padding-bottom:17px;border-bottom:1px solid #d6d0c5;
+ font:10px/1.5 Georgia,serif;letter-spacing:.13em;color:#8f826e;
+}
+.v40-entry-topline>span:last-child{white-space:nowrap;color:#a16d54}
+.v40-entry-editorial{display:flex;flex-direction:column;align-items:flex-start;gap:17px;margin:auto 0;max-width:620px;padding:36px 0}
+.v40-entry-kicker{font:11px/1.6 Georgia,serif;letter-spacing:.19em;color:#6d806e}
+.v40-entry-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#799777;margin-right:10px;vertical-align:2px}
+.v40-entry-title{
+ display:flex;flex-direction:column;gap:1px;
+ font:400 clamp(42px,5.2vw,91px)/1.15 "Songti SC","Noto Serif CJK SC",Georgia,serif;
+ letter-spacing:-.055em;color:#244438;
+}
+.v40-entry-title>span{white-space:nowrap}
+.v40-period{color:#b47858}
+.v40-entry-lede{font:400 clamp(16px,1.5vw,22px)/1.6 "Songti SC",serif;color:#526b5b;margin-top:7px}
+.v40-entry-description{font:13px/2 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color:#77796f;max-width:34em}
+.v40-entry-taxonomy{font:9px/1.6 Georgia,serif;letter-spacing:.12em;color:#9b8d7c;margin-top:7px}
+.v40-entry-taxonomy i{font-style:normal;padding:0 8px;color:#c9a78e}
+.v40-entry-bottomline{border-top:1px solid #d6d0c5;padding-top:20px;display:flex;flex-direction:column;gap:23px}
+.v40-entry-flow{display:flex;justify-content:space-between;gap:8px;color:#aba49a;font-size:10px;white-space:nowrap;letter-spacing:.03em}
+.v40-entry-flow .v40-entry-current{color:#315b49;font-weight:650}
+.v40-entry-cta{
+ display:flex;align-items:center;justify-content:space-between;gap:20px;
+ padding:16px 0 8px;color:#264a3a;font-weight:650;font-size:14px;
+ border-bottom:2px solid #456a53;transition:padding .24s ease,color .24s ease;
+}
+.v40-entry-cta span{font:normal 27px/1 Georgia,serif;transition:transform .27s ease}
+.v40-entry:hover .v40-entry-cta span,.v40-entry:focus-visible .v40-entry-cta span{transform:translate(5px,-3px)}
+.v40-entry:focus-visible{outline:5px solid #8ba48a;outline-offset:-8px}
+.v40-entry.is-exiting{pointer-events:none}
+.v40-entry.is-exiting .v40-photo-side{animation:v40-photo-exit .7s cubic-bezier(.22,.8,.2,1) forwards}
+.v40-entry.is-exiting .v40-editorial-side{transform:translate3d(9%,0,0);opacity:0}
+.v40-entry.is-exiting::after{animation:v40-veil-exit .72s ease both}
+@keyframes v40-photo-exit{0%{transform:scale(1);opacity:1}100%{transform:translate3d(-9%,0,0) scale(1.03);opacity:0}}
+@keyframes v40-veil-exit{0%,45%{opacity:1;background:transparent}100%{opacity:0;background:#f0ede7}}
+/* On the second step the actual book cover is central, with no personal-photo
+   tile pasted to its left; the user then clicks the cover to turn it. */
+body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.79,.24,1) both}
+@keyframes v40-stage-arrive{from{opacity:.55;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.site-shell:before{opacity:.075}
+.ambient{opacity:.19}
+.ambient-a{background:radial-gradient(circle,#dcd5c561,transparent 75%)}
+.ambient-b{background:radial-gradient(circle,#cad6c34d,transparent 75%)}
+.header{min-height:83px;padding-top:22px;padding-bottom:17px;border-bottom:1px solid #d6cfc46e}
+.wordmark-mark{border-color:#869489;color:#3e6350}
+.wordmark-name{font-size:10px;letter-spacing:.15em}
+.main-layout{gap:clamp(30px,3.5vw,56px);padding-top:43px;padding-bottom:10px}
+.sidebar{padding-bottom:40px}
+.sidebar h1{font:400 38px/1.09 "Songti SC",Georgia,serif;letter-spacing:-.045em;margin:18px 0}
+.sidebar-description{font-size:11px;line-height:2;color:#807c72}
+.sidebar-overline{font:10px/1.7 Georgia,serif;letter-spacing:.18em;color:#9d8874}
+.toc{border-top-color:#d8d1c7}
+.toc li{border-bottom-color:#dad5cc}
+.toc-btn{padding-top:15px;padding-bottom:15px;color:#6d766d}
+.toc-btn[aria-current="page"]{color:#234c3c}
+.stage-heading{color:#857f76;font-size:10px;letter-spacing:.15em}
+.stage-heading .stroke{width:32px;background:#baa58a}
+.book-area{padding-top:27px;padding-bottom:22px;margin-top:12px;background:radial-gradient(ellipse 53% 74% at 50% 46%,#ffffff74,transparent 87%)}
+.book-area:after{left:18%;right:18%;height:27px;bottom:4px;background:#463c365e;filter:blur(29px)}
+.book-body{filter:drop-shadow(0 14px 16px #3d3b325a)}
+.cover-object.v35-cloth-cover,.mobile-cover.v35-cloth-cover{
+ box-shadow:3px 5px 0 #b7aa91,6px 11px 0 #d8c9a9,13px 22px 27px #37352d7d,inset 7px 0 11px #071e1b63!important;
+}
+.cover-object.v35-cloth-cover{border-radius:4px 9px 12px 4px}
+.cover-object.v35-cloth-cover::before{inset:16px!important;border:1px solid #d8c39168!important}
+.v35-cover-artwork{background:
+ repeating-linear-gradient(92deg,#fff5cd07 0px,#fff5cd07 1px,transparent 1px,transparent 4px),
+ radial-gradient(ellipse 56% 55% at 75% 67%,#55715b33,transparent 94%),
+ #1d4037}
+.v35-emboss{opacity:.53}
+.v35-cloth-content .cover-overline{letter-spacing:.15em!important}
+.v35-cloth-content .cover-title{font-size:clamp(39px,4.05vw,62px)!important;letter-spacing:.015em!important;text-shadow:0 2px 5px #152f2d70}
+.v35-cloth-content .cover-subtitle{color:#e9dcc0!important;letter-spacing:.13em!important}
+.v35-cloth-content .cover-cta{background:#dac59318!important;border-color:#e4d5b481;font-size:10px!important}
+.v37-corner-guide,.v37-top-button{transition:filter .3s ease,transform .3s ease}
+.v3-exhibit{max-width:1180px;margin-top:86px;margin-bottom:94px;padding:0 clamp(22px,4vw,50px)}
+.v3-section-head{padding-bottom:20px;margin-bottom:33px;border-bottom:1px solid #dbd4c8}
+.v3-section-head h2{letter-spacing:-.035em}
+.v3-section-head .eyebrow{letter-spacing:.2em;font:10px Georgia,serif;color:#998777}
+.v3-showcase-grid{gap:21px}
+.v3-flagship,.v3-live-quotes article,.v34-process-cards>article{
+ border-color:#d9d1c3;
+ box-shadow:0 10px 25px #3d382d0b;
+}
+.v37-feature-work{background:#e8ece4}
+.v37-real-live-feature{box-shadow:0 14px 26px #243a3224}
+.v34-process-cards>article{background:#faf7ef}
+.v34-process-cards>article:nth-child(2){background:#e9eee5}
+.v34-field-reel{border-top-color:#d7d0c3}
+.photo-stage{box-shadow:0 16px 33px #4d493e1e}
+.collab-inner{background:#ebe8df;border-color:#d5cbbc}
+@media(max-width:1080px){
+ .v40-entry{grid-template-columns:minmax(0,52%) minmax(0,48%)}
+ .v40-editorial-side{padding:26px clamp(25px,3.6vw,55px)}
+ .v40-entry-title{font-size:clamp(44px,5.2vw,69px)}
+ .v40-entry-description{font-size:12px}
+}
+@media(max-width:680px){
+ .v40-entry{grid-template-columns:1fr;grid-template-rows:minmax(0,56%) minmax(0,44%)}
+ .v40-photo-meta{left:20px;right:20px;bottom:15px;font-size:8px}
+ .v40-photo-frame img{object-position:center 35%}
+ .v40-editorial-side{padding:18px 24px 20px}
+ .v40-entry-topline{padding-bottom:8px;font-size:9px}
+ .v40-entry-editorial{padding:12px 0;gap:7px}
+ .v40-entry-kicker{font-size:9px}
+ .v40-entry-title{font-size:clamp(33px,8vw,48px);gap:0}
+ .v40-entry-title>span{white-space:normal}
+ .v40-entry-lede{font-size:14px;margin-top:0}
+ .v40-entry-description{font-size:11px;line-height:1.65;max-width:none}
+ .v40-entry-taxonomy{display:none}
+ .v40-entry-bottomline{gap:6px;padding-top:9px}
+ .v40-entry-flow{font-size:8px}
+ .v40-entry-cta{font-size:12px;padding:7px 0 4px}
+ .v40-entry-cta span{font-size:22px}
+ .header{border-bottom-color:#e2dbd0}
+ .main-layout{padding-top:15px}
+ .v3-exhibit{padding:0 20px;margin-top:54px;margin-bottom:70px}
+ .v3-section-head{padding-bottom:14px}
+}
+@media(max-width:390px){
+ .v40-entry{grid-template-rows:minmax(0,53%) minmax(0,47%)}
+ .v40-editorial-side{padding:16px 18px}
+ .v40-entry-title{font-size:32px}
+ .v40-entry-description{font-size:10px}
+ .v40-entry-flow{font-size:7px}
+ .v40-entry-kicker{font-size:8px}
+}
+@media(max-height:650px) and (min-width:681px){
+ .v40-entry-editorial{gap:9px;padding:15px 0}
+ .v40-entry-title{font-size:clamp(37px,4.3vw,67px)}
+ .v40-entry-description{line-height:1.6}
+ .v40-entry-bottomline{gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+ .v40-entry *,body.v40-cover-visible .stage{animation:none!important;transition:none!important}
+ .v40-entry.is-exiting{opacity:0}
+}
+
+
+/* V4.1 — stronger editorial signature and original-face-preserving wide portrait */
+.v40-entry{
+  background:#f4f0e9;
+}
+.v40-photo-frame{background:#ab8064}
+.v40-photo-frame picture{display:block;width:100%;height:100%}
+.v40-photo-frame img{
+  object-fit:cover;object-position:51% 44%;
+  filter:saturate(.98) contrast(1.015);
+}
+.v40-editorial-side{
+  --v41-x:clamp(26px,4.5vw,86px);
+  --v41-y:clamp(26px,3.6vw,63px);
+  padding:var(--v41-y) var(--v41-x);
+  background:#f6f2eb;
+  background-image:repeating-linear-gradient(90deg,#8d806907 0,#8d806907 1px,transparent 1px,transparent 6px);
+}
+.v40-entry-topline{
+  margin:calc(-1 * var(--v41-y)) calc(-1 * var(--v41-x)) 0;
+  padding:26px var(--v41-x);
+  min-height:112px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:#203e36;
+  background-image:linear-gradient(128deg,#264c40 0%,#18362f 76%);
+  border:0;border-bottom:1px solid #c0a87e65;
+  box-shadow:inset 0 -1px #927c5130,0 14px 25px #372e2410;
+  color:#f2e7cc;
+}
+.v40-entry-topline .v41-entry-brand{
+  display:flex;flex-wrap:wrap;align-items:baseline;column-gap:15px;row-gap:2px;
+  color:#f0e5cd;min-width:0;
+}
+.v41-entry-brand strong{
+  font:400 clamp(23px,2.2vw,32px)/1.3 "Songti SC",serif;
+  letter-spacing:.09em;white-space:nowrap;
+}
+.v41-entry-brand em{
+  font:normal clamp(14px,1.35vw,20px)/1.45 Georgia,serif;
+  color:#e1cba5;letter-spacing:.055em;white-space:nowrap;
+}
+.v40-entry-topline .v41-stage-number{
+  font:12px Georgia,serif;letter-spacing:.2em;color:#c5b286;
+  padding-left:10px;white-space:nowrap;
+}
+.v40-entry-title{letter-spacing:-.045em}
+.v40-entry-cta{border-bottom-color:#345a46}
+.v40-entry-description{font-size:13px;line-height:2.05}
+.v40-entry:hover .v40-photo-frame img{transform:scale(1.025)}
+@media(max-width:1080px){
+ .v40-editorial-side{--v41-x:clamp(25px,3.6vw,55px);--v41-y:26px}
+ .v40-entry-topline{min-height:100px}
+ .v41-entry-brand strong{font-size:clamp(20px,2.4vw,28px)}
+ .v41-entry-brand em{font-size:clamp(13px,1.3vw,17px)}
+ .v40-entry-topline .v41-stage-number{font-size:10px}
+}
+@media(max-width:680px){
+ .v40-editorial-side{--v41-x:24px;--v41-y:18px}
+ .v40-entry-topline{min-height:65px;padding-top:11px;padding-bottom:11px}
+ .v41-entry-brand strong{font-size:22px}
+ .v41-entry-brand em{font-size:13px}
+ .v40-entry-topline .v41-stage-number{font-size:9px}
+ .v40-photo-frame img{object-position:center 27%;filter:none}
+ .v40-entry-editorial{padding:9px 0}
+ .v40-entry-description{font-size:11px;line-height:1.65}
+}
+@media(max-width:390px){
+ .v40-editorial-side{--v41-x:18px;--v41-y:16px}
+ .v40-entry-topline{min-height:58px;padding-top:9px;padding-bottom:9px}
+ .v41-entry-brand{gap:5px}
+ .v41-entry-brand strong{font-size:19px}
+ .v41-entry-brand em{font-size:11px}
+ .v40-entry-topline .v41-stage-number{font-size:8px}
+}
+
 </style>
 </head>
-<body>
+<body class="v40-entry-active">
+<button class="v40-entry" id="v40Entry" type="button" aria-label="先认识六水，再进入《不止想想》的封面">
+ <span class="v40-photo-side">
+  <span class="v40-photo-frame">
+   <picture><source media="(max-width:680px)" srcset="images/v3/v39-home-portrait.webp"><img src="images/v3/v41-home-wide-original-face.webp" alt="六水身穿蓝色细条纹衬衫，戴着头顶墨镜，站在温暖的木门前" decoding="async" fetchpriority="high"></picture>
+  </span>
+  <span class="v40-photo-meta"><span>01 / A PERSONAL PORTRAIT</span><span>LIUSHUI · 2026</span></span>
+ </span>
+ <span class="v40-editorial-side">
+  <span class="v40-entry-topline"><span class="v41-entry-brand"><strong>不止想想</strong><em>Curious at Heart</em></span><span class="v41-stage-number">01 — 03</span></span>
+  <span class="v40-entry-editorial">
+   <span class="v40-entry-kicker"><span class="v40-entry-dot" aria-hidden="true"></span> HELLO, I'M LIUSHUI</span>
+   <span class="v40-entry-title">你好，<span>我是六水<span class="v40-period">。</span></span></span>
+   <span class="v40-entry-lede">好奇于心，创造于行。</span>
+   <span class="v40-entry-description">我喜欢观察、拆解问题，也喜欢把想法变成真正发生的事情。这里，有我的作品、经历、思考和日常。</span>
+   <span class="v40-entry-taxonomy">CREATION <i>·</i> TEACHING <i>·</i> IDEAS <i>·</i> LIFE</span>
+  </span>
+  <span class="v40-entry-bottomline">
+   <span class="v40-entry-flow"><span class="v40-entry-current">01 / 见个面</span><span class="v40-entry-next">02 / 看封面</span><span class="v40-entry-next">03 / 翻开书</span></span>
+   <span class="v40-entry-cta">进入《不止想想》封面 <span aria-hidden="true">↗</span></span>
+  </span>
+ </span>
+</button>
+
 <a class="skip-link" href="#reading-area">跳转到书本</a>
-<div class="site-shell" id="app">
+<div class="site-shell" id="app" inert>
   <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <header class="header">
     <a class="wordmark" href="#" aria-label="回到首页与书本封面" id="homeLink">
       <span class="wordmark-mark">水</span>
       <span class="wordmark-name">LIUSHUI / 六水<small>CURIOUS AT HEART</small></span>
     </a>
-    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.02.4</span></div>
+    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.03.0</span></div>
   </header>
 
 <nav class="social-rail" aria-label="社交账号与联系方式"><span class="social-rail-heading">FIND ME</span><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer" aria-label="X"><span aria-hidden="true">𝕏</span><span class="social-name">X</span></a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span aria-hidden="true">GH</span><span class="social-name">GitHub</span></a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer" aria-label="小红书"><span aria-hidden="true">书</span><span class="social-name">小红书</span></a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer" aria-label="抖音"><span aria-hidden="true">抖</span><span class="social-name">抖音</span></a><button type="button" data-copy-wechat aria-label="复制微信号 liushui029"><span aria-hidden="true">微</span><span class="social-name">微信</span></button></nav><div class="social-toast" id="socialToast" role="status" aria-live="polite" hidden></div>
@@ -428,12 +1526,12 @@ a { color:inherit; }
       <div>
         <div class="sidebar-overline">THE TABLE OF CONTENTS</div>
         <h1>不止<br><i>想想。</i></h1>
-        <p class="sidebar-description">这本书收录我的观察、作品、思考和日常。点击目录，翻到你感兴趣的那一章。</p>
+        <p class="sidebar-description">从最初的好奇，到做过的事。翻开之后，都是我正在经历的世界。</p>
       </div>
       <ol class="toc" id="toc"></ol>
       <div class="sidebar-note">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 13c4 0 5-5 8-5s4 8 8 8M4 4v16m16-16v16" /></svg>
-        <span>拖动书页，或使用方向键。<br>第二章可以查看完整项目案例。</span>
+        <span>拖动书页，或使用方向键。<br>作品、直播各自有完整展示；继续翻页可查看内页。</span>
       </div>
     </aside>
 
@@ -452,28 +1550,68 @@ a { color:inherit; }
               <div class="face front" id="flipFront"></div>
               <div class="face back" id="flipBack"></div>
             </div>
-            <button class="cover-object" id="cover" aria-label="打开书本">
-              <span class="cover-back" aria-hidden="true"></span>
-              <span class="cover-content">
-                <span class="cover-overline">LIUSHUI’S SKETCHBOOK &nbsp; · &nbsp; VOL. I</span>
-                <span class="cover-center">
-                  <span class="cover-volume">CURIOUS AT HEART</span>
-                  <span class="cover-title">不止<i>想想</i></span>
-                  <span class="cover-subtitle">关于观察、内容、创造与真实生活</span>
-                  <svg class="cover-art" viewBox="0 0 240 105" fill="none" aria-hidden="true"><path d="M5 88c19-35 29-55 41-40s19 42 32 20S113 9 126 31s14 64 29 49 26-65 40-56 21 53 40 43" stroke="#d2bf93" stroke-width="1.6" stroke-linecap="round"/><path d="M20 20c13 7 25 10 39 3M156 10l3 8 8 3-8 2-3 8-2-8-8-2 8-3 2-8ZM206 88c8-8 17-10 25-8" stroke="#d2bf93" stroke-width="1.2"/><circle cx="114" cy="87" r="2" fill="#d2bf93"/></svg>
-                </span>
-                <span class="cover-bottom"><span>六水 LIUSHUI<br>VOL. 01 · 2026</span><span class="cover-cta">OPEN THE BOOK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
-              </span>
-            </button>
+            <button class="cover-object v35-cloth-cover" id="cover" aria-label="打开《不止想想》手账">
+ <span class="cover-back" aria-hidden="true"></span>
+ <span class="v35-cover-artwork" aria-hidden="true">
+ <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#d8bc85" stroke-width="1.12" stroke-linecap="round" opacity=".48">
+   <path d="M-60 119 C68 38 125 190 252 97 S419 63 521 -30"/>
+   <path d="M-64 134 C68 53 127 205 253 112 S423 79 525 -16"/>
+   <path d="M-66 149 C70 69 129 220 255 127 S427 94 527 0"/>
+   <path d="M-69 164 C71 85 131 235 257 142 S432 109 531 16"/>
+   <path d="M-71 179 C74 101 133 250 259 157 S435 124 536 31"/>
+   <path d="M-75 194 C75 117 135 265 261 172 S439 139 540 46"/>
+  </g>
+  <g stroke="#d8bc85" stroke-width="1.2" opacity=".54">
+   <path d="M46 660 Q96 583 156 562 T284 472 T420 308"/>
+   <path d="M154 563 Q149 516 108 484 M204 525 Q212 476 250 441 M281 472 Q322 464 344 424 M366 380 Q350 340 375 300"/>
+   <path d="M95 589 Q57 567 30 530 M250 443 Q233 416 230 386"/>
+  </g>
+  <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
+ </svg>
+</span>
+ 
+ <span class="cover-content v35-cloth-content">
+  <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL · 2026</span></span>
+  <span class="cover-center">
+   <span class="cover-volume">CURIOUS AT HEART</span>
+   <span class="cover-title">不止<i>想想</i></span>
+   <span class="v35-title-rule" aria-hidden="true"></span>
+   <span class="cover-subtitle">好奇于心，创造于行。</span>
+  </span>
+  <span class="cover-bottom"><span>六水 · LIUSHUI<br>EDITION 01</span><span class="cover-cta">OPEN THE BOOK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></span>
+ </span>
+</button>
           </div>
         </div>
       </div>
       <div class="mobile-reader" id="mobileReader">
-        <button class="mobile-cover" id="mobileCover" aria-label="打开书本">
-          <span class="cover-overline">LIUSHUI’S SKETCHBOOK · VOL. I</span>
-          <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="cover-subtitle">关于观察、内容、创造与真实生活</span></span>
-          <span class="cover-bottom"><span>六水 LIUSHUI<br>VOL. 01 · 2026</span><span class="cover-cta">OPEN THE BOOK →</span></span>
-        </button>
+        <button class="mobile-cover v35-cloth-cover v35-mobile-cover" id="mobileCover" aria-label="打开《不止想想》手账">
+ <span class="v35-cover-artwork" aria-hidden="true">
+ <svg class="v35-emboss" viewBox="0 0 460 670" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#d8bc85" stroke-width="1.12" stroke-linecap="round" opacity=".48">
+   <path d="M-60 119 C68 38 125 190 252 97 S419 63 521 -30"/>
+   <path d="M-64 134 C68 53 127 205 253 112 S423 79 525 -16"/>
+   <path d="M-66 149 C70 69 129 220 255 127 S427 94 527 0"/>
+   <path d="M-69 164 C71 85 131 235 257 142 S432 109 531 16"/>
+   <path d="M-71 179 C74 101 133 250 259 157 S435 124 536 31"/>
+   <path d="M-75 194 C75 117 135 265 261 172 S439 139 540 46"/>
+  </g>
+  <g stroke="#d8bc85" stroke-width="1.2" opacity=".54">
+   <path d="M46 660 Q96 583 156 562 T284 472 T420 308"/>
+   <path d="M154 563 Q149 516 108 484 M204 525 Q212 476 250 441 M281 472 Q322 464 344 424 M366 380 Q350 340 375 300"/>
+   <path d="M95 589 Q57 567 30 530 M250 443 Q233 416 230 386"/>
+  </g>
+  <g fill="#d8bc85" opacity=".50"><circle cx="46" cy="660" r="2.3"/><circle cx="154" cy="563" r="2"/><circle cx="281" cy="472" r="2"/><circle cx="366" cy="380" r="2.3"/></g>
+ </svg>
+</span>
+ 
+ <span class="cover-content v35-cloth-content">
+  <span class="cover-overline">LIUSHUI <span>PERSONAL FIELD JOURNAL</span></span>
+  <span class="cover-center"><span class="cover-volume">CURIOUS AT HEART</span><span class="cover-title">不止<i>想想</i></span><span class="v35-title-rule" aria-hidden="true"></span><span class="cover-subtitle">好奇于心，创造于行。</span></span>
+  <span class="cover-bottom"><span>六水 · LIUSHUI<br>EDITION 01</span><span class="cover-cta">翻开看看 →</span></span>
+ </span>
+</button>
         <div class="mobile-paper" id="mobilePaper" aria-live="polite"></div>
       </div>
       <div class="controlbar" aria-label="翻页控制">
@@ -482,52 +1620,178 @@ a { color:inherit; }
           <div class="page-progress" id="pageProgress" aria-live="polite">COVER</div>
           <button class="icon-btn" id="nextButton" aria-label="下一章"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m10 5 7 7-7 7"/><path d="M16 12H4"/></svg></button>
         </div>
-        <div class="control-hint" id="controlHint"><span>点击封面，开始阅读</span><kbd>←</kbd><kbd>→</kbd></div>
+        <div class="control-hint" id="controlHint"><span>02 / 03 &nbsp;·&nbsp; 点击封面，翻开《不止想想》</span><kbd>←</kbd><kbd>→</kbd></div>
       </div>
     </section>
   </main>
 
-<section class="case-section" id="case-studies" aria-labelledby="caseTitle">
- <div class="case-head">
-  <div><span class="case-overline">THE MAKER / SELECTED WORK</span><h2 id="caseTitle">从观察，到做出结果。</h2><p>两份可展开的项目记录，讲清楚目标、做法、反馈与证据状态。</p></div>
-  <span class="case-count">02 / CASE STUDIES</span>
+
+
+<section class="v34-field-reel" aria-labelledby="v34ReelHeading">
+ <div class="v34-field-heading"><div><span class="eyebrow">IN THE MAKING / 真实过程档案</span><h2 id="v34ReelHeading">不止结果，还有正在发生的过程。</h2></div><p>把创作过程里留下来的画面，收进这一页。点击看大图。</p></div>
+ <div class="v34-field-track">
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-self-viral.webp" data-v33-alt="个人内容的真实发布截图"><img src="images/v3/v3-self-viral.webp" alt="六水原创内容的实际发布页面" loading="lazy"></button><figcaption><b>01 / 作品发布</b><span>个人创作的真实截图</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-xhs-notifications.webp" data-v33-alt="小红书点赞收藏与新增关注消息"><img src="images/v3/v3-xhs-notifications.webp" alt="小红书实际互动消息界面" loading="lazy"></button><figcaption><b>02 / 内容反馈</b><span>内容被看见之后的回声</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-speaking.webp" data-v33-alt="六水在白板前讲解"><img src="images/v3/v3-event-speaking.webp" alt="六水在白板旁分享个人 IP 内容思路" loading="lazy"></button><figcaption><b>03 / 线下讲解</b><span>白板、问题与现场表达</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-venue.webp" data-v33-alt="真实线下活动场地"><img src="images/v3/v3-event-venue.webp" alt="有投影和讨论区的实际活动空间" loading="lazy"></button><figcaption><b>04 / 活动现场</b><span>线下分享的空间与布置</span></figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-flomo-print.webp" data-v33-alt="17万字 flomo 打印稿"><img src="images/v3/v3-flomo-print.webp" alt="手持一整叠 flomo 打印稿" loading="lazy"></button><figcaption><b>05 / 长期写作</b><span>17 万字打印稿的实体</span></figcaption></figure>
  </div>
- <div class="case-grid">
-  <article class="case-card" id="case-personal">
-   <div class="case-card-top"><span>CASE 01 · PERSONAL PROJECT</span><span>2023—2026</span></div>
-   <div class="case-visual case-visual-a" aria-hidden="true"><div class="case-visual-tiny">CONTENT / RESEARCH / COMMUNITY</div><div class="case-visual-title">从一个问题<br>开始讲故事。</div><span class="case-visual-mark">01</span></div>
-   <div class="case-body">
-    <p class="case-type">个人 IP · 内容策划 · 用户洞察</p>
-    <h3>个人内容账号：把成长问题讲清楚</h3>
-    <p class="case-summary">面向对大学成长、职业选择和自我发展有困惑的人，独立进行选题研究、脚本表达、拍摄制作与内容复盘。</p>
-    <div class="case-metrics"><div><strong>独立完成</strong><span>选题到发布的内容闭环</span></div><div><strong>50 万</strong><span>代表视频播放（本人确认，截图待核）</span></div></div>
-    <details class="case-details"><summary>展开项目过程与证据 <span aria-hidden="true">↗</span></summary>
-     <div class="case-detail-content"><div><h4>问题与目标</h4><p>大学生成长议题很宽泛。核心任务是找到具体问题，将抽象的观点改写为可理解、可传播的故事。</p></div><div><h4>我的动作</h4><p>围绕大学人脉、职业发展等选题进行资料收集和用户反馈研究；独立完成脚本、出镜、剪辑与发布，结合评论、私信和表现数据迭代内容。</p></div><div><h4>我看到的反馈</h4><p>代表内容《大学如何铺自己的人脉网》在抖音约 50 万次播放、单条新增粉丝约 4000（本人确认，待后台截图核验）。另运营 500+ 人的个人免费社群；社群不是这条视频的直接转化数据，不能合并计算。</p></div>
-     <div class="evidence-box" data-evidence="personal"><div class="evidence-head"><span>原始证据位置 · 01</span><span class="evidence-status">截图待补</span></div><div class="evidence-preview"><div class="evidence-icon">◫</div><p>建议放：代表视频播放后台 / 原始脚本 / 匿名评论截图</p><small>不会生成模拟后台、假数据图或 AI 修饰过的人像</small></div><label class="evidence-upload">选本地截图预览<input type="file" data-proof="personal" accept="image/*"></label></div></div>
-    </details>
-   </div>
+ <p class="v34-field-footnote">这些碎片里，藏着创作与交流真正发生的样子。</p>
+</section>
+<section class="v3-exhibit v3-hero-showcase" id="v3-works" aria-labelledby="worksHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">01A / WORKS</span><h2 id="worksHeading">让想法，有了回声。</h2><p>短视频、系列内容、长文与真实互动。从灵感发芽，到作品被看见。</p></div><span class="liushui-sprite pose-working v36-section-guide" role="img" aria-label="六水在电脑前创作"></span><span class="v3-section-num">01A</span></div>
+ <div class="v3-showcase-grid">
+  <article class="v3-flagship">
+   <div class="v37-feature-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-networking.webp" data-v33-alt="原创代表作《大学里大佬幼年体：怎么铺自己的人脉网》真实视频截图"><img src="images/v3/liushui-work-networking.webp" alt="六水《大学如何铺自己的人脉网》代表作真实视频画面" loading="lazy"></button><div class="v37-feature-work-caption"><span>FLAGSHIP / ORIGINAL VIDEO</span><h3>大学如何铺自己的人脉网</h3><small>真实视频封面与播放截图 · 点击放大</small></div></div>
+   <div class="v3-flagship-meta"><p>把熟悉的大学生活，换一个视角讲给更多人听。</p><div class="v3-result-row"><span><b>约 50 万</b>抖音播放</span><span><b>约 4,000</b>抖音新增关注</span><span><b>约 10 万</b>小红书播放</span></div><small>在抖音与小红书上，收到的真实回声。</small><div class="v3-platform-links"><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音账号 ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书账号 ↗</a></div></div>
   </article>
-  <article class="case-card" id="case-snapvee">
-   <div class="case-card-top"><span>CASE 02 · PRODUCT GROWTH</span><span>2026.08—09</span></div>
-   <div class="case-visual case-visual-b" aria-hidden="true"><div class="case-visual-tiny">IDEA / CONTENT / RESPONSE</div><div class="case-visual-title">让好内容<br>被真正看见。</div><span class="case-visual-mark">02</span></div>
-   <div class="case-body">
-    <p class="case-type">SnapVee · 产品内容推广 · 社群承接</p>
-    <h3>SnapVee：从短视频到主动咨询</h3>
-    <p class="case-summary">把产品功能翻译成用户看得懂的内容，保持小红书与抖音的持续产出，观察内容能否带来实际咨询。</p>
-    <div class="case-metrics"><div><strong>日更</strong><span>1 条视频 + 1 篇图文</span></div><div><strong>数百名</strong><span>新增粉丝，并产生多名主动咨询用户</span></div></div>
-    <details class="case-details"><summary>展开项目过程与证据 <span aria-hidden="true">↗</span></summary>
-     <div class="case-detail-content"><div><h4>问题与目标</h4><p>面向不了解产品的国内受众，建立从内容触达到产品兴趣、再到主动咨询的沟通链路。</p></div><div><h4>我的动作</h4><p>筛选海外热门视频，按国内平台和用户习惯重构表达；独立完成视频与图文的选题、制作及发布；答复产品用途和费用问题，并整理私域来源与意向信息。</p></div><div><h4>结果与边界</h4><p>相关视频带来数百名新增粉丝和多名主动咨询用户。没有可核验的产品注册转化数据，因此不推算注册率、成交率。</p></div>
-     <div class="evidence-box" data-evidence="snapvee"><div class="evidence-head"><span>原始证据位置 · 02</span><span class="evidence-status">截图待补</span></div><div class="evidence-preview"><div class="evidence-icon">◫</div><p>建议放：账号后台 / 内容发布列表 / 匿名咨询记录</p><small>客户头像、电话、私信昵称请在公开前人工打码</small></div><label class="evidence-upload">选本地截图预览<input type="file" data-proof="snapvee" accept="image/*"></label></div></div>
-    </details>
-   </div>
-  </article>
+  <div class="v3-works-list v37-works-list">
+   <article class="v37-thumb-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-feminism.webp" data-v33-alt="六水作品《曾经，我被开盒》在社交平台的真实截图"><img src="images/v3/liushui-work-feminism.webp" alt="六水视频作品《曾经，我被开盒》截图" loading="lazy"></button><div><span>SELECTED VIDEO 01</span><h3>曾经，我被开盒</h3><p>一条关于表达与经历的原创作品。</p></div></article>
+   <article class="v37-thumb-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-university.webp" data-v33-alt="六水作品《上大学后最没用的事》的真实视频截图"><img src="images/v3/liushui-work-university.webp" alt="六水视频作品《上大学后最没用的事》截图" loading="lazy"></button><div><span>SELECTED VIDEO 02</span><h3>上大学后最没用的事</h3><p>从校园生活出发的观察与表达。</p></div></article>
+   <article><span>VIDEO SERIES</span><h3>大佬幼年体</h3><p>关于大学、社会观察与成长判断的一组系列选题。</p></article>
+   <article><span>ESSAY · X</span><h3>从 0 到爆款自媒体运营心法</h3><p>将内容实践整理成结构化的原创长文。</p><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">阅读 X 创作 ↗</a></article>
+  </div>
  </div>
- <div class="case-end-note"><strong>证据说明</strong>：以上成果文字依据你先前确认的经历记录；平台后台和私信原图目前未放入 Demo，因此明确标记“待补”，不会用绘制的假截图代替。</div>
+
+
+<div class="v34-work-process">
+ <div class="v34-process-intro"><span class="eyebrow">MAKING A VIDEO / 真实脚本档案</span><h3>一个选题，是怎么被我讲清楚的？</h3><p>来自《大学如何铺自己的人脉网》2026 年 9 月的实际构思与改稿记录。</p></div>
+ <div class="v34-process-cards">
+  <article><span>2026.09.15 · IDEA</span><h4>先有一个视角。</h4><blockquote>「大学是真实社会的 mini 版。」</blockquote><p>从校园里的关系和信息来源出发，提出选题母题。</p><small>原始选题思考</small></article>
+  <article><span>2026.09.16 · STRUCTURE</span><h4>把想法组织起来。</h4><div class="v34-outline-steps"><b>现象</b><b>误解</b><b>原因</b><b>认知</b><b>方案</b><b>升华</b></div><p>反复调整叙事顺序，收束到一个主要认知点。</p><small>六板块内容结构</small></article>
+  <article><span>2026.09.16 · SCRIPT</span><h4>写成能讲的话。</h4><blockquote>「人脉就是认识有头有脸的人？」</blockquote><p>用反常识问题开场，再进入具体场景与行动建议。</p><small>成稿口播结构</small></article>
+ </div>
+</div>
+</section>
+<section class="v3-exhibit" id="v3-live" aria-labelledby="liveHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">01B / LIVE</span><h2 id="liveHeading">每一次对话，都有新的回声。</h2><p>直播与作品同级。即兴表达、现场问答与观众互动，都有自己的章节。</p></div><span class="liushui-sprite pose-waving v38-margin-mascot" role="img" aria-label="六水挥手欢迎来到直播章节"></span><span class="v3-section-num">01B</span></div>
+ <div class="v3-showcase-grid">
+  <div class="v37-real-live-feature"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-live-ai.webp" data-v33-alt="六水讨论 AI 话题的真实直播截图"><img src="images/v3/liushui-live-ai.webp" loading="lazy" alt="六水在直播间谈论 AI 的真实直播截图"></button><div class="v37-real-live-copy"><span class="v3-live-pill"><i></i> REAL LIVE / ON AIR</span><h3>把问题拆开，<br>把交流留给现场。</h3><p>AI 话题直播 · 真实现场画面</p><small>AI 话题直播中的一个瞬间。</small></div></div>
+  <div class="v3-live-quotes">
+   <article><span>01 / 内容</span><h3>做内容前，先想清楚谁需要它。</h3><p>把真实用户的问题放在内容的起点。</p></article>
+   <article><span>02 / AI</span><h3>用户不为 AI 两个字买单。</h3><p>关键是具体解决了什么问题。</p></article>
+   <article><span>03 / 实践</span><h3>想创业，先用最小动作验证需求。</h3><p>不是先把宏大故事讲圆满。</p></article>
+  </div>
+ </div>
+
+<div class="v34-live-process">
+ <div class="v34-process-intro"><span class="eyebrow">LIVE NOTES · 2026.07.23</span><h3>一场直播之后，观点还会继续生长。</h3><p>从一场直播里的表达，继续生长出新的观点和短视频脚本。</p></div>
+ <div class="v34-live-workflow">
+  <div><span>01 / RECORD</span><h4>先表达、先讨论</h4><p>直播谈到选题、封面、BGM 和发布时间等大量待验证的变量。</p></div>
+  <div><span>02 / REFINE</span><h4>提炼出核心判断</h4><p>「对标的本质，是降低验证成本。」</p></div>
+  <div><span>03 / REWRITE</span><h4>重新组织为口播稿</h4><p>将模仿取样、理解原理、形成表达整理成三个阶段。</p></div>
+ </div>
+</div>
+</section>
+<div class="v38-chapter-breath" aria-hidden="true"><span class="v38-breath-line"></span><span class="liushui-sprite pose-thinking"></span><span class="v38-breath-caption">一边输出，一边继续想。</span><span class="v38-breath-line"></span></div>
+
+<section class="v3-exhibit v3-secondary v3-teaching-studio" id="v3-teaching" aria-labelledby="teachingHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">02 / THE TEACHING STUDIO</span><h2 id="teachingHeading">把知识讲给愿意理解的人。</h2><p>从 2023 年开始，我持续尝试英语一对一与小班教学，也在把经验整理成一套更完整的教培知识地图：从初次连接到知识交付，再到学生成长与家长反馈。</p></div><span class="liushui-sprite pose-thinking v38-margin-mascot" role="img" aria-label="六水思考如何组织教学知识"></span><span class="v3-section-num">02</span></div>
+ <div class="v3-teach-journey" aria-label="英语教培的三个环节">
+  <article><span>01 / CONNECT</span><h3>招生与沟通</h3><p>内容如何被看到？怎样理解学生与家长的需求？如何说明课程价值？</p><div>内容选题 · 信任建立 · 初次沟通 · 课程匹配</div></article>
+  <article><span>02 / DELIVER</span><h3>知识与成长</h3><p>知识怎样从零散考点成为学习路径？如何兼顾理解、动力与学习反馈？</p><div>知识图谱 · 分层讲解 · 学习档案 · 阶段目标</div></article>
+  <article><span>03 / FOLLOW UP</span><h3>反馈与陪伴</h3><p>不只告诉家长今天教了什么，也解释下一阶段要解决什么问题。</p><div>课程记录 · 成长进度 · 家长沟通 · 升学视角</div></article>
+ </div>
+ <div class="v3-teach-structure">
+  <div class="v3-teach-structure-head"><span class="eyebrow">LEARNING ATLAS</span><h3>我正在整理的英语知识地图。</h3><p>以 K12 英语为主要教学实践场景，也为国际教育相关知识预留研究模块。点击不同领域，查看知识如何被组织成课程。</p></div>
+  <div class="v3-teach-subnav" role="group" aria-label="切换英语知识模块">
+   <button type="button" data-teach-subject="0" aria-pressed="true"><span>01</span> 语法</button>
+   <button type="button" data-teach-subject="1" aria-pressed="false"><span>02</span> 词汇</button>
+   <button type="button" data-teach-subject="2" aria-pressed="false"><span>03</span> 阅读</button>
+   <button type="button" data-teach-subject="3" aria-pressed="false"><span>04</span> 写作</button>
+  </div>
+  <div class="v3-teach-stage" aria-live="polite">
+   <div class="v3-teach-stage-main">
+    <span class="v3-teach-stage-kicker" data-teach-stage-kicker>01 / GRAMMAR · STRUCTURE FIRST</span>
+    <h4 data-teach-stage-title>先认识句子的骨架。</h4>
+    <p data-teach-stage-desc>识别谁在做什么，再观察动作发生在什么时间、处于什么状态，最后理解句子怎样扩展。</p>
+    <div class="v3-grammar-demo" data-teach-stage-example aria-label="语法结构示例"><span>Mia</span><span>explains</span><span>the idea.</span></div>
+    <p class="v3-teach-stage-foot" data-teach-stage-foot>主语 → 核心动作 → 动作对象。先理解信息关系，再进入语法规则。</p>
+   </div>
+   <div class="v3-teach-stage-map"><span>THE MAP / KNOWLEDGE NODES</span><div data-teach-stage-nodes><span>基本句型</span><span>动词与时态</span><span>非谓语动词</span><span>从句与句法</span><span>复杂句拆解</span></div><small>从句子的骨架出发，把语言的结构一点点展开。</small></div>
+  </div>
+ </div>
+ <div class="v3-student-loop">
+  <div class="v3-student-loop-heading"><span class="eyebrow">LEARNER JOURNEY</span><h3>把学生的成长，也变得看得见。</h3><p>从了解一个学生开始，找到适合他的学习节奏。</p></div>
+  <div class="v3-student-loop-track"><div><span>01</span><b>了解起点</b><small>初始水平 · 兴趣 · 困难</small></div><div><span>02</span><b>制定目标</b><small>知识缺口 · 学习节奏</small></div><div><span>03</span><b>记录变化</b><small>阶段反馈 · 错因复盘</small></div><div><span>04</span><b>调整策略</b><small>课后支持 · 家校同步</small></div></div>
+ </div>
+ <div class="v3-teach-bottom"><p><b>已经在做的：</b>英语一对一和小班教学、知识点拆解与个性化讲解。</p><p><b>正在建设的：</b>招生、课程配置、学生培养和家长沟通的系统化知识库。</p></div>
+
+<div class="v34-teach-docs">
+ <div class="v34-process-intro"><span class="eyebrow">TEACHING WORKSPACE / 课程资料</span><h3>从一个知识点，到可交付的学习体系。</h3><p>从招生沟通到知识交付，把教学经验慢慢整理成可以反复使用的方法。</p></div>
+ <div class="v34-teach-doc-grid">
+  <article class="v34-teach-doc"><span>FILE 01 · CURRICULUM</span><h4>英语知识总目录</h4><div class="v34-folder-list"><p><b>01 词汇</b>　音标 / 初高中词汇 / 词根词缀</p><p><b>02 语法</b>　词法 / 句法 / 高频速查</p><p><b>03 阅读</b>　阅读技巧与句子分析</p><p><b>04 写作</b>　组织表达和写作实践</p></div><small>知识模块目录 / 持续建设</small></article>
+  <article class="v34-teach-doc"><span>FILE 02 · LEARNER PROGRESS</span><h4>阶段学习档案结构</h4><div class="v34-track-schema"><p><i>01</i> 学生起点与实际困难</p><p><i>02</i> 学习阶段目标与内容</p><p><i>03</i> 练习表现、错因与复盘</p><p><i>04</i> 下一阶段计划与家长同步</p></div><small>从一份学习档案，看见成长的路径。</small></article>
+ </div>
+</div>
+</section>
+<section class="v3-exhibit v3-secondary v33-event-exhibit" id="v3-events" aria-labelledby="eventsHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">03 / EVENTS</span><h2 id="eventsHeading">走进现场，让想法相遇。</h2><p>线下分享、讨论、内容陪跑。那些现场的画面，记着人与观点交汇的时刻。</p></div><span class="liushui-sprite pose-happy v38-margin-mascot" role="img" aria-label="开心的六水陪你看线下活动"></span><span class="v3-section-num">03</span></div>
+ <div class="v33-event-editorial">
+  <div class="v33-event-stage">
+   <div class="v33-event-stage-photo">
+    <button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-speaking.webp" data-v33-alt="六水在线下分享时指向白板上的内容思路"><img id="v33EventImage" src="images/v3/v3-event-speaking.webp" alt="六水坐在白板旁讲解个人 IP 内容思路" loading="lazy"></button>
+    <span class="v33-event-sticker">THE ROOM · 01 / 02</span>
+   </div>
+   <div class="v33-event-switches" role="group" aria-label="切换线下活动现场照片">
+    <button type="button" data-v33-event-image="speaking" aria-pressed="true">讲解现场 · 01</button>
+    <button type="button" data-v33-event-image="venue" aria-pressed="false">活动场地 · 02</button>
+   </div>
+   <p id="v33EventCaption" class="v33-event-photo-caption" aria-live="polite">讲解现场：把个人 IP 的定位、内容与传播关系画在白板上。</p>
+  </div>
+  <div class="v33-event-narrative">
+   <span>90-MIN SHARING SESSION</span><h3>传统老板为什么<br>要做个人 IP？</h3>
+   <p>从线下经验、用户信任到可持续的内容表达。活动现场有分享，也有具体问题的交流。</p>
+   <div class="v33-event-timeline"><div><b>01</b><span>理解经验价值</span></div><div><b>02</b><span>组织表达内容</span></div><div><b>03</b><span>让信任逐步形成</span></div></div>
+   <div class="v3-result-row"><span><b>3 位</b>付费内容陪跑客户</span><span><b>3 个方向</b>财会 · 体育教培 · 餐饮</span></div>
+   <small>每一次面对面的交流，都让我更理解内容如何抵达真实的人。</small>
+  </div>
+ </div>
+
+<div class="v34-event-journal">
+ <div class="v34-event-diptych">
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-speaking.webp" data-v33-alt="白板讲解真实现场"><img src="images/v3/v3-event-speaking.webp" alt="六水在线下分享中讲解内容" loading="lazy"></button><figcaption>讲解 · 白板上的观点拆解</figcaption></figure>
+  <figure><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-event-venue.webp" data-v33-alt="线下分享真实场地"><img src="images/v3/v3-event-venue.webp" alt="线下分享活动的实际场地" loading="lazy"></button><figcaption>活动 · 投影与讨论空间</figcaption></figure>
+ </div>
+ <div class="v34-event-paper"><span>FROM THE ACTUAL 90-MIN OUTLINE</span><h3>一场分享的讲稿是怎么组织的？</h3><div class="v34-agenda"><div><b>18′</b><span>为什么做个人 IP</span></div><div><b>15′</b><span>专业内容从哪里来</span></div><div><b>20′</b><span>一条内容怎么做</span></div><div><b>27′</b><span>获客链路、AI、行动清单与收尾</span></div><div><b>10′</b><span>互动与讨论</span></div></div><small>从开场、讲解到互动，一场 90 分钟分享的完整节奏。</small></div>
+</div>
+</section>
+<div class="v38-chapter-breath" aria-hidden="true"><span class="v38-breath-line"></span><span class="liushui-sprite pose-working"></span><span class="v38-breath-caption">好想法，总要做点什么。</span><span class="v38-breath-line"></span></div>
+<section class="v3-exhibit v3-secondary" id="v3-skills" aria-labelledby="skillsHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">04A / SKILLS</span><h2 id="skillsHeading">让灵感拥有自己的形状。</h2><p>不只是会用 AI，也在探索如何把个人判断和内容方法转成可复用的工作流。</p></div><span class="liushui-sprite pose-working v38-margin-mascot" role="img" aria-label="六水在电脑前创作 Skill"></span><span class="v3-section-num">04A</span></div>
+ <div class="v3-tools-grid"><article><span>GITHUB · PROTOTYPE V0.2</span><h3>liushui-skills</h3><p>授权历史材料的人物行为模式研究、个人 IP 定位假设与验证计划。</p><div><span>liushui-persona</span><span>liushui-ip</span></div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article><article><span>GITHUB · SKILL COLLECTION</span><h3>xiaoshui-content-skill</h3><p>内容创作诊断、商业决策聊天室、自动更新和 HTML 转 Markdown。</p><div><span>内容诊断</span><span>商业决策</span><span>工作流工具</span></div><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article></div>
+<div class="v34-skill-making"><div><span>DESIGN / 01</span><h4>提出真实问题</h4><p>内容定位、表达特色和人物模式怎样被理解？</p></div><div><span>STRUCTURE / 02</span><h4>整理为可复用流程</h4><p>把输入、分析与输出拆成可以独立尝试的步骤。</p></div><div><span>PROTOTYPE / 03</span><h4>用实际环境验证</h4><p>从想法到第一个可用的原型，继续试验，继续迭代。</p></div></div>
+</section>
+<section class="v3-exhibit v3-secondary v33-notes-exhibit" id="v3-notes" aria-labelledby="notesHeading">
+ <div class="v3-section-head"><div><span class="eyebrow">04B / NOTES</span><h2 id="notesHeading">那些念头，慢慢长成了我。</h2><p>17 万字的实物打印稿，和来自真实记录日期的可探索数据。让思考的痕迹既有重量，也有形状。</p></div><span class="liushui-sprite pose-reading v38-margin-mascot" role="img" aria-label="六水抱着书陪你阅读笔记"></span><span class="v3-section-num">04B</span></div>
+ <div class="v33-notes-feature">
+  <figure class="v33-notes-photo"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/v3-flomo-print.webp" data-v33-alt="六水手持一大叠打印出来的 flomo 笔记"><img src="images/v3/v3-flomo-print.webp" alt="六水托起厚厚的 flomo 打印稿，纸页弯曲形成弧度" loading="lazy"></button><span class="v33-paper-tape" aria-hidden="true"></span><figcaption>那天，我把记录真的打印出来了。</figcaption></figure>
+  <div class="v33-notes-feature-copy"><span>FROM SCREEN TO PAPER</span><h3>原来 17 万字<br>真的有这么厚。</h3><p>当时打印出来的那一叠纸，是日常思考留下的真实体积。后来继续记录，累计统计也在变化，所以这里区分不同时点。</p><div class="v33-notes-metrics"><div><b>17 万字</b><small>打印时点</small></div><div><b>709 条</b><small>两批导出笔记</small></div><div><b>224 天</b><small>导出中的活跃日期</small></div></div></div>
+ </div>
+ <div class="v3-thinking-grid"><div><h3>写作活跃热力图</h3><p>在「笔记 · 数据」书页里按年份查看日历，点一天，就能看到那天记录了几条。</p><button type="button" data-open-chapter="9">探索热力图 ↗</button></div><div><h3>我的知识生长树</h3><p>从读过的书、研究过的人，到写出的观点，以及最后做成的视频、课程、直播和 Skills。</p><button type="button" data-open-chapter="10">打开知识树 ↗</button></div></div>
+ <div class="v39-flomo-writing" aria-label="flomo 写作原文节选">
+  <div class="v39-writing-heading"><div><span class="eyebrow">WORDS FROM FLOMO · 真实节选</span><h3>比数字更重要的，是这些具体写下来的话。</h3></div><span class="liushui-sprite pose-thinking" aria-hidden="true"></span></div>
+  <div class="v39-writing-cards">
+   <figure><div><span>01 / 直播复盘</span><time datetime="2026-06-30">2026.06.30</time></div><blockquote>“我以为即兴效果会很好的，但其实不是，就是需要提前准备的。”</blockquote><figcaption>一场直播后，对准备和表达的重新认识。</figcaption></figure>
+   <figure><div><span>02 / 创作实践</span><time datetime="2026-09-14">2026.09.14</time></div><blockquote>“原来这就是认认真真做一条视频的感觉，原来这就是把每一条视频都认真对待的感觉”</blockquote><figcaption>从无限思考，转向具体做一条视频。</figcaption></figure>
+   <figure><div><span>03 / 长期执行</span><time datetime="2026-09-14">2026.09.14</time></div><blockquote>“能忍受长久的不稳定，空白和真空才是执行力”</blockquote><figcaption>不只追求快速开始，也学着持续投入。</figcaption></figure>
+  </div>
+  <p class="v39-flomo-note">有些想法写下时还很模糊，后来却慢慢成了行动的起点。</p>
+ </div>
+<div class="v34-note-transforms"><div><span>COLLECT</span><b>每天留下的念头</b><small>按真实日期存档</small></div><div><span>CONNECT</span><b>整理反复出现的问题</b><small>主题与观点形成联系</small></div><div><span>CREATE</span><b>变成作品、课程或工具</b><small>让思考进入现实</small></div></div>
 </section>
 <section class="archive-section" id="photo-archive" aria-labelledby="photoArchiveTitle">
-  <div class="archive-heading"><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">镜头里的一些小事。</h2></div><p>翻一翻这叠照片。不是履历，也不是作品成绩，只是我愿意记住的瞬间。</p></div>
+  <div class="archive-heading"><span class="liushui-sprite pose-happy v38-photo-mascot" role="img" aria-label="六水开心地陪访客翻阅生活相册"></span><div><span class="eyebrow">THE LITTLE JOYS / PHOTO NOTES</span><h2 id="photoArchiveTitle">把平凡日子，收进镜头里。</h2></div><p>翻一翻这叠照片。它们记着我喜欢的风景、坚持的小事，和一些突然开心的瞬间。</p></div>
+ <article class="v39-swimming-story">
+   <div class="v39-swim-image"><img src="images/v3/v39-swimming.webp" alt="六水穿着青绿色泳衣，在更衣室里开心比耶的游泳训练留影" loading="lazy" decoding="async"><span>AFTER SWIM / REAL MOMENT</span></div>
+   <div class="v39-swim-copy"><span class="eyebrow">A PRACTICE I KEEP · 游泳</span><h3>在水里，找回自己的节奏。</h3>
+    <p>我很喜欢游泳时那种专注的感觉。练技术、调整动作、再下水，慢慢就能看见变化。有些值得坚持的事，本身就是答案。</p>
+    <div class="v39-swim-stats"><div><strong>1,000 <em>m</em></strong><span>一条自由泳训练记录</span></div><div><strong>29:22</strong><span>该次训练用时</span></div></div>
+    <small>2025.04.04 的训练记录，和某次下水之后的开心留影。</small>
+   </div>
+ </article>
   <div class="photo-editorial">
-    <div class="photo-stage"><div class="photo-hero-frame"><img id="photoMain" src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"></div><span class="photo-stage-index" id="photoCount">01 / 05</span></div>
+    <div class="photo-stage"><div class="photo-hero-frame"><img id="photoMain" src="images/01-about-blue-shirt.webp" alt="浅蓝衬衫、自然微笑的个人生活照" loading="lazy"></div><span class="photo-stage-index" id="photoCount">01 / 06</span></div>
     <div class="photo-editorial-text" aria-live="polite"><span class="eyebrow" id="photoEyebrow">01 / HELLO AGAIN</span><h3 id="photoTitle">一个平常的下午。</h3><p id="photoStory">从日常里随手留下的一个微笑开始。</p><div class="photo-switch"><button type="button" id="photoPrev" aria-label="上一张照片">←</button><button type="button" id="photoNext" aria-label="下一张照片">→</button><button type="button" id="photoPause" class="photo-play" aria-pressed="false">暂停轮播</button></div></div>
   </div>
   <div class="photo-filmstrip" id="photoFilmstrip" role="tablist" aria-label="选择照片">
@@ -536,24 +1800,26 @@ a { color:inherit; }
     <button type="button" role="tab" aria-selected="false" data-gallery-index="2" aria-label="黑白趣味照"><img src="images/01-blackwhite-playful.webp" alt="" loading="lazy"><span>03 / PLAY</span></button>
     <button type="button" role="tab" aria-selected="false" data-gallery-index="3" aria-label="雪地日落照"><img src="images/04-snow-sunset.webp" alt="" loading="lazy"><span>04 / WINTER</span></button>
     <button type="button" role="tab" aria-selected="false" data-gallery-index="4" aria-label="暖色低光肖像"><img src="images/03-lowlight-portrait.webp" alt="" loading="lazy"><span>05 / QUIET</span></button>
+    <button type="button" role="tab" aria-selected="false" data-gallery-index="5" aria-label="游泳训练留影"><img src="images/v3/v39-swimming.webp" alt="" loading="lazy"><span>06 / SWIM</span></button>
   </div>
 </section>
 <section class="collab-section" id="collaborate" aria-labelledby="collabTitle">
   <div class="collab-inner">
+    <span class="liushui-sprite pose-waving v38-goodbye-mascot" role="img" aria-label="六水挥手告别"></span>
     <span class="eyebrow">A NOTE FROM LIUSHUI</span>
-    <h2 id="collabTitle">如果你也有些有趣的想法。</h2>
+    <h2 id="collabTitle">下一页，也许是我们的故事。</h2>
     <p>我愿意聊内容创作、营销、个人 IP 与 AI 的实际应用。也欢迎分享你看完这本小书之后的任何想法。</p>
     <a class="collab-mail" href="mailto:jiamiaomiao029@gmail.com?subject=Hello%20from%20Curious%20at%20Heart">写封邮件给我 ↗</a>
-    <div class="collab-socials" aria-label="其他联系方式"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书 ↗</a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音 ↗</a><button type="button" data-copy-wechat>复制微信号</button></div><p class="collab-wechat">WeChat · liushui029</p><p class="collab-aside">不公开手机号。站外账号将在新标签页打开。</p>
+    <div class="collab-socials" aria-label="其他联系方式"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif/liushui-website" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书 ↗</a><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音 ↗</a><button type="button" data-copy-wechat>复制微信号</button></div><p class="collab-wechat">WeChat · liushui029</p><p class="collab-aside">很高兴在这里与你相遇。</p>
   </div>
 </section>
-<section class="studio-section" id="photo-studio" aria-labelledby="studioTitle">
- <details class="studio-details"><summary><span><strong id="studioTitle">替换原始照片</strong><small>仅在本机预览，不上传、不修图；点击展开编辑</small></span><span class="studio-arrow">＋</span></summary>
-  <div class="studio-body"><p>为每一章选择你的原始照片或截图，即可立即在书里预览。刷新网页后预览会消失；正式保存请按 README 将原图放进 <code>images/</code> 并配置对应文件名。</p><div id="photoInputs" class="photo-input-grid"></div><p class="studio-warn">请勿直接把含有他人私人信息的聊天截图发布到公开网站。这里不会对照片进行 AI 优化。</p></div>
+<section class="studio-section" id="photo-studio" hidden aria-labelledby="studioTitle">
+ <details class="studio-details"><summary><span><strong id="studioTitle">替换原始照片</strong><small>展开编辑你的书页照片</small></span><span class="studio-arrow">＋</span></summary>
+  <div class="studio-body"><p>为每一章选择你的原始照片或截图，即可立即在书里预览。刷新网页后会回到原有图片。需要保存时，请按 README 将文件放进 <code>images/</code> 并配置对应文件名。</p><div id="photoInputs" class="photo-input-grid"></div><p class="studio-warn">本机选择图片后，可以即时查看它在书页中的效果。</p></div>
  </details>
 </section>
 
-  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>VOL. 01 · 原图策展进行中 · 原始照片不会被 AI 修改</p></footer>
+  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>VOL. 01 · KEEP MAKING, KEEP WONDERING</p></footer>
 </div>
 <script>
 /*
@@ -567,41 +1833,19 @@ a { color:inherit; }
  * No AI portrait modification or automatic face editing occurs.
  */
 const chapters = [
-  {
-    nav:'我眼中的世界', category:'CHAPTER 01 · THE OBSERVER', label:'WHAT I SEE',
-    headline:'我习惯先观察，<br><em>再开始表达。</em>',
-    desc:'你好，我是六水。喜欢观察有意思的人和事，喜欢记录生活里那些一闪而过的念头，也喜欢把复杂的问题讲清楚。这本手账里有我的作品，也有很多与工作无关的快乐。',
-    quote:'“有好奇心，也有一点把想法做出来的执拗。”',
-    tags:['喜欢观察','喜欢表达','保留玩心'], caption:'湖边的一个开心瞬间 · PHOTO 08', date:'PORTRAIT 001', image:'images/01-lake-joy.webp', alt:'我眼中的世界：原始个人照片'
-  },
-  {
-    nav:'让想法发生', category:'CHAPTER 02 · THE MAKER', label:'WHAT I MAKE',
-    headline:'不只想清楚，<br><em>还要做出来。</em>',
-    desc:'做内容时，我总忍不住追问：谁会真正需要它？它能带来什么改变？从自己的成长类账号到 SnapVee 产品推广，我尝试把观察变成选题，再把选题变成真实作品和反馈。',
-    quote:'“内容不只为了被看见，也为了推动下一步行动。”',
-    tags:['内容策划','产品推广','实践复盘'], caption:'真实内容作品 / 原始截图', date:'WORK 002', image:'', alt:'让想法发生：项目作品截图'
-  },
-  {
-    nav:'思考的痕迹', category:'CHAPTER 03 · THE THINKER', label:'WHAT I THINK',
-    headline:'让思考有迹可循，<br><em>也有停止点。</em>',
-    desc:'从 2024 年开始，我在 flomo 里记录那些值得多想一会儿的事。到这次整理资料时，三年的统计合计 718 条笔记、252,583 字。数字不是奖状，更重要的是这些文字最终如何改变我的选择和行动。',
-    quote:'“思考是为了指导行动，而不是替代行动。”',
-    tags:['718 条笔记','252,583 字','2024—2026'], caption:'flomo 记录与精选原文', date:'NOTES 003', image:'', alt:'思考的痕迹：flomo 笔记截图'
-  },
-  {
-    nav:'认真地生活', category:'CHAPTER 04 · THE EVERYDAY', label:'HOW I LIVE',
-    headline:'在水里找节奏，<br><em>在日常里积累。</em>',
-    desc:'我喜欢游泳，也喜欢把旅行和日常拍下来。2025 年 4 月 4 日，我有一条 1000 米、29 分 22 秒的自由泳记录。这里不想写成一张自律成绩单，只想留住那些确实让我开心的时刻。',
-    quote:'“有些值得坚持的事，本身就是答案。”',
-    tags:['游泳 1000 m','29 分 22 秒','旅行与日常'], caption:'木屋前的阳光 · PHOTO 02', date:'LIFE 004', image:'images/04-wooden-house.webp', alt:'认真地生活：游泳或生活原始照片'
-  },
-  {
-    nav:'一起做点什么', category:'CHAPTER 05 · LET’S MAKE SOMETHING', label:'LET’S CONNECT',
-    headline:'有好想法的话，<br><em>一起做点什么。</em>',
-    desc:'如果你对内容、个人 IP、营销策划或 AI 的真实应用感兴趣，欢迎来交流。也欢迎只是因为这本手账里的某句话、某个作品，想来聊两句。',
-    quote:'“好奇于心，创造于行。”',
-    tags:['交流','一起创作','合作'], caption:'蓝白配色的个人形象照 · PHOTO 04', date:'HELLO 005', image:'images/05-contact-portrait.webp', alt:'一起做点什么：联系与合作'
-  }
+ {nav:'认识六水',category:'INTRO · ABOUT',label:'THE PERSON',headline:'你好，<br><em>我是六水。</em>',desc:'喜欢观察有趣的人和事，也喜欢把想不明白的问题拆开来讲。做过内容、直播、英语教学和一些新鲜实验。这里收着我认真做过的事，也收着还在继续生长的好奇心。',quote:'“好奇于心，创造于行。”',tags:['观察','表达','创造'],caption:'湖边的快乐',date:'ABOUT / 01',image:'images/01-lake-joy.webp',alt:'六水在湖边开心比耶的旅行照片'},
+ {nav:'作品 · 旗舰',category:'01A · WORKS',label:'SELECTED WORK / 01',headline:'先做一件<br><em>让人记住的事。</em>',desc:'《大学如何铺自己的人脉网》：从「大学是社会的缩影」切入，试着让抽象的成长建议变成一个可以讨论、可以传播的观点。',quote:'“大学，不只是上课的地方。”',tags:['原创短视频','选题与脚本','个人表达'],caption:'独立原创作品',date:'WORKS / 02',image:'',alt:''},
+ {nav:'作品 · 精选',category:'01A · WORKS',label:'SELECTED WORK / 02',headline:'想法不止一种，<br><em>表达也不止一种。</em>',desc:'短视频、系列选题、X 长文——从一个具体的问题出发，寻找更有意思、更容易理解的讲法。',quote:'“讲故事大于空谈道理。”',tags:['大佬幼年体','成长与选择','X 长文'],caption:'创作档案',date:'WORKS / 03',image:'',alt:''},
+ {nav:'直播 · 现场',category:'01B · LIVE',label:'IN THE ROOM / 01',headline:'不只写出来，<br><em>也说给你听。</em>',desc:'在直播里，我用自己的方式表达，也在连麦和提问中学习怎么更准确地回应一个真实的问题。',quote:'“先听懂问题，再表达看法。”',tags:['主题自讲','实时连麦','开放答疑'],caption:'真实直播记录',date:'LIVE / 04',image:'',alt:''},
+ {nav:'直播 · 观点',category:'01B · LIVE',label:'IN THE ROOM / 02',headline:'每一个问题，<br><em>都值得再想一层。</em>',desc:'关于内容、IP、用户、AI 和创业，我从直播记录里选出几条真正值得继续讨论的看法。',quote:'“说出口的观点，也应该经得起推敲。”',tags:['用户思维','内容表达','市场验证'],caption:'观点精选',date:'LIVE / 05',image:'',alt:''},
+ {nav:'教学',category:'02 · TEACHING',label:'THE TEACHING STUDIO',headline:'我想做的，<br><em>不只是讲懂一道题。</em>',desc:'从 2023 年开始的英语一对一与小班教学，到我持续整理的课程知识地图、学生培养方法与家校沟通工作流。讲解是一部分，让学习能够持续进步也是。',quote:'“把复杂的知识，变成真正能够理解的东西。”',tags:['英语课堂','词汇·语法·阅读·写作','教学工作台'],caption:'英语教学实践与知识库蓝图',date:'TEACH / 06',image:'',alt:''},
+ {nav:'活动',category:'03 · EVENTS',label:'OFF THE SCREEN',headline:'把想法带到<br><em>真实的现场。</em>',desc:'线下分享《传统老板为什么要做个人 IP》，从线下口碑到内容信任；也做过活动组织、咨询和内容陪跑。',quote:'“用更清晰的表达，让价值被看见。”',tags:['线下分享会','个人 IP','内容陪跑'],caption:'线下表达与组织',date:'EVENTS / 07',image:'',alt:''},
+ {nav:'Skills',category:'04A · SKILLS',label:'THINGS I BUILD',headline:'让好用的方法，<br><em>变成真的工具。</em>',desc:'我试着把内容策划、人物理解和个人 IP 研究中的一些方法，整理成可以安装、可以试验的 Skills。',quote:'“不想让每个想法都只留在聊天记录里。”',tags:['liushui-persona','liushui-ip','content skill'],caption:'GitHub 上的实验原型',date:'SKILLS / 08',image:'',alt:''},
+ {nav:'笔记 · 纸上',category:'04B · NOTES',label:'WRITTEN DOWN',headline:'那些念头，<br><em>终于有了重量。</em>',desc:'有一次我把当时积累的 17 万字 flomo 打印成册。纸张让日常记录有了真实的体积，也让我意识到：想法可以一点一点长出来。',quote:'“记录不是为了漂亮，是为了留下自己真的想过什么。”',tags:['17 万字打印稿','flomo','写作'],caption:'思考有了可触摸的形状',date:'NOTES / 09',image:'',alt:''},
+ {nav:'笔记 · 数据',category:'04B · NOTES',label:'THE DATA OF THOUGHTS',headline:'让记录的痕迹，<br><em>成为一张地图。</em>',desc:'两批带日期的 flomo 导出，覆盖 2024 年 9 月至 2026 年 10 月。一格格日历，记录着思考怎样穿过不同的日子。',quote:'“热力图里，每一格都有它真实的日期。”',tags:['709 条导出记录','224 个活跃日期','真实数据'],caption:'写作活动热力图',date:'NOTES / 10',image:'',alt:''},
+ {nav:'笔记 · 知识树',category:'04B · NOTES',label:'THE THOUGHT LIBRARY',headline:'输入世界，<br><em>输出自己的判断。</em>',desc:'书籍、创作者研究、个人经历，经过写作与实验，逐步长成内容、教学、分享和 Skills。不是读了多少，而是怎样用出来。',quote:'“知识只有用出去，才有下一次生长。”',tags:['书籍与阅读','博主研究','自己的判断'],caption:'知识来源与作品的关系',date:'NOTES / 11',image:'',alt:''},
+ {nav:'照片',category:'04C · PHOTOS',label:'LITTLE JOYS',headline:'还有一些，<br><em>无关紧要的快乐。</em>',desc:'旅行、游泳、随手拍和那些不太正经的表情。不为展示能力，只为了记住当时的生活。',quote:'“工作之外，也有一个有趣的世界。”',tags:['游泳','旅行','生活切片'],caption:'我的生活照片',date:'LIFE / 12',image:'images/04-wooden-house.webp',alt:'木屋前穿着橙色裙子的旅行照片'},
+ {nav:'联系',category:'05 · CONTACT',label:'SAY HELLO',headline:'如果你也有<br><em>有趣的想法。</em>',desc:'欢迎聊内容、直播、教学、个人 IP、AI 工具或任何让你感到好奇的话题。',quote:'“好奇于心，创造于行。”',tags:['X / 小红书 / 抖音','GitHub','微信 liushui029'],caption:'给我写一封信',date:'CONTACT / 13',image:'images/05-contact-portrait.webp',alt:'蓝白服装的个人形象照'}
 ]
 
 /* All placeholder illustrations below are ORIGINAL, procedural SVG art. No external image or network request. */
@@ -653,19 +1897,30 @@ function bookThumbs(index){
 }
 
 
+
+const panel=(i,heading,content,klass='')=>'<div class="page-inner image-page v3-panel '+klass+'"><div class="image-top"><span>'+heading+'</span><span>'+String(i+1).padStart(2,'0')+'</span></div><div class="v3-panel-body">'+content+'</div><div class="page-foot"><span>CURIOUS AT HEART · VOL.03</span><em>'+String(i*2+2).padStart(2,'0')+'</em></div></div>';
 function leftMarkup(i) {
-  const c=chapters[i];
-  return `<article class="page-inner"><span class="big-num" aria-hidden="true">0${i+1}</span><div class="page-kicker"><span>${c.category}</span><span>EST. 2026</span></div><div class="line-rule"></div><div class="eyebrow">${c.label}</div><h2 class="chapter-heading">${c.headline}</h2><p class="chapter-desc">${c.desc}</p><blockquote class="chapter-pull">${c.quote}</blockquote><div class="chips">${c.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>${i===1?'<a class="chapter-action" href="#case-studies">阅读两个完整项目案例 ↗</a>':i===4?'<a class="chapter-action" href="#collaborate">写封邮件，聊聊想法 ↗</a>':''}<div class="page-foot"><span>LIUSHUI · SEE / THINK / MAKE</span><em>${String(i*2+1).padStart(2,'0')}</em></div></article>`;
+ const c=chapters[i];
+ const jumps={1:['#v3-works','看看我的作品 ↗'],2:['#v3-works','打开作品精选 ↗'],3:['#v3-live','走进直播间 ↗'],4:['#v3-live','看直播观点 ↗'],5:['#v3-teaching','打开教学章节 ↗'],6:['#v3-events','看活动现场 ↗'],7:['#v3-skills','看 GitHub Skills ↗'],8:['#v3-notes','查看写作记录 ↗'],9:['#v3-notes','探索真实热力图 ↗'],10:['#v3-notes','打开知识档案 ↗'],11:['#photo-archive','翻阅照片档案 ↗'],12:['#collaborate','找到我 ↗']};
+ const action=jumps[i]?'<a class="chapter-action" href="'+jumps[i][0]+'">'+jumps[i][1]+'</a>':'<div class="v3-first-links"><button type="button" data-open-chapter="1">作品 / WORKS</button><button type="button" data-open-chapter="3">直播 / LIVE</button></div>';
+ return '<article class="page-inner"><span class="big-num" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div class="page-kicker"><span>'+c.category+'</span><span>2026 · V3</span></div><div class="line-rule"></div><div class="eyebrow">'+c.label+'</div><h2 class="chapter-heading">'+c.headline+'</h2><p class="chapter-desc">'+c.desc+'</p><blockquote class="chapter-pull">'+c.quote+'</blockquote><div class="chips">'+c.tags.map(t=>'<span class="chip">'+t+'</span>').join('')+'</div>'+action+'<div class="page-foot"><span>SEE · THINK · MAKE</span><em>'+String(i*2+1).padStart(2,'0')+'</em></div></article>';
 }
 function rightMarkup(i) {
-  const c=chapters[i];
-  // Professional and writing chapters deliberately use verified text-based layouts,
-  // not fabricated platform screenshots or unrelated portraits.
-  if (i===1) return `<div class="page-inner image-page"><div class="image-top"><span>SELECTED WORK / REAL RESULTS</span><span>02</span></div><div class="editorial-metric-card work-metric"><span class="metric-overline">PERSONAL IP · SELECTED VIDEO</span><strong>47.5<span>万</span></strong><p>代表视频单条播放量<br><small>来自原始作品截图记录，不推算转化</small></p><div class="metric-divider"></div><span class="metric-overline">SNAPVEE · CONTENT PRACTICE</span><b>日更视频与图文</b><p>数百名新增粉丝 · 多名主动咨询</p><small>详细的过程与证据状态见下方项目案例</small></div><div class="page-foot"><span>WORK IS MORE THAN A TITLE</span><em>04</em></div></div>`;
-  if (i===2) return `<div class="page-inner image-page"><div class="image-top"><span>FLOMO / YEARS OF NOTES</span><span>03</span></div><div class="editorial-metric-card note-metric"><span class="metric-overline">2024 — 2026 · SNAPSHOT</span><strong>718<span>条</span></strong><p>记录下的想法与观察</p><div class="metric-divider"></div><b>252,583 字</b><p>不是每天都在写，也不是每条都有答案。<br>但好奇心值得被认真对待。</p><small>统计来自上传的 flomo 年度记录截图，数字为截图时点</small></div><div class="page-foot"><span>A LITTLE NOTE TO MYSELF</span><em>06</em></div></div>`;
-  return `<div class="page-inner image-page"><div class="image-top"><span>VISUAL ARCHIVE / 0${i+1}</span><span>✳ &nbsp; 2026</span></div><div class="photo-border"><span class="photo-tape" aria-hidden="true"></span><div class="photo-holder"><img src="${imageFor(i)}" alt="${c.image ? c.alt : c.nav+'章节的原创插画占位图，等待替换为原始照片'}" draggable="false"></div></div>${bookThumbs(i)}<div class="photo-caption"><span>${c.caption}</span><span>${c.date}</span></div><div class="page-foot"><span>AN OPEN PERSONAL ARCHIVE</span><em>${String(i*2+2).padStart(2,'0')}</em></div></div>`;
+ const c=chapters[i];
+ if(i===0)return panel(i,'HELLO / THE PERSON','<div class="v33-about-collage"><figure class="v33-about-present"><img src="images/01-lake-joy.webp" alt="湖边笑着比耶的生活照"><figcaption>NOW / 依然好奇</figcaption></figure><figure class="v33-about-child"><img src="images/v3/v3-childhood.webp" alt="六水小时候的照片"><figcaption>THEN / 很久以前</figcaption></figure></div><div class="v36-welcome-note"><span class="liushui-sprite pose-waving" role="img" aria-label="六水挥手欢迎"></span><span><b>嗨，欢迎来翻翻。</b><small>这本书里，放着我认真做过的事。</small></span></div><p class="v3-soft-caption">从小时候到现在，好奇心一直都在。这里有一些我做过的事，也有很多不必为结果负责的快乐。</p>','v3-about');
+ if(i===1)return panel(i,'FLAGSHIP / WORKS','<div class="v37-book-flagship"><div class="v37-book-film"><img src="images/v3/liushui-work-networking.webp" alt="原创代表作《大学里大佬幼年体：怎么铺自己的人脉网》真实视频截图"></div><div class="v37-book-film-copy"><span>REAL VIDEO / 47.7万截图时播放量</span><h3>大学如何铺<br>自己的人脉网</h3><p>从观察出发，把想法讲给更多人听。</p></div></div><div class="v3-metric-triple"><div><b>约 50 万</b><span>抖音播放</span></div><div><b>约 4,000</b><span>抖音新增关注</span></div><div><b>约 10 万</b><span>小红书播放</span></div></div><a class="v3-inline-link" href="#v3-works">查看真实作品 ↗</a>','v3-works-panel');
+ if(i===2)return panel(i,'SELECTED / WORKS','<div class="v37-book-selected"><div class="v37-book-selected-head"><span>MY WORK / REAL FRAMES</span><h3>其他代表作</h3></div><div class="v37-book-selected-cards"><figure><img src="images/v3/liushui-work-feminism.webp" alt="代表作品《曾经，我被开盒》截图"><figcaption>曾经，我被开盒</figcaption></figure><figure><img src="images/v3/liushui-work-university.webp" alt="代表作品《上大学后最没用的事》截图"><figcaption>上大学后最没用的事</figcaption></figure></div></div><a class="v3-inline-link" href="#v3-works">展开完整作品档案 ↗</a>','v3-works-panel');
+ if(i===3)return panel(i,'ON AIR / LIVE','<div class="v37-book-live"><img src="images/v3/liushui-live-ai.webp" alt="六水直播时讨论 AI 话题的真实现场截图"><div><span>REAL LIVE SCREENSHOT</span><b>把问题留在现场，<br>把观点讲给大家。</b></div></div><p class="v3-soft-caption">真实直播画面 · AI 话题讨论。直播与短视频作品是并列的创作场景。</p><a class="v3-inline-link" href="#v3-live">查看直播档案 ↗</a>','v3-live-panel');
+ if(i===4)return panel(i,'CONVERSATION / LIVE','<div class="v3-topic-tabs" role="group" aria-label="切换直播观点"><button type="button" data-live-topic="0" aria-pressed="true">对标</button><button type="button" data-live-topic="1" aria-pressed="false">内容</button><button type="button" data-live-topic="2" aria-pressed="false">AI</button><button type="button" data-live-topic="3" aria-pressed="false">创业</button></div><div class="v3-topic-card"><span>AN IDEA FROM THE ROOM</span><h3 data-live-topic-title>对标是为了降低试错成本。</h3><p data-live-topic-desc>看见别人走过的路，是为了更快找到适合自己的实验方式，而不是变成另一个人。</p></div><a class="v3-inline-link" href="#v3-live">更多直播观点 ↗</a>','v3-live-panel');
+ if(i===5)return panel(i,'02 / TEACHING STUDIO','<div class="v34-teach-file"><div class="v34-note-top"><span>ENGLISH EDUCATION</span><span>知识库目录</span></div><h3>英语教学工作台</h3><div class="v34-file-list"><div><b>01 / 招生</b><span>内容选题 · 家长初沟通 · 课程方案</span></div><div><b>02 / 知识交付</b><span>词汇 / 语法 / 阅读 / 写作</span></div><div><b>03 / 学生培养</b><span>学习动力 · 阶段目标 · 学情追踪</span></div><div><b>04 / 家校反馈</b><span>课堂记录 · 家长沟通 · 升学建议</span></div></div><small>从知识地图到家校沟通，让教学经验拥有清晰的路径。</small></div><a class="v3-inline-link" href="#v3-teaching">打开教学与学生培养体系 ↗</a>','v3-teaching-panel');
+ if(i===6)return panel(i,'OFFLINE / EVENTS','<div class="v33-event-book"><figure class="v33-event-book-main"><img src="images/v3/v3-event-speaking.webp" alt="六水坐在白板旁讲解个人 IP 内容思路的现场照片"><figcaption>现场讲解 / THE ROOM</figcaption></figure><figure class="v33-event-book-detail"><img src="images/v3/v3-event-venue.webp" alt="线下活动场地，设有屏幕和讨论桌"><figcaption>分享现场</figcaption></figure></div><div class="v3-event-stats"><strong>90 min</strong><span>传统老板为什么要做个人 IP？<br>线下主题分享</span></div><a class="v3-inline-link" href="#v3-events">看活动全貌 ↗</a>','v3-events-panel');
+ if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LAB / PROTOTYPE</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看真实 GitHub 仓库 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容创作与业务判断的 Skills 集合</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开项目 ↗</a></div>','v3-skills-panel');
+ if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v33-print-book"><img src="images/v3/v3-flomo-print.webp" alt="一整叠打印出来的 flomo 笔记，用手托住纸张"><div class="v33-print-label"><small>WRITING / ON PAPER</small><strong>17<span>万字</span></strong><span>把记录变成一叠纸。</span></div></div><p class="v3-soft-caption">17 万字是打印稿当时的字数；其他累计统计以各自记录时间为准。</p><a class="v3-inline-link" href="#v3-notes">打开写作档案 ↗</a>','v3-notes-panel');
+ if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>两批导出笔记</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">记录的日子，在时间轴上慢慢亮起来。</small>','v3-heat-panel');
+ if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><div class="v36-thinking-guide"><span class="liushui-sprite pose-thinking" role="img" aria-label="六水认真思考"></span><span class="v36-guide-text">读过、想过，接下来做出来。</span></div><p class="v39-book-flomo-quote">“能忍受长久的不稳定，空白和真空才是执行力。”<small>摘自 flomo · 2026.09.14</small></p><p class="v3-soft-caption">那些日常写下的念头，逐渐长成自己的判断。</p>','v3-tree-panel');
+ if(i===11)return panel(i,'LITTLE JOYS / PHOTO NOTES','<div class="v3-photo-layout v39-book-life"><img src="images/v3/v39-swimming.webp" alt="六水完成游泳训练时穿着泳衣、开心比耶的真实照片"><img src="images/04-hongkong-street.webp" alt="香港街头的旅行照片"><img src="images/04-snow-sunset.webp" alt="雪地日落的旅行照片"></div><p class="v3-soft-caption"><b>游泳 · 2025.04.04</b> 自由泳 1000 米 / 29 分 22 秒。慢慢练习，反复调整；不把每个快乐都变成一份成绩单。</p><a class="v3-inline-link" href="#photo-archive">翻开生活相册 ↗</a>','v3-photo-panel');
+ return panel(i,'SAY HELLO / CONTACT','<div class="v3-contact-pic"><img src="images/05-contact-portrait.webp" alt="蓝白服装的个人形象照"><span class="liushui-sprite pose-happy v36-contact-guide" role="img" aria-label="开心的六水挥手告别"></span></div><div class="v3-contact-links"><a href="https://x.com/Clara_J_0529" target="_blank" rel="noopener noreferrer">X ↗</a><a href="https://github.com/jiamiaomiao029-gif" target="_blank" rel="noopener noreferrer">GitHub ↗</a><button type="button" data-copy-wechat>微信 · liushui029</button></div>','v3-contact-panel');
 }
-
 const $=id=>document.getElementById(id);
 const app=$('app'), body=$('bookBody'), left=$('leftPage'), right=$('rightPage');
 const leaf=$('flipSheet'), front=$('flipFront'), back=$('flipBack'), shadow=$('turnShadow');
@@ -677,28 +1932,48 @@ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 function renderStatic(index) {
   left.innerHTML=leftMarkup(index); right.innerHTML=rightMarkup(index);
   mobilePaper.innerHTML=leftMarkup(index)+`<div class="image-page">${rightMarkup(index)}</div>`;
-  for(const [i,el] of [...document.querySelectorAll('.toc-btn')].entries()) {
-    if(i===index) el.setAttribute('aria-current','page'); else el.removeAttribute('aria-current');
-  }
+  syncTocSelection(index);
   $('pageProgress').textContent=opened?`${String(index+1).padStart(2,'0')} / ${String(chapters.length).padStart(2,'0')}`:'COVER';
   $('prevButton').disabled=!opened || busy || index===0;
   $('nextButton').disabled=busy || (opened && index===chapters.length-1);
-  $('controlHint').innerHTML=opened?'<span>拖动书页翻页 · 或使用方向键</span><kbd>←</kbd><kbd>→</kbd>':'<span>点击封面，开始阅读</span><kbd>←</kbd><kbd>→</kbd>';
+  $('controlHint').innerHTML=opened?'<span>拖动书页翻页 · 或使用方向键</span><kbd>←</kbd><kbd>→</kbd>':'<span>02 / 03 &nbsp;·&nbsp; 点击封面，翻开《不止想想》</span><kbd>←</kbd><kbd>→</kbd>';
+  if(index===9)hydrateV3Heatmaps();
 }
-function createToc() {
-  $('toc').innerHTML=chapters.map((c,i)=>`<li><button class="toc-btn" type="button" data-index="${i}" aria-label="打开第 ${i+1} 章：${c.nav}"><span class="toc-number">0${i+1}.</span><span class="toc-title">${c.nav}</span><span class="toc-mark"></span></button></li>`).join('');
-  $('toc').addEventListener('click',evt=>{
-    const el=evt.target.closest('.toc-btn'); if(el) goTo(Number(el.dataset.index));
-  });
+
+const v3Nav=[
+ {number:'00',title:'你好，六水',start:0,end:0},
+ {number:'01',title:'让想法发生',start:1,end:4,children:[{title:'作品',start:1,end:2},{title:'直播',start:3,end:4}]},
+ {number:'02',title:'把知识讲成故事',start:5,end:5},
+ {number:'03',title:'在现场相遇',start:6,end:6},
+ {number:'04',title:'好奇心的其他去处',start:7,end:11,children:[{title:'Skills',start:7,end:7},{title:'笔记',start:8,end:10},{title:'照片',start:11,end:11}]},
+ {number:'05',title:'下一页，见',start:12,end:12}
+];
+function createToc(){
+ $('toc').innerHTML=v3Nav.map(group=>'<li class="toc-group'+(group.children?' has-children':'')+'">'+
+  '<button type="button" class="toc-btn toc-parent" data-index="'+group.start+'" data-start="'+group.start+'" data-end="'+group.end+'" data-parent="true" aria-label="前往'+group.title+'"><span class="toc-number">'+group.number+'.</span><span class="toc-title">'+group.title+'</span><span class="toc-mark" aria-hidden="true"></span></button>'+
+  (group.children?'<div class="toc-children" role="group" aria-label="'+group.title+'的平级内容">'+group.children.map(child=>
+  '<button type="button" class="toc-child" data-index="'+child.start+'" data-start="'+child.start+'" data-end="'+child.end+'" aria-label="打开'+child.title+'">'+child.title+'</button>').join('')+'</div>':'')+
+  '</li>').join('');
+ $('toc').addEventListener('click',event=>{
+  const el=event.target.closest('[data-index]');if(el)goTo(Number(el.dataset.index));
+ });
 }
+function syncTocSelection(index) {
+ document.querySelectorAll('#toc [data-start][data-end]').forEach(el=>{
+  const active=index>=Number(el.dataset.start)&&index<=Number(el.dataset.end);
+  if(active)el.setAttribute('aria-current',el.dataset.parent==='true'&&el.closest('.has-children')?'location':'page');
+  else el.removeAttribute('aria-current');
+  el.classList.toggle('is-active',active);
+ });
+}
+
 function openBook(target=0) {
   if(opened || busy) return;
   busy=true; opened=true; current=target;
   app.classList.add('is-opening');
   renderStatic(target);
-  $('mobileCover').hidden=true;
   mobilePaper.classList.add('is-visible');
-  const done=()=>{ app.classList.remove('is-opening'); app.classList.add('is-open'); busy=false; renderStatic(current); };
+  const done=()=>{ $('mobileCover').hidden=true; app.classList.remove('is-opening'); app.classList.add('is-open'); busy=false; renderStatic(current); };
   setTimeout(done,reducedMotion.matches?25:1120);
 }
 function next(){ if(!opened) return openBook(0); goTo(current+1); }
@@ -848,6 +2123,111 @@ function buildLocalPhotoInputs() {
     box.querySelector('.evidence-status').textContent='本机预览 · 未持久保存';
   }));
 }
+
+/* Verified date-count series from Obsidian export, 2024-09-20—2026-10-20. Counts only. */
+const v3FlomoCounts="115j200085210110001342a2535400080400001000000802222005220140300122332011115310000000000000000000000000000000000000062100000700000000000000000000000014000000040000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000420a3e12211132103220000310007853100002000000000000000000000000000000000001002101210400500000000000001d001410501001500000b000001200000000000100000010007b0200000000010j56832000m012200000000000012010020100000000110004100000000002031153633000f364612372300017012011512511123101014942211054318682130330211020110102100000100000000000000210001000000022000000000000600001010000000000030011000000000000100400001002033005100001010200701000000003110090302";
+const v3Start=Date.UTC(2024,8,20),v3End=Date.UTC(2026,9,20),v3Day=86400000;
+let v3HeatYear=2026;
+function v3CountOn(day){
+ const n=Math.round((day-v3Start)/v3Day);
+ return n<0||n>=v3FlomoCounts.length?null:parseInt(v3FlomoCounts[n],24);
+}
+function hydrateV3Heatmaps(year=v3HeatYear){
+ v3HeatYear=year;
+ document.querySelectorAll('.v3-heat-panel').forEach(panel=>{
+  panel.querySelectorAll('[data-year]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.year)===year)));
+  const grid=panel.querySelector('.v3-heat');if(!grid)return;
+  const first=Date.UTC(year,0,1),end=Date.UTC(year,11,31),pad=(new Date(first).getUTCDay()+6)%7,parts=[];
+  for(let i=0;i<pad;i++)parts.push('<span class="v3-day-pad" aria-hidden="true"></span>');
+  for(let day=first;day<=end;day+=v3Day){
+   const c=v3CountOn(day),date=new Date(day).toISOString().slice(0,10);
+   if(c===null){parts.push('<span class="v3-day-no-data" title="'+date+' 不在本次导出范围内"></span>');continue}
+   const level=c>=10?4:c>=5?3:c>=2?2:c>0?1:0;
+   parts.push('<button type="button" data-date="'+date+'" data-count="'+c+'" data-level="'+level+'" aria-label="'+date+'：'+c+' 条笔记" title="'+date+'：'+c+' 条笔记"></button>');
+  }
+  grid.innerHTML=parts.join('');
+  const info=panel.querySelector('.v3-heat-detail');
+  if(info)info.textContent='选中一天查看记录数（2024.09.20—2026.10.20）';
+ });
+}
+const v3LiveTopics=[
+ ['对标的本质，是降低试错成本。','研究别人的路径，是为了找到更有效的测试方法，而不是模仿别人的身份。'],
+ ['做内容前，先回答谁需要它。','从真实用户遇到的问题出发，而不只是从创作者想表达什么出发。'],
+ ['用户不为 AI 两个字买单。','AI 是手段，用户最终关心的仍是被解决的具体问题。'],
+ ['想创业，先验证真实需求。','先用最小动作取得现实反馈，再决定值不值得继续放大。']
+];
+document.addEventListener('click',event=>{
+ const jump=event.target.closest('[data-open-chapter]');
+ if(jump){event.preventDefault();goTo(Number(jump.dataset.openChapter));document.getElementById('reading-area')?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth'});return}
+ const b=event.target.closest('[data-live-topic]');
+ if(b){const panel=b.closest('.v3-live-panel');if(!panel)return;const data=v3LiveTopics[Number(b.dataset.liveTopic)];if(!data)return;
+  panel.querySelectorAll('[data-live-topic]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn===b)));
+  panel.querySelector('[data-live-topic-title]').textContent=data[0];
+  panel.querySelector('[data-live-topic-desc]').textContent=data[1];return;
+ }
+ const year=event.target.closest('.v3-year-tabs [data-year]');
+ if(year){hydrateV3Heatmaps(Number(year.dataset.year));return}
+ const day=event.target.closest('.v3-heat [data-date]');
+ if(day){const panel=day.closest('.v3-heat-panel');const target=panel?.querySelector('.v3-heat-detail');
+  if(target)target.textContent=day.dataset.date+' · '+day.dataset.count+' 条笔记';return;
+ }
+});
+
+
+/* Original examples and teaching-map design; no reused third-party lesson copy or imagery. */
+const v3TeachingModules=[
+ {kicker:'01 / GRAMMAR · STRUCTURE FIRST',title:'先认识句子的骨架。',desc:'识别谁在做什么，再观察动作的时间与状态，最后理解句子怎样扩展。',example:['Mia','explains','the idea.'],foot:'主语 → 核心动作 → 动作对象。先分析信息关系，再归纳规则。',nodes:['基本句型','动词与时态','非谓语动词','从句与句法','复杂句拆解']},
+ {kicker:'02 / VOCABULARY · MEANING NETWORK',title:'单词不该是一座孤岛。',desc:'把发音、构词、词义关系和使用语境联系起来，而不是只背一张中文释义表。',example:['create','→ creative','→ creativity'],foot:'词根 / 词缀 / 语境搭配 → 从认识单词到真正会用。',nodes:['音标与发音','初高中词汇','构词与词缀','易混词辨析','搭配与语境']},
+ {kicker:'03 / READING · SEE THE LOGIC',title:'阅读，先抓住信息关系。',desc:'从句子主干定位信息，再沿着转折、因果与指代线索找到文章的结构。',example:['claim','→ evidence','→ conclusion'],foot:'先看论述如何组织，再决定哪一种阅读策略值得使用。',nodes:['主旨与结构','定位关键信息','指代与衔接','推断与态度','阅读题策略']},
+ {kicker:'04 / WRITING · EXPRESS AN IDEA',title:'写作，不只是拼凑高级词汇。',desc:'先把想表达的观点说清楚，再组织理由、例证、衔接与准确的语言形式。',example:['idea','→ reason','→ example'],foot:'观点明确 → 论证完整 → 表达自然，是一篇文字最重要的骨架。',nodes:['观点与审题','段落组织','论证与举例','句式与衔接','修改与反馈']}
+];
+document.addEventListener('click',e=>{
+ const button=e.target.closest('[data-teach-subject]');
+ if(!button)return;
+ const stage=button.closest('.v3-teach-structure');
+ const d=v3TeachingModules[Number(button.dataset.teachSubject)];
+ if(!stage||!d)return;
+ stage.querySelectorAll('[data-teach-subject]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ stage.querySelector('[data-teach-stage-kicker]').textContent=d.kicker;
+ stage.querySelector('[data-teach-stage-title]').textContent=d.title;
+ stage.querySelector('[data-teach-stage-desc]').textContent=d.desc;
+ stage.querySelector('[data-teach-stage-foot]').textContent=d.foot;
+ const ex=stage.querySelector('[data-teach-stage-example]');ex.replaceChildren();
+ d.example.forEach(t=>{const el=document.createElement('span');el.textContent=t;ex.appendChild(el)});
+ const nodes=stage.querySelector('[data-teach-stage-nodes]');nodes.replaceChildren();
+ d.nodes.forEach(t=>{const el=document.createElement('span');el.textContent=t;nodes.appendChild(el)});
+});
+
+
+/* Entry journey: 01 real portrait -> 02 physical book cover -> 03 readable pages.
+   The book remains inaccessible until the guest completes the single explicit first step. */
+const v40Entry=document.getElementById('v40Entry');
+let v40EntryLeaving=false;
+function v40RevealCover(){
+ if(!v40Entry || v40EntryLeaving || !document.body.classList.contains('v40-entry-active'))return;
+ v40EntryLeaving=true;
+ v40Entry.classList.add('is-exiting');
+ const finish=()=>{
+  document.body.classList.remove('v40-entry-active');
+  document.body.classList.add('v40-cover-visible');
+  app.removeAttribute('inert');
+  v40Entry.hidden=true;
+  v40Entry.inert=true;
+  if(window.matchMedia('(max-width:680px)').matches){
+   window.requestAnimationFrame(()=>{
+    const mobile=$('mobileCover');
+    const rect=mobile.getBoundingClientRect();
+    const centeredY=Math.max(0,window.scrollY+rect.top-Math.max(12,(window.innerHeight-rect.height)/2));
+    window.scrollTo(0,centeredY);
+   });
+  }else window.scrollTo(0,0);
+  const bookButton=window.matchMedia('(max-width:680px)').matches?$('mobileCover'):cover;
+  if(bookButton&&!opened)bookButton.focus({preventScroll:true});
+ };
+ window.setTimeout(finish,reducedMotion.matches?40:740);
+}
+v40Entry.addEventListener('click',v40RevealCover);
+
 createToc(); renderStatic(0); buildLocalPhotoInputs();
 
 cover.addEventListener('click',()=>openBook(current));
@@ -863,7 +2243,9 @@ bookStage.addEventListener('pointercancel',e=>{
   drag=null;settleFlip(false);
 });
 window.addEventListener('keydown',e=>{
+  if(document.body.classList.contains('v40-entry-active'))return;
   if(e.defaultPrevented||e.ctrlKey||e.altKey||e.metaKey||document.activeElement?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
+  if(e.target.closest && e.target.closest('.v3-heat-panel,.v3-topic-tabs,.v3-year-tabs,.v3-thinking-grid,.v3-first-links')) return;
   if(e.key==='ArrowRight') { e.preventDefault(); next(); }
   if(e.key==='ArrowLeft') { e.preventDefault(); prev(); }
   if(e.key==='Home') { e.preventDefault(); returnCover(); }
@@ -879,13 +2261,14 @@ document.addEventListener('click',async event=>{
  socialToastTimer=setTimeout(()=>{toast.hidden=true},3600);
 });
 
-/* V2.4 photo archive: pauseable crossfade, keyboard-friendly tabs */
+/* V3.0 photo archive: pauseable crossfade, keyboard-friendly tabs */
 const photoItems=[
  {src:'images/01-about-blue-shirt.webp',alt:'浅蓝衬衫、自然微笑的生活照',eyebrow:'01 / HELLO AGAIN',title:'一个平常的下午。',story:'从日常里随手留下的一个微笑开始。'},
  {src:'images/04-hongkong-street.webp',alt:'香港街头的色彩与橙红色裙子',eyebrow:'02 / CITY WALKS',title:'街头也有好故事。',story:'喜欢人来人往的城市，也喜欢那些偶然撞见的颜色。'},
  {src:'images/01-blackwhite-playful.webp',alt:'黑白照片里做鬼脸比手势',eyebrow:'03 / NOT TOO SERIOUS',title:'偶尔不那么正经。',story:'认真做事，也保留一点无厘头。'},
  {src:'images/04-snow-sunset.webp',alt:'白色绒帽与雪地日落',eyebrow:'04 / WINTER LIGHT',title:'收藏一点日落。',story:'风景好看的时候，想记住的不一定是结果。'},
- {src:'images/03-lowlight-portrait.webp',alt:'暖色低光室内肖像',eyebrow:'05 / QUIET MOMENTS',title:'安静也是一种状态。',story:'有热闹的瞬间，也有安静看世界的时候。'}
+ {src:'images/03-lowlight-portrait.webp',alt:'暖色低光室内肖像',eyebrow:'05 / QUIET MOMENTS',title:'安静也是一种状态。',story:'有热闹的瞬间，也有安静看世界的时候。'},
+ {src:'images/v3/v39-swimming.webp',alt:'青绿色泳衣、开心比耶的游泳训练留影',eyebrow:'06 / BACK TO WATER',title:'在水里找回节奏。',story:'游泳不是一项需要每天展示成绩的任务，而是我愿意长期练习的事。'}
 ];
 let galleryIndex=0,galleryPaused=false,galleryTimer=null,galleryTransition=null;
 const gallerySection=$('photo-archive'),photoMain=$('photoMain');
@@ -937,6 +2320,54 @@ document.addEventListener('click',event=>{
  if(!busy)renderStatic(current);
 });
 
+
+/* V3.3 genuine process photos: no simulated screenshots or altered portraits. */
+const v33EventImages={
+ speaking:{src:'images/v3/v3-event-speaking.webp',alt:'六水在线下分享中对着白板讲解个人 IP 内容思路',caption:'讲解现场：把个人 IP 的定位、内容与传播关系画在白板上。',label:'THE ROOM · 01 / 02'},
+ venue:{src:'images/v3/v3-event-venue.webp',alt:'线下活动场地的真实室内环境和屏幕、讨论桌',caption:'活动场地：线下分享与交流发生的真实空间。',label:'THE ROOM · 02 / 02'}
+};
+document.addEventListener('click',event=>{
+ const swap=event.target.closest('[data-v33-event-image]');
+ if(swap){
+  const item=v33EventImages[swap.dataset.v33EventImage],img=document.getElementById('v33EventImage');
+  if(!item||!img)return;
+  img.src=item.src;img.alt=item.alt;
+  img.closest('[data-v33-lightbox]').dataset.v33Lightbox=item.src;
+  img.closest('[data-v33-lightbox]').dataset.v33Alt=item.alt;
+  document.getElementById('v33EventCaption').textContent=item.caption;
+  const sticker=document.querySelector('.v33-event-sticker');if(sticker)sticker.textContent=item.label;
+  document.querySelectorAll('[data-v33-event-image]').forEach(b=>b.setAttribute('aria-pressed',String(b===swap)));
+  return;
+ }
+ const photo=event.target.closest('[data-v33-lightbox]');
+ if(photo){
+  const dialog=document.getElementById('v33Lightbox');if(!dialog)return;
+  const img=document.getElementById('v33LightboxImage');
+  img.src=photo.dataset.v33Lightbox;img.alt=photo.dataset.v33Alt||'过程性照片';
+  document.getElementById('v33LightboxCaption').textContent=img.alt;
+  if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
+  return;
+ }
+ if(event.target.closest('[data-v33-close]'))document.getElementById('v33Lightbox')?.close();
+});
+document.addEventListener('click',event=>{if(event.target.id==='v33Lightbox')event.target.close()});
+
+
+// Controls appear after this script, so bind after the document is parsed.
+document.addEventListener('DOMContentLoaded',()=>{
+ const guide=document.getElementById('v37Guide');
+ const top=document.getElementById('v37Top');
+ guide?.addEventListener('click',()=>document.getElementById('reading-area')?.scrollIntoView({behavior:reducedMotion.matches?'auto':'smooth',block:'start'}));
+ top?.addEventListener('click',()=>window.scrollTo({top:0,behavior:reducedMotion.matches?'auto':'smooth'}));
+ if(top){const sync=()=>{top.hidden=window.scrollY<360};sync();window.addEventListener('scroll',sync,{passive:true});}
+});
 </script>
+<div class="v37-fixed-controls" aria-label="网站导览与快速导航">
+  <button class="v37-corner-guide" id="v37Guide" type="button" aria-label="六水导览员，回到翻书区域"><span class="liushui-sprite pose-waving" aria-hidden="true"></span><span class="v37-guide-bubble" aria-hidden="true">来翻翻我的小书！</span></button>
+  <button class="v37-top-button" id="v37Top" type="button" hidden aria-label="一键返回页面顶部"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 14 7-7 7 7M12 7v12"/></svg><span>顶部</span></button>
+</div>
+<dialog id="v33Lightbox" class="v33-lightbox" aria-label="查看真实图片">
+ <div class="v33-lightbox-inner"><button type="button" class="v33-lightbox-close" data-v33-close aria-label="关闭大图">×</button><img id="v33LightboxImage" alt=""><p id="v33LightboxCaption"></p></div>
+</dialog>
 </body>
 </html>
