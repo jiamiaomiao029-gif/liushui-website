@@ -316,6 +316,42 @@ a { color:inherit; }
 .archive-d,.archive-e{transform:translateY(10px)}
 @media(max-width:940px){.archive-heading{display:block}.archive-heading p{margin-top:12px}.archive-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.archive-shot{grid-column:span 3}}
 @media(max-width:680px){.archive-section{padding:0 18px;margin:25px auto 34px}.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.archive-shot{grid-column:span 1}.archive-shot img{min-height:140px;max-height:235px}.archive-a{grid-column:span 2}.archive-a img{max-height:270px}.archive-heading h2{font-size:29px}.archive-d,.archive-e{transform:none}.mobile-paper .editorial-metric-card{min-height:235px}.mobile-paper .editorial-metric-card>strong{font-size:46px}}
+
+/* V2.4 · paper motion — light, tactile and reduced-motion safe */
+.book-stage{touch-action:pan-y}
+.book-body{transition:filter .6s cubic-bezier(.22,.8,.2,1)}
+.is-opening .book-body{filter:drop-shadow(0 23px 28px #3f33286c)}
+.flip-sheet{--leaf-curve:0;--leaf-progress:0;pointer-events:none}
+.flip-sheet .face::before{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(98deg,#4d3b2e5c 0%,#eee5d53d 22%,#fffefc84 52%,#63523b58 100%);
+  opacity:calc(var(--leaf-curve) * .66);mix-blend-mode:multiply;
+}
+.flip-sheet .face.back::before{background:linear-gradient(272deg,#59422e60,#fffefc64 46%,#64533d54)}
+.flip-sheet::after{opacity:calc(.30 + var(--leaf-curve) * .58);filter:blur(.7px)}
+.turn-shadow{filter:blur(8px);transform-origin:center;will-change:opacity,transform}
+.photo-border{transition:transform .36s cubic-bezier(.2,.8,.2,1),box-shadow .36s ease}
+.case-card{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+@media(hover:hover) and (pointer:fine){
+  .is-open .photo-border:hover{transform:rotate(0deg) translateY(-2px);box-shadow:0 8px 22px #776a4f38}
+  .case-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px #65594a2c}
+}
+@keyframes mobileTurnNext{
+  from{opacity:.72;transform:translate3d(14px,7px,0) rotateY(-5deg)}
+  to{opacity:1;transform:translate3d(0,0,0) rotateY(0)}
+}
+@keyframes mobileTurnPrevious{
+  from{opacity:.72;transform:translate3d(-14px,7px,0) rotateY(5deg)}
+  to{opacity:1;transform:translate3d(0,0,0) rotateY(0)}
+}
+@media(max-width:680px){
+  .mobile-paper[data-turn="next"].is-visible{animation:mobileTurnNext .4s cubic-bezier(.2,.8,.2,1)}
+  .mobile-paper[data-turn="previous"].is-visible{animation:mobileTurnPrevious .4s cubic-bezier(.2,.8,.2,1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .flip-sheet,.turn-shadow,.photo-border,.case-card,.book-body{transition:none!important;animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -327,7 +363,7 @@ a { color:inherit; }
       <span class="wordmark-mark">水</span>
       <span class="wordmark-name">LIUSHUI / 六水<small>CURIOUS AT HEART</small></span>
     </a>
-    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">INTERACTIVE DEMO / V.02.3</span></div>
+    <div class="header-right"><span class="live-indicator">从观察，到创造</span><span class="version">CURIOUS AT HEART / V.02.4</span></div>
   </header>
 
   <main class="main-layout" id="reading-area">
@@ -456,7 +492,7 @@ a { color:inherit; }
  </details>
 </section>
 
-  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>V2.3 预览 · 原图策展进行中 · 原始照片不会被 AI 修改</p></footer>
+  <footer class="foot"><p>© 2026 · <strong>CURIOUS AT HEART.</strong> &nbsp; — &nbsp; LIUSHUI’S PERSONAL SKETCHBOOK</p><p>VOL. 01 · 原图策展进行中 · 原始照片不会被 AI 修改</p></footer>
 </div>
 <script>
 /*
@@ -549,6 +585,7 @@ const app=$('app'), body=$('bookBody'), left=$('leftPage'), right=$('rightPage')
 const leaf=$('flipSheet'), front=$('flipFront'), back=$('flipBack'), shadow=$('turnShadow');
 const bookStage=$('bookStage'), mobilePaper=$('mobilePaper'), cover=$('cover');
 let current=0, opened=false, busy=false, drag=null, pendingTarget=0, flipDirection=1;
+let flipProgress=0, settleFrame=0;
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function renderStatic(index) {
@@ -585,7 +622,12 @@ function goTo(target) {
   if(!opened) { openBook(target); return; }
   if(target===current) return;
   if(window.matchMedia('(max-width:680px)').matches || reducedMotion.matches) {
-    current=target; renderStatic(current); mobilePaper.classList.remove('is-visible'); void mobilePaper.offsetWidth; mobilePaper.classList.add('is-visible'); return;
+    const from=current;
+    current=target;
+    mobilePaper.dataset.turn=target>from?'next':'previous';
+    renderStatic(current);
+    mobilePaper.classList.remove('is-visible'); void mobilePaper.offsetWidth;
+    mobilePaper.classList.add('is-visible'); return;
   }
   beginFlip(target>current?1:-1,target,false);
   settleFlip(true);
@@ -608,28 +650,47 @@ function beginFlip(direction,target,fromPointer) {
 }
 function setProgress(progress) {
   progress=Math.max(0,Math.min(1,progress));
+  flipProgress=progress;
+  const bend=Math.sin(Math.PI*progress);
   const angle=(flipDirection===1?-1:1)*180*progress;
-  const curl=1-.055*Math.sin(Math.PI*progress);
-  const lift=10*Math.sin(Math.PI*progress);
-  leaf.style.transform=`translateZ(${lift}px) rotateY(${angle}deg) scaleX(${curl})`;
-  shadow.style.opacity=String(.1+.64*Math.sin(Math.PI*progress));
+  // Small scale compression, elevation and edge twist suggest a soft paper fold.
+  const curl=1-.085*bend;
+  const lift=17*bend;
+  const twist=(flipDirection===1?-1:1)*.85*bend;
+  leaf.style.transform=`translateZ(${lift.toFixed(2)}px) rotateY(${angle.toFixed(2)}deg) scaleX(${curl.toFixed(3)}) rotateZ(${twist.toFixed(2)}deg)`;
+  leaf.style.setProperty('--leaf-curve',bend.toFixed(3));
+  leaf.style.setProperty('--leaf-progress',progress.toFixed(3));
+  shadow.style.opacity=String(.06+.62*bend);
+  shadow.style.transform=`translateX(${(flipDirection===1?-7:7)*bend}px) scaleX(${.89+.14*bend})`;
   shadow.style.background=flipDirection===1?'linear-gradient(90deg,transparent 24%,#29211657 50%,transparent 78%)':'linear-gradient(90deg,transparent 18%,#29211657 50%,transparent 76%)';
 }
 function finishFlip(commit) {
+  if(settleFrame){cancelAnimationFrame(settleFrame);settleFrame=0;}
   if(commit) current=pendingTarget;
-  renderStatic(current);
-  leaf.style.display='none'; leaf.style.transition='none';
-  app.classList.remove('is-flipping'); busy=false; drag=null;
+  leaf.style.display='none';
+  leaf.style.transition='none';
+  app.classList.remove('is-flipping');
+  busy=false;drag=null;
   renderStatic(current);
 }
 function settleFlip(commit) {
   if(!busy) return;
-  if(reducedMotion.matches) { finishFlip(commit); return; }
-  const duration=commit?750:360;
-  leaf.style.transition=`transform ${duration}ms cubic-bezier(.22,.74,.12,1)`;
-  requestAnimationFrame(()=>requestAnimationFrame(()=>setProgress(commit?1:0)));
-  // A timer rather than transitionend keeps cancellation and browser quirks deterministic.
-  setTimeout(()=>finishFlip(commit),duration+45);
+  if(reducedMotion.matches){finishFlip(commit);return;}
+  const from=flipProgress,to=commit?1:0;
+  const distance=Math.abs(to-from);
+  if(distance<.001){finishFlip(commit);return;}
+  const duration=Math.max(190,Math.round(640*distance));
+  const started=performance.now();
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  if(settleFrame)cancelAnimationFrame(settleFrame);
+  function frame(now){
+    if(!busy)return;
+    const t=Math.min(1,(now-started)/duration);
+    setProgress(from+(to-from)*ease(t));
+    if(t<1)settleFrame=requestAnimationFrame(frame);
+    else{settleFrame=0;finishFlip(commit);}
+  }
+  settleFrame=requestAnimationFrame(frame);
 }
 function pointerStart(e) {
   if(!opened||busy||window.matchMedia('(max-width:680px)').matches||e.button!==0) return;
@@ -711,9 +772,12 @@ $('homeLink').addEventListener('click',returnCover);
 bookStage.addEventListener('pointerdown',pointerStart);
 bookStage.addEventListener('pointermove',pointerMove);
 bookStage.addEventListener('pointerup',pointerEnd);
-bookStage.addEventListener('pointercancel',pointerEnd);
+bookStage.addEventListener('pointercancel',e=>{
+  if(!drag||e.pointerId!==drag.id)return;
+  drag=null;settleFlip(false);
+});
 window.addEventListener('keydown',e=>{
-  if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
+  if(e.defaultPrevented||e.ctrlKey||e.altKey||e.metaKey||document.activeElement?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
   if(e.key==='ArrowRight') { e.preventDefault(); next(); }
   if(e.key==='ArrowLeft') { e.preventDefault(); prev(); }
   if(e.key==='Home') { e.preventDefault(); returnCover(); }
