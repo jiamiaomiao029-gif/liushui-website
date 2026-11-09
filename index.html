@@ -1554,13 +1554,131 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
 @media(max-width:680px){.v44-repo-card{min-height:300px;padding:28px}.v44-repo-center strong{font-size:36px}.v44-repo-foot{font-size:9px}.v44-skill-catalog{padding:24px}.v44-skill-row{padding:17px 0;gap:8px}.v44-catalog-head h3{font-size:30px}}
 @media(prefers-reduced-motion:reduce){.v44-repo-card,.v44-repo-arrow,.v44-skill-row{transition:none!important}}
 
+
+/* V4.5 preview only: sharp original-fidelity hero, quiet update signal */
+.v45-skill-title-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;column-gap:18px;row-gap:7px}
+.v45-skill-title-row h3{margin:14px 0 9px}
+.v45-updating-note{font:11px/1.65 "PingFang SC","Microsoft YaHei",sans-serif;color:#68846d;letter-spacing:.035em;white-space:nowrap;display:inline-flex;align-items:center;gap:8px}
+.v45-updating-dot{width:6px;height:6px;background:#83a48a;border-radius:50%;box-shadow:0 0 0 3px #e8f0e6}
+.v40-photo-frame img{
+  transform:none!important;
+  filter:none!important;
+  image-rendering:auto;
+  backface-visibility:visible;
+}
+.v40-entry:hover .v40-photo-frame img{transform:scale(1.006)!important}
+@media(max-width:680px){
+  .v40-photo-frame img{object-position:center 27%}
+  .v45-skill-title-row{align-items:flex-start;flex-direction:column}
+  .v45-skill-title-row h3{margin-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .v40-entry:hover .v40-photo-frame img{transform:none!important}
+}
+
+
+/* V4.6 / career positioning and editorial case study — preview only */
+.v46-entry-focus{
+ display:block;font:600 11px/1.65 "PingFang SC","Microsoft YaHei",sans-serif;
+ letter-spacing:.055em;color:#426b53;margin:2px 0 -5px;
+}
+.v46-entry-focus i{font-style:normal;padding:0 7px;color:#c0a58b}
+.v46-case-jump{
+ display:flex;align-items:center;justify-content:space-between;gap:18px;
+ margin-top:15px;padding:13px 0 9px;
+ border-bottom:1px solid #a8bda7;
+ color:#335f48;text-decoration:none;font-size:12px;line-height:1.5;transition:color .2s ease;
+}
+.v46-case-jump>span{font:italic 20px Georgia,serif;transition:transform .2s ease}
+.v46-case-jump:hover{color:#af7152}
+.v46-case-jump:hover>span{transform:translate(3px,3px)}
+.v46-case{margin-top:45px;background:#f6f2e8;border:1px solid #d8cdbc;overflow:hidden;scroll-margin-top:24px}
+.v46-case-masthead{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(210px,.55fr);gap:30px;padding:clamp(24px,4vw,57px);background:#e8eadd;border-bottom:1px solid #d0d7c9}
+.v46-case-overline,.v46-case-tag{font:10px/1.7 Georgia,"PingFang SC",serif;letter-spacing:.125em;color:#8a8e75}
+.v46-case-overline i{font-style:normal;color:#bf9076}
+.v46-case-header-copy h3{font:normal clamp(31px,3.6vw,48px)/1.28 "Songti SC",Georgia,serif;letter-spacing:-.045em;color:#2f5643;margin:18px 0}
+.v46-case-header-copy h3 em{font-style:normal;color:#a36a4d}
+.v46-case-header-copy p{max-width:570px;font-size:13px;line-height:2;color:#697a69;margin:0}
+.v46-case-facts{display:flex;flex-direction:column;justify-content:center;border-left:1px solid #c2cebd;padding-left:28px;gap:21px}
+.v46-case-facts div{display:flex;flex-direction:column;gap:4px}
+.v46-case-facts span{font-size:10px;color:#8a947f}
+.v46-case-facts b{font:normal 14px/1.5 "Songti SC",serif;color:#3f5f4e}
+.v46-case-decision{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #d8cdbc}
+.v46-case-question,.v46-case-insight{padding:clamp(23px,3.5vw,47px);min-width:0}
+.v46-case-question{border-right:1px solid #d8cdbc;background:#faf7f0}
+.v46-case-question h4{font:normal clamp(26px,2.7vw,36px)/1.35 "Songti SC",serif;color:#315845;margin:18px 0}
+.v46-case-question p,.v46-case-insight p{font-size:12px;line-height:2;color:#77756b;max-width:480px;margin:10px 0 0}
+.v46-case-insight{background:#f0f1e8}
+.v46-insight-compare{display:grid;grid-template-columns:minmax(0,1fr) 29px minmax(0,1.2fr);align-items:center;gap:10px;margin:23px 0 18px}
+.v46-insight-compare>div{display:flex;flex-direction:column;gap:12px;min-width:0}
+.v46-insight-compare small{font-size:10px;color:#948d7a}
+.v46-insight-compare>div>span{font:normal clamp(15px,1.6vw,21px)/1.55 "Songti SC",serif;color:#8a8b78}
+.v46-insight-compare strong{font:normal clamp(19px,2vw,27px)/1.47 "Songti SC",serif;color:#315b47}
+.v46-insight-arrow{font:normal 27px Georgia,serif;color:#a88b6b;text-align:center}
+.v46-case-method{padding:clamp(23px,3.7vw,48px);border-bottom:1px solid #d8cdbc}
+.v46-case-method-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:27px}
+.v46-case-method-head h4,.v46-case-outcome h4{font:normal clamp(23px,2.6vw,34px)/1.4 "Songti SC",serif;color:#315b48;margin:13px 0 0}
+.v46-case-method-index{font:9px Georgia,serif;letter-spacing:.08em;color:#a0917b;white-space:nowrap}
+.v46-case-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.v46-case-step{min-width:0;padding:22px 19px 23px;border:1px solid #dad4c6;background:#faf8f1;display:flex;flex-direction:column;gap:8px}
+.v46-case-step:nth-child(2){background:#e9ece2}
+.v46-case-step-number{font:italic 29px Georgia,serif;color:#a18e74}
+.v46-case-step-date{font:9px Georgia,serif;letter-spacing:.10em;color:#a48b76}
+.v46-case-step h5{font:normal 20px/1.35 "Songti SC",serif;color:#375945;margin:8px 0 2px}
+.v46-case-step p{font-size:11px;line-height:1.95;color:#79776b;margin:0}
+.v46-case-outline{display:flex;align-items:center;gap:21px;padding:17px 2px 0;overflow:hidden}
+.v46-case-outline>span{font:10px "PingFang SC",sans-serif;color:#8e8979;white-space:nowrap}
+.v46-case-outline ol{display:flex;align-items:center;flex-wrap:wrap;gap:5px;list-style:none;margin:0;padding:0}
+.v46-case-outline li{font-size:10px;color:#476e55;padding:6px 9px;border:1px solid #c5d0bf;border-radius:30px;background:#edf1e7}
+.v46-case-outline li+li:before{content:"";display:none}
+.v46-case-finale{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.5fr);background:#f8f5ee}
+.v46-case-outcome{padding:clamp(24px,3.7vw,48px)}
+.v46-case-outcome p{max-width:700px;font-size:12px;line-height:2;color:#726d64;margin:17px 0 0}
+.v46-case-endnote{display:flex;flex-direction:column;justify-content:space-between;gap:25px;padding:31px 27px;background:#24493c;color:#f8f0dc}
+.v46-case-endnote>span{font:9px/1.5 Georgia,serif;color:#c2cda9;letter-spacing:.11em}
+.v46-case-endnote strong{font:normal 23px/1.7 "Songti SC",serif;letter-spacing:.01em}
+.v46-case-endnote strong i{color:#e6c799;font-style:normal}
+.v46-case-endnote a{font-size:11px;color:#e9d2a4;text-decoration:none;border-bottom:1px solid #c9bf92;padding-bottom:6px;align-self:flex-start}
+@media(max-width:940px){
+.v46-case-masthead{grid-template-columns:1.25fr .75fr}
+.v46-case-method-index{display:none}
+}
+@media(max-width:680px){
+.v46-entry-focus{font-size:10px;margin:0 0 -3px}
+.v46-case{margin-top:25px}
+.v46-case-masthead,.v46-case-decision,.v46-case-finale{grid-template-columns:1fr}
+.v46-case-masthead{gap:20px;padding:25px 21px}
+.v46-case-header-copy h3{font-size:32px;margin:12px 0}
+.v46-case-header-copy p{font-size:12px}
+.v46-case-facts{border-left:0;border-top:1px solid #c2cebd;padding:15px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.v46-case-facts div:last-child{grid-column:1/-1}
+.v46-case-question{border-right:0;border-bottom:1px solid #d8cdbc}
+.v46-case-question,.v46-case-insight{padding:24px 21px}
+.v46-case-steps{grid-template-columns:1fr}
+.v46-case-step{padding:19px}
+.v46-case-method{padding:25px 21px}
+.v46-case-method-head h4{font-size:26px}
+.v46-case-outline{flex-direction:column;align-items:flex-start;gap:9px}
+.v46-case-outcome{padding:27px 21px}
+.v46-case-endnote{padding:24px 21px}
+.v46-case-endnote strong{font-size:21px}
+}
+@media(max-width:390px){
+.v46-entry-focus{font-size:9px;letter-spacing:0}
+.v46-insight-compare{grid-template-columns:minmax(0,1fr) 17px minmax(0,1.15fr);gap:4px}
+.v46-insight-compare strong{font-size:18px}
+.v46-case-facts{grid-template-columns:1fr}
+.v46-case-facts div:last-child{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){.v46-case-jump,.v46-case-jump>span{transition:none!important}}
+
 </style>
 </head>
 <body class="v40-entry-active">
 <button class="v40-entry" id="v40Entry" type="button" aria-label="先认识六水，再进入《不止想想》的封面">
  <span class="v40-photo-side">
   <span class="v40-photo-frame">
-   <picture><source media="(max-width:680px)" srcset="images/v3/v39-home-portrait.webp"><img src="images/v3/v41-home-wide-original-face.webp" alt="六水身穿蓝色细条纹衬衫，戴着头顶墨镜，站在温暖的木门前" decoding="async" fetchpriority="high"></picture>
+   <picture><source media="(max-width:680px)" srcset="images/v3/v45-home-hd-mobile.webp"><img src="images/v3/v45-home-hd-wide.webp" width="2896" height="2172" alt="六水身穿蓝色细条纹衬衫，戴着头顶墨镜，站在温暖的木门前" decoding="async" fetchpriority="high"></picture>
   </span>
   <span class="v40-photo-meta"><span>01 / A PERSONAL PORTRAIT</span><span>LIUSHUI · 2026</span></span>
  </span>
@@ -1570,7 +1688,8 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
    <span class="v40-entry-kicker"><span class="v40-entry-dot" aria-hidden="true"></span> HELLO, I'M LIUSHUI</span>
    <span class="v40-entry-title">你好，<span>我是六水<span class="v40-period">。</span></span></span>
    <span class="v40-entry-lede">好奇于心，创造于行。</span>
-   <span class="v40-entry-description">我喜欢观察、拆解问题，也喜欢把想法变成真正发生的事情。这里，有我的作品、经历、思考和日常。</span>
+   <span class="v46-entry-focus">内容创作 <i>·</i> 个人 IP <i>·</i> 增长探索</span>
+   <span class="v40-entry-description">我习惯从真实问题中寻找选题，把复杂观点讲清楚，再用作品与反馈检验判断。教学、阅读和日常，也是我不断生长的部分。</span>
    <span class="v40-entry-taxonomy">CREATION <i>·</i> TEACHING <i>·</i> IDEAS <i>·</i> LIFE</span>
   </span>
   <span class="v40-entry-bottomline">
@@ -1714,7 +1833,7 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
  <div class="v3-showcase-grid">
   <article class="v3-flagship">
    <div class="v37-feature-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-networking.webp" data-v33-alt="原创代表作《大学里大佬幼年体：怎么铺自己的人脉网》真实视频截图"><img src="images/v3/liushui-work-networking.webp" alt="六水《大学如何铺自己的人脉网》代表作真实视频画面" loading="lazy"></button><div class="v37-feature-work-caption"><span>FLAGSHIP / ORIGINAL VIDEO</span><h3>大学如何铺自己的人脉网</h3><small>真实视频封面与播放截图 · 点击放大</small></div></div>
-   <div class="v3-flagship-meta"><p>把熟悉的大学生活，换一个视角讲给更多人听。</p><div class="v3-result-row"><span><b>约 50 万</b>抖音播放</span><span><b>约 4,000</b>抖音新增关注</span><span><b>约 10 万</b>小红书播放</span></div><small>在抖音与小红书上，收到的真实回声。</small><div class="v3-platform-links"><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音账号 ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书账号 ↗</a></div></div>
+   <div class="v3-flagship-meta"><p>把熟悉的大学生活，换一个视角讲给更多人听。</p><div class="v3-result-row"><span><b>约 50 万</b>抖音播放</span><span><b>约 4,000</b>抖音新增关注</span><span><b>约 10 万</b>小红书播放</span></div><small>在抖音与小红书上，收到的真实回声。</small><div class="v3-platform-links"><a href="https://www.douyin.com/user/MS4wLjABAAAAEkIAYP8QvttNkPDfjFTbC2X6kvhekZEk-c-YW6i8MbaNx6-4tEcnz4ErLabUMW19" target="_blank" rel="noopener noreferrer">抖音账号 ↗</a><a href="https://www.xiaohongshu.com/user/profile/674eb977000000001d02f681" target="_blank" rel="noopener noreferrer">小红书账号 ↗</a></div><a class="v46-case-jump" href="#v46-case-study">读一读这条作品背后的判断 <span aria-hidden="true">↘</span></a></div>
   </article>
   <div class="v3-works-list v37-works-list">
    <article class="v37-thumb-work"><button type="button" class="v33-image-button" data-v33-lightbox="images/v3/liushui-work-feminism.webp" data-v33-alt="六水作品《曾经，我被开盒》在社交平台的真实截图"><img src="images/v3/liushui-work-feminism.webp" alt="六水视频作品《曾经，我被开盒》截图" loading="lazy"></button><div><span>SELECTED VIDEO 01</span><h3>曾经，我被开盒</h3><p>一条关于表达与经历的原创作品。</p></div></article>
@@ -1725,14 +1844,75 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
  </div>
 
 
-<div class="v34-work-process">
- <div class="v34-process-intro"><span class="eyebrow">MAKING A VIDEO / 真实脚本档案</span><h3>一个选题，是怎么被我讲清楚的？</h3><p>来自《大学如何铺自己的人脉网》2026 年 9 月的实际构思与改稿记录。</p></div>
- <div class="v34-process-cards">
-  <article><span>2026.09.15 · IDEA</span><h4>先有一个视角。</h4><blockquote>「大学是真实社会的 mini 版。」</blockquote><p>从校园里的关系和信息来源出发，提出选题母题。</p><small>原始选题思考</small></article>
-  <article><span>2026.09.16 · STRUCTURE</span><h4>把想法组织起来。</h4><div class="v34-outline-steps"><b>现象</b><b>误解</b><b>原因</b><b>认知</b><b>方案</b><b>升华</b></div><p>反复调整叙事顺序，收束到一个主要认知点。</p><small>六板块内容结构</small></article>
-  <article><span>2026.09.16 · SCRIPT</span><h4>写成能讲的话。</h4><blockquote>「人脉就是认识有头有脸的人？」</blockquote><p>用反常识问题开场，再进入具体场景与行动建议。</p><small>成稿口播结构</small></article>
+<article class="v46-case" id="v46-case-study" aria-labelledby="v46CaseHeading">
+ <div class="v46-case-masthead">
+  <div class="v46-case-header-copy">
+   <span class="v46-case-overline">SELECTED CASE STUDY <i>/</i> 01 &nbsp;·&nbsp; 2026.09</span>
+   <h3 id="v46CaseHeading">把「人脉」<em>讲出一个新视角。</em></h3>
+   <p>这条视频从大学生熟悉的校园关系出发，但真正要讨论的，是信息、资源与人际连接背后的判断方式。</p>
+  </div>
+  <div class="v46-case-facts">
+   <div><span>栏目</span><b>大佬幼年体</b></div>
+   <div><span>形式</span><b>原创短视频 / 口播</b></div>
+   <div><span>创作记录</span><b>2026.09.15 — 09.16</b></div>
+  </div>
  </div>
-</div>
+ <div class="v46-case-decision">
+  <div class="v46-case-question">
+   <span class="v46-case-tag">01 / THE QUESTION · 为什么做</span>
+   <h4>大学真的只是<br>上课和考试吗？</h4>
+   <p>我发现，大多数人谈大学，往往先想到学习、成绩和身份。可大学也是一个提前理解社会运行方式的地方。能不能从熟悉的日常里，讲出更底层的一层逻辑？</p>
+  </div>
+  <div class="v46-case-insight">
+   <span class="v46-case-tag">02 / THE REFRAME · 怎样切入</span>
+   <div class="v46-insight-compare">
+    <div><small>常见的理解</small><span>人脉是认识<br>有头衔的人</span></div>
+    <span class="v46-insight-arrow" aria-hidden="true">→</span>
+    <div><small>重新提问</small><strong>谁能连接信息、<br>经验与资源？</strong></div>
+   </div>
+   <p>选题不止讲“认识谁”，而是把目光放到不同关系能带来什么具体价值；从显眼的身份，转向看不见的信息流动。</p>
+  </div>
+ </div>
+ <div class="v46-case-method">
+  <div class="v46-case-method-head">
+   <div><span class="v46-case-tag">03 / HOW I BUILT IT · 选题到成稿</span><h4>把一个观察，写成有推进感的故事。</h4></div>
+   <span class="v46-case-method-index">IDEA → STRUCTURE → SCRIPT</span>
+  </div>
+  <div class="v46-case-steps">
+   <div class="v46-case-step">
+    <span class="v46-case-step-number">01</span>
+    <span class="v46-case-step-date">SEP 15 · IDEA</span>
+    <h5>从生活观察出发</h5>
+    <p>把「大学是社会的 mini 版」定为核心视角，选择老师、校园服务人员和同学这些容易共鸣的真实场景。</p>
+   </div>
+   <div class="v46-case-step">
+    <span class="v46-case-step-number">02</span>
+    <span class="v46-case-step-date">SEP 16 · STRUCTURE</span>
+    <h5>先收束观点，再搭骨架</h5>
+    <p>不让多个话题并列抢主线。先找到一个认知差，再沿着现象、误解、原因、认知、方案、升华逐层展开。</p>
+   </div>
+   <div class="v46-case-step">
+    <span class="v46-case-step-number">03</span>
+    <span class="v46-case-step-date">SEP 16 · SCRIPT</span>
+    <h5>用问题和具体场景说话</h5>
+    <p>从「人脉就是认识有头有脸的人？」这样的提问切入，用信息节点和互惠关系解释观点，最后落到可执行的小行动。</p>
+   </div>
+  </div>
+  <div class="v46-case-outline" aria-label="口播脚本的六步结构">
+   <span>内容结构</span>
+   <ol><li>现象</li><li>误解</li><li>原因</li><li>认知</li><li>方案</li><li>升华</li></ol>
+  </div>
+ </div>
+ <div class="v46-case-finale">
+  <div class="v46-case-outcome">
+   <span class="v46-case-tag">04 / RELEASE & REFLECTION · 发布与复盘</span>
+   <h4>让判断，接受真实反馈。</h4>
+   <p>发布后，这条内容在抖音获得约 50 万播放、带来约 4,000 名新增关注；在小红书获得约 10 万播放。</p>
+   <p>这次创作留下的，不只是一条视频：先发现受众习以为常的理解，再寻找新的解释变量，最后用清晰的叙事和具体场景把判断传递出去。</p>
+  </div>
+  <div class="v46-case-endnote"><span>FROM ONE IDEA TO A FINISHED WORK</span><strong>看见问题。<br>重新理解。<br><i>认真表达。</i></strong><a href="#v3-works">回到作品展示 ↑</a></div>
+ </div>
+</article>
 </section>
 <section class="v3-exhibit" id="v3-live" aria-labelledby="liveHeading">
  <div class="v3-section-head"><div><span class="eyebrow">01B / LIVE</span><h2 id="liveHeading">每一次对话，都有新的回声。</h2><p>直播与作品同级。即兴表达、现场问答与观众互动，都有自己的章节。</p></div><span class="liushui-sprite pose-waving v38-margin-mascot" role="img" aria-label="六水挥手欢迎来到直播章节"></span><span class="v3-section-num">01B</span></div>
@@ -1845,7 +2025,7 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
      </span>
    </a>
    <article class="v44-skill-catalog" aria-label="六水 Skills 功能介绍">
-     <div class="v44-catalog-head"><span>THE LIUSHUI TOOLBOX / 目前正在做的事</span><h3>两种方法，两条路径。</h3><p>把人物理解和内容定位中的经验，拆成可以独立使用的工具。</p></div>
+     <div class="v44-catalog-head"><span>THE LIUSHUI TOOLBOX / 目前正在做的事</span><div class="v45-skill-title-row"><h3>两种方法，两条路径。</h3><span class="v45-updating-note"><span class="v45-updating-dot" aria-hidden="true"></span>持续更新中</span></div><p>把人物理解和内容定位中的经验，拆成可以独立使用的工具。</p></div>
      <div class="v44-skill-rows">
        <a class="v44-skill-row" href="https://github.com/jiamiaomiao029-gif/liushui-skills/tree/main/skills/liushui-persona" target="_blank" rel="noopener noreferrer">
          <span class="v44-skill-no">01</span>
