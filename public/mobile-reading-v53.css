@@ -1,0 +1,191 @@
+/* V5.3 | mobile reading foundation
+   Mobile-only overrides; desktop flipbook and original media assets are unchanged. */
+@media (max-width: 680px) {
+  :root {
+    --m-gutter: clamp(15px, 4.5vw, 22px);
+    --m-reading: "PingFang SC","Hiragino Sans GB","Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif;
+    --m-display: "Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;
+  }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 14px; }
+  body { min-width: 0; overflow-x: clip; font-family: var(--m-reading); }
+  :where(img,video,canvas,svg) { max-width: 100%; }
+  :where(.main-layout,.sidebar,.stage,.mobile-reader,.mobile-paper,.v3-exhibit,.v3-panel-body,.v44-skill-catalog) { min-width: 0; }
+  :where(.mobile-paper,.v3-exhibit,.v46-case,.v44-skill-catalog) { overflow-wrap: break-word; word-break: normal; }
+
+  /* The welcome card MUST scroll as a whole on short iPhones.
+     Previous percentage rows plus nested scrolling clipped the title and CTA. */
+  .v40-entry {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) !important;
+    grid-template-rows: clamp(210px, 41svh, 330px) auto !important;
+    grid-template-areas: "photo" "editorial" !important;
+    align-content: start !important;
+    height: 100dvh !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  .v40-entry .v40-photo-side {
+    grid-area: photo !important;
+    min-height: 0 !important;
+    background-color: #bda997 !important;
+    background-size: cover !important;
+    background-position: center 32% !important;
+    overflow: hidden !important;
+  }
+  .v40-entry .v40-photo-frame { inset: 0 !important; }
+  .v40-entry .v40-photo-frame .v49-entry-photo {
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; object-position: 50% 33% !important;
+  }
+  .v40-photo-meta { left: var(--m-gutter) !important; right: var(--m-gutter) !important; bottom: 10px !important; gap: 8px; font-size: 9px !important; }
+  .v40-entry .v40-editorial-side {
+    grid-area: editorial !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    justify-content: flex-start !important;
+    padding: 0 var(--m-gutter) max(18px,env(safe-area-inset-bottom,0px)) !important;
+    border-left: 0;
+  }
+  .v40-entry-topline {
+    margin: 0 calc(-1 * var(--m-gutter)) 14px !important;
+    padding: 11px var(--m-gutter) !important;
+    min-height: 58px !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+  }
+  .v40-entry-topline .v41-entry-brand { flex-wrap: wrap; gap: 1px 9px !important; }
+  .v41-entry-brand strong { font: 400 21px/1.25 var(--m-display) !important; letter-spacing: .035em !important; }
+  .v41-entry-brand em { font-size: 12px !important; line-height: 1.3 !important; }
+  .v40-entry-topline .v41-stage-number { font-size: 10px !important; padding-left: 4px !important; }
+  .v40-entry-editorial { margin: 0 !important; padding: 0 0 8px !important; gap: 7px !important; max-width: none !important; }
+  .v40-entry-kicker { font-size: 10px !important; line-height: 1.5 !important; }
+  .v40-entry-title {
+    font-family: var(--m-display) !important;
+    font-weight: 400 !important;
+    font-size: clamp(31px,8.5vw,40px) !important;
+    line-height: 1.17 !important;
+    letter-spacing: -.055em !important;
+  }
+  .v40-entry-title>span { white-space: normal !important; }
+  .v40-entry-lede { margin: 2px 0 0 !important; font: 400 16px/1.5 var(--m-display) !important; }
+  .v46-entry-focus { font-size: 11px !important; line-height: 1.5 !important; letter-spacing: 0 !important; }
+  .v40-entry-description {
+    font: 400 13.5px/1.68 var(--m-reading) !important;
+    letter-spacing: 0 !important; max-width: 36em !important;
+    overflow-wrap: break-word !important;
+  }
+  .v40-entry-bottomline { margin-top: auto !important; padding-top: 10px !important; gap: 7px !important; }
+  .v40-entry-flow { font-size: 10px !important; gap: 6px !important; white-space: normal !important; line-height: 1.4 !important; }
+  .v40-entry-cta { min-height: 44px !important; padding: 7px 0 !important; font-size: 13px !important; }
+  .v40-entry-cta>span { font-size: 22px !important; }
+
+  /* Approved six-pose Liushui sprite, reused without regenerating it. */
+  .v53-entry-mascot {
+    display: block !important; position: absolute; z-index: 3;
+    right: 12px; bottom: 38px; width: 66px; aspect-ratio: 1;
+    pointer-events: none; filter: drop-shadow(0 4px 8px #272b234d);
+  }
+  .v53-entry-mascot .liushui-sprite { width: 100% !important; height: auto !important; display: block !important; animation: none !important; }
+
+  /* Book: a readable single-column sheet, not a scaled-down desktop spread. */
+  .header { padding-inline: var(--m-gutter) !important; }
+  .main-layout { padding: 16px var(--m-gutter) 0 !important; gap: 13px !important; }
+  .sidebar { max-width: 100% !important; }
+  .toc .toc-parent { min-height: 48px !important; }
+  .toc-children { margin-left: 33px !important; max-width: calc(100% - 33px) !important; }
+  .toc-child { min-height: 40px !important; white-space: normal !important; text-align: left !important; }
+  .mobile-reader { width: 100% !important; max-width: 430px !important; margin-inline: auto; padding: 8px 1px 22px !important; }
+  .mobile-cover { max-width: calc(100% - 20px) !important; }
+  .mobile-paper {
+    width: 100% !important; min-height: 0 !important; max-height: none !important;
+    padding: 23px clamp(17px,5vw,26px) 28px !important;
+    overflow: visible !important; overflow-wrap: break-word !important; word-break: normal !important;
+  }
+  .mobile-paper .page-inner { height: auto !important; min-height: 0 !important; max-height: none !important; }
+  .mobile-paper .chapter-heading {
+    font: 400 clamp(27px,7.1vw,34px)/1.32 var(--m-display) !important;
+    letter-spacing: -.04em !important; overflow-wrap: break-word !important;
+  }
+  .mobile-paper .chapter-desc { font: 400 15px/1.8 var(--m-reading) !important; letter-spacing: .012em !important; }
+  .mobile-paper .chapter-pull { font: 400 18px/1.65 var(--m-display) !important; }
+  .mobile-paper .image-page { min-height: 0 !important; max-height: none !important; }
+  .mobile-paper .v3-panel-body { min-width: 0 !important; max-width: 100%; }
+  .mobile-paper :where(p,li,figcaption) { overflow-wrap: break-word; }
+  .mobile-paper .photo-border { min-width: 0; }
+  .mobile-paper .photo-holder img { display: block; width: 100%; height: 100% !important; object-fit: cover; }
+  .mobile-paper .v3-photo-layout img { max-width: 100%; }
+  .mobile-paper :where(pre,table) { max-width: 100%; overflow-x: auto; }
+
+  /* Full projects: create consistent mobile editorial rhythm. */
+  .v3-exhibit, .archive-section, .collab-section { max-width: 100% !important; }
+  .v3-exhibit { padding-inline: var(--m-gutter) !important; }
+  .v3-section-head h2 { font-family: var(--m-display) !important; font-size: clamp(25px,6.7vw,32px) !important; line-height: 1.36 !important; }
+  .v3-exhibit p, .v3-exhibit li,
+  .v33-event-narrative p, .v44-skill-text>span,
+  .v3-teach-stage-main>p, .v3-teach-structure-head p,
+  .v46-case p {
+    font-family: var(--m-reading) !important;
+    font-size: 15px !important; line-height: 1.78 !important;
+    letter-spacing: .01em !important;
+    word-break: normal !important; overflow-wrap: break-word !important;
+  }
+  .v3-exhibit :where(h2,h3,h4) { overflow-wrap: break-word; word-break: normal; }
+  .v44-skill-row { grid-template-columns: 23px minmax(0,1fr) 16px !important; gap: 8px !important; }
+  .v44-skill-text { min-width: 0 !important; }
+  .v44-skill-text code { white-space: normal !important; overflow-wrap: anywhere !important; }
+  .v3-grammar-demo, .v3-teach-stage-map>div { flex-wrap: wrap !important; }
+  .v33-image-button img, .v3-exhibit img { display: block; max-width: 100%; }
+  .v33-lightbox { max-width: 100vw !important; }
+  .v33-lightbox-inner { padding: 12px !important; max-height: calc(100dvh - 24px) !important; overflow-y: auto; }
+  .v33-lightbox img { max-width: calc(100vw - 36px) !important; max-height: calc(100dvh - 110px) !important; object-fit: contain; }
+  .v33-lightbox-close { width: 44px !important; height: 44px !important; top: 4px !important; right: 4px !important; z-index: 5; }
+
+  /* Keep the mascot reachable, without hiding the book controls. */
+  .v37-fixed-controls { z-index: 175 !important; }
+  .v37-corner-guide {
+    display: flex !important; align-items: center; justify-content: center;
+    left: max(6px,env(safe-area-inset-left,0px)) !important;
+    bottom: calc(8px + env(safe-area-inset-bottom,0px)) !important;
+    width: 62px !important; min-height: 62px !important; height: 62px !important;
+    visibility: visible !important; pointer-events: auto !important;
+  }
+  .v37-corner-guide .liushui-sprite { display: block !important; width: 60px !important; aspect-ratio: 1; }
+  body.mobile-reading .v37-corner-guide { bottom: calc(78px + env(safe-area-inset-bottom,0px)) !important; }
+  .v37-top-button { width: 46px !important; height: 46px !important; }
+  body.mobile-reading .site-shell { padding-bottom: calc(102px + env(safe-area-inset-bottom,0px)) !important; }
+  body.mobile-reading .controlbar { z-index: 150 !important; }
+  .icon-btn, .v3-teach-subnav button { min-width: 44px; min-height: 44px; }
+}
+
+@media (max-width: 380px) {
+  .v40-entry { grid-template-rows: clamp(185px,37svh,265px) auto !important; }
+  .v40-entry-topline { min-height: 52px !important; }
+  .v41-entry-brand strong { font-size: 19px !important; }
+  .v41-entry-brand em { font-size: 11px !important; }
+  .v40-entry-title { font-size: 31px !important; }
+  .v40-entry-description { font-size: 13px !important; }
+  .v53-entry-mascot { width: 56px; }
+  .mobile-paper { padding-inline: 17px !important; }
+}
+@media (max-width: 680px) and (max-height: 700px) and (orientation: portrait) {
+  .v40-entry { grid-template-rows: clamp(175px,32svh,240px) auto !important; }
+}
+@media (max-width: 680px) and (orientation: landscape) {
+  .v40-entry {
+    grid-template-areas: "photo editorial" !important;
+    grid-template-columns: minmax(0,43%) minmax(0,57%) !important;
+    grid-template-rows: minmax(100svh,auto) !important;
+  }
+  .v40-entry .v40-photo-side { min-height: 100svh !important; }
+  .v40-entry .v40-editorial-side { padding-bottom: 18px !important; }
+  .v40-entry-topline { flex-wrap: wrap !important; }
+  .v40-entry-title { font-size: clamp(25px,4.3vw,34px) !important; }
+  .v53-entry-mascot { bottom: 20px; right: 8px; width: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v53-entry-mascot .liushui-sprite { animation: none !important; }
+}
