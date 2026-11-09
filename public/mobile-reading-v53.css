@@ -1,3 +1,6 @@
+/* Keep the intro sticker hidden on desktop (mobile rule below enables it). */
+.v53-entry-mascot { display: none; }
+
 /* V5.3 | mobile reading foundation
    Mobile-only overrides; desktop flipbook and original media assets are unchanged. */
 @media (max-width: 680px) {
