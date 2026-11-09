@@ -1494,6 +1494,66 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
 .v43-contact-shadow img{object-position:50% 37%;object-fit:cover;filter:none}
 @media(max-width:680px){.v43-event-slide-stage .v33-image-button{height:240px;width:96%}.v43-event-web-previews .v33-image-button{height:auto;aspect-ratio:16/10}.v43-contact-shadow img{object-position:50% 39%}}
 
+
+/* V4.4 — one click-through GitHub feature + two current independent Skills */
+.v44-skills-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:20px;align-items:stretch}
+.v44-repo-card{
+ display:flex;flex-direction:column;justify-content:space-between;gap:35px;min-height:465px;
+ padding:clamp(26px,3vw,43px);
+ border:1px solid #28483e;background:#22483b;
+ background-image:radial-gradient(ellipse 56% 50% at 95% 12%,#47755d65,transparent 90%),repeating-linear-gradient(93deg,#f0e5c807 0,#f0e5c807 1px,transparent 1px,transparent 6px);
+ color:#f4efe1;text-decoration:none!important;
+ box-shadow:0 12px 23px #1d33291a;
+ transition:transform .28s ease,box-shadow .28s ease,background-color .28s ease;
+ position:relative;overflow:hidden;min-width:0;
+}
+.v44-repo-card:before{
+ content:"";position:absolute;inset:17px;border:1px solid #b8c7a12d;pointer-events:none;
+}
+.v44-repo-card:hover{transform:translateY(-5px);box-shadow:0 21px 36px #142b2440;background-color:#1d3f34}
+.v44-repo-card:focus-visible,.v44-skill-row:focus-visible{outline:3px solid #bd9468;outline-offset:3px}
+.v44-repo-top,.v44-repo-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;z-index:1}
+.v44-repo-top{font:10px/1.6 Georgia,serif;letter-spacing:.17em;color:#d1c59f}
+.v44-repo-arrow{font:normal 29px/1 Georgia,serif;color:#e3d1ad;transition:transform .25s ease}
+.v44-repo-card:hover .v44-repo-arrow{transform:translate(4px,-4px)}
+.v44-repo-center{display:flex;flex-direction:column;align-items:flex-start;gap:13px;z-index:1}
+.v44-repo-mark{font:italic 56px Georgia,serif;letter-spacing:-.13em;color:#cfbf95;opacity:.8;line-height:1}
+.v44-repo-mark span{color:#c78a6d}
+.v44-repo-center strong{font:normal clamp(31px,3vw,45px)/1.2 Georgia,serif;letter-spacing:-.035em;color:#fcf7e9;word-break:break-word}
+.v44-repo-lead{font:normal clamp(16px,1.6vw,21px)/1.7 "Songti SC",serif;color:#e5dfcc}
+.v44-repo-foot{padding-top:18px;border-top:1px solid #e5dabe55;font-size:10px;line-height:1.7;letter-spacing:.02em;color:#e9e1cf}
+.v44-repo-foot b{font:normal 17px Georgia,serif;color:#f3d4a2}
+.v44-repo-foot>span:last-child{text-align:right}
+.v44-skill-catalog{
+ border:1px solid #d2c7b7;background:#f9f6ee;padding:clamp(26px,2.8vw,38px);
+ display:flex;flex-direction:column;gap:22px;min-width:0;
+ box-shadow:0 12px 23px #5145380c;
+}
+.v44-catalog-head>span{display:block;font:10px Georgia,serif;letter-spacing:.11em;color:#9b8469}
+.v44-catalog-head h3{font:normal clamp(26px,2.6vw,38px)/1.22 "Songti SC",serif;color:#315745;margin:14px 0 9px}
+.v44-catalog-head p{font-size:12px;line-height:1.85;color:#817a6f;margin:0}
+.v44-skill-rows{border-top:1px solid #d8d0c2;display:flex;flex-direction:column}
+.v44-skill-row{
+ display:grid;grid-template-columns:29px minmax(0,1fr) 17px;gap:13px;
+ border-bottom:1px solid #d8d0c2;padding:22px 0 23px;color:#385d49;text-decoration:none!important;
+ transition:padding-left .25s ease,background .25s ease;
+}
+.v44-skill-row:hover{padding-left:7px;background:#eef0e6}
+.v44-skill-no{font:italic 17px Georgia,serif;color:#b68c6e}
+.v44-skill-text{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+.v44-skill-text strong{font:normal 21px/1.4 "Songti SC",serif;color:#315845}
+.v44-skill-text code{font:10px/1.65 "SFMono-Regular",Consolas,monospace;color:#a18c71;background:transparent;white-space:normal;word-break:break-word}
+.v44-skill-text>span{font-size:12px;line-height:1.85;color:#777668;margin-top:3px}
+.v44-skill-arrow{font:19px Georgia,serif;align-self:start;color:#8c9e8b}
+.v44-catalog-footer{margin-top:auto;font:10px/1.75 Georgia,"Songti SC",serif;letter-spacing:.08em;color:#9c9180}
+.v44-book-skill-list{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.v44-book-skill-list>div{background:#e7ebdf;border-left:2px solid #91a88f;padding:7px 10px;display:flex;flex-direction:column;gap:4px}
+.v44-book-skill-list b{font-size:10px;color:#355d47}
+.v44-book-skill-list small{font-size:9px;line-height:1.5;color:#77796d}
+@media(max-width:940px){.v44-skills-grid{grid-template-columns:1fr}.v44-repo-card{min-height:340px}.v44-repo-center strong{font-size:42px}}
+@media(max-width:680px){.v44-repo-card{min-height:300px;padding:28px}.v44-repo-center strong{font-size:36px}.v44-repo-foot{font-size:9px}.v44-skill-catalog{padding:24px}.v44-skill-row{padding:17px 0;gap:8px}.v44-catalog-head h3{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.v44-repo-card,.v44-repo-arrow,.v44-skill-row{transition:none!important}}
+
 </style>
 </head>
 <body class="v40-entry-active">
@@ -1770,7 +1830,37 @@ body.v40-cover-visible .stage{animation:v40-stage-arrive .64s cubic-bezier(.24,.
 <div class="v38-chapter-breath" aria-hidden="true"><span class="v38-breath-line"></span><span class="liushui-sprite pose-working"></span><span class="v38-breath-caption">好想法，总要做点什么。</span><span class="v38-breath-line"></span></div>
 <section class="v3-exhibit v3-secondary" id="v3-skills" aria-labelledby="skillsHeading">
  <div class="v3-section-head"><div><span class="eyebrow">04A / SKILLS</span><h2 id="skillsHeading">让灵感拥有自己的形状。</h2><p>不只是会用 AI，也在探索如何把个人判断和内容方法转成可复用的工作流。</p></div><span class="liushui-sprite pose-working v38-margin-mascot" role="img" aria-label="六水在电脑前创作 Skill"></span><span class="v3-section-num">04A</span></div>
- <div class="v3-tools-grid"><article><span>GITHUB · PROTOTYPE V0.2</span><h3>liushui-skills</h3><p>授权历史材料的人物行为模式研究、个人 IP 定位假设与验证计划。</p><div><span>liushui-persona</span><span>liushui-ip</span></div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article><article><span>GITHUB · SKILL COLLECTION</span><h3>xiaoshui-content-skill</h3><p>内容创作诊断、商业决策聊天室、自动更新和 HTML 转 Markdown。</p><div><span>内容诊断</span><span>商业决策</span><span>工作流工具</span></div><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开仓库 ↗</a></article></div>
+ 
+ <div class="v3-tools-grid v44-skills-grid">
+   <a class="v44-repo-card" href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer" aria-label="打开六水 Skills 的 GitHub 仓库">
+     <span class="v44-repo-top"><span>GITHUB / OPEN SOURCE</span><span class="v44-repo-arrow" aria-hidden="true">↗</span></span>
+     <span class="v44-repo-center">
+       <span class="v44-repo-mark" aria-hidden="true">LS<span>·</span></span>
+       <strong>liushui-skills</strong>
+       <span class="v44-repo-lead">从一个问题出发，<br>让思考成为可以使用的方法。</span>
+     </span>
+     <span class="v44-repo-foot">
+       <span>当前收录 <b>02</b> 个独立 Skill</span>
+       <span>点击进入 GitHub 仓库 <span aria-hidden="true">→</span></span>
+     </span>
+   </a>
+   <article class="v44-skill-catalog" aria-label="六水 Skills 功能介绍">
+     <div class="v44-catalog-head"><span>THE LIUSHUI TOOLBOX / 目前正在做的事</span><h3>两种方法，两条路径。</h3><p>把人物理解和内容定位中的经验，拆成可以独立使用的工具。</p></div>
+     <div class="v44-skill-rows">
+       <a class="v44-skill-row" href="https://github.com/jiamiaomiao029-gif/liushui-skills/tree/main/skills/liushui-persona" target="_blank" rel="noopener noreferrer">
+         <span class="v44-skill-no">01</span>
+         <span class="v44-skill-text"><strong>人设考古</strong><code>liushui-persona</code><span>从日记、社交媒体记录与真实经历里，梳理反复出现的行为模式，找到能讲出人物特点的具体故事。</span></span>
+         <span class="v44-skill-arrow" aria-hidden="true">↗</span>
+       </a>
+       <a class="v44-skill-row" href="https://github.com/jiamiaomiao029-gif/liushui-skills/tree/main/skills/liushui-ip" target="_blank" rel="noopener noreferrer">
+         <span class="v44-skill-no">02</span>
+         <span class="v44-skill-text"><strong>个人 IP 定位</strong><code>liushui-ip</code><span>结合真实能力、受众需求和长期兴趣，比较适合的 IP 方向，并设计可以实际执行的验证计划。</span></span>
+         <span class="v44-skill-arrow" aria-hidden="true">↗</span>
+       </a>
+     </div>
+     <div class="v44-catalog-footer">01 / 看见真实的人 &nbsp; · &nbsp; 02 / 找到值得做的方向</div>
+   </article>
+ </div>
 <div class="v34-skill-making"><div><span>DESIGN / 01</span><h4>提出真实问题</h4><p>内容定位、表达特色和人物模式怎样被理解？</p></div><div><span>STRUCTURE / 02</span><h4>整理为可复用流程</h4><p>把输入、分析与输出拆成可以独立尝试的步骤。</p></div><div><span>PROTOTYPE / 03</span><h4>用实际环境验证</h4><p>从想法到第一个可用的原型，继续试验，继续迭代。</p></div></div>
 </section>
 <section class="v3-exhibit v3-secondary v33-notes-exhibit" id="v3-notes" aria-labelledby="notesHeading">
@@ -1925,7 +2015,7 @@ function rightMarkup(i) {
  if(i===4)return panel(i,'CONVERSATION / LIVE','<div class="v3-topic-tabs" role="group" aria-label="切换直播观点"><button type="button" data-live-topic="0" aria-pressed="true">对标</button><button type="button" data-live-topic="1" aria-pressed="false">内容</button><button type="button" data-live-topic="2" aria-pressed="false">AI</button><button type="button" data-live-topic="3" aria-pressed="false">创业</button></div><div class="v3-topic-card"><span>AN IDEA FROM THE ROOM</span><h3 data-live-topic-title>对标是为了降低试错成本。</h3><p data-live-topic-desc>看见别人走过的路，是为了更快找到适合自己的实验方式，而不是变成另一个人。</p></div><a class="v3-inline-link" href="#v3-live">更多直播观点 ↗</a>','v3-live-panel');
  if(i===5)return panel(i,'02 / TEACHING STUDIO','<div class="v34-teach-file"><div class="v34-note-top"><span>ENGLISH EDUCATION</span><span>知识库目录</span></div><h3>英语教学工作台</h3><div class="v34-file-list"><div><b>01 / 招生</b><span>内容选题 · 家长初沟通 · 课程方案</span></div><div><b>02 / 知识交付</b><span>词汇 / 语法 / 阅读 / 写作</span></div><div><b>03 / 学生培养</b><span>学习动力 · 阶段目标 · 学情追踪</span></div><div><b>04 / 家校反馈</b><span>课堂记录 · 家长沟通 · 升学建议</span></div></div><small>从知识地图到家校沟通，让教学经验拥有清晰的路径。</small></div><a class="v3-inline-link" href="#v3-teaching">打开教学与学生培养体系 ↗</a>','v3-teaching-panel');
  if(i===6)return panel(i,'OFFLINE / EVENTS','<div class="v33-event-book"><figure class="v33-event-book-main"><img src="images/v3/v3-event-speaking.webp" alt="六水坐在白板旁讲解个人 IP 内容思路的现场照片"><figcaption>现场讲解 / THE ROOM</figcaption></figure><figure class="v33-event-book-detail"><img src="images/v3/v3-event-venue.webp" alt="线下活动场地，设有屏幕和讨论桌"><figcaption>分享现场</figcaption></figure></div><div class="v3-event-stats"><strong>90 min</strong><span>传统老板为什么要做个人 IP？<br>线下主题分享</span></div><a class="v3-inline-link" href="#v3-events">看活动全貌 ↗</a>','v3-events-panel');
- if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LAB / PROTOTYPE</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">查看真实 GitHub 仓库 ↗</a></div><div class="v3-skill-mini"><b>xiaoshui-content-skill</b><small>内容创作与业务判断的 Skills 集合</small><a href="https://github.com/jiamiaomiao029-gif/xiaoshui-content-skill" target="_blank" rel="noopener noreferrer">打开项目 ↗</a></div>','v3-skills-panel');
+ if(i===7)return panel(i,'MADE WITH CURIOSITY / SKILLS','<div class="v34-skill-file"><div class="v34-note-top"><span>GITHUB WORKSPACE</span><span>LIUSHUI SKILLS / V0.2</span></div><h3>liushui-skills/</h3><p><span>├──</span> liushui-persona</p><p><span>└──</span> liushui-ip</p><div class="v34-skill-progress">观察与研究 <span>→</span> 转译成流程 <span>→</span> 迭代原型</div><a href="https://github.com/jiamiaomiao029-gif/liushui-skills" target="_blank" rel="noopener noreferrer">进入 GitHub 仓库 ↗</a></div><div class="v44-book-skill-list"><div><b>01 · 人设考古</b><small>从真实记录中寻找稳定的人物模式和故事。</small></div><div><b>02 · 个人 IP 定位</b><small>分析能力与受众，验证值得长期做的方向。</small></div></div>','v3-skills-panel');
  if(i===8)return panel(i,'FLOMO / ON PAPER','<div class="v33-print-book"><img src="images/v3/v3-flomo-print.webp" alt="一整叠打印出来的 flomo 笔记，用手托住纸张"><div class="v33-print-label"><small>WRITING / ON PAPER</small><strong>25<span>万字</span></strong><span>把记录变成一叠纸。</span></div></div><p class="v3-soft-caption">25 万字的纸上痕迹，也是一段持续写作的旅程。</p><a class="v3-inline-link" href="#v3-notes">打开写作档案 ↗</a>','v3-notes-panel');
  if(i===9)return panel(i,'FLOMO / ACTIVITY','<div class="v3-heat-top"><div><b>709</b><span>热力图收录记录</span></div><div><b>224</b><span>有记录日期</span></div><div><b>22</b><span>单日最多</span></div></div><div class="v3-year-tabs" role="group" aria-label="查看年份"><button data-year="2024" type="button">2024</button><button data-year="2025" type="button">2025</button><button data-year="2026" type="button">2026</button></div><div class="v3-heat" role="group" aria-label="flomo 每日记录热力图"></div><div class="v3-heat-detail" aria-live="polite">选择某一天，看看有多少条笔记。</div><small class="v3-micro">记录的日子，在时间轴上慢慢亮起来。</small>','v3-heat-panel');
  if(i===10)return panel(i,'READ / THINK / MAKE','<div class="v3-tree"><div class="v3-tree-row"><span>读过的书</span><span>研究过的创作者</span><span>真实经历</span></div><div class="v3-tree-trunk">我的理解 · 写作 · 复盘</div><div class="v3-tree-row v3-tree-output"><span>作品与直播</span><span>课程与分享</span><span>Skills 工具</span></div></div><div class="v36-thinking-guide"><span class="liushui-sprite pose-thinking" role="img" aria-label="六水认真思考"></span><span class="v36-guide-text">读过、想过，接下来做出来。</span></div><p class="v39-book-flomo-quote">“能忍受长久的不稳定，空白和真空才是执行力。”<small>摘自 flomo · 2026.09.14</small></p><p class="v3-soft-caption">那些日常写下的念头，逐渐长成自己的判断。</p>','v3-tree-panel');
