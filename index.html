@@ -1960,6 +1960,80 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .v3-teach-stage-main{padding:15px 12px!important}
 }
 </style>
+<style id="v52-type-study">
+/* V5.2 / TYPE STUDY — literary editorial typography, no remote font dependency.
+   Songti for expressive headings; PingFang for body; Georgia for folio and labels. */
+:root{
+ --type-display:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC",serif;
+ --type-reading:"PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",-apple-system,BlinkMacSystemFont,sans-serif;
+ --type-folio:"Iowan Old Style","Baskerville","Palatino Linotype",Georgia,serif;
+}
+@media(max-width:680px){
+ body{font-family:var(--type-reading)!important;font-weight:400;color:#35473d;-webkit-font-smoothing:antialiased}
+ /* Headline typography: expressive instead of oversized sans-serif */
+ .sidebar h1,.v40-entry-title,.v3-section-head h2,.v3-exhibit h2,.v3-exhibit h3,
+ .v3-exhibit h4,.v44-catalog-head h3,.v44-skill-text strong,
+ .v33-event-narrative h3,.v3-teach-stage h4,.mobile-paper .chapter-heading,
+ .chapter-heading,.v46-case-header-copy h3,.photo-title,
+ .v3-notes-feature h3,.v3-flagship h3{
+   font-family:var(--type-display)!important;font-weight:400!important;
+   font-synthesis:none;letter-spacing:-.045em!important;
+   line-height:1.35!important;text-wrap:pretty;
+ }
+ .v40-entry-title{font-size:clamp(30px,8.4vw,40px)!important;letter-spacing:-.065em!important;line-height:1.16!important}
+ .v41-entry-brand strong{font-family:var(--type-display)!important;font-weight:400!important;letter-spacing:.045em!important}
+ .v3-section-head h2{font-size:clamp(25px,6.5vw,31px)!important;line-height:1.28!important}
+ .v3-exhibit h3{letter-spacing:-.035em!important}
+ .v33-event-narrative h3{font-size:clamp(28px,7.2vw,34px)!important;line-height:1.35!important}
+ .v44-skill-text strong{font-size:clamp(22px,5.6vw,26px)!important;line-height:1.32!important}
+ .v44-catalog-head h3{font-size:clamp(25px,6.3vw,30px)!important}
+ .v3-teach-stage h4{font-size:clamp(25px,6.3vw,30px)!important;line-height:1.32!important}
+ .mobile-paper .chapter-heading{font-size:clamp(28px,7.2vw,35px)!important;line-height:1.22!important}
+ /* Real reading text: clean, consistent, intentionally light */
+ .v3-exhibit p,.v3-exhibit li,.v44-skill-text>span,.v33-event-narrative p,
+ .v3-teach-stage-main>p,.v3-teach-structure-head p,.mobile-paper .chapter-desc,
+ .mobile-paper .chapter-pull,.v40-entry-description{
+   font-family:var(--type-reading)!important;
+   font-weight:400!important;font-size:13px!important;
+   line-height:1.77!important;letter-spacing:.012em!important;
+   text-wrap:pretty;overflow-wrap:break-word;
+ }
+ .v40-entry-description{font-size:11px!important;line-height:1.58!important}
+ .mobile-paper .chapter-pull{font-family:var(--type-display)!important;font-size:17px!important;line-height:1.65!important;letter-spacing:.025em!important}
+ .v3-exhibit strong:not(.v44-skill-text strong),.v3-exhibit b:not(.v3-result-row b){
+   font-weight:600;
+ }
+ /* Architectural detail: folios, eyebrow, subtitles and editorial metadata */
+ .eyebrow,.sidebar-overline,.v3-section-head .eyebrow,
+ .v3-teach-stage-kicker,.v3-teach-stage-map>span,
+ .v33-event-narrative>span,.v44-catalog-head>span,
+ .v44-skill-no,.v44-repo-top,.v44-repo-foot,
+ .v40-entry-kicker,.v40-entry-flow,.v40-entry-topline .v41-stage-number,
+ .stage-heading,.v3-heat-panel .eyebrow,.v3-teach-subnav button span,
+ .v3-event-sticker,.v3-flagship-label,.v3-result-row b{
+   font-family:var(--type-folio)!important;
+   font-style:normal;letter-spacing:.13em!important;
+ }
+ .eyebrow,.sidebar-overline,.v3-section-head .eyebrow{font-size:10px!important;line-height:1.55!important;color:#927e69!important}
+ .v40-entry-kicker{letter-spacing:.14em!important}
+ .v44-skill-no{font-style:italic!important;font-size:16px!important;color:#a78364}
+ .v44-skill-text code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;letter-spacing:.015em!important;font-size:10px!important}
+ .v3-result-row b{letter-spacing:-.025em!important;font-size:clamp(20px,5.4vw,24px)!important}
+ .v3-result-row span,.v33-event-timeline>div,.v44-catalog-footer{font-family:var(--type-reading)!important}
+ .v3-section-head{border-bottom-color:#cfc6b7!important}
+ .v3-section-head h2{margin-top:10px!important;margin-bottom:10px!important}
+ .v3-exhibit p{margin-top:8px;margin-bottom:12px}
+ .v44-skill-row{padding-block:17px!important}
+ .v33-event-narrative{gap:15px!important}
+ /* Visually rich but readable English */
+ .v41-entry-brand em,.v40-entry-topline em,.stage-heading,
+ .v44-repo-lead,.v3-teach-stage-map>span{font-family:var(--type-folio)!important}
+ .sidebar .toc .toc-title{font-family:var(--type-reading)!important;font-weight:400!important;font-size:13px!important;letter-spacing:.025em!important}
+ .sidebar .toc [aria-current] .toc-title{font-weight:600!important}
+ .sidebar .toc .toc-number{font-family:var(--type-folio)!important;font-style:italic!important}
+ .page-progress,.mobile-paper .page-foot{font-family:var(--type-folio)!important;letter-spacing:.08em!important}
+}
+</style>
 </head>
 <body class="v40-entry-active">
 <button class="v40-entry" id="v40Entry" type="button" aria-label="先认识六水，再进入《不止想想》的封面">
