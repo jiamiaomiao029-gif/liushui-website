@@ -573,3 +573,200 @@
     line-height: 1.6 !important;
   }
 }
+
+
+/* V5.6 — thinking-page overflow repair.
+   Keep every book caption above its folio on narrow desktop spreads.
+   Mobile's reading panel uses natural block flow so zoom / dynamic fonts
+   can never make the quote, caption and folio occupy the same line. */
+.v3-tree-panel .v3-panel-body {
+  min-width: 0;
+  gap: 6px;
+}
+.v3-tree-panel .v3-tree {
+  flex: 0 1 auto;
+  min-height: 0;
+  gap: clamp(7px, .9vw, 12px);
+  padding: 2px 0 4px;
+}
+.v3-tree-panel .v3-tree-row > span {
+  min-height: clamp(36px, 4vw, 49px);
+  padding: 6px 4px;
+}
+.v3-tree-panel .v3-tree-trunk {
+  padding: clamp(8px, .9vw, 12px) 7px;
+}
+.v3-tree-panel .v3-tree-row::after,
+.v3-tree-panel .v3-tree-trunk::after {
+  height: 10px;
+}
+.v3-tree-panel .v36-thinking-guide {
+  flex-shrink: 0;
+  gap: 7px;
+  padding: 5px 8px;
+}
+.v3-tree-panel .v36-thinking-guide .liushui-sprite {
+  width: 38px;
+  flex: 0 0 38px;
+}
+.v3-tree-panel .v39-book-flomo-quote {
+  flex-shrink: 0;
+  margin: 2px 0 0;
+  padding: 7px 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.v3-tree-panel .v39-book-flomo-quote small {
+  margin-top: 3px;
+  line-height: 1.45;
+}
+.v3-tree-panel .v3-soft-caption {
+  flex-shrink: 0;
+  margin: 0 0 3px;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+.v3-tree-panel .page-foot {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: 6px;
+  padding-top: 9px;
+}
+@media (min-width: 681px) and (max-width: 1000px) {
+  .v3-tree-panel .v3-tree-row > span {
+    min-height: 34px;
+    padding: 4px 3px;
+    font-size: 9px;
+  }
+  .v3-tree-panel .v3-tree-trunk {
+    padding: 7px 6px;
+    font-size: 11px;
+  }
+  .v3-tree-panel .v3-tree {
+    gap: 7px;
+    padding: 0;
+  }
+  .v3-tree-panel .v36-thinking-guide .liushui-sprite {
+    width: 29px;
+    flex-basis: 29px;
+  }
+  .v3-tree-panel .v36-thinking-guide {
+    padding: 3px 7px;
+  }
+  .v3-tree-panel .v39-book-flomo-quote {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+  .v3-tree-panel .v3-soft-caption {
+    font-size: 10px;
+    line-height: 1.45;
+  }
+}
+@media (max-width: 680px) {
+  .mobile-paper .v3-tree-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 20px 0 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .mobile-paper .v3-tree-panel .image-top {
+    flex: none !important;
+    height: auto !important;
+    min-height: 24px !important;
+    margin-bottom: 14px !important;
+  }
+  .mobile-paper .v3-tree-panel .v3-panel-body {
+    display: block !important;
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .mobile-paper .v3-tree-panel .v3-tree {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    gap: 15px !important;
+    margin: 0 0 17px !important;
+    padding: 6px 0 10px !important;
+  }
+  .mobile-paper .v3-tree-panel .v3-tree-row > span {
+    min-height: 52px !important;
+    padding: 8px 5px !important;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
+  .mobile-paper .v3-tree-panel .v3-tree-trunk {
+    padding: 13px 8px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  .mobile-paper .v3-tree-panel .v36-thinking-guide {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 0 15px !important;
+    padding: 9px 10px !important;
+  }
+  .mobile-paper .v3-tree-panel .v36-thinking-guide .liushui-sprite {
+    width: 52px !important;
+    flex: 0 0 52px !important;
+  }
+  .mobile-paper .v3-tree-panel .v36-guide-text {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+  .mobile-paper .v3-tree-panel .v39-book-flomo-quote {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 0 16px !important;
+    padding: 13px 14px !important;
+    font-size: clamp(14px, 4vw, 17px) !important;
+    line-height: 1.75 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+  .mobile-paper .v3-tree-panel .v39-book-flomo-quote small {
+    display: block !important;
+    margin-top: 7px !important;
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
+  .mobile-paper .v3-tree-panel .v3-soft-caption {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 19px !important;
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+    overflow-wrap: break-word !important;
+  }
+  .mobile-paper .v3-tree-panel .page-foot {
+    position: static !important;
+    display: flex !important;
+    flex: none !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 30px !important;
+    margin: 0 !important;
+    padding: 12px 0 0 !important;
+    clear: both !important;
+    border-top: 1px solid #d9d3c5 !important;
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+  }
+}
